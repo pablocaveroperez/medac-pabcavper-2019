@@ -37,4 +37,12 @@ public class Asignatura {
     public void setiCodigo(int iCodigo) {
         this.iCodigo = iCodigo;
     }
+
+    @Override
+    public String toString() {
+        String salida = "";
+        salida += "La asignatura "+getsNombre()+" con el codigo "+getiCodigo()+" corresponde al curso "+getsCurso();
+
+        return salida;
+    }
 }

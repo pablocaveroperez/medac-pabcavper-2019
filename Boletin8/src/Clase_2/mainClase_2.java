@@ -6,7 +6,14 @@ import java.io.InputStreamReader;
 public class mainClase_2 {
 
     public static void main(String[] args) {
+        Asignatura vAsignaturas[] = new Asignatura[2];
 
+        vAsignaturas[0] = new Asignatura("Matematicas","Primero",589725);
+        vAsignaturas[1] = new Asignatura("Programacion","Segundo",225448);
+
+        for (int i = 0; i < vAsignaturas.length; i++){
+            System.out.println(vAsignaturas[i]);
+        }
     }
 
 
