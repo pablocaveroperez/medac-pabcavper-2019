@@ -49,11 +49,13 @@ public class Fecha {
     }
 
     public boolean esFechaValida(byte bDia, byte bMes, short shAnio){
-        boolean esValida = true;
+        boolean esValida = false;
         if (bMes == 2){
             if (esBisiesto(shAnio)){
                 if (bDia >= 1 && bDia <= diasDelMes(bMes,shAnio))
-
+                    esValida = true;
+                else
+                    esValida = false;
             }
         }
 
