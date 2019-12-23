@@ -3,7 +3,7 @@ package Problema1;
 public class Fecha {
     private byte bDia;
     private byte bMes;
-    private short bAnio;
+    private short shAnio;
 
     public Fecha(){
 
@@ -26,10 +26,22 @@ public class Fecha {
     }
 
     public short getbAnio() {
-        return bAnio;
+        return shAnio;
     }
 
     public void setbAnio(short bAnio) {
-        this.bAnio = bAnio;
+        this.shAnio = bAnio;
+    }
+
+    public boolean esFechaValida(byte bDia, byte bMes, short shAnio){
+        boolean esValida = true;
+
+
+
+        return esValida;
+    }
+
+    public boolean esBisiesto(short shAnio){
+        return shAnio % 400 == 0 || shAnio % 4 == 0 && shAnio % 100 != 0;
     }
 }
