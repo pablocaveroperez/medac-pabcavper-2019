@@ -35,7 +35,11 @@ public class Fecha {
 
     public boolean esFechaValida(byte bDia, byte bMes, short shAnio){
         boolean esValida = true;
+        if (getbMes() == 2){
+            if (esBisiesto(getbAnio())){
 
+            }
+        }
 
 
         return esValida;
