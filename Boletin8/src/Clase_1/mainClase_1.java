@@ -7,7 +7,7 @@ public class mainClase_1 {
     public static void main(String[] args) {
         byte bCantidadProductos = (byte) valida("Introduce la cantidad de productos",1,5,3);
 
-        Producto vProductos[] = new Producto[bCantidadProductos];
+        Producto[] vProductos = new Producto[bCantidadProductos];
         for (int i = 0; i < vProductos.length; i++){
             String sNombre = leer("Introduce el nombre del producto");
             vProductos[i] = new Producto(sNombre, (float) valida("Introduce el precio del producto ",0,-1,2), (int) valida("Introduce el numero de unidades del producto ",-1,1000,1));
