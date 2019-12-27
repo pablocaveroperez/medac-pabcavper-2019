@@ -8,5 +8,12 @@ public class mainClimatizador {
         climatizador.setTemperaturaActual(14);
 
         climatizador.activar();
+
+        System.out.println();
+
+        climatizador.setTemperaturaDeseada(14);
+        climatizador.setTemperaturaActual(25);
+
+        climatizador.activar();
     }
 }
