@@ -61,17 +61,21 @@ public class Fecha {
         return diasDelMes;
     }
 
-    public boolean esFechaValida(){
+    public String esFechaValida(){
         boolean esValida;
+        String salida = "";
         if (this.bMes == 2){
             esValida = this.bDia >= 1 && this.bDia <= diasDelMes(this.bMes, this.shAnio);
         }else{
             esValida = this.bDia >= 1 && this.bDia <= diasDelMes(this.bMes);
         }
+        if (esValida)
+            salida += "La fecha introducida es valida";
+        else
+            salida += "La fecha introducida no es valida";
 
 
-
-        return esValida;
+        return salida;
     }
 
     public boolean esBisiesto(short shAnio){
