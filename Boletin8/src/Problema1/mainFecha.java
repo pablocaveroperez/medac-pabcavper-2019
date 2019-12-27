@@ -9,6 +9,9 @@ public class mainFecha {
         fecha1.setbAnio((Short) valida("Introduce el año(1900-2036): ",1900,2036,4));
         fecha1.setbDia((Byte) valida("Introduce el dia del mes: ",-1,-1,3));
         fecha1.setbMes((Byte) valida("Introduce el mes del anio: ",-1,-1,3));
+
+        System.out.println(fecha1);
+        fecha1.esFechaValida();
     }
 
 

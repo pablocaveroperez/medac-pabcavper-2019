@@ -61,12 +61,12 @@ public class Fecha {
         return diasDelMes;
     }
 
-    public boolean esFechaValida(byte bDia, byte bMes, short shAnio){
+    public boolean esFechaValida(){
         boolean esValida;
-        if (bMes == 2){
-            esValida = bDia >= 1 && bDia <= diasDelMes(bMes, shAnio);
+        if (this.bMes == 2){
+            esValida = this.bDia >= 1 && this.bDia <= diasDelMes(this.bMes, this.shAnio);
         }else{
-            esValida = bDia >= 1 && bDia <= diasDelMes(bMes);
+            esValida = this.bDia >= 1 && this.bDia <= diasDelMes(this.bMes);
         }
 
 
@@ -76,5 +76,12 @@ public class Fecha {
 
     public boolean esBisiesto(short shAnio){
         return shAnio % 400 == 0 || shAnio % 4 == 0 && shAnio % 100 != 0;
+    }
+
+    @Override
+    public String toString() {
+        return "Fecha: " + bDia +
+                " " + bMes +
+                " " + shAnio;
     }
 }
