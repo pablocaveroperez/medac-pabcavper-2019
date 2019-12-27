@@ -19,5 +19,8 @@ public class mainPunto {
         punto2.mover(15,3);
         punto1.mover(punto2);
         System.out.println(punto1);
+
+        punto1.mover(6,2);
+        System.out.println(punto1.distancia(punto2));
     }
 }
