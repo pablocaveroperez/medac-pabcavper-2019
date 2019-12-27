@@ -8,7 +8,7 @@ public class Climatizador {
     private float temperaturaDeseada;
 
     public Climatizador(){
-        this.encendido = false;
+        this.setEncendido(false);
     }
 
     public void activar(){
