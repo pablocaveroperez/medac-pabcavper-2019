@@ -12,5 +12,12 @@ public class mainPunto {
 
         punto1.borrar();
         System.out.println(punto1);
+
+        punto1.mover(3,4.1);
+        System.out.println(punto1);
+
+        punto2.mover(15,3);
+        punto1.mover(punto2);
+        System.out.println(punto1);
     }
 }
