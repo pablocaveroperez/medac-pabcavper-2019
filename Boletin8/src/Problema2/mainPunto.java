@@ -9,5 +9,8 @@ public class mainPunto {
         punto1.setY(2);
 
         System.out.println(punto1);
+
+        punto1.borrar();
+        System.out.println(punto1);
     }
 }
