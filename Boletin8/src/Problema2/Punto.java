@@ -34,4 +34,9 @@ public class Punto {
         setX(x);
         setY(y);
     }
+
+    public void mover(Punto punto){
+        setX(punto.getX());
+        setY(punto.getY());
+    }
 }
