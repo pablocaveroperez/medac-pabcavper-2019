@@ -5,8 +5,8 @@ public class Punto {
     private double y;
 
     public Punto(){
-        setX(0);
-        setY(0);
+        this.setX(0);
+        this.setY(0);
     }
 
     public void setX(double x) {
@@ -31,12 +31,16 @@ public class Punto {
     }
 
     public void mover(double x, double y){
-        setX(x);
-        setY(y);
+        this.setX(x);
+        this.setY(y);
     }
 
     public void mover(Punto punto){
-        setX(punto.getX());
-        setY(punto.getY());
+        this.setX(punto.getX());
+        this.setY(punto.getY());
+    }
+
+    public double distancia(Punto punto){
+        return Math.sqrt(Math.pow(this.getX() - punto.getX(),2) + Math.pow(this.getY() - punto.getY(),2));
     }
 }
