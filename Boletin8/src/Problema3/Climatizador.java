@@ -21,12 +21,20 @@ public class Climatizador {
                 enfriar();
             }while(getTemperaturaActual() > getTemperaturaDeseada());
         }else {
+            setEncendido(true);
             System.out.println("La temperatura actual es igual a la deseada");
+            desactivar();
         }
     }
 
     public void desactivar(){
+        System.out.println("Se ha desactivado el climatizador");
+        setEncendido(false);
+        System.exit(0);
+    }
 
+    public void setEncendido(boolean encendido) {
+        this.encendido = encendido;
     }
 
     public boolean isEncendido() {
