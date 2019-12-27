@@ -43,4 +43,9 @@ public class Punto {
     public double distancia(Punto punto){
         return Math.sqrt(Math.pow(this.getX() - punto.getX(),2) + Math.pow(this.getY() - punto.getY(),2));
     }
+
+    @Override
+    public String toString() {
+        return "("+this.getX()+" , "+this.getY()+")";
+    }
 }
