@@ -60,7 +60,7 @@ public class MaquinaExpendedora {
     }
 
     public void devolucionCreditoRestante(){
-        float creditoRestante =  getiCreditoAcumulado() - getiCreditoConsumido();
+        float creditoRestante =  getiCreditoAcumulado();
         System.out.println("El creddito restante de la maquina "+getiNumeroSerie() +" es "+creditoRestante);
         System.exit(0);
     }
