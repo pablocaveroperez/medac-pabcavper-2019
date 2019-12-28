@@ -47,20 +47,20 @@ public class MaquinaExpendedora {
 
     public void insertarMoneda(byte valorMoneda){
         setiCreditoAcumulado(getiCreditoAcumulado() + valorMoneda);
-        System.out.println("Has insertado una moneda de "+valorMoneda);
+        System.out.println("Has insertado una moneda de "+valorMoneda+" en la maquina "+getiNumeroSerie());
     }
 
     public void pedirProducto(byte costeProducto){
         if (costeProducto <= getiCreditoAcumulado()) {
             setiCreditoConsumido(getiCreditoConsumido() + costeProducto);
-            System.out.println("Has pedido el producto que cuesta "+costeProducto);
+            System.out.println("Has pedido el producto que cuesta "+costeProducto+" de la maquina "+getiNumeroSerie());
         }else
-            System.out.println("El coste del producto es mayor que el credito acumulado. Inserta mas monedas o pide otro producto");
+            System.out.println("El coste del producto es mayor que el credito acumulado de la maquina "+getiNumeroSerie()+". Inserta mas monedas o pide otro producto");
     }
 
     public int devolucionCreditoRestante(){
         int creditoRestante =  getiCreditoAcumulado() - getiCreditoConsumido();
-        System.out.println("El creddito restante es "+creditoRestante);
+        System.out.println("El creddito restante de la maquina "+getiNumeroSerie() +" es "+creditoRestante);
         return creditoRestante;
     }
 
