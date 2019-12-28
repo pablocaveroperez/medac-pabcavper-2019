@@ -11,5 +11,7 @@ public class mainMaquinaExpendedora {
         System.out.println(maquina1.getiCreditoAcumulado());
 
         maquina1.pedirProducto(0.75f);
+        System.out.println(maquina1.getiCreditoAcumulado());
+        maquina1.pedirProducto(1);
     }
 }

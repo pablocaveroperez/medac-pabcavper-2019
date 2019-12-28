@@ -53,6 +53,7 @@ public class MaquinaExpendedora {
     public void pedirProducto(float costeProducto){
         if (costeProducto <= getiCreditoAcumulado()) {
             setiCreditoConsumido(getiCreditoConsumido() + costeProducto);
+            setiCreditoAcumulado(getiCreditoAcumulado() - costeProducto);
             setiDineroAcumulado(getiCreditoConsumido());
             System.out.println("Has pedido el producto que cuesta "+costeProducto+" de la maquina "+getiNumeroSerie());
         }else
