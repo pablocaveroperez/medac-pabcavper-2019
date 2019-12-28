@@ -2,9 +2,9 @@ package Problema4;
 
 public class MaquinaExpendedora {
     private int iNumeroSerie;
-    private int iCreditoAcumulado;
-    private int iCreditoConsumido;
-    private int iDineroAcumulado;
+    private float iCreditoAcumulado;
+    private float iCreditoConsumido;
+    private double iDineroAcumulado;
 
     public MaquinaExpendedora(int iNumeroSerie){
         setiNumeroSerie(iNumeroSerie);
@@ -21,36 +21,36 @@ public class MaquinaExpendedora {
         this.iNumeroSerie = iNumeroSerie;
     }
 
-    public int getiCreditoAcumulado() {
+    public float getiCreditoAcumulado() {
         return iCreditoAcumulado;
     }
 
-    private void setiCreditoAcumulado(int iCreditoAcumulado) {
+    private void setiCreditoAcumulado(float iCreditoAcumulado) {
         this.iCreditoAcumulado = iCreditoAcumulado;
     }
 
-    public int getiCreditoConsumido() {
+    public float getiCreditoConsumido() {
         return iCreditoConsumido;
     }
 
-    private void setiCreditoConsumido(int iCreditoConsumido) {
+    private void setiCreditoConsumido(float iCreditoConsumido) {
         this.iCreditoConsumido = iCreditoConsumido;
     }
 
-    public int getiDineroAcumulado() {
+    public double getiDineroAcumulado() {
         return iDineroAcumulado;
     }
 
-    private void setiDineroAcumulado(int iDineroAcumulado) {
+    private void setiDineroAcumulado(double iDineroAcumulado) {
         this.iDineroAcumulado = iDineroAcumulado;
     }
 
-    public void insertarMoneda(byte valorMoneda){
+    public void insertarMoneda(float valorMoneda){
         setiCreditoAcumulado(getiCreditoAcumulado() + valorMoneda);
         System.out.println("Has insertado una moneda de "+valorMoneda+" en la maquina "+getiNumeroSerie());
     }
 
-    public void pedirProducto(byte costeProducto){
+    public void pedirProducto(float costeProducto){
         if (costeProducto <= getiCreditoAcumulado()) {
             setiCreditoConsumido(getiCreditoConsumido() + costeProducto);
             setiDineroAcumulado(getiCreditoConsumido());
@@ -60,7 +60,7 @@ public class MaquinaExpendedora {
     }
 
     public void devolucionCreditoRestante(){
-        int creditoRestante =  getiCreditoAcumulado() - getiCreditoConsumido();
+        float creditoRestante =  getiCreditoAcumulado() - getiCreditoConsumido();
         System.out.println("El creddito restante de la maquina "+getiNumeroSerie() +" es "+creditoRestante);
         System.exit(0);
     }
