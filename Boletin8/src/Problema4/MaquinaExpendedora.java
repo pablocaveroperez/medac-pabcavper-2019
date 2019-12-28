@@ -9,6 +9,8 @@ public class MaquinaExpendedora {
     public MaquinaExpendedora(int iNumeroSerie){
         setiNumeroSerie(iNumeroSerie);
         setiCreditoConsumido(0);
+        setiCreditoAcumulado(0);
+        setiDineroAcumulado(0);
     }
 
     public int getiNumeroSerie() {
@@ -57,7 +59,9 @@ public class MaquinaExpendedora {
     }
 
     public int devolucionCreditoRestante(){
-        return getiCreditoAcumulado() - getiCreditoConsumido();
+        int creditoRestante =  getiCreditoAcumulado() - getiCreditoConsumido();
+        System.out.println("El creddito restante es "+creditoRestante);
+        return creditoRestante;
     }
 
 
