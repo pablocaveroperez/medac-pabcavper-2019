@@ -9,5 +9,7 @@ public class mainMaquinaExpendedora {
         maquina1.insertarMoneda(1);
         maquina1.insertarMoneda(0.5f);
         System.out.println(maquina1.getiCreditoAcumulado());
+
+        maquina1.pedirProducto(0.75f);
     }
 }
