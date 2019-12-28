@@ -8,6 +8,7 @@ public class MaquinaExpendedora {
 
     public MaquinaExpendedora(int iNumeroSerie){
         setiNumeroSerie(iNumeroSerie);
+        setiCreditoConsumido(0);
     }
 
     public int getiNumeroSerie() {
@@ -44,6 +45,7 @@ public class MaquinaExpendedora {
 
     public void insertarMoneda(byte valorMoneda){
         setiCreditoAcumulado(getiCreditoAcumulado() + valorMoneda);
+        System.out.println("Has insertado una moneda de "+valorMoneda);
     }
 
     public void pedirProducto(byte costeProducto){
@@ -55,9 +57,7 @@ public class MaquinaExpendedora {
     }
 
     public int devolucionCreditoRestante(){
-        int creditoRestante = 0;
-
-        return creditoRestante;
+        return getiCreditoAcumulado() - getiCreditoConsumido();
     }
 
 
