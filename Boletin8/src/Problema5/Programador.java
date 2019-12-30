@@ -34,7 +34,18 @@ public class Programador {
         }
     }
 
-
+    public void encenderUnoPorUno(){
+        for (int i = 0; i < this.bombillas.length; i++){
+            this.bombillas[i].encender();
+            System.out.println(toString());
+            this.bombillas[i].cambiar();
+        }
+        for (int i = this.bombillas.length-1; i >= 0; i--){
+            this.bombillas[i].encender();
+            System.out.println(toString());
+            this.bombillas[i].cambiar();
+        }
+    }
 
     @Override
     public String toString() {
