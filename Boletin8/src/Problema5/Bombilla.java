@@ -26,7 +26,7 @@ public class Bombilla {
         this.bolEncendida = bolEncendida;
     }
 
-    public String mostrar(){
+    public String toString(){
         String salida = "";
         if (isBolEncendida())
             salida += '*';

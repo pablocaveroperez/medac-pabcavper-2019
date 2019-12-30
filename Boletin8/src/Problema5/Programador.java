@@ -18,21 +18,30 @@ public class Programador {
     }
 
     public void encenderAlternativo(){
-        if (bombilla1.isBolEncendida()){
-            bombilla2.apagar();
-            bombilla3.encender();
-            bombilla4.apagar();
-            bombilla5.encender();
-            bombilla6.apagar();
-        }
-        else{
-            bombilla2.encender();
-            bombilla3.apagar();
-            bombilla4.encender();
-            bombilla5.apagar();
-            bombilla6.encender();
-        }
+        bombilla1.encender();
+        bombilla2.apagar();
+        bombilla3.encender();
+        bombilla4.apagar();
+        bombilla5.encender();
+        bombilla6.apagar();
+        System.out.println(toString());
+
+
+        bombilla1.cambiar();
+        bombilla2.cambiar();
+        bombilla3.cambiar();
+        bombilla4.cambiar();
+        bombilla5.cambiar();
+        bombilla6.cambiar();
+        System.out.println(toString());
     }
 
+    public void encenderBarrido(){
 
+    }
+
+    @Override
+    public String toString() {
+        return bombilla1+" "+bombilla2+" "+bombilla3+" "+bombilla4+" "+bombilla5+" "+bombilla6;
+    }
 }
