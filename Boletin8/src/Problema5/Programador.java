@@ -41,7 +41,6 @@ public class Programador {
         for (int i = 0; i < this.bombillas.length;i++){
             salida += this.bombillas[i];
         }
-
         return salida;
     }
 }
