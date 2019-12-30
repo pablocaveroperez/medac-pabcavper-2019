@@ -83,4 +83,10 @@ public class Coche {
     public void setBolTodoRiesgo(boolean bolTodoRiesgo) {
         this.bolTodoRiesgo = bolTodoRiesgo;
     }
+
+    public String imprimeCoche(){
+        String salida = "";
+        salida += "El coche "+getModelo()+" es de color "+getColor();
+        return salida;
+    }
 }
