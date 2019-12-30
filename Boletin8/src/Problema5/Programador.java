@@ -28,8 +28,13 @@ public class Programador {
     }
 
     public void encenderBarrido(){
-
+        for (int i = 0; i < this.bombillas.length; i++){
+            this.bombillas[i].encender();
+            System.out.println(toString());
+        }
     }
+
+
 
     @Override
     public String toString() {
