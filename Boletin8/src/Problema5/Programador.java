@@ -19,22 +19,27 @@ public class Programador {
         bombillas[3].apagar();
         bombillas[4].encender();
         bombillas[5].apagar();
+        System.out.println("----------------------------");
         System.out.println(toString());
 
         for (int i = 0; i < this.bombillas.length; i++){
             this.bombillas[i].cambiar();
         }
         System.out.println(toString());
+        System.out.println("----------------------------");
     }
 
     public void encenderBarrido(){
+        System.out.println("----------------------------");
         for (int i = 0; i < this.bombillas.length; i++){
             this.bombillas[i].encender();
             System.out.println(toString());
         }
+        System.out.println("----------------------------");
     }
 
     public void encenderUnoPorUno(){
+        System.out.println("----------------------------");
         for (int i = 0; i < this.bombillas.length; i++){
             this.bombillas[i].encender();
             System.out.println(toString());
@@ -45,6 +50,7 @@ public class Programador {
             System.out.println(toString());
             this.bombillas[i].cambiar();
         }
+        System.out.println("----------------------------");
     }
 
     @Override
