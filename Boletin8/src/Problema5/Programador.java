@@ -18,6 +18,21 @@ public class Programador {
     }
 
     public void encenderAlternativo(){
-
+        if (bombilla1.isBolEncendida()){
+            bombilla2.apagar();
+            bombilla3.encender();
+            bombilla4.apagar();
+            bombilla5.encender();
+            bombilla6.apagar();
+        }
+        else{
+            bombilla2.encender();
+            bombilla3.apagar();
+            bombilla4.encender();
+            bombilla5.apagar();
+            bombilla6.encender();
+        }
     }
+
+
 }
