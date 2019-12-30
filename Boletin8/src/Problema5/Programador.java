@@ -12,6 +12,12 @@ public class Programador {
         this.bombillas[5] = new Bombilla();
     }
 
+    private void reestablecerBombillas(){
+        for (int i = 0; i < this.bombillas.length; i++){
+            this.bombillas[i].apagar();
+        }
+    }
+
     public void encenderAlternativo(){
         bombillas[0].encender();
         bombillas[1].apagar();
@@ -30,6 +36,7 @@ public class Programador {
     }
 
     public void encenderBarrido(){
+        reestablecerBombillas();
         System.out.println("----------------------------");
         for (int i = 0; i < this.bombillas.length; i++){
             this.bombillas[i].encender();
@@ -39,6 +46,7 @@ public class Programador {
     }
 
     public void encenderUnoPorUno(){
+        reestablecerBombillas();
         System.out.println("----------------------------");
         for (int i = 0; i < this.bombillas.length; i++){
             this.bombillas[i].encender();
