@@ -21,13 +21,9 @@ public class Programador {
         bombillas[5].apagar();
         System.out.println(toString());
 
-
-        bombillas[0].cambiar();
-        bombillas[1].cambiar();
-        bombillas[2].cambiar();
-        bombillas[3].cambiar();
-        bombillas[4].cambiar();
-        bombillas[5].cambiar();
+        for (int i = 0; i < this.bombillas.length; i++){
+            this.bombillas[i].cambiar();
+        }
         System.out.println(toString());
     }
 
