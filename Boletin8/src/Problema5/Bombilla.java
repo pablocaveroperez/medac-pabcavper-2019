@@ -1,7 +1,7 @@
 package Problema5;
 
 public class Bombilla {
-    private boolean bolEncendida;
+    private boolean bolEncendida = false;
 
     public void encender(){
         this.setBolEncendida(true);

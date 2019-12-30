@@ -16,4 +16,8 @@ public class Programador {
         this.bombilla5 = new Bombilla();
         this.bombilla6 = new Bombilla();
     }
+
+    public void encenderAlternativo(){
+
+    }
 }
