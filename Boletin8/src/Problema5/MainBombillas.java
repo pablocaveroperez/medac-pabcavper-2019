@@ -6,5 +6,6 @@ public class MainBombillas {
 
         programador1.encenderAlternativo();
         programador1.encenderBarrido();
+        programador1.encenderUnoPorUno();
     }
 }
