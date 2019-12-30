@@ -1,38 +1,33 @@
 package Problema5;
 
 public class Programador {
-    private Bombilla bombilla1;
-    private Bombilla bombilla2;
-    private Bombilla bombilla3;
-    private Bombilla bombilla4;
-    private Bombilla bombilla5;
-    private Bombilla bombilla6;
+    private Bombilla []bombillas = new Bombilla[6];
 
     public Programador(){
-        this.bombilla1 = new Bombilla();
-        this.bombilla2 = new Bombilla();
-        this.bombilla3 = new Bombilla();
-        this.bombilla4 = new Bombilla();
-        this.bombilla5 = new Bombilla();
-        this.bombilla6 = new Bombilla();
+        this.bombillas[0] = new Bombilla();
+        this.bombillas[1] = new Bombilla();
+        this.bombillas[2] = new Bombilla();
+        this.bombillas[3] = new Bombilla();
+        this.bombillas[4] = new Bombilla();
+        this.bombillas[5] = new Bombilla();
     }
 
     public void encenderAlternativo(){
-        bombilla1.encender();
-        bombilla2.apagar();
-        bombilla3.encender();
-        bombilla4.apagar();
-        bombilla5.encender();
-        bombilla6.apagar();
+        bombillas[0].encender();
+        bombillas[1].apagar();
+        bombillas[2].encender();
+        bombillas[3].apagar();
+        bombillas[4].encender();
+        bombillas[5].apagar();
         System.out.println(toString());
 
 
-        bombilla1.cambiar();
-        bombilla2.cambiar();
-        bombilla3.cambiar();
-        bombilla4.cambiar();
-        bombilla5.cambiar();
-        bombilla6.cambiar();
+        bombillas[0].cambiar();
+        bombillas[1].cambiar();
+        bombillas[2].cambiar();
+        bombillas[3].cambiar();
+        bombillas[4].cambiar();
+        bombillas[5].cambiar();
         System.out.println(toString());
     }
 
@@ -42,6 +37,11 @@ public class Programador {
 
     @Override
     public String toString() {
-        return bombilla1+" "+bombilla2+" "+bombilla3+" "+bombilla4+" "+bombilla5+" "+bombilla6;
+        String salida = "";
+        for (int i = 0; i < this.bombillas.length;i++){
+            salida += this.bombillas[i];
+        }
+
+        return salida;
     }
 }
