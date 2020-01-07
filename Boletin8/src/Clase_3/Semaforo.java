@@ -61,6 +61,5 @@ public class Semaforo {
             }
             else
                 setiColor(getiColor()+1);
-
     }
 }
