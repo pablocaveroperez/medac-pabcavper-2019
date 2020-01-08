@@ -50,7 +50,7 @@ public class Persona {
             this.shEdad = shEdad;
             bExito = true;
             if (shAux < shEdad)
-                System.out.println("La edad introducida es mayor que la anterior");
+                System.out.println("La edad introducida "+shEdad+" es mayor que la anterior "+shAux);
         }
         return bExito;
 
