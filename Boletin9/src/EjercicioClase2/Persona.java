@@ -94,7 +94,7 @@ public class Persona {
         }else if (this.bEstado == 2 && bEstado == 3){
             this.bEstado = bEstado;
             bExito = true;
-        }else if (this.bEstado == 3 && bEstado == 4 || bEstado == 5){
+        }else if (this.bEstado == 3 && (bEstado == 4 || bEstado == 5)){
             this.bEstado = bEstado;
             bExito = true;
         }else if (this.bEstado == 4 && bEstado == 2){
