@@ -65,6 +65,17 @@ public class Libreria {
                     oResultado = convertirShort(sMensaje);
                 }
                 break;
+            case 5: //double
+                if (dMin != -1 && dMax != -1) {
+                    oResultado = validaNumero(sMensaje, (double) dMin, (double) dMax);
+                } else if (dMin != -1) {
+                    oResultado = validaNumeroMinimo(sMensaje, (double) dMin);
+                } else if (dMax != -1) {
+                    oResultado = validaNumeroMaximo(sMensaje, (double) dMax);
+                } else {
+                    oResultado = convertirShort(sMensaje);
+                }
+                break;
         }
         return oResultado;
     }
@@ -198,6 +209,39 @@ public class Libreria {
 
     private static short convertirShort(String sMensaje) {
         return Short.parseShort(leer(sMensaje));
+    }
+
+    /* ################################
+     * # VALIDACION DE NUMEROS DOUBLE #
+     * ################################
+     */
+
+    private static double validaNumero(String sMensaje, double fMin, double fMax) {
+        double shNumero;
+        do {
+            shNumero = convertirDouble(sMensaje);
+        } while (shNumero < fMin || shNumero > fMax);
+        return shNumero;
+    }
+
+    private static double validaNumeroMinimo(String sMensaje, double fMin) {
+        double shNumero;
+        do {
+            shNumero = convertirDouble(sMensaje);
+        } while (shNumero < fMin);
+        return shNumero;
+    }
+
+    private static double validaNumeroMaximo(String sMensaje, double fMax) {
+        double shNumero;
+        do {
+            shNumero = convertirDouble(sMensaje);
+        } while (shNumero > fMax);
+        return shNumero;
+    }
+
+    private static double convertirDouble(String sMensaje) {
+        return Double.parseDouble(leer(sMensaje));
     }
 
 }

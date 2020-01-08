@@ -4,7 +4,7 @@ import Boletin9.Libreria;
 
 public class mainCalculadora {
     public static void main(String[] args) {
-        double dNumero = Double.parseDouble(Libreria.leer("Introduce el numero deseado: "));
+        double dNumero = Double.parseDouble(Libreria.valida("Introduce el numero deseado: ",-2000,2000,5));
 
 
 
