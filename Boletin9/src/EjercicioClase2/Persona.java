@@ -7,7 +7,7 @@ public class Persona {
     private short shEdad;
     private float fEstatura;
     private float fKilos;
-    private static byte bEstado; // 1 - SOLTERO; 2 - CASADO; 3 - SEPARADO; 4 - DIVORCIADO; 5 - VIUDO
+    private byte bEstado; // 1 - SOLTERO; 2 - CASADO; 3 - SEPARADO; 4 - DIVORCIADO; 5 - VIUDO
 
     public Persona(String sNombre, String sApellido1, String sApellido2){
         this.setsNombre(sNombre);
@@ -62,7 +62,7 @@ public class Persona {
 
     public boolean setfEstatura(float fEstatura) {
         boolean bExito = false;
-        if (fEstatura >= 1.50 && fEstatura <= 2.32){
+        if (fEstatura >= 0 && fEstatura <= 3){
             this.fEstatura = fEstatura;
             bExito = true;
         }
@@ -75,22 +75,21 @@ public class Persona {
 
     public boolean setfKilos(float fKilos) {
         boolean bExito = false;
-        if (fKilos >= 30 && fKilos <= 200){
+        if (fKilos >= 0 && fKilos <= 300){
             this.fKilos = fKilos;
             bExito = true;
         }
         return bExito;
     }
 
-    public static byte getbEstado() {
+    public byte getbEstado() {
         return bEstado;
     }
 
-    public static boolean setbEstado(byte bEstado) {
+    public boolean setbEstado(byte bEstado) {
         boolean bExito = false;
         if (bEstado == 1 || bEstado == 2 || bEstado == 3 || bEstado == 4 || bEstado == 5){
-            Persona.bEstado = bEstado;
-            bExito = true;
+
         }
         return bExito;
     }
