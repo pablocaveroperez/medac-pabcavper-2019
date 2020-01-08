@@ -7,6 +7,10 @@ public class Calculadora {
     private float fNumero;
     private Object oNumero;
 
+    public Calculadora(double dNumero){
+        this.dNumero = dNumero;
+    }
+
     public double getdNumero() {
         return dNumero;
     }
@@ -40,7 +44,7 @@ public class Calculadora {
     }
 
 
-    public Object getoNumero(byte bTipo) {
+    public Object getoNumero(byte bTipo, double dNumero) {
 
         if (bTipo == 1){
             setiNumero((int) dNumero);
