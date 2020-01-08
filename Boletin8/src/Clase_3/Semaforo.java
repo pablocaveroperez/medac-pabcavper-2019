@@ -5,11 +5,11 @@ public class Semaforo {
      * iColor, 0 es rojo, 1 es ambar y 2 es verde
      */
     private int iColor;
-    private boolean parpadeando;
+    private boolean bParpadeando;
 
-    public Semaforo(){
-        setiColor(0);
-        setParpadeando(false);
+    public Semaforo() {
+        setiColor(1);
+        setbParpadeando(false);
     }
 
     public int getiColor() {
@@ -17,49 +17,54 @@ public class Semaforo {
     }
 
     public void setiColor(int iColor) {
-        if (iColor == 0 ||iColor == 1 || iColor == 2)
+        if(iColor >= 1 && iColor <= 3) {
             this.iColor = iColor;
+        }
     }
 
-    public boolean isParpadeando() {
-        return parpadeando;
+    public boolean isbParpadeando() {
+        return bParpadeando;
     }
 
-    public void setParpadeando(boolean parpadeando) {
-        if (isParpadeando() && getiColor() == 1)
-            this.parpadeando = parpadeando;
+    public void setbParpadeando(boolean bParpadeando) {
+        if(bParpadeando && this.iColor == 2) {
+            this.bParpadeando = bParpadeando;
+        } else {
+            this.bParpadeando = false;
+        }
     }
 
-    private String cadenaColor(){
-        String salida ="";
-        if (getiColor() == 0)
-            salida += "ROJO";
-        if (getiColor() == 1)
-            salida += "AMBAR";
-        if (getiColor() == 2)
-            salida += "VERDE";
-        return salida;
+    public String cadenaColor() {
+        String sResultado;
+        if(this.iColor == 1) {
+            sResultado = "ROJO";
+        }else if(this.iColor == 2) {
+            sResultado = "AMBAR";
+        }else {
+            sResultado = "VERDE";
+        }
+        return sResultado;
     }
 
-    public void imprimir(){
-        String salida = "";
-        salida += "El semaforo es "+cadenaColor();
-        if (isParpadeando())
-            salida += " parpadeando";
-        System.out.println(salida);
+
+    public String imprimir() {
+        String sResultado = "Semaforo en " + this.cadenaColor();
+        if(this.bParpadeando) {
+            sResultado += " parpadeando";
+        }
+        return sResultado;
     }
 
-    public void cambia(){
-
-            if (getiColor() == 2){
-                setiColor(0);
-            }else if (getiColor() == 0){
-                setParpadeando(true);
-                setiColor(1);
-            }else if (getiColor() == 1){
-
-            }
-            else
-                setiColor(getiColor()+1);
+    public void cambia() {
+        if(this.iColor == 1) {
+            this.setiColor(3);
+        }else if(this.iColor == 3) {
+            this.setiColor(2);
+            this.setbParpadeando(true);
+        }else if(this.iColor == 2 && this.isbParpadeando()) {
+            this.setbParpadeando(false);
+        }else {
+            this.setiColor(1);
+        }
     }
 }
