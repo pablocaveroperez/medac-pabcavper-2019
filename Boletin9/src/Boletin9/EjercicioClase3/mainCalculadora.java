@@ -9,5 +9,6 @@ public class mainCalculadora {
 
         System.out.println(calculadora1.transformarNumero((byte) 1,dNumero));
         calculadora1.transformarNumero((byte) 1,dNumero);
+        calculadora1.transformarNumero((byte)1, dNumero);
     }
 }
