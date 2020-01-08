@@ -88,8 +88,21 @@ public class Persona {
 
     public boolean setbEstado(byte bEstado) {
         boolean bExito = false;
-        if (bEstado == 1 || bEstado == 2 || bEstado == 3 || bEstado == 4 || bEstado == 5){
-
+        if (this.bEstado == 1 && bEstado == 2) {
+            this.bEstado = bEstado;
+            bExito = true;
+        }else if (this.bEstado == 2 && bEstado == 3){
+            this.bEstado = bEstado;
+            bExito = true;
+        }else if (this.bEstado == 3 && bEstado == 4 || bEstado == 5){
+            this.bEstado = bEstado;
+            bExito = true;
+        }else if (this.bEstado == 4 && bEstado == 2){
+            this.bEstado = bEstado;
+            bExito = true;
+        }else if (this.bEstado == 5 && bEstado == 2){
+            this.bEstado = bEstado;
+            bExito = true;
         }
         return bExito;
     }
