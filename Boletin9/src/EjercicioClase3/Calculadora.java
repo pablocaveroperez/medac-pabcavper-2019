@@ -46,11 +46,14 @@ public class Calculadora {
             setiNumero((int) dNumero);
             oNumero = getiNumero();
         }else if (bTipo == 2){
-
+            setlNumero((long) dNumero);
+            oNumero = getlNumero();
         }else if (bTipo == 3){
-
+            setfNumero((float) dNumero);
+            oNumero = getfNumero();
         }else if (bTipo == 4){
-
+            setdNumero((double) dNumero);
+            oNumero = getdNumero();
         }
 
         return oNumero;
