@@ -8,8 +8,18 @@ public class Semaforo {
     private boolean bParpadeando;
 
     public Semaforo() {
-        setiColor(1);
-        setbParpadeando(false);
+        setiColor(2);
+        setbParpadeando(true);
+    }
+
+    public Semaforo(int iColor){
+        if (iColor == 2){
+            setiColor(iColor);
+            setbParpadeando(true);
+        }else{
+            setiColor(iColor);
+            setbParpadeando(false);
+        }
     }
 
     public int getiColor() {
