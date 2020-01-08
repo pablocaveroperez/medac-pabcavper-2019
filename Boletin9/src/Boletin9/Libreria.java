@@ -73,7 +73,7 @@ public class Libreria {
                 } else if (dMax != -1) {
                     oResultado = validaNumeroMaximo(sMensaje, (double) dMax);
                 } else {
-                    oResultado = convertirShort(sMensaje);
+                    oResultado = convertirDouble(sMensaje);
                 }
                 break;
         }
