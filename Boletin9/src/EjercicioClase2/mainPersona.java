@@ -24,7 +24,9 @@ public class mainPersona {
             System.out.println("La masa introducida es incorrecta");
 
         if (!persona1.setbEstado((byte) 1))
-            System.out.println("Es estado introducido es incorrecto");
+            System.out.println("El estado introducido es incorrecto");
 
+        if (!persona1.setbEstado((byte)3))
+            System.out.println("El estado introducido es incorrecto");
     }
 }
