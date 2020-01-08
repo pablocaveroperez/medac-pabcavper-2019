@@ -103,7 +103,37 @@ public class Persona {
         }else if (this.bEstado == 5 && bEstado == 2){
             this.bEstado = bEstado;
             bExito = true;
+        }else if (this.bEstado == 0) {
+            this.bEstado = bEstado;
+            bExito = true;
         }
         return bExito;
+    }
+
+    public String estadoTexto(byte bEstado){
+        String salida = "";
+        if (bEstado == 1)
+            salida += "SOLTERO";
+        if (bEstado == 2)
+            salida += "CASADO";
+        if (bEstado == 3)
+            salida += "SEPARADO";
+        if (bEstado == 4)
+            salida += "DIVORCIADO";
+        if (bEstado == 5)
+            salida += "VIUDO";
+        return salida;
+    }
+
+    @Override
+    public String toString() {
+        String salida = "";
+        salida += "\nNombre: "+ getsNombre();
+        salida += "\nPrimer Apellido: "+ getsApellido1();
+        salida += "\nSegundo Apellido: "+ getsApellido2();
+        salida += "\nMasa: "+ getfKilos()+" kg";
+        salida += "\nEstatura: "+ getfEstatura()+" m";
+        salida += "\nEstado: "+ estadoTexto(getbEstado());
+        return salida;
     }
 }
