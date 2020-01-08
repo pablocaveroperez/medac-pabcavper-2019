@@ -38,7 +38,7 @@ public class Persona {
     }
 
     public void setbEdad(byte bEdad) {
-
+        boolean bExito = false;
         if (bEdad >= 0 && bEdad <= 126){
             this.bEdad = bEdad;
         }
