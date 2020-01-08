@@ -1,4 +1,4 @@
-package EjercicioClase1;
+package Boletin9.EjercicioClase1;
 
 public class mainSemaforo {
     public static void main(String []args){

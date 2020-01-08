@@ -1,4 +1,4 @@
-package EjercicioClase3;
+package Boletin9.EjercicioClase3;
 
 public class Calculadora {
     private double dNumero;

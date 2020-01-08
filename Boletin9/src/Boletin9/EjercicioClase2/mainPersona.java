@@ -1,4 +1,4 @@
-package EjercicioClase2;
+package Boletin9.EjercicioClase2;
 
 public class mainPersona {
     public static void main(String[] args) {
