@@ -1,4 +1,4 @@
-package Clase_3;
+package Boletin9.EjercicioClase1;
 
 public class Semaforo {
     /**

@@ -1,7 +1,7 @@
-package Clase_3;
+package Boletin9.EjercicioClase1;
 
 public class mainSemaforo {
-    public static void main(String[] args) {
+    public static void main(String []args){
         // Paso 1
         Semaforo oSem1 = new Semaforo();
         Semaforo oSem2;
