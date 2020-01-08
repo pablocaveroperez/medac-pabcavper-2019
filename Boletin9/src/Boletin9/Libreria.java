@@ -1,8 +1,10 @@
+package Boletin9;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
 public class Libreria {
-    private static String leer(String sMensaje) {
+    public static String leer(String sMensaje) {
         BufferedReader teclado = new BufferedReader(new InputStreamReader(System.in));
         String cadenaLeida;
 
@@ -15,7 +17,7 @@ public class Libreria {
         return cadenaLeida;
     }
 
-    private static Object valida(String sMensaje, double dMin, double dMax, int iTipoDato) {
+    public static Object valida(String sMensaje, double dMin, double dMax, int iTipoDato) {
         Object oResultado = null;
 
         switch (iTipoDato) {
