@@ -30,5 +30,14 @@ public class mainPersona {
             System.out.println("El estado introducido es incorrecto");
 
         System.out.println(persona1);
+
+        if (!persona1.setbEstado((byte)5))
+            System.out.println("El estado introducido es incorrecto");
+
+        System.out.println(persona1.estadoTexto());
+
+        if (!persona1.setbEstado((byte)2))
+            System.out.println("El estado introducido es incorrecto");
+
     }
 }

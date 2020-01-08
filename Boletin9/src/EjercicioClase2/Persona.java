@@ -110,17 +110,17 @@ public class Persona {
         return bExito;
     }
 
-    public String estadoTexto(byte bEstado){
+    public String estadoTexto(){
         String salida = "";
-        if (bEstado == 1)
+        if (this.bEstado == 1)
             salida += "SOLTERO";
-        if (bEstado == 2)
+        if (this.bEstado == 2)
             salida += "CASADO";
-        if (bEstado == 3)
+        if (this.bEstado == 3)
             salida += "SEPARADO";
-        if (bEstado == 4)
+        if (this.bEstado == 4)
             salida += "DIVORCIADO";
-        if (bEstado == 5)
+        if (this.bEstado == 5)
             salida += "VIUDO";
         return salida;
     }
@@ -133,7 +133,7 @@ public class Persona {
         salida += "\nSegundo Apellido: "+ getsApellido2();
         salida += "\nMasa: "+ getfKilos()+" kg";
         salida += "\nEstatura: "+ getfEstatura()+" m";
-        salida += "\nEstado: "+ estadoTexto(getbEstado());
+        salida += "\nEstado: "+ estadoTexto();
         return salida;
     }
 }
