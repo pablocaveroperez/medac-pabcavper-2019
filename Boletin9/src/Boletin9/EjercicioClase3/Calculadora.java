@@ -63,4 +63,8 @@ public class Calculadora {
 
         return oNumero;
     }
+
+    public double suma(double dNumero){
+        return this.dNumero + dNumero;
+    }
 }
