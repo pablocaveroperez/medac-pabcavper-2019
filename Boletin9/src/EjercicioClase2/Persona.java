@@ -4,16 +4,22 @@ public class Persona {
     private String sNombre;
     private String sApellido1;
     private String sApellido2;
-    private byte bEdad;
+    private short shEdad;
     private float fEstatura;
     private float fKilos;
     private static byte bEstado; // 1 - SOLTERO; 2 - CASADO; 3 - SEPARADO; 4 - DIVORCIADO; 5 - VIUDO
+
+    public Persona(String sNombre, String sApellido1, String sApellido2){
+        this.setsNombre(sNombre);
+        this.setsApellido1(sApellido1);
+        this.setsApellido2(sApellido2);
+    }
 
     public String getsNombre() {
         return sNombre;
     }
 
-    public void setsNombre(String sNombre) {
+    private void setsNombre(String sNombre) {
         this.sNombre = sNombre;
     }
 
@@ -21,7 +27,7 @@ public class Persona {
         return sApellido1;
     }
 
-    public void setsApellido1(String sApellido1) {
+    private void setsApellido1(String sApellido1) {
         this.sApellido1 = sApellido1;
     }
 
@@ -29,19 +35,22 @@ public class Persona {
         return sApellido2;
     }
 
-    public void setsApellido2(String sApellido2) {
+    private void setsApellido2(String sApellido2) {
         this.sApellido2 = sApellido2;
     }
 
-    public byte getbEdad() {
-        return bEdad;
+    public short getShEdad() {
+        return shEdad;
     }
 
-    public boolean setbEdad(byte bEdad) {
+    public boolean setbEdad(short shEdad) {
         boolean bExito = false;
-        if (bEdad >= 0 && bEdad <= 126){
-            this.bEdad = bEdad;
+        short shAux = this.shEdad;
+        if (shEdad >= 0 && shEdad <= 150){
+            this.shEdad = shEdad;
             bExito = true;
+            if (shAux < shEdad)
+                System.out.println("La edad introducida es mayor que la anterior");
         }
         return bExito;
 
@@ -64,15 +73,25 @@ public class Persona {
         return fKilos;
     }
 
-    public void setfKilos(float fKilos) {
-        this.fKilos = fKilos;
+    public boolean setfKilos(float fKilos) {
+        boolean bExito = false;
+        if (fKilos >= 30 && fKilos <= 200){
+            this.fKilos = fKilos;
+            bExito = true;
+        }
+        return bExito;
     }
 
     public static byte getbEstado() {
         return bEstado;
     }
 
-    public static void setbEstado(byte bEstado) {
-        Persona.bEstado = bEstado;
+    public static boolean setbEstado(byte bEstado) {
+        boolean bExito = false;
+        if (bEstado == 1 || bEstado == 2 || bEstado == 3 || bEstado == 4 || bEstado == 5){
+            Persona.bEstado = bEstado;
+            bExito = true;
+        }
+        return bExito;
     }
 }
