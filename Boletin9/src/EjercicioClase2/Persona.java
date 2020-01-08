@@ -37,11 +37,13 @@ public class Persona {
         return bEdad;
     }
 
-    public void setbEdad(byte bEdad) {
+    public boolean setbEdad(byte bEdad) {
         boolean bExito = false;
         if (bEdad >= 0 && bEdad <= 126){
             this.bEdad = bEdad;
+            bExito = true;
         }
+        return bExito;
 
     }
 
@@ -49,8 +51,13 @@ public class Persona {
         return fEstatura;
     }
 
-    public void setfEstatura(float fEstatura) {
-        this.fEstatura = fEstatura;
+    public boolean setfEstatura(float fEstatura) {
+        boolean bExito = false;
+        if (fEstatura >= 1.50 && fEstatura <= 2.32){
+            this.fEstatura = fEstatura;
+            bExito = true;
+        }
+        return bExito;
     }
 
     public float getfKilos() {
