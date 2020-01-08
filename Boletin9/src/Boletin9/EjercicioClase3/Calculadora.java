@@ -44,7 +44,7 @@ public class Calculadora {
     }
 
 
-    public Object getoNumero(byte bTipo, double dNumero) {
+    public Object transformarNumero(byte bTipo, double dNumero) {
 
         if (bTipo == 1){
             setiNumero((int) dNumero);
