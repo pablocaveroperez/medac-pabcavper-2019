@@ -67,4 +67,16 @@ public class Calculadora {
     public double suma(double dNumero){
         return this.dNumero + dNumero;
     }
+
+    public double restar(double dNumero){
+        return this.dNumero - dNumero;
+    }
+
+    public double multiplicar(double dNumero){
+        return this.dNumero * dNumero;
+    }
+
+    public double dividir(double dNumero){
+        return this.dNumero / dNumero;
+    }
 }
