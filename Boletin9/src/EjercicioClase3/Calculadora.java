@@ -54,7 +54,8 @@ public class Calculadora {
         }else if (bTipo == 4){
             setdNumero((double) dNumero);
             oNumero = getdNumero();
-        }
+        }else
+            return null;
 
         return oNumero;
     }
