@@ -39,10 +39,12 @@ public class Calculadora {
         this.fNumero = fNumero;
     }
 
+
     public Object getoNumero(byte bTipo) {
 
         if (bTipo == 1){
-
+            setiNumero((int) dNumero);
+            oNumero = getiNumero();
         }else if (bTipo == 2){
 
         }else if (bTipo == 3){
