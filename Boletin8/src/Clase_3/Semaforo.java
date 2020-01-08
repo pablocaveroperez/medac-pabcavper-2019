@@ -36,9 +36,9 @@ public class Semaforo {
 
     public String cadenaColor() {
         String sResultado;
-        if(this.iColor == 1) {
+        if(getiColor() == 1) {
             sResultado = "ROJO";
-        }else if(this.iColor == 2) {
+        }else if(getiColor() == 2) {
             sResultado = "AMBAR";
         }else {
             sResultado = "VERDE";
