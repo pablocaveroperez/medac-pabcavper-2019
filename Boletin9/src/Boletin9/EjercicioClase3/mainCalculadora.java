@@ -8,7 +8,10 @@ public class mainCalculadora {
         Calculadora calculadora1 = new Calculadora(dNumero);
 
         System.out.println(calculadora1.transformarNumero((byte) 1,dNumero));
-        calculadora1.transformarNumero((byte) 1,dNumero);
-        calculadora1.transformarNumero((byte)1, dNumero);
+        System.out.println(calculadora1.suma(5));
+        System.out.println(calculadora1.transformarNumero((byte) 1,calculadora1.suma(5)));
+        System.out.println(calculadora1.transformarNumero((byte) 1,calculadora1.restar(5)));
+        System.out.println(calculadora1.transformarNumero((byte) 1,calculadora1.dividir(5)));
+        System.out.println(calculadora1.transformarNumero((byte) 1,calculadora1.multiplicar(5)));
     }
 }
