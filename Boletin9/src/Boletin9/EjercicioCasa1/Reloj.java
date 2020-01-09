@@ -80,6 +80,17 @@ public class Reloj {
         return salida;
     }
 
+    public void ponerEnHora(byte bHoras, byte bMinutos){
+        setbHoras(bHoras);
+        setbMinutos(bMinutos);
+        setbSegundos((byte)0);
+    }
+
+    public void ponerEnHora(byte bHoras, byte bMinutos, byte bSegundos){
+        setbHoras(bHoras);
+        setbMinutos(bMinutos);
+        setbSegundos(bSegundos);
+    }
     public String imprimir() {
         String salida = "";
         salida += getbHoras() + ":"+getbMinutos()+":"+getbSegundos();
