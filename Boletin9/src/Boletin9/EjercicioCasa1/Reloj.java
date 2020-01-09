@@ -59,23 +59,25 @@ public class Reloj {
     public String darHora(byte bTipo, Reloj reloj){
         String salida ="";
         if (bTipo == 1){ // AM
-            salida += darHoraAM(reloj);
+            salida += darHora12(reloj);
         }else if (bTipo == 2){ // PM
-            salida += darHoraPM();
+            salida += darHora24();
         }
         return salida;
     }
 
     private String darHora24() {
-        return toString() + " PM";
+        return toString();
     }
 
     private String darHora12(Reloj reloj) {
         String salida = "";
-        if (bHoras <= 11 && bHoras >= 0){
-
+        if (reloj.getbHoras() <= 11 && reloj.getbHoras() >= 0){
+            salida += reloj.getbHoras()+ ":"+reloj.getbMinutos()+":"+reloj.getbSegundos()+" AM";
+        }else if (reloj.getbHoras() >= 12 && reloj.getbHoras() <= 23){
+            salida += (reloj.getbHoras() - 12)+":"+reloj.getbMinutos()+":"+reloj.getbSegundos()+" PM";
         }
-        return salida + " AM";
+        return salida;
     }
 
     @Override
