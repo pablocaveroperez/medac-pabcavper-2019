@@ -43,9 +43,9 @@ public class Aparato {
         String salida = "";
         salida += "El aparato "+getsNombre() +" consume: "+getfConsumo();
         if (isEncendido())
-            salida += "Estado: Encendido";
+            salida += "\nEstado: Encendido";
         else
-            salida += "Estado: Apagado";
+            salida += "\nEstado: Apagado";
         return salida;
     }
 }
