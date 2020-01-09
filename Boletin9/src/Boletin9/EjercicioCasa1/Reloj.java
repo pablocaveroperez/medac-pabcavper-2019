@@ -17,8 +17,13 @@ public class Reloj {
         setbSegundos(bSegundos);
     }
 
-    public void setbHoras(byte bHoras) {
-        this.bHoras = bHoras;
+    public boolean setbHoras(byte bHoras) {
+        boolean bExito = false;
+        if (bHoras >= 0 && bHoras <= 24){
+            this.bHoras = bHoras;
+            bExito = true;
+        }
+        return bExito;
     }
 
     public void setbMinutos(byte bMinutos) {
@@ -41,7 +46,7 @@ public class Reloj {
         return bSegundos;
     }
 
-
+    public
 
     @Override
     public String toString() {
