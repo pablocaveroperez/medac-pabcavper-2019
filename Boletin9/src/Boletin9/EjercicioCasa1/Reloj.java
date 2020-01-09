@@ -35,8 +35,13 @@ public class Reloj {
         return bExito;
     }
 
-    public void setbSegundos(byte bSegundos) {
-        this.bSegundos = bSegundos;
+    public boolean setbSegundos(byte bSegundos) {
+        boolean bExito = false;
+        if (bSegundos >= 0 && bSegundos <= 59){
+            this.bSegundos = bSegundos;
+            bExito = true;
+        }
+        return bExito;
     }
 
     public byte getbHoras() {
