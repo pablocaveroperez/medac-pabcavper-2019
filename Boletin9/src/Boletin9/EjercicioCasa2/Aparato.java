@@ -21,5 +21,22 @@ public class Aparato {
         return bExito;
     }
 
+    public float getfConsumo() {
+        return fConsumo;
+    }
 
+    public boolean isEncendido() {
+        return isEncendido;
+    }
+
+    @Override
+    public String toString() {
+        String salida = "";
+        salida += "El aparato consume: "+getfConsumo();
+        if (isEncendido())
+            salida += "Estado: Encendido";
+        else
+            salida += "Estado: Apagado";
+        return salida;
+    }
 }
