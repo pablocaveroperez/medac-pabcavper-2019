@@ -11,6 +11,12 @@ public class Reloj {
         setbSegundos((byte)0);
     }
 
+    public Reloj(byte bHoras, byte bMinutos, byte bSegundos){
+        setbHoras(bHoras);
+        setbMinutos(bMinutos);
+        setbSegundos(bSegundos);
+    }
+
     public void setbHoras(byte bHoras) {
         this.bHoras = bHoras;
     }
@@ -34,6 +40,8 @@ public class Reloj {
     public byte getbSegundos() {
         return bSegundos;
     }
+
+
 
     @Override
     public String toString() {
