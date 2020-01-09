@@ -58,9 +58,9 @@ public class Reloj {
 
     public String darHora(byte bTipo, Reloj reloj){
         String salida ="";
-        if (bTipo == 1){ // AM
+        if (bTipo == 1){ // 12
             salida += darHora12(reloj);
-        }else if (bTipo == 2){ // PM
+        }else if (bTipo == 2){ // 24
             salida += darHora24();
         }
         return salida;
