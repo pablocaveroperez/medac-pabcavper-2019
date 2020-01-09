@@ -80,7 +80,6 @@ public class Reloj {
         return salida;
     }
 
-    @Override
     public String imprimir() {
         String salida = "";
         salida += getbHoras() + ":"+getbMinutos()+":"+getbSegundos();
