@@ -67,7 +67,7 @@ public class Reloj {
     }
 
     private String darHora24() {
-        return toString();
+        return imprimir();
     }
 
     private String darHora12(Reloj reloj) {
@@ -78,7 +78,8 @@ public class Reloj {
             salida += (reloj.getbHoras() - 12)+":"+reloj.getbMinutos()+":"+reloj.getbSegundos()+" PM";
         }else if (reloj.getbHoras() == 12){
             salida += toString()+ " PM";
-        }
+        }else if (reloj.getbHoras() == 24)
+            salida += "00:"+reloj.getbMinutos()+":"+reloj.getbSegundos()+" AM";
         return salida;
     }
 
@@ -94,9 +95,13 @@ public class Reloj {
         setbSegundos(bSegundos);
     }
 
-    public String toString() {
+    private String imprimir() {
         String salida = "";
-        salida += getbHoras() + ":"+getbMinutos()+":"+getbSegundos();
+        if (getbHoras() == 24)
+            salida += "00:";
+        else
+            salida += getbHoras() + ":";
+        salida += getbMinutos()+":"+getbSegundos();
         return salida;
     }
 }
