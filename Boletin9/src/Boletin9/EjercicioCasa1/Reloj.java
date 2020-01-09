@@ -56,25 +56,30 @@ public class Reloj {
         return bSegundos;
     }
 
-    public String darHora(byte bTipo){
+    public String darHora(byte bTipo, Reloj reloj){
         String salida ="";
         if (bTipo == 1){ // AM
-            salida += darHoraAM();
+            salida += darHoraAM(reloj);
         }else if (bTipo == 2){ // PM
             salida += darHoraPM();
         }
         return salida;
     }
 
-    private String darHoraPM() {
-
+    private String darHora24() {
+        return toString() + " PM";
     }
 
-    private String darHoraAM() {
+    private String darHora12(Reloj reloj) {
+        String salida = "";
+        if (bHoras <= 11 && bHoras >= 0){
+
+        }
+        return salida + " AM";
     }
 
     @Override
-    public String toString() {
+    public String imprimir() {
         String salida = "";
         salida += getbHoras() + ":"+getbMinutos()+":"+getbSegundos();
         return salida;
