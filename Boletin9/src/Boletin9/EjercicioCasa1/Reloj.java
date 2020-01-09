@@ -6,7 +6,9 @@ public class Reloj {
     private byte bSegundos;
 
     public Reloj(){
-
+        setbHoras((byte)0);
+        setbMinutos((byte)0);
+        setbSegundos((byte)0);
     }
 
     public void setbHoras(byte bHoras) {
@@ -31,5 +33,12 @@ public class Reloj {
 
     public byte getbSegundos() {
         return bSegundos;
+    }
+
+    @Override
+    public String toString() {
+        String salida = "";
+        salida += getbHoras() + ":"+getbMinutos()+":"+getbSegundos();
+        return salida;
     }
 }
