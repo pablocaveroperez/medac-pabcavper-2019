@@ -20,4 +20,6 @@ public class Aparato {
         }
         return bExito;
     }
+
+
 }
