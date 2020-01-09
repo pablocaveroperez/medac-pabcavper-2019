@@ -74,8 +74,10 @@ public class Reloj {
         String salida = "";
         if (reloj.getbHoras() <= 11 && reloj.getbHoras() >= 0){
             salida += reloj.getbHoras()+ ":"+reloj.getbMinutos()+":"+reloj.getbSegundos()+" AM";
-        }else if (reloj.getbHoras() >= 12 && reloj.getbHoras() <= 23){
+        }else if (reloj.getbHoras() > 12 && reloj.getbHoras() <= 23){
             salida += (reloj.getbHoras() - 12)+":"+reloj.getbMinutos()+":"+reloj.getbSegundos()+" PM";
+        }else if (reloj.getbHoras() == 12){
+            salida += toString()+ " PM";
         }
         return salida;
     }
