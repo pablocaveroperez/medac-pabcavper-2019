@@ -92,7 +92,7 @@ public class Reloj {
         setbSegundos(bSegundos);
     }
 
-    public String imprimir() {
+    public String toString() {
         String salida = "";
         salida += getbHoras() + ":"+getbMinutos()+":"+getbSegundos();
         return salida;
