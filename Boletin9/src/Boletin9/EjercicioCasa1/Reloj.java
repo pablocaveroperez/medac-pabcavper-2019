@@ -56,7 +56,22 @@ public class Reloj {
         return bSegundos;
     }
 
-    public
+    public String darHora(byte bTipo){
+        String salida ="";
+        if (bTipo == 1){ // AM
+            salida += darHoraAM();
+        }else if (bTipo == 2){ // PM
+            salida += darHoraPM();
+        }
+        return salida;
+    }
+
+    private String darHoraPM() {
+
+    }
+
+    private String darHoraAM() {
+    }
 
     @Override
     public String toString() {
