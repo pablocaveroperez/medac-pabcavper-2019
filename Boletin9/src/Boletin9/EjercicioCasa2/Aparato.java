@@ -9,6 +9,12 @@ public class Aparato {
         setEncendido(false);
     }
 
+    public Aparato(float fConsumo, String sNombre){
+        setEncendido(false);
+        setfConsumo(fConsumo);
+        setsNombre(sNombre);
+    }
+
     public void setsNombre(String sNombre) {
         this.sNombre = sNombre;
     }
