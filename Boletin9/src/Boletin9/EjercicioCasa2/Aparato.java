@@ -52,6 +52,6 @@ public class Aparato {
             salida += "\nEstado: Encendido";
         else
             salida += "\nEstado: Apagado";
-        return salida;
+        return salida+"\n";
     }
 }
