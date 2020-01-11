@@ -18,7 +18,13 @@ public class Instalacion {
     }
 
     public void addAparato(Aparato aparato){
-        this.setoAparatos(getoAparatos());
+        Aparato[] oAparatos = new Aparato[this.oAparatos.length+1];
+        for (int i = 0; i < oAparatos.length; i++){
+            if (i == oAparatos.length-1)
+                oAparatos[i] = aparato;
+            else
+                oAparatos[i] = this.oAparatos[i];
+        }
     }
 
     public float consumoTotal(){

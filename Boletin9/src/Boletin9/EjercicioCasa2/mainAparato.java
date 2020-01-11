@@ -6,8 +6,9 @@ public class mainAparato {
     public static void main(String[] args) {
         Aparato[] aparatos = new Aparato[TAMANIO];
 
+
         
 
-        Instalacion instalacion1 = new Instalacion();
+        Instalacion instalacion1 = new Instalacion(aparatos);
     }
 }
