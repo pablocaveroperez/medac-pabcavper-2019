@@ -1,4 +1,4 @@
-package Boletin9.EjercicioCasa2;
+package Boletin9.EjercicioCasa2_y_3;
 
 public class mainAparato {
     private static final byte TAMANIO = 3;

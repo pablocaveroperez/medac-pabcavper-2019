@@ -1,6 +1,4 @@
-package Boletin9.EjercicioCasa2;
-
-import java.util.Arrays;
+package Boletin9.EjercicioCasa2_y_3;
 
 public class Instalacion {
     private Aparato[] oAparatos;
