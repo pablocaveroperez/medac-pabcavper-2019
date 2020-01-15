@@ -1,3 +1,5 @@
+package ExperimentoAvion;
+
 public interface IAeronave {
 
     public void aumentarAlturaDeVuelo(int aumento);
