@@ -67,7 +67,7 @@ public class Avion implements IAeronave{
     }
 
     private String mensaje(String informacion) {
-        return "Airbus340 - Vuelo " + getId() + ":" + informacion + "\n";
+        return "Vuelo " + getId() + ":" + informacion + "\n";
     }
 
 }
