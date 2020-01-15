@@ -8,6 +8,11 @@ public abstract class Avion implements IAeronave{
     public Avion(int iAltura, String sId) {
         this.setiAltura(iAltura);
         this.sId = sId;
+        setTrenAbierto(false);
+    }
+
+    public Avion(){
+        setTrenAbierto(false);
     }
 
     public void setiAltura(int iAltura) {
@@ -29,4 +34,5 @@ public abstract class Avion implements IAeronave{
     public String getsId() {
         return sId;
     }
+
 }
