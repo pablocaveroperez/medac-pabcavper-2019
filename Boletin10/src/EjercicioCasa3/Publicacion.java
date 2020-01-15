@@ -1,3 +1,5 @@
+package EjercicioCasa3;
+
 public class Publicacion {
     private int iCodigo;
     private String sAutor;
