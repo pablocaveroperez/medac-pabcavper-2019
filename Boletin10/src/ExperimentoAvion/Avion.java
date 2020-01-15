@@ -1,38 +1,74 @@
 package ExperimentoAvion;
 
-public abstract class Avion implements IAeronave{
-    private int iAltura;
-    private String sId;
+public class Avion implements IAeronave{
+    private int altura;
+    private String id;
     private boolean trenAbierto;
 
-    public Avion(int iAltura, String sId) {
-        this.setiAltura(iAltura);
-        this.sId = sId;
-        setTrenAbierto(false);
+    public Avion(String identificacion, int pasajeros) {
+        setId(identificacion);
+        setAltura(0);
+        setTrenAbierto(true);
+        mensaje("Preparado para recibir plan de vuelo");
     }
 
-    public Avion(){
-        setTrenAbierto(false);
+    public String getId() {
+        return id;
     }
 
-    public void setiAltura(int iAltura) {
-        this.iAltura = iAltura;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public void setsId(String sId) {
-        this.sId = sId;
+    public int getAltura() {
+        return altura;
+    }
+
+    public void setAltura(int altura) {
+        this.altura = altura;
+    }
+
+    public boolean isTrenAbierto() {
+        return trenAbierto;
     }
 
     public void setTrenAbierto(boolean trenAbierto) {
         this.trenAbierto = trenAbierto;
     }
 
-    public int getiAltura() {
-        return iAltura;
+    public String aumentarAlturaDeVuelo(int aumento) {
+        setAltura(this.altura + aumento);
+        return mensaje("Incrementando altura de vuelo en " + aumento + " pies");
     }
 
-    public String getsId() {
-        return sId;
+    public String disminuirAlturaDeVuelo(int descenso) {
+        setAltura(this.altura - descenso);
+        return mensaje("Disminuyendo la altura de vuelo en " + descenso + " pies");
+    }
+
+    public String despegar() {
+        String sResultado = "";
+        sResultado += mensaje("Procediendo a realizar la maniobra de despegue");
+        aumentarAlturaDeVuelo(150);
+        setTrenAbierto(false);
+        aumentarAlturaDeVuelo(1000);
+        sResultado += mensaje("Maniobra de despegue concluida");
+        return sResultado;
+    }
+
+    public String aterrizar() {
+        String sResultado = "";
+        sResultado += mensaje("Procediendo a realizar la maniobra de aterrizaje");
+        setAltura(200);
+        setTrenAbierto(true);
+        disminuirAlturaDeVuelo(0);
+        sResultado += mensaje("Maniobra de aterrizaje concluida");
+        return sResultado;
+    }
+
+    private String mensaje(String informacion) {
+        return "Airbus340 - Vuelo " + getId() + ":" + informacion + "\n";
     }
 
 }
+
