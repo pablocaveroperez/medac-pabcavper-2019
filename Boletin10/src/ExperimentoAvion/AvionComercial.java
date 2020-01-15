@@ -11,4 +11,8 @@ public class AvionComercial extends Avion {
     public void setPasajeros(int pasajeros) {
         this.pasajeros = pasajeros;
     }
+
+    public int getPasajeros() {
+        return pasajeros;
+    }
 }

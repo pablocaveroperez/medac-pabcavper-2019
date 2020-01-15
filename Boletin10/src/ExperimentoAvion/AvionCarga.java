@@ -11,4 +11,8 @@ public class AvionCarga extends Avion {
     public void setCarga(float carga) {
         this.carga = carga;
     }
+
+    public float getCarga() {
+        return carga;
+    }
 }
