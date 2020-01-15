@@ -1,9 +1,9 @@
 package ExperimentoAvion;
 
 public class Avion implements IAeronave{
-    private int altura;
-    private String id;
-    private boolean trenAbierto;
+    protected int altura;
+    protected String id;
+    protected boolean trenAbierto;
 
     public Avion(String identificacion) {
         setId(identificacion);
