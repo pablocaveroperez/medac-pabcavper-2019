@@ -5,7 +5,7 @@ public class Avion implements IAeronave{
     private String id;
     private boolean trenAbierto;
 
-    public Avion(String identificacion, int pasajeros) {
+    public Avion(String identificacion) {
         setId(identificacion);
         setAltura(0);
         setTrenAbierto(true);
