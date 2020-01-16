@@ -66,6 +66,11 @@ public class Publicacion implements IPublicacion {
         return bExito;
     }
 
+    @Override
+    public void setPrestado(boolean bPrestado) {
+        this.estaPrestado = bPrestado;
+    }
+
 
     public String imprimir(){
         String salida = "";
@@ -74,7 +79,7 @@ public class Publicacion implements IPublicacion {
         salida += "Titulo: "+getTitulo()+"\n";
         salida += "Pubicacion: "+getshPubicacion()+"\n";
         salida += "Estado: ";
-        if (getEstaPrestado())
+        if (this.estaPrestado)
             salida += "Prestado";
         else
             salida += "No prestado";
