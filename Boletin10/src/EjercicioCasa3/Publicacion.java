@@ -18,8 +18,13 @@ public class Publicacion implements IPublicacion {
     }
 
     @Override
-    public void setCodigo(int iCodigo) {
-
+    public boolean setCodigo(int iCodigo) {
+        boolean bExito = false;
+        if (iCodigo > 0){
+            this.iCodigo = iCodigo;
+            bExito = false;
+        }
+        return bExito;
     }
 
     @Override
@@ -29,7 +34,7 @@ public class Publicacion implements IPublicacion {
 
     @Override
     public void setAutor(String sAutor) {
-
+        this.sAutor = sAutor;
     }
 
     @Override
@@ -39,17 +44,22 @@ public class Publicacion implements IPublicacion {
 
     @Override
     public void setTitulo(String sTitulo) {
-
+        this.sTitulo = sTitulo;
     }
 
     @Override
-    public short getshPublicacion() {
+    public short getshPubicacion() {
         return this.shPubicacion;
     }
 
     @Override
-    public void setshPublicacion(short shPublicacion) {
-
+    public boolean setshPubicacion(short shPubicacion) {
+        boolean bExito = false;
+        if (shPubicacion > 0){
+            this.shPubicacion = shPubicacion;
+            bExito = true;
+        }
+        return bExito;
     }
 
     @Override
@@ -59,6 +69,6 @@ public class Publicacion implements IPublicacion {
 
     @Override
     public void setEstaPrestado(boolean estaPrestado) {
-
+        this.estaPrestado = estaPrestado;
     }
 }

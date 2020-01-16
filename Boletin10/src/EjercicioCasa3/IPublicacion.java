@@ -4,7 +4,7 @@ public interface IPublicacion {
 
     public int getCodigo();
 
-    public void setCodigo(int iCodigo);
+    public boolean setCodigo(int iCodigo);
 
     public String getAutor();
 
@@ -14,9 +14,9 @@ public interface IPublicacion {
 
     public void setTitulo(String sTitulo);
 
-    public short getshPublicacion();
+    public short getshPubicacion();
 
-    public void setshPublicacion(short shPublicacion);
+    public boolean setshPubicacion(short shPublicacion);
 
     public boolean getEstaPrestado();
 
