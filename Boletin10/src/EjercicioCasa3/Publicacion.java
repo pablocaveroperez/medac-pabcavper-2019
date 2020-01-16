@@ -12,7 +12,7 @@ public class Publicacion implements IPublicacion {
         setCodigo(iCodigo);
         setshPubicacion(shPubicacion);
         setTitulo(sTitulo);
-        setEstaPrestado(false);
+        setPrestado(false);
     }
 
 
