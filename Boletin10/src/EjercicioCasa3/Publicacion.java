@@ -66,15 +66,6 @@ public class Publicacion implements IPublicacion {
         return bExito;
     }
 
-    @Override
-    public boolean getEstaPrestado() {
-        return this.estaPrestado;
-    }
-
-    @Override
-    public void setEstaPrestado(boolean estaPrestado) {
-        this.estaPrestado = estaPrestado;
-    }
 
     public String imprimir(){
         String salida = "";

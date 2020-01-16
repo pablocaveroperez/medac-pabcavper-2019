@@ -18,8 +18,5 @@ public interface IPublicacion {
 
     public boolean setshPubicacion(short shPublicacion);
 
-    public boolean getEstaPrestado();
-
-    public void setEstaPrestado(boolean estaPrestado);
 
 }
