@@ -7,4 +7,10 @@ public class Revista extends Publicacion {
         super(iCodigo, sAutor, sTitulo, shPubicacion);
     }
 
+    public String imprimir(){
+        String salida = "";
+        salida += "Propiedades Revista:\n";
+        salida += super.imprimir();
+        return salida;
+    }
 }

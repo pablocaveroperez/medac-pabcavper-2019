@@ -6,4 +6,11 @@ public class Disco extends Publicacion {
     public Disco(int iCodigo, String sAutor, String sTitulo, short shPubicacion){
         super(iCodigo, sAutor, sTitulo, shPubicacion);
     }
+
+    public String imprimir(){
+        String salida = "";
+        salida += "Propiedades Disco:\n";
+        salida += super.imprimir();
+        return salida;
+    }
 }
