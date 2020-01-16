@@ -1,11 +1,15 @@
 package EjercicioCasa3;
 
 public class Publicacion {
-    private int iCodigo;
-    private String sAutor;
-    private String sTitulo;
-    private short shPubicacion;
-    private boolean estaPrestado;
+    protected int iCodigo;
+    protected String sAutor;
+    protected String sTitulo;
+    protected short shPubicacion;
+    protected boolean estaPrestado;
+
+    public Publicacion(){
+
+    }
 
 
 }
