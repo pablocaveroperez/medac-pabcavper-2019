@@ -1,6 +1,20 @@
 package EjercicioCasa3;
 
 public class Revista extends Publicacion implements IPublicacion {
+    private String sNombreRevista;
+
+    public Revista(int iCodigo, String sNombreRevista, String sAutor, String sTitulo, short shPubicacion){
+        super(iCodigo, sAutor, sTitulo, shPubicacion);
+        setsNombreRevista(sNombreRevista);
+    }
+
+    public void setsNombreRevista(String sNombreRevista) {
+        this.sNombreRevista = sNombreRevista;
+    }
+
+    public String getsNombreRevista() {
+        return sNombreRevista;
+    }
 
     @Override
     public int getCodigo() {
