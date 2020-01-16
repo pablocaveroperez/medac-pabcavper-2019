@@ -1,19 +1,10 @@
 package EjercicioCasa3;
 
 public class Disco extends Publicacion implements IPublicacion {
-    private String sNombreDisco;
+    private String sTitulo;
 
-    public Disco(int iCodigo, String sNombreDisco, String sAutor, String sTitulo, short shPubicacion){
+    public Disco(int iCodigo, String sAutor, String sTitulo, short shPubicacion){
         super(iCodigo, sAutor, sTitulo, shPubicacion);
-        setsNombreDisco(sNombreDisco);
-    }
-
-    public void setsNombreDisco(String sNombreDisco) {
-        this.sNombreDisco = sNombreDisco;
-    }
-
-    public String getsNombreDisco() {
-        return sNombreDisco;
     }
 
     @Override

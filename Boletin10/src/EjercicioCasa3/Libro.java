@@ -1,19 +1,10 @@
 package EjercicioCasa3;
 
 public class Libro extends Publicacion implements IPublicacion {
-    private String sNombreLibro;
+    private String sTitulo;
 
-    public Libro(int iCodigo, String sNombreLibro, String sAutor, String sTitulo, short shPubicacion){
+    public Libro(int iCodigo, String sAutor, String sTitulo, short shPubicacion){
         super(iCodigo, sAutor, sTitulo, shPubicacion);
-        setsNombreLibro(sNombreLibro);
-    }
-
-    public void setsNombreLibro(String sNombreLibro) {
-        this.sNombreLibro = sNombreLibro;
-    }
-
-    public String getsNombreLibro() {
-        return sNombreLibro;
     }
 
     @Override
