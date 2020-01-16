@@ -75,4 +75,18 @@ public class Publicacion implements IPublicacion {
     public void setEstaPrestado(boolean estaPrestado) {
         this.estaPrestado = estaPrestado;
     }
+
+    public String imprimir(){
+        String salida = "";
+        salida += "Codigo: "+getCodigo()+"\n";
+        salida += "Autor: "+getAutor()+"\n";
+        salida += "Titulo: "+getTitulo()+"\n";
+        salida += "Pubicacion: "+getshPubicacion()+"\n";
+        salida += "Estado: ";
+        if (getEstaPrestado())
+            salida += "Prestado";
+        else
+            salida += "No prestado";
+        return salida;
+    }
 }
