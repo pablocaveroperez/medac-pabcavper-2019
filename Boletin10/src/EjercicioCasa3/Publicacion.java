@@ -93,7 +93,7 @@ public class Publicacion implements IPublicacion, IPrestable {
 
     @Override
     public void devolver() {
-
+        setPrestado(false);
     }
 
     @Override
