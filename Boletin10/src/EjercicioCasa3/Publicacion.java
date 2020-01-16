@@ -1,6 +1,6 @@
 package EjercicioCasa3;
 
-public class Publicacion implements IPublicacion {
+public class Publicacion implements IPublicacion, IPrestable {
     protected int iCodigo;
     protected String sAutor;
     protected String sTitulo;
@@ -84,5 +84,20 @@ public class Publicacion implements IPublicacion {
         else
             salida += "No prestado";
         return salida+"\n";
+    }
+
+    @Override
+    public void prestar() {
+        setPrestado(true);
+    }
+
+    @Override
+    public void devolver() {
+
+    }
+
+    @Override
+    public boolean estaPrestado() {
+        return false;
     }
 }
