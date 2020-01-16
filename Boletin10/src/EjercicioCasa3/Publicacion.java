@@ -87,6 +87,6 @@ public class Publicacion implements IPublicacion {
             salida += "Prestado";
         else
             salida += "No prestado";
-        return salida;
+        return salida+"\n";
     }
 }

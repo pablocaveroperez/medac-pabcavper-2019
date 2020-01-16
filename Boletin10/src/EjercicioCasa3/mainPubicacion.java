@@ -8,5 +8,9 @@ public class mainPubicacion {
 
         publicacion1.setTitulo("Chiricirco de mamones");
         System.out.println(publicacion1.getTitulo());
+
+        System.out.println(publicacion1.imprimir());
+        System.out.println(publicacion2.imprimir());
+        System.out.println(publicacion3.imprimir());
     }
 }

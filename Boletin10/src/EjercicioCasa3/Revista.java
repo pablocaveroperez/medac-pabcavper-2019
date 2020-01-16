@@ -9,7 +9,7 @@ public class Revista extends Publicacion {
 
     public String imprimir(){
         String salida = "";
-        salida += "Propiedades Revista:\n";
+        salida += "Propiedades Revista\n";
         salida += super.imprimir();
         return salida;
     }
