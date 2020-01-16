@@ -7,8 +7,12 @@ public class Publicacion implements IPublicacion {
     protected short shPubicacion;
     protected boolean estaPrestado;
 
-    public Publicacion(){
-
+    public Publicacion(int iCodigo, String sAutor, String sTitulo, short shPubicacion){
+        setAutor(sAutor);
+        setCodigo(iCodigo);
+        setshPubicacion(shPubicacion);
+        setTitulo(sTitulo);
+        setEstaPrestado(false);
     }
 
 
