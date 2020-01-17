@@ -15,5 +15,6 @@ public class mainPubicacion {
         
         publicacion1.prestar();
         publicacion2.prestar();
+        publicacion3.prestar();
     }
 }
