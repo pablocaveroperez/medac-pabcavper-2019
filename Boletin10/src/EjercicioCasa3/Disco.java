@@ -9,7 +9,7 @@ public class Disco extends Publicacion {
 
     public String imprimir(){
         String salida = "";
-        salida += "Propiedades Disco\n";
+        salida += "Propiedades Disco:\n";
         salida += super.imprimir();
         return salida;
     }

@@ -83,7 +83,7 @@ public class Publicacion implements IPublicacion, IPrestable {
             salida += "Prestado";
         else
             salida += "No prestado";
-        return salida+"\n";
+        return salida;
     }
 
     @Override

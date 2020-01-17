@@ -9,7 +9,7 @@ public class Libro extends Publicacion {
 
     public String imprimir(){
         String salida = "";
-        salida += "Propiedades Libro\n";
+        salida += "Propiedades Libro:\n";
         salida += super.imprimir();
         return salida;
     }
