@@ -1,4 +1,4 @@
-package Boletin9.EjercicioCasa2;
+package Boletin9.EjercicioCasa2_y_3;
 
 public class Aparato {
     private float fConsumo;
@@ -52,6 +52,6 @@ public class Aparato {
             salida += "\nEstado: Encendido";
         else
             salida += "\nEstado: Apagado";
-        return salida;
+        return salida+"\n";
     }
 }
