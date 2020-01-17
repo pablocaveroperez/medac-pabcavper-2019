@@ -14,5 +14,6 @@ public class mainPubicacion {
         System.out.println(publicacion3.imprimir());
         
         publicacion1.prestar();
+        publicacion2.prestar();
     }
 }
