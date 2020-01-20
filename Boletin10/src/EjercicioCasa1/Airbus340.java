@@ -67,6 +67,11 @@ public class Airbus340 implements IAeronave,IAvion{
         id = identificacion;
     }
 
+    @Override
+    public Object consultarEstado() {
+        return null;
+    }
+
 
     private void mensaje(String informacion){
         System.out.println( "Airbus340 - Vuelo " +

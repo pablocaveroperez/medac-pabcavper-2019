@@ -4,14 +4,23 @@ public class Globo implements IAeronave {
 
     private String id;
     private int altura=0;
+    private byte bEstado;
 
 
 
     public Globo(String identificacion) {
         this.id=identificacion;
         mensaje("Preparado para dar un paseo en globo");
+        setbEstado(TIERRA);
     }
 
+    public void setbEstado(byte bEstado) {
+        this.bEstado = bEstado;
+    }
+
+    public byte getbEstado() {
+        return bEstado;
+    }
 
     public void calentarAire(int segundos){
         mensaje("Calentando aire durante " + segundos + " segundos");
@@ -55,12 +64,14 @@ public class Globo implements IAeronave {
         mensaje("?Preparaos para despegar!");
         aumentarAlturaDeVuelo(150);
         mensaje("?Ya estamos en el aire!");
+        setbEstado(VOLANDO);
     }
 
     public void aterrizar(){
         mensaje("Vamos a aterrizar !Agarraos!");
         variarAlturaDeVuelo(0);
         mensaje("Ya estamos en tierra firme");
+        setbEstado(TIERRA);
     }
 
 
@@ -75,6 +86,15 @@ public class Globo implements IAeronave {
         id = identificacion;
     }
 
+    @Override
+    public String consultarEstado() {
+        String salida = "";
+        if (bEstado == VOLANDO)
+            salida += "El globo esta volando";
+        else
+            salida += "El globo esta en tierra";
+        return salida;
+    }
 
 
     private void mensaje(String informacion){

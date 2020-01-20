@@ -12,4 +12,6 @@ public interface IAeronave {
     public void aterrizar();
     public String obtenerIdentificacion();
     public void establecerIdentificacion(String identificacion);
+
+    public String consultarEstado();
 }
