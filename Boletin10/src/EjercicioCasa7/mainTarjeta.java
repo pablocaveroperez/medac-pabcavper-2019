@@ -12,7 +12,7 @@ public class mainTarjeta {
     }
 
     public static void simulaRetiradaCajero(ITarjetaCredito tarjetaCredito){
-        int pin = (int)Libreria.valida("Introduce el pin: ",0,999,1);
+        int pin = (int)Libreria.valida("Introduce el pin: ",0,9999,1);
         float importeRetirar = (float) Libreria.valida("Introuce el imnporte a retirar: ",0,500,2);
 
         tarjetaCredito.retirarCajero(importeRetirar,pin);
@@ -33,6 +33,15 @@ public class mainTarjeta {
         // una tarjeta de monedero como parametro por que solo admite TarjetaCredito
         simulaRetiradaCajero(tc);
         simulaRetiradaCajero(t);
+
+        ITarjetaMonedero tm2 = t;
+        System.out.println(tm2.getDNITitular());
+        System.out.println(tm2.getSaldo());
+
+        ITarjetaCredito tc2 = t;
+
+        System.out.println(tc2.getSaldo());
+        System.out.println(tc2.getId());
 
     }
 }
