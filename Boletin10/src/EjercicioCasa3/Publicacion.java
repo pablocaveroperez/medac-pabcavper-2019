@@ -1,11 +1,12 @@
 package EjercicioCasa3;
 
-public class Publicacion implements IPublicacion, IPrestable {
+public class Publicacion implements IPublicacion, IPrestable, IConsultable {
     protected int iCodigo;
     protected String sAutor;
     protected String sTitulo;
     protected short shPubicacion;
     protected boolean estaPrestado;
+    protected boolean esConsultado;
 
     public Publicacion(int iCodigo, String sAutor, String sTitulo, short shPubicacion){
         setAutor(sAutor);
@@ -68,22 +69,13 @@ public class Publicacion implements IPublicacion, IPrestable {
 
     @Override
     public void setPrestado(boolean bPrestado) {
-        this.estaPrestado = bPrestado;
+        if (!estaConsultando())
+            this.estaPrestado = bPrestado;
     }
 
-
-    public String imprimir(){
-        String salida = "";
-        salida += "Codigo: "+getCodigo()+"\n";
-        salida += "Autor: "+getAutor()+"\n";
-        salida += "Titulo: "+getTitulo()+"\n";
-        salida += "Pubicacion: "+getshPubicacion()+"\n";
-        salida += "Estado: ";
-        if (this.estaPrestado)
-            salida += "Prestado";
-        else
-            salida += "No prestado";
-        return salida;
+    public void setEsConsultado(boolean esConsultado) {
+        if (!(estaPrestado()))
+            this.esConsultado = esConsultado;
     }
 
     @Override
@@ -98,6 +90,40 @@ public class Publicacion implements IPublicacion, IPrestable {
 
     @Override
     public boolean estaPrestado() {
-        return false;
+        return estaPrestado;
+    }
+
+    @Override
+    public void retirar() {
+        setEsConsultado(true);
+    }
+
+    @Override
+    public void devolverConsul() {
+        setEsConsultado(false);
+    }
+
+    @Override
+    public boolean estaConsultando() {
+        return esConsultado;
+    }
+
+    public String imprimir(){
+        String salida = "";
+        salida += "Codigo: "+getCodigo()+"\n";
+        salida += "Autor: "+getAutor()+"\n";
+        salida += "Titulo: "+getTitulo()+"\n";
+        salida += "Pubicacion: "+getshPubicacion()+"\n";
+        salida += "Estado: ";
+        if (estaPrestado())
+            salida += "Prestado";
+        else
+            salida += "No prestado";
+        salida += "\nConsultando: ";
+        if (estaConsultando())
+            salida += "Si";
+        else
+            salida += "No";
+        return salida+"\n";
     }
 }
