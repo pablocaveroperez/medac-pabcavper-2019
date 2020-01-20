@@ -31,27 +31,27 @@ public class mainPersona {
 
         System.out.println(persona1);
 
-        if (!persona1.setbEstado((byte)5))
+        if (!persona1.setbEstado(persona1.VIUDO))
             System.out.println("El estado introducido es incorrecto");
 
         System.out.println(persona1.estadoTexto());
 
-        if (!persona1.setbEstado((byte)2))
+        if (!persona1.setbEstado(persona1.CASADO))
             System.out.println("El estado introducido es incorrecto");
 
         System.out.println(persona1.estadoTexto());
 
-        if (!persona1.setbEstado((byte)3))
+        if (!persona1.setbEstado(persona1.SEPARADO))
             System.out.println("El estado introducido es incorrecto");
 
         System.out.println(persona1.estadoTexto());
 
-        if (!persona1.setbEstado((byte)4))
+        if (!persona1.setbEstado(persona1.DIVORCIADO))
             System.out.println("El estado introducido es incorrecto");
 
         System.out.println(persona1.estadoTexto());
 
-        if (!persona1.setbEstado((byte)5))
+        if (!persona1.setbEstado(persona1.VIUDO))
             System.out.println("El estado introducido es incorrecto");
 
         System.out.println(persona1.estadoTexto());
