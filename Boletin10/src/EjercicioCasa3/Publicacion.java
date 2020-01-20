@@ -6,6 +6,7 @@ public class Publicacion implements IPublicacion, IPrestable {
     protected String sTitulo;
     protected short shPubicacion;
     protected boolean estaPrestado;
+    protected boolean esConsultado;
 
     public Publicacion(int iCodigo, String sAutor, String sTitulo, short shPubicacion){
         setAutor(sAutor);
