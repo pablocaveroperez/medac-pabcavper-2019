@@ -73,12 +73,12 @@ public class Airbus340 implements IAeronave,IAvion {
 
 
     public void establecerIdentificacion(String identificacion) {
-        mensaje("Cambio de n?mero de vuelo a" + identificacion);
+        mensaje("Cambio de numero de vuelo a" + identificacion);
         id = identificacion;
     }
 
     @Override
-    public Object consultarEstado() {
+    public String consultarEstado() {
         String salida = "";
         if (bEstado == VOLANDO)
             salida += "El avion esta volando";
