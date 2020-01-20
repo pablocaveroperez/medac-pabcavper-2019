@@ -28,8 +28,6 @@ public class Tarjeta implements ITarjetaCredito, ITarjetaMonedero {
         return cargo;
     }
 
-
-
     public String getId() {
         return id;
     }
