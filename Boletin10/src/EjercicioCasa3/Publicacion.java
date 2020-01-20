@@ -1,6 +1,6 @@
 package EjercicioCasa3;
 
-public class Publicacion implements IPublicacion, IPrestable {
+public class Publicacion implements IPublicacion, IPrestable, IConsultable {
     protected int iCodigo;
     protected String sAutor;
     protected String sTitulo;
@@ -87,6 +87,14 @@ public class Publicacion implements IPublicacion, IPrestable {
         return salida+"\n";
     }
 
+    public void setEsConsultado(boolean esConsultado) {
+        this.esConsultado = esConsultado;
+    }
+
+    public boolean isEsConsultado() {
+        return esConsultado;
+    }
+
     @Override
     public void prestar() {
         setPrestado(true);
@@ -100,5 +108,20 @@ public class Publicacion implements IPublicacion, IPrestable {
     @Override
     public boolean estaPrestado() {
         return false;
+    }
+
+    @Override
+    public void retirar() {
+        setEsConsultado(true);
+    }
+
+    @Override
+    public void devolverConsul() {
+        setEsConsultado(false);
+    }
+
+    @Override
+    public boolean estaConsultando() {
+        return isEsConsultado();
     }
 }
