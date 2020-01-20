@@ -119,11 +119,11 @@ public class Publicacion implements IPublicacion, IPrestable, IConsultable {
             salida += "Prestado";
         else
             salida += "No prestado";
-        salida += "\n";
+        salida += "\nConsultando: ";
         if (estaConsultando())
-            salida += "Consultando";
+            salida += "Si";
         else
-            salida += "No consultando";
+            salida += "No";
         return salida+"\n";
     }
 }
