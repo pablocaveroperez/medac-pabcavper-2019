@@ -41,7 +41,7 @@ public class Movil extends Telefono implements ITelefono {
 
     public String imprimir(){
         String salida = "";
-        salida += "Movil: \n";
+        salida += "Movil: \n"+super.imprimir();
         return salida;
     }
 }

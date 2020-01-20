@@ -41,7 +41,7 @@ public class Fijo extends Telefono implements ITelefono {
 
     public String imprimir(){
         String salida = "";
-        salida += "FIJO: \n";
+        salida += "FIJO: \n"+super.imprimir();
         return salida;
     }
 }

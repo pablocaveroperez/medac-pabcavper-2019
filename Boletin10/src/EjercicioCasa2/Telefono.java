@@ -15,7 +15,9 @@ public class Telefono {
         this.iTelefono = iTelefono;
     }
 
-
+    public int getiTelefono() {
+        return iTelefono;
+    }
 
     public void setAltavozEncendido(boolean altavozEncendido) {
         this.altavozEncendido = altavozEncendido;
@@ -31,5 +33,11 @@ public class Telefono {
 
     public boolean isEstaLlamando() {
         return estaLlamando;
+    }
+
+    public String imprimir(){
+        String salida ="";
+        salida += "El numero de telefono es: "+getiTelefono();
+        return salida+"\n";
     }
 }
