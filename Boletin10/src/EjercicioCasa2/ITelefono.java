@@ -11,5 +11,5 @@ public interface ITelefono {
 
     public String desactivarAltavoz();
 
-    public boolean sonarTimbre();
+    public String sonarTimbre();
 }

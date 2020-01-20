@@ -35,8 +35,13 @@ public class Fijo extends Telefono implements ITelefono {
     }
 
     @Override
-    public boolean sonarTimbre() {
-        return isEstaLlamando();
+    public String sonarTimbre() {
+        String salida = "";
+        if (isEstaLlamando())
+            salida += "Esta sonando el timbre";
+        else
+            salida += "No esta sonando el timbre";
+        return salida;
     }
 
     public String imprimir(){
