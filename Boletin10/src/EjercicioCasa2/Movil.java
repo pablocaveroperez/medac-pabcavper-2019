@@ -13,25 +13,25 @@ public class Movil extends Telefono implements ITelefono {
     @Override
     public String marcar() {
         setEstaLlamando(true);
-        return "Llamando" ;
+        return "MOVIL: Llamando" ;
     }
 
     @Override
     public String colgar() {
         setEstaLlamando(false);
-        return "Colgado";
+        return "MOVIL: Colgado";
     }
 
     @Override
     public String activarAltavoz() {
         setAltavozEncendido(true);
-        return "Altavoz activado";
+        return "MOVIL: Altavoz activado";
     }
 
     @Override
     public String desactivarAltavoz() {
         setAltavozEncendido(false);
-        return "Altavoz desactivado";
+        return "MOVIL: Altavoz desactivado";
     }
 
     @Override

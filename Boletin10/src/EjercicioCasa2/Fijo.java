@@ -13,29 +13,35 @@ public class Fijo extends Telefono implements ITelefono {
     @Override
     public String marcar() {
         setEstaLlamando(true);
-        return "Llamando" ;
+        return "FIJO: Llamando" ;
     }
 
     @Override
     public String colgar() {
         setEstaLlamando(false);
-        return "Colgado";
+        return "FIJO: Colgado";
     }
 
     @Override
     public String activarAltavoz() {
         setAltavozEncendido(true);
-        return "Altavoz activado";
+        return "FIJO: Altavoz activado";
     }
 
     @Override
     public String desactivarAltavoz() {
         setAltavozEncendido(false);
-        return "Altavoz desactivado";
+        return "FIJO: Altavoz desactivado";
     }
 
     @Override
     public boolean sonarTimbre() {
         return isEstaLlamando();
+    }
+
+    public String imprimir(){
+        String salida = "";
+        salida += "FIJO: \n";
+        return salida;
     }
 }
