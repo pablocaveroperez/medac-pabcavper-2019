@@ -64,6 +64,4 @@ public class Expendedora implements IExpendedora {
         System.out.println("El creddito restante de la maquina "+getiNumeroSerie() +" es "+creditoRestante);
         System.exit(0);
     }
-
-
 }
