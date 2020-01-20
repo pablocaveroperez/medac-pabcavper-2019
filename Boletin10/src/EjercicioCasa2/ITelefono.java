@@ -3,13 +3,13 @@ package EjercicioCasa2;
 public interface ITelefono {
     public int consultarNumero();
 
-    public void marcar();
+    public String marcar();
 
-    public void colgar();
+    public String colgar();
 
-    public void activarAltavoz();
+    public String activarAltavoz();
 
-    public void desactivarAltavoz();
+    public String desactivarAltavoz();
 
     public boolean sonarTimbre();
 }
