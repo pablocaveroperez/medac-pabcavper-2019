@@ -7,6 +7,8 @@ public interface ITarjetaMonedero {
 
     public String getDNITitular();
 
+    public void setDNITitular(String DNITitular);
+
     public float getSaldo();
 
     public void setPin(int pin);
