@@ -69,7 +69,8 @@ public class Publicacion implements IPublicacion, IPrestable, IConsultable {
 
     @Override
     public void setPrestado(boolean bPrestado) {
-        this.estaPrestado = bPrestado;
+        if (!estaConsultando())
+            this.estaPrestado = bPrestado;
     }
 
 
@@ -88,11 +89,8 @@ public class Publicacion implements IPublicacion, IPrestable, IConsultable {
     }
 
     public void setEsConsultado(boolean esConsultado) {
-        this.esConsultado = esConsultado;
-    }
-
-    public boolean isEsConsultado() {
-        return esConsultado;
+        if (!(estaPrestado()))
+            this.esConsultado = esConsultado;
     }
 
     @Override
@@ -122,6 +120,6 @@ public class Publicacion implements IPublicacion, IPrestable, IConsultable {
 
     @Override
     public boolean estaConsultando() {
-        return isEsConsultado();
+        return esConsultado;
     }
 }
