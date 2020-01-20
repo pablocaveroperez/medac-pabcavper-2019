@@ -9,13 +9,17 @@ public class mainPubicacion {
         publicacion1.setTitulo("Chiricirco de mamones");
         System.out.println(publicacion1.getTitulo());
 
-        System.out.println(publicacion1.imprimir());
-        System.out.println(publicacion2.imprimir());
-        System.out.println(publicacion3.imprimir());
-        
         publicacion1.prestar();
         publicacion2.prestar();
         publicacion3.prestar();
+
+        System.out.println(publicacion1.imprimir());
+        System.out.println(publicacion2.imprimir());
+        System.out.println(publicacion3.imprimir());
+
+        publicacion1.devolver();
+        publicacion2.devolver();
+        publicacion3.devolver();
         
         System.out.println(publicacion1.imprimir());
         System.out.println(publicacion2.imprimir());
