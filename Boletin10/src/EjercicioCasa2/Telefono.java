@@ -1,6 +1,6 @@
 package EjercicioCasa2;
 
-public class Telefono implements ITelefono {
+public class Telefono {
     protected int iTelefono;
     protected boolean altavozEncendido;
     protected boolean estaLlamando;
@@ -31,35 +31,5 @@ public class Telefono implements ITelefono {
 
     public boolean isEstaLlamando() {
         return estaLlamando;
-    }
-
-    @Override
-    public int consultarNumero() {
-        return this.iTelefono;
-    }
-
-    @Override
-    public void marcar() {
-        setEstaLlamando(true);
-    }
-
-    @Override
-    public void colgar() {
-        setEstaLlamando(false);
-    }
-
-    @Override
-    public void activarAltavoz() {
-        setAltavozEncendido(true);
-    }
-
-    @Override
-    public void desactivarAltavoz() {
-        setAltavozEncendido(false);
-    }
-
-    @Override
-    public boolean sonarTimbre() {
-        return isEstaLlamando();
     }
 }
