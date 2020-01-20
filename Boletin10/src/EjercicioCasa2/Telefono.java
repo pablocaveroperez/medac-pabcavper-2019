@@ -38,6 +38,8 @@ public class Telefono {
     public String imprimir(){
         String salida ="";
         salida += "El numero de telefono es: "+getiTelefono();
+        salida += "\nEsta en llamada: "+isEstaLlamando();
+        salida += "\nEsta altaVOX encendido: "+isAltavozEncendido();
         return salida+"\n";
     }
 }

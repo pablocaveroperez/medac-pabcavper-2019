@@ -13,7 +13,7 @@ public class Movil extends Telefono implements ITelefono {
     @Override
     public String marcar() {
         setEstaLlamando(true);
-        return "MOVIL: Llamando" ;
+        return "MOVIL: Llamando";
     }
 
     @Override
