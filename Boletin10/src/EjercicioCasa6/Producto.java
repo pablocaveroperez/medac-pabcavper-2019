@@ -1,6 +1,6 @@
 package EjercicioCasa6;
 
-public class Producto {
+public class Producto implements IProducto{
     private String nombre;
     private float precio;
     private int unidades;
