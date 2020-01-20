@@ -19,7 +19,7 @@ public class Persona implements IPersona {
         return sNombre;
     }
 
-    private void setsNombre(String sNombre) {
+    public void setsNombre(String sNombre) {
         this.sNombre = sNombre;
     }
 
@@ -27,7 +27,7 @@ public class Persona implements IPersona {
         return sApellido1;
     }
 
-    private void setsApellido1(String sApellido1) {
+    public void setsApellido1(String sApellido1) {
         this.sApellido1 = sApellido1;
     }
 
@@ -35,7 +35,7 @@ public class Persona implements IPersona {
         return sApellido2;
     }
 
-    private void setsApellido2(String sApellido2) {
+    public void setsApellido2(String sApellido2) {
         this.sApellido2 = sApellido2;
     }
 
@@ -88,19 +88,19 @@ public class Persona implements IPersona {
 
     public boolean setbEstado(byte bEstado) {
         boolean bExito = false;
-        if (this.bEstado == 1 && bEstado == 2) {
+        if (this.bEstado == SOLTERO && bEstado == CASADO) {
             this.bEstado = bEstado;
             bExito = true;
-        }else if (this.bEstado == 2 && bEstado == 3){
+        }else if (this.bEstado == CASADO && bEstado == SEPARADO){
             this.bEstado = bEstado;
             bExito = true;
-        }else if (this.bEstado == 3 && (bEstado == 4 || bEstado == 5)){
+        }else if (this.bEstado == SEPARADO && (bEstado == DIVORCIADO || bEstado == VIUDO)){
             this.bEstado = bEstado;
             bExito = true;
-        }else if (this.bEstado == 4 && bEstado == 2){
+        }else if (this.bEstado == DIVORCIADO && bEstado == CASADO){
             this.bEstado = bEstado;
             bExito = true;
-        }else if (this.bEstado == 5 && bEstado == 2){
+        }else if (this.bEstado == VIUDO && bEstado == CASADO){
             this.bEstado = bEstado;
             bExito = true;
         }else if (this.bEstado == 0) {
@@ -112,15 +112,15 @@ public class Persona implements IPersona {
 
     public String estadoTexto(){
         String salida = "";
-        if (this.bEstado == 1)
+        if (this.bEstado == SOLTERO)
             salida += "SOLTERO";
-        if (this.bEstado == 2)
+        if (this.bEstado == CASADO)
             salida += "CASADO";
-        if (this.bEstado == 3)
+        if (this.bEstado == SEPARADO)
             salida += "SEPARADO";
-        if (this.bEstado == 4)
+        if (this.bEstado == DIVORCIADO)
             salida += "DIVORCIADO";
-        if (this.bEstado == 5)
+        if (this.bEstado == VIUDO)
             salida += "VIUDO";
         return salida;
     }
