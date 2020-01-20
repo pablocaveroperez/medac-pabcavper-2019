@@ -6,13 +6,13 @@ public class mainAeronave {
 
         globo.despegar();
 
-        globo.aumentarAlturaDeVuelo(20);
+        globo.aumentarAlturaDeVuelo(500);
 
         System.out.println(globo.consultarEstado());
 
         System.out.println(globo.obtenerAlturaDeVuelo());
 
-        globo.disminuirAlturaDeVuelo(500);
+        globo.disminuirAlturaDeVuelo(20);
 
         globo.aterrizar();
 
