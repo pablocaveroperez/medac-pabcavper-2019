@@ -73,21 +73,6 @@ public class Publicacion implements IPublicacion, IPrestable, IConsultable {
             this.estaPrestado = bPrestado;
     }
 
-
-    public String imprimir(){
-        String salida = "";
-        salida += "Codigo: "+getCodigo()+"\n";
-        salida += "Autor: "+getAutor()+"\n";
-        salida += "Titulo: "+getTitulo()+"\n";
-        salida += "Pubicacion: "+getshPubicacion()+"\n";
-        salida += "Estado: ";
-        if (this.estaPrestado)
-            salida += "Prestado";
-        else
-            salida += "No prestado";
-        return salida+"\n";
-    }
-
     public void setEsConsultado(boolean esConsultado) {
         if (!(estaPrestado()))
             this.esConsultado = esConsultado;
@@ -105,7 +90,7 @@ public class Publicacion implements IPublicacion, IPrestable, IConsultable {
 
     @Override
     public boolean estaPrestado() {
-        return false;
+        return estaPrestado;
     }
 
     @Override
@@ -121,5 +106,24 @@ public class Publicacion implements IPublicacion, IPrestable, IConsultable {
     @Override
     public boolean estaConsultando() {
         return esConsultado;
+    }
+
+    public String imprimir(){
+        String salida = "";
+        salida += "Codigo: "+getCodigo()+"\n";
+        salida += "Autor: "+getAutor()+"\n";
+        salida += "Titulo: "+getTitulo()+"\n";
+        salida += "Pubicacion: "+getshPubicacion()+"\n";
+        salida += "Estado: ";
+        if (estaPrestado())
+            salida += "Prestado";
+        else
+            salida += "No prestado";
+        salida += "\n";
+        if (estaConsultando())
+            salida += "Consultando";
+        else
+            salida += "No consultando";
+        return salida+"\n";
     }
 }
