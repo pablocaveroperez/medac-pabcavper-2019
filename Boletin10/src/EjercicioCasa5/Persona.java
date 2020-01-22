@@ -1,13 +1,13 @@
 package EjercicioCasa5;
 
 public class Persona implements IPersona {
-    private String sNombre;
-    private String sApellido1;
-    private String sApellido2;
-    private short shEdad;
-    private float fEstatura;
-    private float fKilos;
-    private byte bEstado; // 1 - SOLTERO; 2 - CASADO; 3 - SEPARADO; 4 - DIVORCIADO; 5 - VIUDO
+    protected String sNombre;
+    protected String sApellido1;
+    protected String sApellido2;
+    protected short shEdad;
+    protected float fEstatura;
+    protected float fKilos;
+    protected byte bEstado; // 1 - SOLTERO; 2 - CASADO; 3 - SEPARADO; 4 - DIVORCIADO; 5 - VIUDO
 
     public Persona(String sNombre, String sApellido1, String sApellido2){
         this.setsNombre(sNombre);
