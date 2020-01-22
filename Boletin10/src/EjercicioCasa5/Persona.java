@@ -15,34 +15,42 @@ public class Persona implements IPersona {
         this.setsApellido2(sApellido2);
     }
 
+    @Override
     public String getsNombre() {
         return sNombre;
     }
 
+    @Override
     public void setsNombre(String sNombre) {
         this.sNombre = sNombre;
     }
 
+    @Override
     public String getsApellido1() {
         return sApellido1;
     }
 
+    @Override
     public void setsApellido1(String sApellido1) {
         this.sApellido1 = sApellido1;
     }
 
+    @Override
     public String getsApellido2() {
         return sApellido2;
     }
 
+    @Override
     public void setsApellido2(String sApellido2) {
         this.sApellido2 = sApellido2;
     }
 
+    @Override
     public short getShEdad() {
         return shEdad;
     }
 
+    @Override
     public boolean setbEdad(short shEdad) {
         boolean bExito = false;
         short shAux = this.shEdad;
@@ -56,10 +64,12 @@ public class Persona implements IPersona {
 
     }
 
+    @Override
     public float getfEstatura() {
         return fEstatura;
     }
 
+    @Override
     public boolean setfEstatura(float fEstatura) {
         boolean bExito = false;
         if (fEstatura >= 0 && fEstatura <= 3){
@@ -69,6 +79,7 @@ public class Persona implements IPersona {
         return bExito;
     }
 
+    @Override
     public float getfKilos() {
         return fKilos;
     }
@@ -82,10 +93,12 @@ public class Persona implements IPersona {
         return bExito;
     }
 
+    @Override
     public byte getbEstado() {
         return bEstado;
     }
 
+    @Override
     public boolean setbEstado(byte bEstado) {
         boolean bExito = false;
         if (this.bEstado == SOLTERO && bEstado == CASADO) {
@@ -110,6 +123,7 @@ public class Persona implements IPersona {
         return bExito;
     }
 
+    @Override
     public String estadoTexto(){
         String salida = "";
         if (this.bEstado == SOLTERO)
