@@ -15,7 +15,7 @@ public class Tarjeta implements ITarjetaCredito, ITarjetaMonedero {
 
     @Override
     public void comprar(float importe, String DNI) {
-
+        setSaldo(saldo - importe);
     }
 
     @Override
@@ -23,39 +23,48 @@ public class Tarjeta implements ITarjetaCredito, ITarjetaMonedero {
 
     }
 
-    private float cargo(float importe){
+    @Override
+    public float cargo(float importe){
         float cargo = 0;
         return cargo;
     }
 
+    @Override
     public String getId() {
         return id;
     }
 
+    @Override
     public void setId(String id) {
         this.id = id;
     }
 
+    @Override
     public String getDNITitular() {
         return DNITitular;
     }
 
+    @Override
     public void setDNITitular(String DNITitular) {
         this.DNITitular = DNITitular;
     }
 
+    @Override
     public int getPin() {
         return pin;
     }
 
+    @Override
     public void setPin(int pin) {
         this.pin = pin;
     }
 
+    @Override
     public float getSaldo() {
         return saldo;
     }
 
+    @Override
     public void setSaldo(float saldo) {
         this.saldo = saldo;
     }
