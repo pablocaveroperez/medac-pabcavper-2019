@@ -44,6 +44,7 @@ public class Fijo extends Telefono implements ITelefono {
         return salida;
     }
 
+    @Override
     public String imprimir(){
         String salida = "";
         salida += "FIJO: \n"+super.imprimir();

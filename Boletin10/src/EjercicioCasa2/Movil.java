@@ -44,6 +44,7 @@ public class Movil extends Telefono implements ITelefono {
         return salida;
     }
 
+    @Override
     public String imprimir(){
         String salida = "";
         salida += "Movil: \n"+super.imprimir();
