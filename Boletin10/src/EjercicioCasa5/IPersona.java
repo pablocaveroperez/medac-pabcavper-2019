@@ -34,4 +34,8 @@ public interface IPersona {
     public byte getbEstado();
 
     public boolean setbEstado(byte bEstado);
+
+    public String toString();
+
+    public String estadoTexto();
 }

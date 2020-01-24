@@ -19,4 +19,6 @@ public interface IProducto {
     public void setUnidades(int unidades) ;
 
     public void setPrecio(float precio) ;
+
+    public String toString();
 }
