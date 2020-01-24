@@ -1,6 +1,6 @@
 package EjercicioCasa4;
 
-public class Programador {
+public class Programador implements IProgramador {
     private Bombilla []bombillas = new Bombilla[6];
 
     public Programador(){
@@ -12,12 +12,14 @@ public class Programador {
         this.bombillas[5] = new Bombilla();
     }
 
-    private void reestablecerBombillas(){
+    @Override
+    public void reestablecerBombillas(){
         for (int i = 0; i < this.bombillas.length; i++){
             this.bombillas[i].apagar();
         }
     }
 
+    @Override
     public void encenderAlternativo(){
         bombillas[0].encender();
         bombillas[1].apagar();
@@ -35,6 +37,7 @@ public class Programador {
         System.out.println("----------------------------");
     }
 
+    @Override
     public void encenderBarrido(){
         reestablecerBombillas();
         System.out.println("----------------------------");
@@ -45,6 +48,7 @@ public class Programador {
         System.out.println("----------------------------");
     }
 
+    @Override
     public void encenderUnoPorUno(){
         reestablecerBombillas();
         System.out.println("----------------------------");

@@ -8,4 +8,6 @@ public interface IProgramador {
     public void encenderBarrido();
 
     public void encenderUnoPorUno();
+
+    public String toString();
 }
