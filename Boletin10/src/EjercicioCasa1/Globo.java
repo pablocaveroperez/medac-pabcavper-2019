@@ -30,24 +30,24 @@ public class Globo implements IAeronave {
         mensaje("Expulsando aire durante " + segundos + " segundos");
     }
 
-
+    @Override
     public void aumentarAlturaDeVuelo(int aumento){
         mensaje("Incrementando altura de vuelo en " + aumento + " pies");
         variarAlturaDeVuelo(obtenerAlturaDeVuelo()+aumento);
     }
 
-
+    @Override
     public void disminuirAlturaDeVuelo(int descenso){
         mensaje("Disminuyendo la altura de vuelo en " + descenso + " pies");
         variarAlturaDeVuelo(obtenerAlturaDeVuelo()-descenso);
     }
 
-
+    @Override
     public int obtenerAlturaDeVuelo(){
         return altura;
     }
 
-
+    @Override
     public void variarAlturaDeVuelo(int altura){
         if(obtenerAlturaDeVuelo() < altura)
             calentarAire(altura - obtenerAlturaDeVuelo());
@@ -59,7 +59,7 @@ public class Globo implements IAeronave {
                 " pies");
     }
 
-
+    @Override
     public void despegar(){
         mensaje("?Preparaos para despegar!");
         aumentarAlturaDeVuelo(150);
@@ -67,6 +67,7 @@ public class Globo implements IAeronave {
         setbEstado(VOLANDO);
     }
 
+    @Override
     public void aterrizar(){
         mensaje("Vamos a aterrizar !Agarraos!");
         variarAlturaDeVuelo(0);
@@ -74,13 +75,12 @@ public class Globo implements IAeronave {
         setbEstado(TIERRA);
     }
 
-
-
+    @Override
     public String obtenerIdentificacion(){
         return id;
     }
 
-
+    @Override
     public void establecerIdentificacion(String identificacion){
         mensaje("Cambio de n?mero de vuelo a" + identificacion);
         id = identificacion;
