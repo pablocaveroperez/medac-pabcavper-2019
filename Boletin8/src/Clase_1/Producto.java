@@ -40,8 +40,13 @@ public class Producto {
         return unidades;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public boolean setNombre(String nombre) {
+        boolean bExito = false;
+        if (!nombre.equals("") && nombre.length() <= 250){
+            this.nombre = nombre;
+            bExito = true;
+        }
+        return bExito;
     }
 
     public void setUnidades(int unidades) {
