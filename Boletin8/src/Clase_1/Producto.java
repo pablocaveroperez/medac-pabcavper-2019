@@ -12,6 +12,10 @@ public class Producto {
         this.setUnidades(unidades);
     }
 
+    public Producto(String sNombre){
+        setNombre(sNombre);
+    }
+
     public float valorEnStock() {
         return unidades * precio;
     }
@@ -56,6 +60,7 @@ public class Producto {
         sResultado += "Nombre: " + this.getNombre() + "\n";
         sResultado += "Precio: " + this.getPrecio() + "\n";
         sResultado += "Unidades: " + this.getUnidades() + "\n";
+        sResultado += "Precio Total: " + valorEnStock() + "\n";
         return sResultado;
     }
 }
