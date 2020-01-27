@@ -34,7 +34,7 @@ public class Asignatura {
         return iCodigo;
     }
 
-    public void setiCodigo(int iCodigo) {
+    private void setiCodigo(int iCodigo) {
         this.iCodigo = iCodigo;
     }
 
