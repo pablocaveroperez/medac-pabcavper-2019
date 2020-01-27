@@ -4,10 +4,6 @@ public class Producto {
     private float precio;
     private int unidades;
 
-    public int getPRECIO_MAXIMO() {
-        return PRECIO_MAXIMO;
-    }
-
     private final int PRECIO_MAXIMO = 1000000;
 
     public Producto(String nombre, float precio, int unidades) {
