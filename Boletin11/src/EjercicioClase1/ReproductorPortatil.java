@@ -213,10 +213,12 @@ public class ReproductorPortatil implements IReproductorPortatil {
         salida += "Marca: " + getMarca() + "\n";
         salida += "Modelo: " + getModelo() + "\n";
         salida += "Tipo de almacenamiento: " + almacenamientoTexto() + "\n";
-        salida += "Marca: " + getMarca() + "\n";
-        salida += "Marca: " + getMarca() + "\n";
-        salida += "Marca: " + getMarca() + "\n";
-        salida += "Marca: " + getMarca() + "\n";
+        salida += "Capacidad de almacenamiento: " + getCapacidadDeAlmacenamiento() + "\n";
+        salida += "Autonomia: " + getAutonomia() + "\n";
+        salida += "Peso(g): " + getPeso() + "\n";
+        salida += "Ancho(mm): " + getAncho() + "\n";
+        salida += "Alto(mm): " + getAncho() + "\n";
+        salida += "Grosor(mm): " + getAncho() + "\n";
         return salida;
     }
 }
