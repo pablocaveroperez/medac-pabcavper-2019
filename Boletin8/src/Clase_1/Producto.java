@@ -4,16 +4,16 @@ public class Producto {
     private float precio;
     private int unidades;
 
-    public int getPRECIO_MAXIMO() {
-        return PRECIO_MAXIMO;
-    }
-
     private final int PRECIO_MAXIMO = 1000000;
 
     public Producto(String nombre, float precio, int unidades) {
         this.setNombre(nombre);
         this.setPrecio(precio);
         this.setUnidades(unidades);
+    }
+
+    public Producto(String sNombre){
+        setNombre(sNombre);
     }
 
     public float valorEnStock() {
@@ -40,8 +40,13 @@ public class Producto {
         return unidades;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public boolean setNombre(String nombre) {
+        boolean bExito = false;
+        if (!nombre.equals("") && nombre.length() <= 250){
+            this.nombre = nombre;
+            bExito = true;
+        }
+        return bExito;
     }
 
     public void setUnidades(int unidades) {
@@ -60,6 +65,7 @@ public class Producto {
         sResultado += "Nombre: " + this.getNombre() + "\n";
         sResultado += "Precio: " + this.getPrecio() + "\n";
         sResultado += "Unidades: " + this.getUnidades() + "\n";
+        sResultado += "Precio Total: " + valorEnStock() + "\n";
         return sResultado;
     }
 }
