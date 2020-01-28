@@ -191,4 +191,32 @@ public class ReproductorPortatil implements IReproductorPortatil {
         }
         return bExito;
     }
+
+    private String almacenamientoTexto(){
+        String salida = "";
+        if (this.tipoDeAlmacenamiento == CD)
+            salida += "CD";
+        else if (this.tipoDeAlmacenamiento == DVD)
+            salida += "DVD";
+        else if (this.tipoDeAlmacenamiento == MEMORIAFLASH)
+            salida += "MemoriaFlash";
+        else if (this.tipoDeAlmacenamiento == MINIDISK)
+            salida += "Minidisk";
+        else
+            salida += "Tipo de almacenamiento erroneo";
+        return salida;
+    }
+
+    @Override
+    public String toString(){
+        String salida = "";
+        salida += "Marca: " + getMarca() + "\n";
+        salida += "Modelo: " + getModelo() + "\n";
+        salida += "Tipo de almacenamiento: " + almacenamientoTexto() + "\n";
+        salida += "Marca: " + getMarca() + "\n";
+        salida += "Marca: " + getMarca() + "\n";
+        salida += "Marca: " + getMarca() + "\n";
+        salida += "Marca: " + getMarca() + "\n";
+        return salida;
+    }
 }
