@@ -12,6 +12,12 @@ public class ReproductorPortatil implements IReproductorPortatil {
     private float peso; //  PESO EN GRAMOS DEL DISPOSITIVO
     private float ancho, alto, grosor; //   DIMENSIONES EN MILIMETROS DEL DISPOSITIVO
 
+    public ReproductorPortatil(String marca, String modelo, byte tipoDeAlmacenamiento){
+        setMarca(marca);
+        setModelo(modelo);
+        setTipoDeAlmacenamiento(tipoDeAlmacenamiento);
+    }
+
     @Override
     public String getMarca() {
         return marca;
