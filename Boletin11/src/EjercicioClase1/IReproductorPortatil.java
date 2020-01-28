@@ -33,19 +33,19 @@ public interface IReproductorPortatil {
 
     byte getTipoDeAlmacenamiento();
 
-    void setTipoDeAlmacenamiento(byte tipoDeAlmacenamiento);
+    boolean setTipoDeAlmacenamiento(byte tipoDeAlmacenamiento);
 
     int getCapacidadDeAlmacenamiento();
 
-    void setCapacidadDeAlmacenamiento(int capacidadDeAlmacenamiento);
+    boolean setCapacidadDeAlmacenamiento(int capacidadDeAlmacenamiento);
 
     byte getPantalla();
 
-    void setPantalla(byte pantalla);
+    boolean setPantalla(byte pantalla);
 
     byte getTipoDeBateria();
 
-    void setTipoDeBateria(byte tipoDeBateria);
+    boolean setTipoDeBateria(byte tipoDeBateria);
 
     int getAutonomia();
 

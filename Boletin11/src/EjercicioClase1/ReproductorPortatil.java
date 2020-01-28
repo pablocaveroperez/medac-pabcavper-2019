@@ -63,8 +63,13 @@ public class ReproductorPortatil implements IReproductorPortatil {
     }
 
     @Override
-    public void setTipoDeAlmacenamiento(byte tipoDeAlmacenamiento) {
-        this.tipoDeAlmacenamiento = tipoDeAlmacenamiento;
+    public boolean setTipoDeAlmacenamiento(byte tipoDeAlmacenamiento) {
+        boolean bExito = false;
+        if (tipoDeAlmacenamiento >= 1 && tipoDeAlmacenamiento <= 4){
+            this.tipoDeAlmacenamiento = tipoDeAlmacenamiento;
+            bExito = true;
+        }
+        return bExito;
     }
 
     @Override
@@ -73,8 +78,13 @@ public class ReproductorPortatil implements IReproductorPortatil {
     }
 
     @Override
-    public void setCapacidadDeAlmacenamiento(int capacidadDeAlmacenamiento) {
-        this.capacidadDeAlmacenamiento = capacidadDeAlmacenamiento;
+    public boolean setCapacidadDeAlmacenamiento(int capacidadDeAlmacenamiento) {
+        boolean bExito = false;
+        if (capacidadDeAlmacenamiento < 0){
+            this.capacidadDeAlmacenamiento = capacidadDeAlmacenamiento;
+            bExito = true;
+        }
+        return bExito;
     }
 
     @Override
@@ -83,8 +93,13 @@ public class ReproductorPortatil implements IReproductorPortatil {
     }
 
     @Override
-    public void setPantalla(byte pantalla) {
-        this.pantalla = pantalla;
+    public boolean setPantalla(byte pantalla) {
+        boolean bExito = false;
+        if (pantalla >= 1 && pantalla <= 4){
+            this.pantalla = pantalla;
+            bExito = true;
+        }
+        return bExito;
     }
 
     @Override
@@ -93,8 +108,13 @@ public class ReproductorPortatil implements IReproductorPortatil {
     }
 
     @Override
-    public void setTipoDeBateria(byte tipoDeBateria) {
-        this.tipoDeBateria = tipoDeBateria;
+    public boolean setTipoDeBateria(byte tipoDeBateria) {
+        boolean bExito = false;
+        if (tipoDeBateria == PILAS || tipoDeBateria == LI_ION){
+            this.tipoDeBateria = tipoDeBateria;
+            bExito = true;
+        }
+        return bExito;
     }
 
     @Override
