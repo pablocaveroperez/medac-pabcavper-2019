@@ -17,5 +17,53 @@ public interface IReproductorPortatil {
     public final byte PILAS = 1;
     public final byte LI_ION = 2;
 
-    public void getMarca();
+    public String getMarca();
+
+    void setMarca(String marca);
+
+    String getModelo();
+
+    boolean isReproduceSonido();
+
+    void setReproduceSonido(boolean reproduceSonido);
+
+    boolean isReproduceVideo();
+
+    void setReproduceVideo(boolean reproduceVideo);
+
+    byte getTipoDeAlmacenamiento();
+
+    void setTipoDeAlmacenamiento(byte tipoDeAlmacenamiento);
+
+    int getCapacidadDeAlmacenamiento();
+
+    void setCapacidadDeAlmacenamiento(int capacidadDeAlmacenamiento);
+
+    byte getPantalla();
+
+    void setPantalla(byte pantalla);
+
+    byte getTipoDeBateria();
+
+    void setTipoDeBateria(byte tipoDeBateria);
+
+    int getAutonomia();
+
+    void setAutonomia(int autonomia);
+
+    float getPeso();
+
+    void setPeso(float peso);
+
+    float getAncho();
+
+    void setAncho(float ancho);
+
+    float getAlto();
+
+    void setAlto(float alto);
+
+    float getGrosor();
+
+    void setGrosor(float grosor);
 }
