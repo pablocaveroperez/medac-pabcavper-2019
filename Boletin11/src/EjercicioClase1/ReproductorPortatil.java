@@ -80,7 +80,7 @@ public class ReproductorPortatil implements IReproductorPortatil {
     @Override
     public boolean setCapacidadDeAlmacenamiento(int capacidadDeAlmacenamiento) {
         boolean bExito = false;
-        if (capacidadDeAlmacenamiento < 0){
+        if (capacidadDeAlmacenamiento >= 0){
             this.capacidadDeAlmacenamiento = capacidadDeAlmacenamiento;
             bExito = true;
         }
