@@ -123,8 +123,13 @@ public class ReproductorPortatil implements IReproductorPortatil {
     }
 
     @Override
-    public void setAutonomia(int autonomia) {
-        this.autonomia = autonomia;
+    public boolean setAutonomia(int autonomia) {
+        boolean bExito = false;
+        if (autonomia >= 0){
+            this.autonomia = autonomia;
+            bExito = true;
+        }
+        return bExito;
     }
 
     @Override
@@ -133,8 +138,13 @@ public class ReproductorPortatil implements IReproductorPortatil {
     }
 
     @Override
-    public void setPeso(float peso) {
-        this.peso = peso;
+    public boolean setPeso(float peso) {
+        boolean bExito = false;
+        if (peso > 0){
+            this.peso = peso;
+            bExito = true;
+        }
+        return bExito;
     }
 
     @Override
@@ -143,8 +153,13 @@ public class ReproductorPortatil implements IReproductorPortatil {
     }
 
     @Override
-    public void setAncho(float ancho) {
-        this.ancho = ancho;
+    public boolean setAncho(float ancho) {
+        boolean bExito = false;
+        if (ancho > 0){
+            this.ancho = ancho;
+            bExito = true;
+        }
+        return bExito;
     }
 
     @Override
@@ -153,8 +168,13 @@ public class ReproductorPortatil implements IReproductorPortatil {
     }
 
     @Override
-    public void setAlto(float alto) {
-        this.alto = alto;
+    public boolean setAlto(float alto) {
+        boolean bExito = false;
+        if (alto > 0){
+            this.alto = alto;
+            bExito = true;
+        }
+        return bExito;
     }
 
     @Override
@@ -163,7 +183,12 @@ public class ReproductorPortatil implements IReproductorPortatil {
     }
 
     @Override
-    public void setGrosor(float grosor) {
-        this.grosor = grosor;
+    public boolean setGrosor(float grosor) {
+        boolean bExito = false;
+        if (alto > 0){
+            this.grosor = grosor;
+            bExito = true;
+        }
+        return bExito;
     }
 }

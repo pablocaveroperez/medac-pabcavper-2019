@@ -49,21 +49,21 @@ public interface IReproductorPortatil {
 
     int getAutonomia();
 
-    void setAutonomia(int autonomia);
+    boolean setAutonomia(int autonomia);
 
     float getPeso();
 
-    void setPeso(float peso);
+    boolean setPeso(float peso);
 
     float getAncho();
 
-    void setAncho(float ancho);
+    boolean setAncho(float ancho);
 
     float getAlto();
 
-    void setAlto(float alto);
+    boolean setAlto(float alto);
 
     float getGrosor();
 
-    void setGrosor(float grosor);
+    boolean setGrosor(float grosor);
 }
