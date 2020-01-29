@@ -10,6 +10,10 @@ public class ReproductorDeAudio extends ReproductorPortatil implements IReproduc
 
     public ReproductorDeAudio(String marca, String modelo, byte tipoDeAlmacenamiento){
         super(marca, modelo, tipoDeAlmacenamiento);
+        setReproduceAudioCds(false);
+        setReproduceMP3(false);
+        setReproduceWMA(false);
+        setReproduceVorbis(false);
     }
 
     @Override
