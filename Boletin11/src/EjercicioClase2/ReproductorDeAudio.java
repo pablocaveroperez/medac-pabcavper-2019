@@ -86,5 +86,16 @@ public class ReproductorDeAudio extends ReproductorPortatil implements IReproduc
         this.grabacionDeVoz = grabacionDeVoz;
     }
 
-
+    @Override
+    public String toString() {
+        return "ReproductorDeAudio{" +
+                "reproduceAudioCds: " + reproduceAudioCds +
+                ", reproduceMP3: " + reproduceMP3 +
+                ", reproduceWMA: " + reproduceWMA +
+                ", reproduceVorbis: " + reproduceVorbis +
+                ", accesoPorCarpetas: " + accesoPorCarpetas +
+                ", radio: " + radio +
+                ", grabacionDeVoz: " + grabacionDeVoz +
+                '}';
+    }
 }
