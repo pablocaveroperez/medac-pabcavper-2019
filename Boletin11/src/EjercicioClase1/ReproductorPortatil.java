@@ -207,6 +207,21 @@ public class ReproductorPortatil implements IReproductorPortatil {
         return salida;
     }
 
+    private String pantallaTexto(){
+        String salida = "";
+        if (this.pantalla == NINGUNA)
+            salida += "NINGUNA";
+        else if (this.pantalla == TEXTO)
+            salida += "TEXTO";
+        else if (this.pantalla == MONOCROMO)
+            salida += "MONOCROMO";
+        else if (this.pantalla == COLOR)
+            salida += "COLOR";
+        else
+            salida += "Tipo de pantalla erroneo";
+        return salida;
+    }
+
     @Override
     public String toString(){
         String salida = "";
@@ -219,6 +234,7 @@ public class ReproductorPortatil implements IReproductorPortatil {
         salida += "Ancho(mm): " + getAncho() + "\n";
         salida += "Alto(mm): " + getAncho() + "\n";
         salida += "Grosor(mm): " + getAncho() + "\n";
+        salida += "Pantalla: " + getAncho() + "\n";
         return salida;
     }
 }
