@@ -1,10 +1,16 @@
 package EjercicioClase2;
 
-public class ReproductorDeAudio implements IReproductorAudio {
+import EjercicioClase1.ReproductorPortatil;
+
+public class ReproductorDeAudio extends ReproductorPortatil implements IReproductorAudio {
     private boolean reproduceAudioCds, reproduceMP3, reproduceWMA, reproduceVorbis;
     private boolean accesoPorCarpetas;
     private boolean radio;
     private boolean grabacionDeVoz;
+
+    public ReproductorDeAudio(String marca, String modelo, byte tipoDeAlmacenamiento){
+        super(marca, modelo, tipoDeAlmacenamiento);
+    }
 
     @Override
     public boolean isAccesoPorCarpetas() {
