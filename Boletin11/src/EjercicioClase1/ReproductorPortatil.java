@@ -213,7 +213,7 @@ public class ReproductorPortatil implements IReproductorPortatil {
         else if (this.tipoDeAlmacenamiento == MINIDISK)
             salida += "Minidisk";
         else
-            salida += "Tipo de almacenamiento erroneo";
+            salida += "Tipo de almacenamiento por determinar";
         return salida;
     }
 
@@ -228,7 +228,7 @@ public class ReproductorPortatil implements IReproductorPortatil {
         else if (this.pantalla == COLOR)
             salida += "COLOR";
         else
-            salida += "Tipo de pantalla erroneo";
+            salida += "Tipo de pantalla por determinar";
         return salida;
     }
 
@@ -238,6 +238,8 @@ public class ReproductorPortatil implements IReproductorPortatil {
             salida += "PILAS";
         else if (this.tipoDeBateria == LI_ION)
             salida += "LI-ION";
+        else
+            salida += "Tipo de bateria por determinar";
         return salida;
     }
 
