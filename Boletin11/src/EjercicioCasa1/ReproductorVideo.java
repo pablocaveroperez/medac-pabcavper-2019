@@ -96,8 +96,8 @@ public class ReproductorVideo extends ReproductorPortatil implements IReproducto
         salida += "Reproduce DVD: " + isReproduceDVD() + "\n";
         salida += "Reproduce JPG: " + isReproduceJPG() + "\n";
         salida += "Screen size: " + getTamanioDeLaPantalla() + "\n";
-        salida += "Sintoniza: " + isTelevision() + "\n";
-
+        salida += "Capaz de sintonizar emisoras: " + isTelevision() + "\n";
+        salida += super.toString()+"\n";
         return salida;
     }
 }
