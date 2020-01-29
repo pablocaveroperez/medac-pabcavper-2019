@@ -16,6 +16,16 @@ public class ReproductorPortatil implements IReproductorPortatil {
         setMarca(marca);
         setModelo(modelo);
         setTipoDeAlmacenamiento(tipoDeAlmacenamiento);
+        setAlto(0);
+        setAncho(0);
+        setAutonomia(0);
+        setCapacidadDeAlmacenamiento(0);
+        setGrosor(0);
+        setPantalla((byte) 0);
+        setPeso(0);
+        setReproduceSonido(false);
+        setReproduceVideo(false);
+        setTipoDeBateria((byte) 0);
     }
 
     @Override
@@ -245,6 +255,8 @@ public class ReproductorPortatil implements IReproductorPortatil {
         salida += "Grosor(mm): " + getAncho() + "\n";
         salida += "Pantalla: " + pantallaTexto() + "\n";
         salida += "Tipo de bateria: " + bateriaTexto() + "\n";
+        salida += "Reproduciendo sonido: " + isReproduceSonido()+"\n";
+        salida += "Reproduciendo video: " + isReproduceVideo()+"\n";
         return salida;
     }
 
