@@ -88,13 +88,13 @@ public class ReproductorDeAudio extends ReproductorPortatil implements IReproduc
 
     @Override
     public String toString() {
-        return "ReproductorDeAudio{" +
-                "reproduceAudioCds: " + reproduceAudioCds +
+        return "ReproduceAudioCds: " + reproduceAudioCds +
                 "\nReproduceMP3: " + reproduceMP3 +
                 "\nReproduceWMA: " + reproduceWMA +
                 "\nReproduceVorbis: " + reproduceVorbis +
                 "\nAccesoPorCarpetas: " + accesoPorCarpetas +
                 "\nRadio: " + radio +
-                "\nGrabacionDeVoz: " + grabacionDeVoz;
+                "\nGrabacionDeVoz: " + grabacionDeVoz +
+                "\n"+super.toString();
     }
 }
