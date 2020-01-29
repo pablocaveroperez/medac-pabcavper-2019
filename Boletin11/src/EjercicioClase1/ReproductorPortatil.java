@@ -222,6 +222,16 @@ public class ReproductorPortatil implements IReproductorPortatil {
         return salida;
     }
 
+    private String bateriaTexto() {
+        String salida = "";
+        if (this.tipoDeBateria == PILAS)
+            salida += "PILAS";
+        else if (this.tipoDeBateria == LI_ION)
+            salida += "LI-ION";
+
+        return salida;
+    }
+
     @Override
     public String toString(){
         String salida = "";
@@ -234,7 +244,9 @@ public class ReproductorPortatil implements IReproductorPortatil {
         salida += "Ancho(mm): " + getAncho() + "\n";
         salida += "Alto(mm): " + getAncho() + "\n";
         salida += "Grosor(mm): " + getAncho() + "\n";
-        salida += "Pantalla: " + getAncho() + "\n";
+        salida += "Pantalla: " + pantallaTexto() + "\n";
+        salida += "Tipo de bateria: " + bateriaTexto() + "\n";
         return salida;
     }
+
 }
