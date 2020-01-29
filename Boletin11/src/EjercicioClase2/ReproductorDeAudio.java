@@ -90,12 +90,11 @@ public class ReproductorDeAudio extends ReproductorPortatil implements IReproduc
     public String toString() {
         return "ReproductorDeAudio{" +
                 "reproduceAudioCds: " + reproduceAudioCds +
-                ", reproduceMP3: " + reproduceMP3 +
-                ", reproduceWMA: " + reproduceWMA +
-                ", reproduceVorbis: " + reproduceVorbis +
-                ", accesoPorCarpetas: " + accesoPorCarpetas +
-                ", radio: " + radio +
-                ", grabacionDeVoz: " + grabacionDeVoz +
-                '}';
+                "\nReproduceMP3: " + reproduceMP3 +
+                "\nReproduceWMA: " + reproduceWMA +
+                "\nReproduceVorbis: " + reproduceVorbis +
+                "\nAccesoPorCarpetas: " + accesoPorCarpetas +
+                "\nRadio: " + radio +
+                "\nGrabacionDeVoz: " + grabacionDeVoz;
     }
 }
