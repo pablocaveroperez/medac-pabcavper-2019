@@ -90,6 +90,13 @@ public class ReproductorVideo extends ReproductorPortatil implements IReproducto
     @Override
     public String toString (){
         String salida = "";
+        salida += "Reproduce WMV: " + isReproduceWMV() + "\n";
+        salida += "Reproduce DIVX: " + isReproduceDIVX() + "\n";
+        salida += "Reproduce MPG: " + isReproduceMPG() + "\n";
+        salida += "Reproduce DVD: " + isReproduceDVD() + "\n";
+        salida += "Reproduce JPG: " + isReproduceJPG() + "\n";
+        salida += "Screen size: " + getTamanioDeLaPantalla() + "\n";
+        salida += "Sintoniza: " + isTelevision() + "\n";
 
         return salida;
     }
