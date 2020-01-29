@@ -4,8 +4,8 @@ public interface IReproductorPortatil {
     //  TIPOS DE ALMACENAMIENTOS
     public final byte CD = 1;
     public final byte DVD = 2;
-    public final byte MemoriaFlash = 3;
-    public final byte Minidisk = 4;
+    public final byte MEMORIAFLASH = 3;
+    public final byte MINIDISK = 4;
 
     //  TIPOS DE PANTALLAS
     public final byte NINGUNA = 1;
