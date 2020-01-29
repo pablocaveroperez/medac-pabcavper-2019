@@ -228,7 +228,6 @@ public class ReproductorPortatil implements IReproductorPortatil {
             salida += "PILAS";
         else if (this.tipoDeBateria == LI_ION)
             salida += "LI-ION";
-
         return salida;
     }
 
