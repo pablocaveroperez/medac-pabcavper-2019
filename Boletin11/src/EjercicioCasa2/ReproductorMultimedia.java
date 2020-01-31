@@ -13,6 +13,7 @@ public class ReproductorMultimedia extends ReproductorVideo implements IReproduc
         super(marca, modelo, tipoDeAlmacenamiento);
     }
 
+
     @Override
     public boolean isAccesoPorCarpetas() {
         return accesoPorCarpetas;
