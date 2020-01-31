@@ -31,7 +31,7 @@ public class Bombilla {
         if (isBolEncendida())
             salida += '*';
         else
-            salida += '·';
+            salida += '.';
         return salida;
     }
 }
