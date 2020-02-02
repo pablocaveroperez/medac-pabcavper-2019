@@ -14,15 +14,14 @@ public class Socio implements IComparable {
     }
 
     @Override
-    public void introducirDatos(int numeroSocio, int telefono, String dni, String nombre, String apellidos, String email, String direccion){
-
-        setNumeroSocio(numeroSocio);
-        setTelefono(telefono);
-        setDni(dni);
-        setNombre(nombre);
-        setApellidos(apellidos);
-        setEmail(email);
-        setDireccion(direccion);
+    public void introducirDatos(){
+        setNumeroSocio((int) ValidaLibrary.valida("Introduce el numero de socio: ",0,10,1));
+        setTelefono((int) ValidaLibrary.valida("Introduce el telefono del socio: ",100000000,999999999,1));
+        setDni(ValidaLibrary.leer("Introduce el DNI del socio: "));
+        setNombre(ValidaLibrary.leer("Introduce el nombre del socio: "));
+        setApellidos(ValidaLibrary.leer("Introduce los apellidos del socio: "));
+        setEmail(ValidaLibrary.leer("Introduce el email del socio: "));
+        setDireccion(ValidaLibrary.leer("Introduce la direccion del socio: "));
     }
 
     @Override
@@ -31,8 +30,15 @@ public class Socio implements IComparable {
     }
 
     @Override
-    public void imprimir(){
-
+    public String imprimir(){
+        String salida ="\n****************************************\n";
+        salida += "El socio "+getNombre()+" "+getApellidos()+" tiene:\n";
+        salida += "Numero de socio: "+getNumeroSocio()+".\n";
+        salida += "Telefono: "+getTelefono()+".\n";
+        salida += "DNI: "+getDni()+".\n";
+        salida += "Email: "+getEmail()+".\n";
+        salida += "Direccion: "+getDireccion()+".\n";
+        return salida;
     }
 
     @Override

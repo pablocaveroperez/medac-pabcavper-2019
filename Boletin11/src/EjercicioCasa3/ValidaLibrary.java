@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
 public class ValidaLibrary {
-    private static String leer(String sMensaje) {
+    public static String leer(String sMensaje) {
         BufferedReader teclado = new BufferedReader(new InputStreamReader(System.in));
         String cadenaLeida;
         System.out.println(sMensaje);
@@ -38,7 +38,7 @@ public class ValidaLibrary {
         return fNumero;
     }
 
-    private static Object valida(String sMensaje, double dMin, double dMax, int iTipoDato) {
+    public static Object valida(String sMensaje, double dMin, double dMax, int iTipoDato) {
         Object oResultado = 0;
 
         switch (iTipoDato) {

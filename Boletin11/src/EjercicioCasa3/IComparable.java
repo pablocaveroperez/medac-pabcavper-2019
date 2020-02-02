@@ -2,11 +2,11 @@ package EjercicioCasa3;
 
 public interface IComparable {
 
-    void introducirDatos(int numeroSocio, int telefono, String dni, String nombre, String apellidos, String email, String direccion);
+    public void introducirDatos();
 
     void modificarSocio(String datos);
 
-    void imprimir();
+    String imprimir();
 
     boolean equals(Socio oSocio);
 
