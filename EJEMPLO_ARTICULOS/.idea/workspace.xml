@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9ab498ba-98c8-48e8-90b4-f4554ec44152" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../Boletin11/src/EjercicioCasa3/IComparable.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Boletin11/src/EjercicioCasa3/IComparable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Boletin11/src/EjercicioCasa3/Socio.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Boletin11/src/EjercicioCasa3/Socio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Boletin11/src/EjercicioCasa3/ValidaLibrary.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Boletin11/src/EjercicioCasa3/ValidaLibrary.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

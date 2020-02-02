@@ -37,7 +37,8 @@ public class Socio implements IComparable {
         salida += "Telefono: "+getTelefono()+".\n";
         salida += "DNI: "+getDni()+".\n";
         salida += "Email: "+getEmail()+".\n";
-        salida += "Direccion: "+getDireccion()+".\n";
+        salida += "Direccion: "+getDireccion()+".";
+        salida += "\n****************************************\n";
         return salida;
     }
 
