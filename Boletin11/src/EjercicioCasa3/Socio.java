@@ -15,6 +15,7 @@ public class Socio implements IComparable {
 
     @Override
     public void introducirDatos(int numeroSocio, int telefono, String dni, String nombre, String apellidos, String email, String direccion){
+
         setNumeroSocio(numeroSocio);
         setTelefono(telefono);
         setDni(dni);
