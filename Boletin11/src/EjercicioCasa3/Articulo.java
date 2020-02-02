@@ -41,4 +41,14 @@ public class Articulo {
     public void setTamanio(int tamanio) {
         this.tamanio = tamanio;
     }
+
+    @Override
+    public String toString() {
+        String salida = "";
+        salida += "ID articulo: "+getIdArticulo()+"\n";
+        salida += "Tamanio: "+getTamanio()+"\n";
+        salida += "Stock: "+getStock()+"\n";
+        salida += "Nombre: "+getNombre()+"\n";
+        return salida;
+    }
 }
