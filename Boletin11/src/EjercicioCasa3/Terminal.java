@@ -25,11 +25,11 @@ public class Terminal {
     // ##################
     // # SEARCH METHODS #
     // ##################
-    public int searchPositionCliente(Socio oCli) {
+    public int searchPositionSocio(Socio oCli) {
         return socControl.searchPosition(oCli);
     }
 
-    public Socio searchCliente(Socio oCli) {
+    public Socio searchSocio(Socio oCli) {
         return socControl.searchObject(oCli);
     }
 
