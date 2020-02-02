@@ -13,6 +13,10 @@ public class Socio implements IComparable {
 
     }
 
+    public void introducirDatos(){
+
+    }
+
     @Override
     public int getNumeroSocio() {
         return numeroSocio;
