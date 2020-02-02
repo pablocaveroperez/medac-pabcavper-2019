@@ -1,6 +1,12 @@
 package EjercicioCasa3;
 
 public interface IComparable {
+    void introducirDatos();
+
+    void modificarSocio();
+
+    void imprimir();
+
     int getNumeroSocio();
 
     int getTelefono();

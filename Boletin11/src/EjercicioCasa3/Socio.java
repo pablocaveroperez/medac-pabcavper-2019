@@ -1,5 +1,7 @@
 package EjercicioCasa3;
 
+import java.util.Objects;
+
 public class Socio implements IComparable {
     private int numeroSocio;
     private int telefono;
@@ -13,8 +15,38 @@ public class Socio implements IComparable {
 
     }
 
+    @Override
     public void introducirDatos(){
 
+    }
+
+    @Override
+    public void modificarSocio(){
+
+    }
+
+    @Override
+    public void imprimir(){
+
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Socio socio = (Socio) o;
+        return numeroSocio == socio.numeroSocio &&
+                telefono == socio.telefono &&
+                Objects.equals(dni, socio.dni) &&
+                Objects.equals(nombre, socio.nombre) &&
+                Objects.equals(apellidos, socio.apellidos) &&
+                Objects.equals(email, socio.email) &&
+                Objects.equals(direccion, socio.direccion);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(numeroSocio, telefono, dni, nombre, apellidos, email, direccion);
     }
 
     @Override
