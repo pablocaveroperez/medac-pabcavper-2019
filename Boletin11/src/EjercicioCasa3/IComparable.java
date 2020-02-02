@@ -1,7 +1,8 @@
 package EjercicioCasa3;
 
 public interface IComparable {
-    void introducirDatos();
+
+    void introducirDatos(int numeroSocio, int telefono, String dni, String nombre, String apellidos, String email, String direccion);
 
     void modificarSocio(String datos);
 
