@@ -32,21 +32,7 @@ public class Socio implements IComparable {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Socio socio = (Socio) o;
-        return numeroSocio == socio.numeroSocio &&
-                telefono == socio.telefono &&
-                Objects.equals(dni, socio.dni) &&
-                Objects.equals(nombre, socio.nombre) &&
-                Objects.equals(apellidos, socio.apellidos) &&
-                Objects.equals(email, socio.email) &&
-                Objects.equals(direccion, socio.direccion);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(numeroSocio, telefono, dni, nombre, apellidos, email, direccion);
+        return super.equals(o);
     }
 
     @Override
