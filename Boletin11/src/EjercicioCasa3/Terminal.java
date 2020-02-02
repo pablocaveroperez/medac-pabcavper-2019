@@ -62,32 +62,4 @@ public class Terminal {
         return socControl.printAll();
     }
 
-    // ###################
-    // # CRUD OPERATIONS #
-    // # Articulo CLASS  #
-    // ###################
-    // CREATE
-    public boolean addArticulo(Articulo oArt) {
-        return artControl.add(oArt);
-    }
-
-    // READ
-    public Articulo readArticulo(Articulo oArt) {
-        return artControl.read(oArt);
-    }
-
-    // UPDATE
-    public boolean updateArticulo(Articulo oArt) {
-        return artControl.update(oArt);
-    }
-
-    // DELETE
-    public boolean deleteArticulo(Articulo oArt) {
-        return artControl.delete(oArt);
-    }
-
-    // PRINT ALL ARTICULOS
-    public String printArticulos() {
-        return artControl.printAll();
-    }
 }
