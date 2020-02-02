@@ -9,11 +9,15 @@ public class Socio {
     private String email;
     private String direccion;
 
+    public Socio(){
+
+    }
+
     public int getNumeroSocio() {
         return numeroSocio;
     }
 
-    private void setNumeroSocio(int numeroSocio) {
+    private void setNumeroSocio(int numeroSocio) { // ESTE METODO ES PRIVADO POR QUE ES LA CLAVE PRIMARIA
         this.numeroSocio = numeroSocio;
     }
 
@@ -64,4 +68,6 @@ public class Socio {
     public void setDireccion(String direccion) {
         this.direccion = direccion;
     }
+
+
 }
