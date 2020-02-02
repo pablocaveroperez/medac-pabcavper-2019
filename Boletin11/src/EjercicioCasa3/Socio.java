@@ -1,7 +1,5 @@
 package EjercicioCasa3;
 
-import java.util.Objects;
-
 public class Socio implements IComparable {
     private int numeroSocio;
     private int telefono;
@@ -21,7 +19,7 @@ public class Socio implements IComparable {
     }
 
     @Override
-    public void modificarSocio(){
+    public void modificarSocio(String datos){
 
     }
 
@@ -31,8 +29,8 @@ public class Socio implements IComparable {
     }
 
     @Override
-    public boolean equals(Object o) {
-        return super.equals(o);
+    public boolean equals(Socio oSocio) {
+        return this.numeroSocio == oSocio.numeroSocio;
     }
 
     @Override

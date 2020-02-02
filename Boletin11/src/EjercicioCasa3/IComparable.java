@@ -3,9 +3,11 @@ package EjercicioCasa3;
 public interface IComparable {
     void introducirDatos();
 
-    void modificarSocio();
+    void modificarSocio(String datos);
 
     void imprimir();
+
+    boolean equals(Socio oSocio);
 
     int getNumeroSocio();
 
