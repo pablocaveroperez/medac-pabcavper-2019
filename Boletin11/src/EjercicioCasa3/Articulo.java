@@ -5,6 +5,7 @@ public class Articulo {
     private int tamanio;
     private int stock;
     private String nombre;
+    private Descripcion descripcion;
 
     public Articulo(){
 
@@ -49,6 +50,8 @@ public class Articulo {
         salida += "Tamanio: "+getTamanio()+"\n";
         salida += "Stock: "+getStock()+"\n";
         salida += "Nombre: "+getNombre()+"\n";
+
+        salida += descripcion.toString();
         return salida;
     }
 }
