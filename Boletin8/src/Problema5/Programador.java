@@ -9,12 +9,18 @@ public class Programador {
         }
     }
 
+    /**
+     * Este metodo apaga todas las bombillas
+     */
     private void reestablecerBombillas(){
         for (int i = 0; i < this.bombillas.length; i++){
             this.bombillas[i].apagar();
         }
     }
 
+    /**
+     * Este metodo enciende las bombillas que estan en la posicion impar del vector y luego al contrario
+     */
     public void encenderAlternativo(){
         for (int i = 0; i < bombillas.length; i++){
             if (i % 2 != 0)
@@ -30,6 +36,9 @@ public class Programador {
         System.out.println("----------------------------");
     }
 
+    /**
+     * Este metodo va encendiendo poco a poco las bombillas empezando desde la izquierda
+     */
     public void encenderBarrido(){
         reestablecerBombillas();
         System.out.println("----------------------------");
@@ -40,6 +49,9 @@ public class Programador {
         System.out.println("----------------------------");
     }
 
+    /**
+     * Este metodo enciende las bombillas una por una empezando por la izquierda
+     */
     public void encenderUnoPorUno(){
         reestablecerBombillas();
         System.out.println("----------------------------");
