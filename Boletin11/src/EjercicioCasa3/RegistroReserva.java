@@ -5,7 +5,7 @@ public class RegistroReserva {
     private int iContReservas;
 
     public RegistroReserva(int numReservas) {
-        reservas = new Alquiler[numReservas];
+        reservas = new Reserva[numReservas];
         setiContReservas(0);
     }
 
