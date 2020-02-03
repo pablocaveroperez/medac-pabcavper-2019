@@ -99,7 +99,7 @@ public class RegistroSocios {
                 sResultado = "No hay socios registrados en la aplicacion.";
             } else {
                 for (int iCont = 0; iCont < iContClientes; iCont++) {
-                    sResultado += socios[iCont] + "\n";
+                    sResultado += socios[iCont].imprimir() + "\n";
                 }
             }
             return sResultado;

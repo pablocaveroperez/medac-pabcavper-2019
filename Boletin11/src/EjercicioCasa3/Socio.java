@@ -46,7 +46,7 @@ public class Socio implements IComparable {
     public boolean equals(Socio oSocio) {
         boolean bIgual = false;
         Socio otro = (Socio) oSocio;
-        if(this != null && otro != null && this.getNumeroSocio().equals(otro.getNumeroSocio())) {
+        if(this != null && otro != null && this.getNumeroSocio() == (otro.getNumeroSocio())) {
             bIgual = true;
         }
         return bIgual;
