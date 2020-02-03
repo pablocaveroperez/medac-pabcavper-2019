@@ -26,7 +26,7 @@ public class Catalogo {
         this.autoincremento = autoincremento;
     }
 
-    private static Articulo[] llenarVectorArticulo() {
+    public static Articulo[] llenarVectorArticulo() {
         int iTamanio = (int) valida("Introduce el tamanio del vector (2-100): ",0,5,1);
         Articulo[] iVector = new Articulo[iTamanio];
         for(int iContador = 0; iContador < iVector.length; iContador++) {
@@ -35,4 +35,16 @@ public class Catalogo {
         }
         return iVector;
     }
+
+    public void addArticulo(Articulo articulo){
+        Articulo[] aux = new Articulo[getArticulos().length+1];
+        for (int i = 0; i < aux.length;i++){
+            if (i < getArticulos().length)
+                aux[i] = getArticulos()[i];
+            else
+                aux[i] = articulo;
+        }
+        setArticulos(aux);
+    }
+
 }
