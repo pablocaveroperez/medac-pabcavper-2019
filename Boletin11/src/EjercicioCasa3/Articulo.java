@@ -5,17 +5,34 @@ public class Articulo {
     private int tamanio;
     private int stock;
     private String nombre;
-    private Descripcion descripcion;
+    private String descripcion;
+    private Catalogo catalogo;
 
     public Articulo(){
 
+    }
+
+    public Articulo(int idArticulo, int tamanio, int stock, String nombre, String descripcion){
+        setIdArticulo(idArticulo);
+        setTamanio(tamanio);
+        setStock(stock);
+        setNombre(nombre);
+        setDescripcion(descripcion);
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 
     public int getIdArticulo() {
         return idArticulo;
     }
 
-    public void setIdArticulo(int idArticulo) {
+    private void setIdArticulo(int idArticulo) {
         this.idArticulo = idArticulo;
     }
 
@@ -50,8 +67,7 @@ public class Articulo {
         salida += "Tamanio: "+getTamanio()+"\n";
         salida += "Stock: "+getStock()+"\n";
         salida += "Nombre: "+getNombre()+"\n";
-
-        salida += descripcion.toString();
+        salida += "Descripcion: "+getDescripcion()+"\n";
         return salida;
     }
 }

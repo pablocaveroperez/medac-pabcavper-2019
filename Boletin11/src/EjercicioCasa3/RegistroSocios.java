@@ -1,7 +1,7 @@
 package EjercicioCasa3;
 
 public class RegistroSocios {
-        private Socio socios[];
+        private Socio[] socios;
         private int iContClientes;
 
         public RegistroSocios(int numClientes) {
