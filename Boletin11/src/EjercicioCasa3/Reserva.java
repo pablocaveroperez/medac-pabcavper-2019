@@ -6,7 +6,9 @@ public class Reserva {
     private String hora;
 
     public Reserva(int idReserva, String fecha, String hora){
-
+        setIdReserva(idReserva);
+        setFecha(fecha);
+        setHora(hora);
     }
 
     public void introducirDatos(Socio s1, Instalacion i1){
@@ -37,7 +39,7 @@ public class Reserva {
         return hora;
     }
 
-    public void setIdReserva(int idReserva) {
+    private void setIdReserva(int idReserva) {
         this.idReserva = idReserva;
     }
 }
