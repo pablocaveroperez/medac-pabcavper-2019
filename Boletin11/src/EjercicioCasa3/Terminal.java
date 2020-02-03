@@ -65,6 +65,14 @@ public class Terminal {
         return resControl.searchObject(oCli);
     }
 
+    public int searchPositionAlquiler(Alquiler oCli) {
+        return alqControl.searchPosition(oCli);
+    }
+
+    public Alquiler searchAlquiler(Alquiler oCli) {
+        return alqControl.searchObject(oCli);
+    }
+
     // ###################
     // # CRUD OPERATIONS #
     // # Socio CLASS #
@@ -179,6 +187,35 @@ public class Terminal {
     // PRINT ALL SOCIOS
     public String printReserva() {
         return resControl.printAll();
+    }
+
+    // ###################
+    // # CRUD OPERATIONS #
+    // # Alquiler CLASS #
+    // ###################
+    // CREATE
+    public boolean addAlquiler(Alquiler oCli) {
+        return alqControl.add(oCli);
+    }
+
+    // READ
+    public Alquiler readAlquiler(Alquiler oCli) {
+        return alqControl.read(oCli);
+    }
+
+    // UPDATE
+    public boolean updateAlquiler(Alquiler oCli) {
+        return alqControl.update(oCli);
+    }
+
+    // DELETE
+    public boolean deleteAlquiler(Alquiler oCli) {
+        return alqControl.delete(oCli);
+    }
+
+    // PRINT ALL SOCIOS
+    public String printAlquiler() {
+        return alqControl.printAll();
     }
 
 }
