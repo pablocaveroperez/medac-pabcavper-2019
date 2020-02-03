@@ -14,14 +14,17 @@ public class Reserva {
     }
 
     public void introducirDatos(Socio s1, Instalacion i1){
-
+        setSosio(s1);
+        setInstalasion(i1);
     }
 
     public String imprimirRecibo(){
         String salida = "";
-        salida += "idReserva: "+ getIdReserva()+"\n";
+        salida += "\nidReserva: "+ getIdReserva()+"\n";
         salida += "Fecha: " + getFecha()+"\n";
-        salida +=
+        salida += "Hora: " + getHora()+"\n";
+        salida += "idSosio: " + getSosio().getNumeroSocio()+"\n";
+        salida += "idInstalacion: " + getInstalasion().getIdInstalacion()+"\n";
         return salida;
     }
 
