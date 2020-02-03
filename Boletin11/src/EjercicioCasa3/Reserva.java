@@ -4,6 +4,8 @@ public class Reserva {
     private int idReserva;
     private String fecha;
     private String hora;
+    private Socio sosio;
+    private Instalacion instalasion;
 
     public Reserva(int idReserva, String fecha, String hora){
         setIdReserva(idReserva);
@@ -16,11 +18,31 @@ public class Reserva {
     }
 
     public String imprimirRecibo(){
-
+        String salida = "";
+        salida += "idReserva: "+ getIdReserva()+"\n";
+        salida += "Fecha: " + getFecha()+"\n";
+        salida +=
+        return salida;
     }
 
     public int getIdReserva() {
         return idReserva;
+    }
+
+    public void setInstalasion(Instalacion instalasion) {
+        this.instalasion = instalasion;
+    }
+
+    public Instalacion getInstalasion() {
+        return instalasion;
+    }
+
+    public void setSosio(Socio sosio) {
+        this.sosio = sosio;
+    }
+
+    public Socio getSosio() {
+        return sosio;
     }
 
     public void setFecha(String fecha) {
