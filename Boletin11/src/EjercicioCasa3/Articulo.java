@@ -12,6 +12,10 @@ public class Articulo {
 
     }
 
+    public Articulo(int idArticulo, int tamanio, int stock, String nombre, String descripcion){
+
+    }
+
     public String getDescripcion() {
         return descripcion;
     }
