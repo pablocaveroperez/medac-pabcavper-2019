@@ -7,15 +7,17 @@ public class Terminal {
     private RegistroArticulos artControl;
     private RegistroInstalacion insControl;
     private RegistroReserva resControl;
+    private RegistroAlquiler alqControl;
 
 
 
     // Constructores
-    public Terminal(byte idTerminal, int numSocios, int numArticulos, int numInstalaciones, int numReservas) {
+    public Terminal(byte idTerminal, int numSocios, int numArticulos, int numInstalaciones, int numReservas, int numAlquileres) {
         socControl = new RegistroSocios(numSocios);
         artControl = new RegistroArticulos(numArticulos);
         insControl = new RegistroInstalacion(numInstalaciones);
         resControl = new RegistroReserva(numReservas);
+        alqControl = new RegistroAlquiler(numAlquileres);
         setIdTerminal(idTerminal);
     }
 
