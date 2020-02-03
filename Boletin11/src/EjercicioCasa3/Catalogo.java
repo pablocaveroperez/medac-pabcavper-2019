@@ -1,5 +1,7 @@
 package EjercicioCasa3;
 
+import static EjercicioCasa3.ValidaLibrary.*;
+
 public class Catalogo {
     private int autoincremento;
     private Articulo[] articulos;
@@ -25,10 +27,11 @@ public class Catalogo {
     }
 
     private static Articulo[] llenarVectorArticulo() {
-        int iTamanio;
+        int iTamanio = (int) valida("Introduce el tamanio del vector (2-100): ",0,5,1);
         Articulo[] iVector = new Articulo[iTamanio];
         for(int iContador = 0; iContador < iVector.length; iContador++) {
-            iVector[iContador] = new Articulo();
+            iVector[iContador] = new Articulo((int)valida("Introduce idArticulo: ",0,5,1),(int)valida("Introduce el tamanio del articulo: ",0,50,1),(int)valida("Introduce el stock del articulo: ",
+                    0,100,1),leer("Introduce el nombre del articulo"),leer("Introduce la descripcion del articulo: "));
         }
         return iVector;
     }
