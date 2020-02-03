@@ -18,7 +18,7 @@ public class Terminal {
     }
 
     // Métodos getters y setters
-    public void setIdTerminal(byte idTerminal) {
+    private void setIdTerminal(byte idTerminal) {
         this.idTerminal = idTerminal;
     }
 
@@ -109,6 +109,35 @@ public class Terminal {
     // PRINT ALL SOCIOS
     public String printArticulo() {
         return artControl.printAll();
+    }
+
+    // ###################
+    // # CRUD OPERATIONS #
+    // # Instalacion CLASS #
+    // ###################
+    // CREATE
+    public boolean addInstalacion(Instalacion oCli) {
+        return insControl.add(oCli);
+    }
+
+    // READ
+    public Instalacion readInstalacion(Instalacion oCli) {
+        return insControl.read(oCli);
+    }
+
+    // UPDATE
+    public boolean updateInstalacion(Instalacion oCli) {
+        return insControl.update(oCli);
+    }
+
+    // DELETE
+    public boolean deleteInstalacion(Instalacion oCli) {
+        return insControl.delete(oCli);
+    }
+
+    // PRINT ALL SOCIOS
+    public String printInstalacion() {
+        return insControl.printAll();
     }
 
 }
