@@ -23,30 +23,31 @@ public class Airbus340 implements IAeronave,IAvion {
         return bEstado;
     }
 
+    @Override
     public void aumentarAlturaDeVuelo(int aumento) {
         mensaje("Incrementando altura de vuelo en " + aumento + " pies");
         variarAlturaDeVuelo(obtenerAlturaDeVuelo() + aumento);
     }
 
-
+    @Override
     public void disminuirAlturaDeVuelo(int descenso) {
         mensaje("Disminuyendo la altura de vuelo en " + descenso + " pies");
         variarAlturaDeVuelo(obtenerAlturaDeVuelo() - descenso);
     }
 
-
+    @Override
     public int obtenerAlturaDeVuelo() {
         return altura;
     }
 
-
+    @Override
     public void variarAlturaDeVuelo(int altura) {
         this.altura = altura;
         mensaje("Altura de vuelo establecida en " + obtenerAlturaDeVuelo() +
                 " pies");
     }
 
-
+    @Override
     public void despegar() {
         mensaje("Procediendo a realizar la maniobra de despegue");
         aumentarAlturaDeVuelo(150);
@@ -56,7 +57,7 @@ public class Airbus340 implements IAeronave,IAvion {
         setbEstado(VOLANDO);
     }
 
-
+    @Override
     public void aterrizar() {
         mensaje("Procediendo a realizar la maniobra de aterrizaje");
         variarAlturaDeVuelo(200);
@@ -66,12 +67,12 @@ public class Airbus340 implements IAeronave,IAvion {
         setbEstado(TIERRA);
     }
 
-
+    @Override
     public String obtenerIdentificacion() {
         return id;
     }
 
-
+    @Override
     public void establecerIdentificacion(String identificacion) {
         mensaje("Cambio de numero de vuelo a" + identificacion);
         id = identificacion;
@@ -93,13 +94,13 @@ public class Airbus340 implements IAeronave,IAvion {
                 obtenerIdentificacion() + ":" + informacion);
     }
 
-
+    @Override
     public void abrirTrenDeAterrizaje() {
         trenAbierto = true;
         mensaje("Tren de aterrizaje abierto");
     }
 
-
+    @Override
     public void cerrarTrenDeAterrizaje() {
         trenAbierto = false;
         mensaje("Tren de aterrizaje cerrado");

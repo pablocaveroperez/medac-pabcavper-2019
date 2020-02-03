@@ -44,6 +44,7 @@ public class Satelite extends Telefono implements ITelefono {
         return salida;
     }
 
+    @Override
     public String imprimir(){
         String salida = "";
         salida += "SATELITE: \n"+super.imprimir();

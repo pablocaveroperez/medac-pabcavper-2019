@@ -34,7 +34,7 @@ public class mainTarjeta {
         simulaRetiradaCajero(tc);
         simulaRetiradaCajero(t);
 
-        ITarjetaMonedero tm2 = t;
+        Tarjeta tm2 = t;
         System.out.println(tm2.getDNITitular());
         System.out.println(tm2.getSaldo());
 

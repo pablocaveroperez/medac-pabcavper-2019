@@ -6,4 +6,10 @@ public interface IBombilla {
     public void apagar();
 
     public void cambiar();
+
+    public boolean isBolEncendida();
+
+    public void setBolEncendida(boolean bolEncendida);
+
+    public String toString();
 }

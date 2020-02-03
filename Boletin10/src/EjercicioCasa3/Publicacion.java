@@ -73,6 +73,7 @@ public class Publicacion implements IPublicacion, IPrestable, IConsultable {
             this.estaPrestado = bPrestado;
     }
 
+    @Override
     public void setEsConsultado(boolean esConsultado) {
         if (!(estaPrestado()))
             this.esConsultado = esConsultado;
@@ -108,7 +109,7 @@ public class Publicacion implements IPublicacion, IPrestable, IConsultable {
         return esConsultado;
     }
 
-    public String imprimir(){
+    protected String imprimir(){
         String salida = "";
         salida += "Codigo: "+getCodigo()+"\n";
         salida += "Autor: "+getAutor()+"\n";
