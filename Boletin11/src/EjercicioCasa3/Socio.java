@@ -10,7 +10,7 @@ public class Socio implements IComparable {
     private String direccion;
 
     public Socio(){
-
+        introducirDatos();
     }
 
     @Override
@@ -44,7 +44,12 @@ public class Socio implements IComparable {
 
     @Override
     public boolean equals(Socio oSocio) {
-        return this.numeroSocio == oSocio.numeroSocio;
+        boolean bIgual = false;
+        Socio otro = (Socio) oSocio;
+        if(this != null && otro != null && this.getNumeroSocio().equals(otro.getNumeroSocio())) {
+            bIgual = true;
+        }
+        return bIgual;
     }
 
     @Override
