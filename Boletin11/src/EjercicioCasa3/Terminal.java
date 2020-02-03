@@ -6,14 +6,16 @@ public class Terminal {
     private RegistroSocios socControl;
     private RegistroArticulos artControl;
     private RegistroInstalacion insControl;
+    private RegistroReserva resControl;
 
 
 
     // Constructores
-    public Terminal(byte idTerminal, int numSocios, int numArticulos, int numInstalaciones) {
+    public Terminal(byte idTerminal, int numSocios, int numArticulos, int numInstalaciones, int numReservas) {
         socControl = new RegistroSocios(numSocios);
         artControl = new RegistroArticulos(numArticulos);
         insControl = new RegistroInstalacion(numInstalaciones);
+        resControl = new RegistroReserva(numReservas);
         setIdTerminal(idTerminal);
     }
 
@@ -51,6 +53,14 @@ public class Terminal {
 
     public Instalacion searchInstalacion(Instalacion oCli) {
         return insControl.searchObject(oCli);
+    }
+
+    public int searchPositionReserva(Reserva oCli) {
+        return resControl.searchPosition(oCli);
+    }
+
+    public Reserva searchReserva(Reserva oCli) {
+        return resControl.searchObject(oCli);
     }
 
     // ###################
@@ -138,6 +148,35 @@ public class Terminal {
     // PRINT ALL SOCIOS
     public String printInstalacion() {
         return insControl.printAll();
+    }
+
+    // ###################
+    // # CRUD OPERATIONS #
+    // # Reserva CLASS #
+    // ###################
+    // CREATE
+    public boolean addReserva(Reserva oCli) {
+        return resControl.add(oCli);
+    }
+
+    // READ
+    public Reserva readReserva(Reserva oCli) {
+        return resControl.read(oCli);
+    }
+
+    // UPDATE
+    public boolean updateReserva(Reserva oCli) {
+        return resControl.update(oCli);
+    }
+
+    // DELETE
+    public boolean deleteReserva(Reserva oCli) {
+        return resControl.delete(oCli);
+    }
+
+    // PRINT ALL SOCIOS
+    public String printReserva() {
+        return resControl.printAll();
     }
 
 }
