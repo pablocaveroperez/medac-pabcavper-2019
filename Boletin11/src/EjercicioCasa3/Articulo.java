@@ -13,7 +13,11 @@ public class Articulo {
     }
 
     public Articulo(int idArticulo, int tamanio, int stock, String nombre, String descripcion){
-
+        setIdArticulo(idArticulo);
+        setTamanio(tamanio);
+        setStock(stock);
+        setNombre(nombre);
+        setDescripcion(descripcion);
     }
 
     public String getDescripcion() {
