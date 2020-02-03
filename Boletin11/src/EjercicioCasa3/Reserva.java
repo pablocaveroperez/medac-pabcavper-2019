@@ -5,7 +5,7 @@ public class Reserva {
     private String fecha;
     private String hora;
 
-    public Reserva(){
+    public Reserva(int idReserva, String fecha, String hora){
 
     }
 
@@ -13,8 +13,31 @@ public class Reserva {
 
     }
 
-    public void imprimirRecibo(){
+    public String imprimirRecibo(){
 
     }
 
+    public int getIdReserva() {
+        return idReserva;
+    }
+
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
+    }
+
+    public String getFecha() {
+        return fecha;
+    }
+
+    public void setHora(String hora) {
+        this.hora = hora;
+    }
+
+    public String getHora() {
+        return hora;
+    }
+
+    public void setIdReserva(int idReserva) {
+        this.idReserva = idReserva;
+    }
 }
