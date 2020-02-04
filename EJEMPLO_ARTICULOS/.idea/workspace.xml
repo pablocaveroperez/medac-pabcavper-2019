@@ -34,9 +34,17 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="645" y="312" key="git4idea.merge.GitPullDialog" timestamp="1580802059789">
+    <state x="490" y="115" key="CommitChangelistDialog2" timestamp="1580802142519">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="645" y="312" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1580802059789" />
+    <state x="490" y="115" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1580802142519" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1580802163764">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1580802163764" />
+    <state x="645" y="312" key="git4idea.merge.GitPullDialog" timestamp="1580802185212">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="645" y="312" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1580802185212" />
   </component>
 </project>
