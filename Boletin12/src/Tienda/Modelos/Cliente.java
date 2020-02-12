@@ -6,7 +6,11 @@ public class Cliente {
     private String sApellidos;
     private String sDni;
 
-    public Cliente(){
+    public Cliente(String sDni, String sNombre, String sApellidos, double saldo){
+
+    }
+
+    public Cliente(String sDni){
 
     }
 
