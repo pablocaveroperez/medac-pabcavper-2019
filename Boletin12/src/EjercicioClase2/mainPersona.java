@@ -1,15 +1,24 @@
 package EjercicioClase2;
 
+import static EjercicioClase1.Libreria.*;
+
 public class mainPersona {
     public static void main(String[] args) {
-        String sNombre, sApellido1, sApellido2;
+        Persona persona1 = new Persona("Antonio","Jimenez","Lopez");
 
+        short shEdad;
 
-
-        Persona persona1 = new Persona();
-
-        try {
-            persona1
+        try{
+            shEdad = (short) valida("Introduce la edad: ", 0,150,4);
+        }catch (NumberFormatException exc){
+            shEdad = -1;
+        }catch (Exception exc){
+            shEdad = -1;
+        }finally {
+            if (shEdad == -1)
+                System.out.println("Edad introducida incorrecto.");
+            else
+                System.out.println("Edad introducida correcto.");
         }
 
         if (!persona1.setbEdad((short) 152))
