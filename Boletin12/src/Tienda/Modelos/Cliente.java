@@ -14,7 +14,7 @@ public class Cliente {
     }
 
     public Cliente(String sDni){
-
+        setsDni(sDni);
     }
 
     public void setsNombre(String sNombre) {
