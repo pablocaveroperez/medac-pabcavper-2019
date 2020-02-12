@@ -2,7 +2,7 @@ package EjercicioClase2;
 
 public class mainPersona {
     public static void main(String[] args) {
-
+        String sNombre, sApellido1, sApellido2;
 
         Persona persona1 = new Persona("Antonio","Jimenez","Lopez");
         if (!persona1.setbEdad((short) 152))
