@@ -26,11 +26,11 @@ public class mainPersona {
 
 
 
-        if (!persona1.setbEdad((short) 152))
+        if (!persona1.setbEdad(shEdad))
             System.out.println("La edad introducida es incorrecta");
 
 
-        if (!persona1.setbEdad((short) 20))
+        if (!persona1.setbEdad(shEdad))
             System.out.println("La edad introducida es incorrecta");
 
 
