@@ -8,18 +8,23 @@ public class mainPersona {
 
         short shEdad;
 
-        try{
-            shEdad = (short) valida("Introduce la edad: ", 0,150,4);
-        }catch (NumberFormatException exc){
-            shEdad = -1;
-        }catch (Exception exc){
-            shEdad = -1;
-        }finally {
-            if (shEdad == -1)
-                System.out.println("Edad introducida incorrecto.");
-            else
-                System.out.println("Edad introducida correcto.");
-        }
+        do {
+            try{
+                shEdad = (short) valida("Introduce la edad: ", 0,150,4);
+            }catch (NumberFormatException exc){
+                shEdad = -1;
+            }catch (Exception exc){
+                shEdad = -1;
+            }finally {
+                if (shEdad == -1)
+                    System.out.println("Edad introducida incorrecto.");
+                else
+                    System.out.println("Edad introducida correcto.");
+            }
+        }while(shEdad == -1);
+
+
+
 
         if (!persona1.setbEdad((short) 152))
             System.out.println("La edad introducida es incorrecta");
