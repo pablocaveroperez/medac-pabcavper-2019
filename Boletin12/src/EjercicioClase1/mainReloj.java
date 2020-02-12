@@ -4,7 +4,7 @@ import static EjercicioClase1.Libreria.valida;
 
 public class mainReloj {
     public static void main(String[] args) {
-        byte bHoras = 0, bMinutos, bSegundos;
+        byte bHoras = 0, bMinutos = 0, bSegundos = 0;
 
         do {
             try {
@@ -25,18 +25,31 @@ public class mainReloj {
             try {
                 bMinutos = (byte) valida("Introduce las horas(0-24): ",0,24,3);
             }catch (NumberFormatException exc){
-                bHoras = -1;
+                bMinutos = -1;
+            }catch (Exception exc){
+                bMinutos = -1;
             }finally {
-                if (bHoras == -1){
+                if (bMinutos == -1){
                     System.out.println("La hora introducida es incorrecta.");
                 }
                 else System.out.println("La hora introducida es correcta");
             }
         }while (bMinutos == -1);
 
-        bMinutos = (byte) valida("Introduce los minutos(0-59): ",0,59,3);
-        bSegundos = (byte) valida("Introduce las segundos(0-59): ",0,59,3);
-
+        do {
+            try {
+                bSegundos = (byte) valida("Introduce las segundos(0-59): ",0,59,3);
+            }catch (NumberFormatException exc){
+                bSegundos = -1;
+            }catch (Exception exc){
+                bSegundos = -1;
+            }finally {
+                if (bSegundos == -1){
+                    System.out.println("La hora introducida es incorrecta.");
+                }
+                else System.out.println("La hora introducida es correcta");
+            }
+        }while (bSegundos == -1);
 
         Reloj reloj1 = new Reloj(bHoras,bMinutos,bSegundos);
 
