@@ -4,7 +4,14 @@ import static EjercicioClase1.Libreria.valida;
 
 public class mainReloj {
     public static void main(String[] args) {
-        byte bHoras = (byte) valida("Introduce las horas(0-24): ",0,24,3);
+
+        try {
+            byte bHoras = (byte) valida("Introduce las horas(0-24): ",0,24,3);
+        }catch (NumberFormatException exc){
+
+        }
+
+
         byte bMinutos = (byte) valida("Introduce los minutos(0-59): ",0,59,3);
         byte bSegundos = (byte) valida("Introduce las segundos(0-59): ",0,59,3);
 
