@@ -4,7 +4,14 @@ public class mainPersona {
     public static void main(String[] args) {
         String sNombre, sApellido1, sApellido2;
 
-        Persona persona1 = new Persona("Antonio","Jimenez","Lopez");
+
+
+        Persona persona1 = new Persona();
+
+        try {
+            persona1
+        }
+
         if (!persona1.setbEdad((short) 152))
             System.out.println("La edad introducida es incorrecta");
 

@@ -15,11 +15,15 @@ public class Persona {
         this.setsApellido2(sApellido2);
     }
 
+    public Persona(){
+
+    }
+
     public String getsNombre() {
         return sNombre;
     }
 
-    private void setsNombre(String sNombre) {
+    public void setsNombre(String sNombre) {
         this.sNombre = sNombre;
     }
 
@@ -27,7 +31,7 @@ public class Persona {
         return sApellido1;
     }
 
-    private void setsApellido1(String sApellido1) {
+    public void setsApellido1(String sApellido1) {
         this.sApellido1 = sApellido1;
     }
 
@@ -35,7 +39,7 @@ public class Persona {
         return sApellido2;
     }
 
-    private void setsApellido2(String sApellido2) {
+    public void setsApellido2(String sApellido2) {
         this.sApellido2 = sApellido2;
     }
 
