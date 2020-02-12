@@ -23,17 +23,6 @@ public class mainPersona {
             }
         }while(shEdad == -1);
 
-
-
-
-        if (!persona1.setbEdad(shEdad))
-            System.out.println("La edad introducida es incorrecta");
-
-
-        if (!persona1.setbEdad(shEdad))
-            System.out.println("La edad introducida es incorrecta");
-
-
         float fEstatura = 0;
 
         do {
@@ -47,7 +36,7 @@ public class mainPersona {
                 if (fEstatura == -1)
                     System.out.println("La estatura introducida es incorrecta");
                 else
-                    System.out.println("La estatura introducida es incorrecta");
+                    System.out.println("La estatura introducida es correcta");
             }
         }while(fEstatura == -1);
 
@@ -62,17 +51,11 @@ public class mainPersona {
                 fKilos = -1;
             }finally {
                 if (fKilos == -1)
-                    System.out.println("Edad introducida incorrecto.");
+                    System.out.println("La masa introducida es incorrecta");
                 else
-                    System.out.println("Edad introducida correcto.");
+                    System.out.println("La masa introducida es correcta");
             }
         }while(fKilos == -1);
-
-        if (!persona1.setfKilos(fKilos))
-            System.out.println("La masa introducida es incorrecta");
-
-        if (!persona1.setfKilos(fKilos))
-            System.out.println("La masa introducida es incorrecta");
 
         byte bEstado = 0;
 
@@ -85,42 +68,13 @@ public class mainPersona {
                 bEstado = -1;
             }finally {
                 if (bEstado == -1)
-                    System.out.println("Edad introducida incorrecto.");
+                    System.out.println("El estado introducido es incorrecto");
                 else
-                    System.out.println("Edad introducida correcto.");
+                    System.out.println("El estado introducido es correcto");
             }
         }while(bEstado == -1);
 
-        if (!persona1.setbEstado(bEstado))
-            System.out.println("El estado introducido es incorrecto");
-
-        if (!persona1.setbEstado(bEstado))
-            System.out.println("El estado introducido es incorrecto");
-
         System.out.println(persona1);
-
-        if (!persona1.setbEstado((byte)5))
-            System.out.println("El estado introducido es incorrecto");
-
-        System.out.println(persona1.estadoTexto());
-
-        if (!persona1.setbEstado((byte)2))
-            System.out.println("El estado introducido es incorrecto");
-
-        System.out.println(persona1.estadoTexto());
-
-        if (!persona1.setbEstado((byte)3))
-            System.out.println("El estado introducido es incorrecto");
-
-        System.out.println(persona1.estadoTexto());
-
-        if (!persona1.setbEstado((byte)4))
-            System.out.println("El estado introducido es incorrecto");
-
-        System.out.println(persona1.estadoTexto());
-
-        if (!persona1.setbEstado((byte)5))
-            System.out.println("El estado introducido es incorrecto");
 
         System.out.println(persona1.estadoTexto());
 
