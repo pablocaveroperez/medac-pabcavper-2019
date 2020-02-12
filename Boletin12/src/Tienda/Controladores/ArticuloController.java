@@ -1,5 +1,5 @@
 package Tienda.Controladores;
 
-public class ArticuloControl {
+public class ArticuloController {
 
 }
