@@ -11,6 +11,8 @@ public class mainReloj {
                 bHoras = (byte) valida("Introduce las horas(0-24): ",0,24,3);
             }catch (NumberFormatException exc){
                 bHoras = -1;
+            }catch (Exception exc){
+                bHoras = -1;
             }finally {
                 if (bHoras == -1){
                     System.out.println("La hora introducida es incorrecta.");
@@ -19,7 +21,18 @@ public class mainReloj {
             }
         }while (bHoras == -1);
 
-
+        do {
+            try {
+                bMinutos = (byte) valida("Introduce las horas(0-24): ",0,24,3);
+            }catch (NumberFormatException exc){
+                bHoras = -1;
+            }finally {
+                if (bHoras == -1){
+                    System.out.println("La hora introducida es incorrecta.");
+                }
+                else System.out.println("La hora introducida es correcta");
+            }
+        }while (bMinutos == -1);
 
         bMinutos = (byte) valida("Introduce los minutos(0-59): ",0,59,3);
         bSegundos = (byte) valida("Introduce las segundos(0-59): ",0,59,3);
