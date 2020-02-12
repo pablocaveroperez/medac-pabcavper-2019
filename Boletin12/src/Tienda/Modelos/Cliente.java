@@ -25,4 +25,20 @@ public class Cliente {
     public void setsDni(String sDni) {
         this.sDni = sDni;
     }
+
+    public String getsNombre() {
+        return sNombre;
+    }
+
+    public double getSaldo() {
+        return saldo;
+    }
+
+    public String getsApellidos() {
+        return sApellidos;
+    }
+
+    public String getsDni() {
+        return sDni;
+    }
 }
