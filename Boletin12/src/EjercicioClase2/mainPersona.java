@@ -38,30 +38,24 @@ public class mainPersona {
 
         do {
             try{
-                fEstatura = (short) valida("Introduce la edad: ", 0,150,4);
+                fEstatura = (float) valida("Introduce la edad: ", 0,3,2);
             }catch (NumberFormatException exc){
                 fEstatura = -1;
             }catch (Exception exc){
                 fEstatura = -1;
             }finally {
                 if (fEstatura == -1)
-                    System.out.println("Edad introducida incorrecto.");
+                    System.out.println("La estatura introducida es incorrecta");
                 else
-                    System.out.println("Edad introducida correcto.");
+                    System.out.println("La estatura introducida es incorrecta");
             }
         }while(fEstatura == -1);
-
-        if (!persona1.setfEstatura(fEstatura))
-            System.out.println("La estatura introducida es incorrecta");
-
-        if (!persona1.setfEstatura(fEstatura))
-            System.out.println("La estatura introducida es incorrecta");
 
         float fKilos = 0;
 
         do {
             try{
-                fKilos = (short) valida("Introduce la edad: ", 0,150,4);
+                fKilos = (float) valida("Introduce la edad: ", 0,300,2);
             }catch (NumberFormatException exc){
                 fKilos = -1;
             }catch (Exception exc){
@@ -74,16 +68,33 @@ public class mainPersona {
             }
         }while(fKilos == -1);
 
-        if (!persona1.setfKilos(75.5f))
+        if (!persona1.setfKilos(fKilos))
             System.out.println("La masa introducida es incorrecta");
 
-        if (!persona1.setfKilos(324.2f))
+        if (!persona1.setfKilos(fKilos))
             System.out.println("La masa introducida es incorrecta");
 
-        if (!persona1.setbEstado((byte) 1))
+        byte bEstado = 0;
+
+        do {
+            try{
+                bEstado = (byte) valida("Introduce la edad: ", 1,5,3);
+            }catch (NumberFormatException exc){
+                bEstado = -1;
+            }catch (Exception exc){
+                bEstado = -1;
+            }finally {
+                if (bEstado == -1)
+                    System.out.println("Edad introducida incorrecto.");
+                else
+                    System.out.println("Edad introducida correcto.");
+            }
+        }while(bEstado == -1);
+
+        if (!persona1.setbEstado(bEstado))
             System.out.println("El estado introducido es incorrecto");
 
-        if (!persona1.setbEstado((byte)3))
+        if (!persona1.setbEstado(bEstado))
             System.out.println("El estado introducido es incorrecto");
 
         System.out.println(persona1);
