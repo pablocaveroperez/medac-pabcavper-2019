@@ -1,5 +1,7 @@
 package Tienda.Modelos;
 
+import java.util.Objects;
+
 public class Articulo implements IArticulo {
     private int id;
     private String nombre;
@@ -47,5 +49,20 @@ public class Articulo implements IArticulo {
             bExito = true;
         }
         return bExito;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
+        Articulo articulo = (Articulo) o;
+        return id == articulo.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 }
