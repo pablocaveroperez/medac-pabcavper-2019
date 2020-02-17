@@ -7,7 +7,6 @@ import controlador.Terminal;
 import modelo.Instalacion;
 import modelo.Reserva;
 import modelo.Socio;
-import medac.validaciones.LibFrontend;
 import vista.SocioView;
 import vista.InstalacionView;
 
