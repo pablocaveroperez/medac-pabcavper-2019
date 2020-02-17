@@ -30,7 +30,16 @@ public class ArticuloController implements ICrud<Articulo> {
 
     @Override
     public boolean remove(Articulo oObject) {
-        return false;
+        boolean bExito = false;
+        int iPosicion = search(oObject);
+        if (iPosicion != -1){
+            for (int i = iPosicion; i < contadorArticulos; i++)
+                vArticulos[i-1] = vArticulos[i];
+            vArticulos[contadorArticulos] = null;
+            contadorArticulos--;
+            bExito = true;
+        }
+        return bExito;
     }
 
     @Override
