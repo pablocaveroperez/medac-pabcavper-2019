@@ -1,5 +1,7 @@
 package Tienda.Modelos;
 
+import java.util.Objects;
+
 public class Cliente implements ICliente {
     private int idCliente;
     private String sNombre;
@@ -75,5 +77,31 @@ public class Cliente implements ICliente {
     @Override
     public String getsDni() {
         return sDni;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
+        Cliente cliente = (Cliente) o;
+        return idCliente == cliente.idCliente;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(idCliente);
+    }
+
+    @Override
+    public String toString() {
+        String salida = "";
+        salida += "**************************";
+        salida += "\nID CLIENTE: "+ getIdCliente();
+        salida += "\nNOMBRE: "+ getsNombre();
+        salida += "\nAPELLIDOS: "+ getsApellidos();
+        salida += "\nID CLIENTE: "+ getIdCliente();
+        return salida;
     }
 }
