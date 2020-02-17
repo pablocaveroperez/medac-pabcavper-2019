@@ -7,7 +7,10 @@ public class ArticuloController implements ICrud<Articulo> {
     private byte contadorArticulos;
     private final byte MAXARTICULOS = 60;
 
-    public
+    public ArticuloController(){
+        vArticulos = new Articulo[MAXARTICULOS];
+        contadorArticulos = 0;
+    }
 
     @Override
     public Articulo[] getaVector() {
