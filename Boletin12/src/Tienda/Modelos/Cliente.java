@@ -9,15 +9,16 @@ public class Cliente implements ICliente {
     private String sApellidos;
     private String sDni;
 
-    public Cliente(String sDni, String sNombre, String sApellidos, double saldo){
+    public Cliente(String sDni, String sNombre, String sApellidos, double saldo, int idCliente){
         setSaldo(saldo);
         setsApellidos(sApellidos);
         setsNombre(sNombre);
         setsDni(sDni);
+        setIdCliente(idCliente);
     }
 
-    public Cliente(String sDni){
-        setsDni(sDni);
+    public Cliente(int idCliente){
+        setIdCliente(idCliente);
     }
 
     @Override
@@ -101,7 +102,8 @@ public class Cliente implements ICliente {
         salida += "\nID CLIENTE: "+ getIdCliente();
         salida += "\nNOMBRE: "+ getsNombre();
         salida += "\nAPELLIDOS: "+ getsApellidos();
-        salida += "\nID CLIENTE: "+ getIdCliente();
+        salida += "\nSALDO: "+ getSaldo();
+        salida += "\nDNI: "+ getsDni();
         return salida;
     }
 }
