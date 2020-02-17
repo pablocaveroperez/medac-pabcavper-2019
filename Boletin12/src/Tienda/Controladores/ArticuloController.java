@@ -7,6 +7,8 @@ public class ArticuloController implements ICrud<Articulo> {
     private byte contadorArticulos;
     private final byte MAXARTICULOS = 60;
 
+    public
+
     @Override
     public Articulo[] getaVector() {
         return vArticulos;
@@ -15,6 +17,18 @@ public class ArticuloController implements ICrud<Articulo> {
     @Override
     public byte getbContadorArray() {
         return contadorArticulos;
+    }
+
+    @Override
+    public int search(Articulo oObject) {
+        int iPosicion = -1;
+        int iContador = 0;
+        while(iPosicion == -1 && iContador < contadorArticulos){
+            if (oObject.equals(vArticulos[iContador]))
+                iPosicion = iContador;
+            iContador++;
+        }
+        return iPosicion;
     }
 
     @Override
@@ -40,17 +54,5 @@ public class ArticuloController implements ICrud<Articulo> {
             bExito = true;
         }
         return bExito;
-    }
-
-    @Override
-    public int search(Articulo oObject) {
-        int iPosicion = -1;
-        int iContador = 0;
-        while(iPosicion == -1 && iContador < contadorArticulos){
-            if (oObject.equals(vArticulos[iContador]))
-                iPosicion = iContador;
-            iContador++;
-        }
-        return iPosicion;
     }
 }
