@@ -1,6 +1,7 @@
 package Tienda.Modelos;
 
-public class Cliente {
+public class Cliente implements ICliente {
+    private int idCliente;
     private String sNombre;
     private double saldo;
     private String sApellidos;
@@ -15,6 +16,19 @@ public class Cliente {
 
     public Cliente(String sDni){
         setsDni(sDni);
+    }
+
+    public int getIdCliente() {
+        return idCliente;
+    }
+
+    private boolean setIdCliente(int idCliente) {
+        boolean bExito = false;
+        if (idCliente > 0){
+            this.idCliente = idCliente;
+            bExito = true;
+        }
+        return bExito;
     }
 
     public void setsNombre(String sNombre) {
