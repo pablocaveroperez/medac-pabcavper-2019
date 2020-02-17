@@ -20,7 +20,7 @@ public class ArticuloController implements ICrud<Articulo> {
     @Override
     public boolean add(Articulo oObject) {
         boolean bExito = false;
-        if (oObject.getId() != null && contadorArticulos < MAXARTICULOS && search(oObject) == -1){
+        if (oObject.getId() != 0 && contadorArticulos < MAXARTICULOS && search(oObject) == -1){
             vArticulos[contadorArticulos] = oObject;
             contadorArticulos++;
             bExito = true;
