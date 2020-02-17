@@ -65,4 +65,14 @@ public class Articulo implements IArticulo {
     public int hashCode() {
         return Objects.hash(id);
     }
+
+    @Override
+    public String toString() {
+        String salida = "";
+        salida += "*************************";
+        salida += "\nID ARTICULO: "+ getId();
+        salida += "\nNOMBRE: "+ getNombre();
+        salida += "\nPRECIO: "+ getPrecio();
+        return salida;
+    }
 }
