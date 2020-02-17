@@ -2,15 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="99d860ae-45cb-466a-a9b5-2358a49736a5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../Boletin12/Boletin12.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Boletin10/out/production/Boletin10/EjercicioCasa3/Disco.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Boletin10/out/production/Boletin10/EjercicioCasa3/Disco.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Boletin10/out/production/Boletin10/EjercicioCasa3/Libro.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Boletin10/out/production/Boletin10/EjercicioCasa3/Libro.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Boletin10/out/production/Boletin10/EjercicioCasa3/Publicacion.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Boletin10/out/production/Boletin10/EjercicioCasa3/Publicacion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Boletin10/out/production/Boletin10/EjercicioCasa3/Revista.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Boletin10/out/production/Boletin10/EjercicioCasa3/Revista.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Boletin10/out/production/Boletin10/EjercicioCasa3/mainPubicacion.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Boletin10/out/production/Boletin10/EjercicioCasa3/mainPubicacion.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/LibFrontend.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CLUB_DEPORTIVO.iml" beforeDir="false" afterPath="$PROJECT_DIR$/CLUB_DEPORTIVO.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/vista/CLUB_DEPORTIVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vista/CLUB_DEPORTIVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EJEMPLO_ARTICULOS/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../EJEMPLO_ARTICULOS/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,7 +25,10 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/LibFrontend.jar!/medac/validaciones" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -50,7 +48,21 @@
       <option name="project" value="LOCAL" />
       <updated>1581941935088</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Club Deportivo">
+      <created>1581942000854</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1581942000854</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Club Deportivo">
+      <created>1581942139927</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1581942139927</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -62,13 +74,29 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="808" y="408" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581941888240" />
-    <state x="607" y="114" key="CommitChangelistDialog2" timestamp="1581942000120">
+    <state x="607" y="114" key="CommitChangelistDialog2" timestamp="1581942139208">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="607" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1581942000120" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1581942016647">
+    <state x="607" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1581942139208" />
+    <state x="714" y="235" key="DetectedRootsChooserDialog" timestamp="1581942341314">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1581942016647" />
+    <state x="714" y="235" key="DetectedRootsChooserDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581942341314" />
+    <state x="666" y="261" key="FileChooserDialogImpl" timestamp="1581942339346">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="666" y="261" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1581942339346" />
+    <state x="440" y="94" width="1157" height="852" key="SettingsEditor" timestamp="1581942357016">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="440" y="94" width="1157" height="852" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1581942357016" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1581942144504">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1581942144504" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1581942392164">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1581942392164" />
   </component>
 </project>
