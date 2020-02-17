@@ -15,7 +15,7 @@ import static medac.validaciones.LibFrontend.valida;
 public class CLUB_DEPORTIVO {
 
 	public static void main(String[] args) {
-		valida();
+
 		Terminal t = new Terminal();
 		// Alta de socio
 		System.out.println(SocioView.altaSocio(t));
