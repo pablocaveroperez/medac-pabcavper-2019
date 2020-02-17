@@ -2,16 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9ab498ba-98c8-48e8-90b4-f4554ec44152" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../CLUB_DEPORTIVO/.idea/libraries/LibFrontend.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controlador/ICrud.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../CLUB_DEPORTIVO/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../CLUB_DEPORTIVO/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CLUB_DEPORTIVO/CLUB_DEPORTIVO.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../CLUB_DEPORTIVO/CLUB_DEPORTIVO.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CLUB_DEPORTIVO/src/vista/CLUB_DEPORTIVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CLUB_DEPORTIVO/src/vista/CLUB_DEPORTIVO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controlador/ArticuloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controlador/ArticuloController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controlador/ClienteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controlador/ClienteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controlador/EmpleadoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controlador/EmpleadoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controlador/InterfaceController.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -49,14 +58,30 @@
       <option name="project" value="LOCAL" />
       <updated>1580763246813</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="club deportivo">
+      <created>1581942531265</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1581942531265</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="workspace.xml" />
-    <option name="LAST_COMMIT_MESSAGE" value="workspace.xml" />
+    <MESSAGE value="club deportivo" />
+    <option name="LAST_COMMIT_MESSAGE" value="club deportivo" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="1245" y="229" key="#com.intellij.ide.util.MemberChooser" timestamp="1581942621540">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1245" y="229" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1581942621540" />
+    <state x="967" y="114" key="CommitChangelistDialog2" timestamp="1581942530593">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="967" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1581942530593" />
     <state x="1154" y="235" key="DetectedRootsChooserDialog" timestamp="1581942485027">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

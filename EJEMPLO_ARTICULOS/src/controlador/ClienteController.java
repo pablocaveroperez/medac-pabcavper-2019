@@ -1,7 +1,7 @@
 package controlador;
 import modelo.Cliente;
 
-public class ClienteController implements InterfaceController<Cliente> {
+public class ClienteController implements ICrud<Cliente> {
 	
 	private Cliente aClientes[];
 	private int iContClientes;

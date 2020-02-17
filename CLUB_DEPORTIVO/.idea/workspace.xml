@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="99d860ae-45cb-466a-a9b5-2358a49736a5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/LibFrontend.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../EJEMPLO_ARTICULOS/src/controlador/ICrud.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CLUB_DEPORTIVO.iml" beforeDir="false" afterPath="$PROJECT_DIR$/CLUB_DEPORTIVO.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vista/CLUB_DEPORTIVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vista/CLUB_DEPORTIVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EJEMPLO_ARTICULOS/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../EJEMPLO_ARTICULOS/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EJEMPLO_ARTICULOS/src/controlador/InterfaceController.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +62,14 @@
       <option name="project" value="LOCAL" />
       <updated>1581942139927</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Club Deportivo">
+      <created>1581942548040</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1581942548040</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -74,10 +81,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="808" y="408" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581941888240" />
-    <state x="607" y="114" key="CommitChangelistDialog2" timestamp="1581942139208">
+    <state x="607" y="114" key="CommitChangelistDialog2" timestamp="1581942547213">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="607" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1581942139208" />
+    <state x="607" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1581942547213" />
     <state x="714" y="235" key="DetectedRootsChooserDialog" timestamp="1581942341314">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -90,10 +97,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="440" y="94" width="1157" height="852" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1581942357016" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1581942144504">
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1581942554103">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1581942144504" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1581942554103" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1581942392164">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -1,7 +1,7 @@
 package controlador;
 import modelo.Empleado;
 
-public class EmpleadoController implements InterfaceController<Empleado> {
+public class EmpleadoController implements ICrud<Empleado> {
 	
 	private Empleado aEmpleados[];
 	private int iContEmpleados;

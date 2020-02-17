@@ -1,7 +1,7 @@
 package controlador;
 import modelo.Articulo;
 
-public class ArticuloController implements InterfaceController<Articulo> {
+public class ArticuloController implements ICrud<Articulo> {
 
 	private Articulo aArticulos[];
 	private int iContArticulos;
@@ -61,6 +61,16 @@ public class ArticuloController implements InterfaceController<Articulo> {
 	}
 
 	@Override
+	public Articulo[] getaVector() {
+		return new Articulo[0];
+	}
+
+	@Override
+	public byte getbContadorArray() {
+		return 0;
+	}
+
+	@Override
 	public boolean add(Articulo oObjeto) {
 		boolean bExito = false;
 		if (iContArticulos < aArticulos.length && searchPosition(oObjeto) == -1) {
@@ -69,6 +79,24 @@ public class ArticuloController implements InterfaceController<Articulo> {
 			bExito = true;
 		}
 		return bExito;
+	}
+
+	@Override
+	public boolean remove(Articulo oObject) {
+		return false;
+	}
+
+	@Override
+	public int search(Articulo oObject) {
+		Articulo oDevolver = null;
+		int iContador = 0;
+		while (oDevolver == null && iContador < aArticulos.length) {
+			if (oObjeto.equals(aArticulos[iContador])) {
+				oDevolver = aArticulos[iContador];
+			}
+			iContador++;
+		}
+		return oDevolver;
 	}
 
 	@Override
