@@ -18,6 +18,7 @@ public class Cliente implements ICliente {
         setsDni(sDni);
     }
 
+    @Override
     public int getIdCliente() {
         return idCliente;
     }
@@ -31,10 +32,12 @@ public class Cliente implements ICliente {
         return bExito;
     }
 
+    @Override
     public void setsNombre(String sNombre) {
         this.sNombre = sNombre;
     }
 
+    @Override
     public boolean setSaldo(double saldo) {
         boolean bExito = false;
         if (saldo > 0 && saldo < 2000){
@@ -44,26 +47,32 @@ public class Cliente implements ICliente {
         return bExito;
     }
 
+    @Override
     public void setsApellidos(String sApellidos) {
         this.sApellidos = sApellidos;
     }
 
+    @Override
     public void setsDni(String sDni) {
         this.sDni = sDni;
     }
 
+    @Override
     public String getsNombre() {
         return sNombre;
     }
 
+    @Override
     public double getSaldo() {
         return saldo;
     }
 
+    @Override
     public String getsApellidos() {
         return sApellidos;
     }
 
+    @Override
     public String getsDni() {
         return sDni;
     }
