@@ -1,18 +1,21 @@
 package Tienda.Modelos;
 
-public class Articulo {
+public class Articulo implements IArticulo {
     private int id;
     private String nombre;
     private double precio;
 
+    @Override
     public int getId() {
         return id;
     }
 
+    @Override
     public String getNombre() {
         return nombre;
     }
 
+    @Override
     public double getPrecio() {
         return precio;
     }
@@ -26,6 +29,7 @@ public class Articulo {
         return bExito;
     }
 
+    @Override
     public boolean setNombre(String nombre) {
         boolean bExito = false;
         if (nombre.length() < 5){
@@ -35,6 +39,7 @@ public class Articulo {
         return bExito;
     }
 
+    @Override
     public boolean setPrecio(double precio) {
         boolean bExito = false;
         if (precio > 0 && precio < 500){
