@@ -21,5 +21,6 @@ public class ArticuloView {
             sResultado = "El articulo no se ha podido registrar correctamente";
         else
             sResultado = "El articulo se ha podido registrar correctamente";
+        return sResultado;
     }
 }
