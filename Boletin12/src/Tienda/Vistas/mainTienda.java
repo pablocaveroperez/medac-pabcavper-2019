@@ -8,5 +8,13 @@ public class mainTienda {
         int iPosicion = 3;
         ClienteController clienteController = new ClienteController();
 
+        clienteController.add(new Cliente(1));
+        clienteController.add(new Cliente(2));
+        clienteController.add(new Cliente(3));
+        clienteController.add(new Cliente(4));
+        clienteController.add(new Cliente(5));
+
+        clienteController.remove(new Cliente(3));
+
     }
 }

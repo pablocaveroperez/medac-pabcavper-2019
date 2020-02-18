@@ -51,7 +51,7 @@ public class ArticuloController implements ICrud<Articulo> {
         int iPosicion = search(oObject);
         if (iPosicion != -1){
             for (int i = iPosicion; i < contadorArticulos; i++)
-                vArticulos[i-1] = vArticulos[i];
+                vArticulos[i] = vArticulos[i+1];
             vArticulos[contadorArticulos] = null;
             contadorArticulos--;
             bExito = true;
