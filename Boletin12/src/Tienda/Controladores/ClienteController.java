@@ -18,8 +18,27 @@ public class ClienteController implements ICrud<Cliente> {
     }
 
     @Override
+    public int search(Cliente oObject) {
+        int iPosicion = -1;
+        int iContador = 0;
+
+        while(iPosicion == -1 && iContador < contadorClientes){
+            if (oObject.equals(vClientes[iContador]))
+                iPosicion = iContador;
+            iContador++;
+        }
+        return iPosicion;
+    }
+
+    @Override
     public boolean add(Cliente oObject) {
-        return false;
+        boolean bExito = false;
+        if (oObject.getIdCliente() != 0 && oObject.getsDni() != null && contadorClientes < MAXCLIENTES && search(oObject) == -1){
+            vClientes[contadorClientes] = oObject;
+            contadorClientes++;
+            bExito = true;
+        }
+        return bExito;
     }
 
     @Override
@@ -27,8 +46,5 @@ public class ClienteController implements ICrud<Cliente> {
         return false;
     }
 
-    @Override
-    public int search(Cliente oObject) {
-        return 0;
-    }
+
 }
