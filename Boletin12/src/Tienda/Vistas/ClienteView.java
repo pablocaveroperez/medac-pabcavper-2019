@@ -13,6 +13,7 @@ public class ClienteView {
         int idCliente;
         String sResultado;
 
+
         sDni = LibFrontend.leer("Introduce el DNI del socio: ");
         sNombre = LibFrontend.leer("Introduce el nombre del socio: ");
         sApellidos = LibFrontend.leer("Introduce los apellidos del socio: ");
