@@ -3,7 +3,8 @@ package Tienda.Vistas;
 import Tienda.Controladores.Tienda;
 import Tienda.Modelos.Articulo;
 
-import static medac.validaciones.LibFrontend.*;
+import static Libreria.LibreriaValida.*;
+
 
 public class ArticuloView {
     public static String altaArticulo(Tienda tienda){
