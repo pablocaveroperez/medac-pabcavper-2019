@@ -5,7 +5,7 @@ import Tienda.Modelos.Cliente;
 import medac.validaciones.LibFrontend;
 
 public class ClienteView {
-    public static String altaSocio(Tienda tienda){
+    public static String altaCliente(Tienda tienda){
         String sDni;
         String sNombre;
         float saldo;

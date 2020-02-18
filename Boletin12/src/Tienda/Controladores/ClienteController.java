@@ -73,8 +73,4 @@ public class ClienteController implements ICrud<Cliente> {
         }
         return bExito;
     }
-
-
-
-
 }
