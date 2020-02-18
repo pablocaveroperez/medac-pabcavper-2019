@@ -5,7 +5,7 @@ public interface ICliente {
 
     void setsNombre(String sNombre);
 
-    boolean setSaldo(double saldo);
+    boolean setSaldo(float saldo);
 
     void setsApellidos(String sApellidos);
 
@@ -13,7 +13,7 @@ public interface ICliente {
 
     String getsNombre();
 
-    double getSaldo();
+    float getSaldo();
 
     String getsApellidos();
 

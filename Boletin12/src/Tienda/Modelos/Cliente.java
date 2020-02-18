@@ -5,11 +5,11 @@ import java.util.Objects;
 public class Cliente implements ICliente {
     private int idCliente;
     private String sNombre;
-    private double saldo;
+    private float saldo;
     private String sApellidos;
     private String sDni;
 
-    public Cliente(String sDni, String sNombre, String sApellidos, double saldo, int idCliente){
+    public Cliente(String sDni, String sNombre, String sApellidos, float saldo, int idCliente){
         setSaldo(saldo);
         setsApellidos(sApellidos);
         setsNombre(sNombre);
@@ -41,7 +41,7 @@ public class Cliente implements ICliente {
     }
 
     @Override
-    public boolean setSaldo(double saldo) {
+    public boolean setSaldo(float saldo) {
         boolean bExito = false;
         if (saldo > 0 && saldo < 2000){
             this.saldo = saldo;
@@ -66,7 +66,7 @@ public class Cliente implements ICliente {
     }
 
     @Override
-    public double getSaldo() {
+    public float getSaldo() {
         return saldo;
     }
 
