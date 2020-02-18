@@ -20,17 +20,21 @@ public class ClienteView {
         sNombre = leer("Introduce el nombre del socio: ");
         sApellidos = leer("Introduce los apellidos del socio: ");
         boolean bExito = true;
-        try {
-            saldo = (float) valida("Introduce el saldo del socio: ",0,2000,2);
-            bExito = false;
-        }catch (NumberFormatException exc){
-            System.out.println(exc.getMessage());
-        }catch (Exception exc){
-            System.out.println(exc.getMessage());
-        }finally {
-            if (!bExito)
-                System.out.println("Saldo introducido incorrecto");
-        }
+        do {
+            boolean bExito = true;
+            try {
+                saldo = (float) valida("Introduce el saldo del socio: ",0,2000,2);
+                bExito = false;
+            }catch (NumberFormatException exc){
+                System.out.println(exc.getMessage());
+            }catch (Exception exc){
+                System.out.println(exc.getMessage());
+            }finally {
+                if (!bExito)
+                    System.out.println("Saldo introducido incorrecto");
+            }
+        }while(!bExito);
+
 
 
         idCliente = (int) valida("Introduce el ID del socio",0,-1,1);
