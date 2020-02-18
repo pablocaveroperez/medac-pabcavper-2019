@@ -19,7 +19,20 @@ public class ClienteView {
         sDni = leer("Introduce el DNI del socio: ");
         sNombre = leer("Introduce el nombre del socio: ");
         sApellidos = leer("Introduce los apellidos del socio: ");
-        saldo = (float) valida("Introduce el saldo del socio: ",0,2000,2);
+        boolean bExito
+        try {
+            saldo = (float) valida("Introduce el saldo del socio: ",0,2000,2);
+             bExito = false;
+        }catch (NumberFormatException exc){
+            System.out.println(exc.getMessage());
+        }catch (Exception exc){
+            System.out.println(exc.getMessage());
+        }finally {
+            if (!bExito)
+                System.out.println("Saldo introducido incorrecto");
+        }
+
+
         idCliente = (int) valida("Introduce el ID del socio",0,-1,1);
         Cliente oCliente = new Cliente(sDni,sNombre,sApellidos,saldo,idCliente);
         if (!(tienda.getClienteController().add(oCliente)))
