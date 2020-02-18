@@ -43,7 +43,16 @@ public class ClienteController implements ICrud<Cliente> {
 
     @Override
     public boolean remove(Cliente oObject) {
-        return false;
+        boolean bExito = false;
+        int iPosicion = search(oObject);
+        if (iPosicion != -1){
+            for (int i = iPosicion; i < contadorClientes; i++)
+                vClientes[i-1] = vClientes[i];
+            vClientes[contadorClientes] = null;
+            contadorClientes--;
+            bExito = true;
+        }
+        return bExito;
     }
 
 
