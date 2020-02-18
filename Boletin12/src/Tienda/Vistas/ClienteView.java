@@ -10,7 +10,7 @@ public class ClienteView {
     public static String altaCliente(Tienda tienda){
         String sDni;
         String sNombre;
-        float saldo;
+        float saldo = 0;
         String sApellidos;
         int idCliente;
         String sResultado;
@@ -19,10 +19,10 @@ public class ClienteView {
         sDni = leer("Introduce el DNI del socio: ");
         sNombre = leer("Introduce el nombre del socio: ");
         sApellidos = leer("Introduce los apellidos del socio: ");
-        boolean bExito
+        boolean bExito = true;
         try {
             saldo = (float) valida("Introduce el saldo del socio: ",0,2000,2);
-             bExito = false;
+            bExito = false;
         }catch (NumberFormatException exc){
             System.out.println(exc.getMessage());
         }catch (Exception exc){
