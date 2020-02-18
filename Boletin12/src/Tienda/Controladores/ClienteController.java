@@ -7,6 +7,11 @@ public class ClienteController implements ICrud<Cliente> {
     private Cliente[] vClientes;
     private final byte MAXCLIENTES = 20;
 
+    public ClienteController(){
+        vClientes = new Cliente[MAXCLIENTES];
+        contadorClientes = 0;
+    }
+
     @Override
     public Cliente[] getaVector() {
         return vClientes;
