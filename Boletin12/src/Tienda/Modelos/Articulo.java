@@ -7,6 +7,16 @@ public class Articulo implements IArticulo {
     private String nombre;
     private double precio;
 
+    public Articulo(int id, String nombre, double precio){
+        setNombre(nombre);
+        setPrecio(precio);
+        setId(id);
+    }
+
+    public Articulo(int id){
+        setId(id);
+    }
+
     @Override
     public int getId() {
         return id;
