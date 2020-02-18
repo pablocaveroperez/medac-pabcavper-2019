@@ -21,7 +21,7 @@ public class ClienteView {
         sApellidos = leer("Introduce los apellidos del socio: ");
         boolean bExito = true;
         do {
-            boolean bExito = true;
+            bExito = true;
             try {
                 saldo = (float) valida("Introduce el saldo del socio: ",0,2000,2);
                 bExito = false;
