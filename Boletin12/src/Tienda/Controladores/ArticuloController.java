@@ -35,6 +35,20 @@ public class ArticuloController implements ICrud<Articulo> {
     }
 
     @Override
+    public String printAll() {
+        String salida = "";
+
+        if (contadorArticulos == 0)
+            salida = "No hay articulos registrados.";
+        else {
+            for (int i = 0; i < contadorArticulos; i++){
+                salida += vArticulos[i]+"\n";
+            }
+        }
+        return salida;
+    }
+
+    @Override
     public boolean add(Articulo oObject) {
         boolean bExito = false;
         if (oObject.getId() != 0 && contadorArticulos < MAXARTICULOS && search(oObject) == -1){
