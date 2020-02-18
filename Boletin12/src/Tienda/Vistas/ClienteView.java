@@ -12,19 +12,33 @@ public class ClienteView {
         String sNombre;
         float saldo = 0;
         String sApellidos;
-        int idCliente;
+        int idCliente = 0;
         String sResultado;
 
+        boolean bExito = false;
+        do {
+            try {
+                idCliente = (int) valida("Introduce el ID del socio",0,-1,1);
+                bExito = true;
+            }catch (NumberFormatException exc){
+                System.out.println(exc.getMessage());
+            }catch (Exception exc){
+                System.out.println(exc.getMessage());
+            }finally {
+                if (!bExito)
+                    System.out.println("ID introducido incorrecto");
+            }
+        }while(!bExito);
 
         sDni = leer("Introduce el DNI del socio: ");
         sNombre = leer("Introduce el nombre del socio: ");
         sApellidos = leer("Introduce los apellidos del socio: ");
-        boolean bExito = true;
+
         do {
-            bExito = true;
+            bExito = false;
             try {
                 saldo = (float) valida("Introduce el saldo del socio: ",0,2000,2);
-                bExito = false;
+                bExito = true;
             }catch (NumberFormatException exc){
                 System.out.println(exc.getMessage());
             }catch (Exception exc){
@@ -37,7 +51,7 @@ public class ClienteView {
 
 
 
-        idCliente = (int) valida("Introduce el ID del socio",0,-1,1);
+
         Cliente oCliente = new Cliente(sDni,sNombre,sApellidos,saldo,idCliente);
         if (!(tienda.getClienteController().add(oCliente)))
             sResultado = "El socio no se ha podido registrar correctamente";
