@@ -36,6 +36,20 @@ public class ClienteController implements ICrud<Cliente> {
     }
 
     @Override
+    public String printAll() {
+        String salida = "";
+
+        if (contadorClientes == 0)
+            salida = "No hay clientes registrados.";
+        else {
+            for (int i = 0; i < contadorClientes; i++){
+                salida += vClientes[i]+"\n";
+            }
+        }
+        return salida;
+    }
+
+    @Override
     public boolean add(Cliente oObject) {
         boolean bExito = false;
         if (oObject.getIdCliente() != 0 && contadorClientes < MAXCLIENTES && search(oObject) == -1){
@@ -59,6 +73,8 @@ public class ClienteController implements ICrud<Cliente> {
         }
         return bExito;
     }
+
+
 
 
 }
