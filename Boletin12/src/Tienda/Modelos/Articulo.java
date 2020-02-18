@@ -5,9 +5,9 @@ import java.util.Objects;
 public class Articulo implements IArticulo {
     private int id;
     private String nombre;
-    private double precio;
+    private float precio;
 
-    public Articulo(int id, String nombre, double precio){
+    public Articulo(int id, String nombre, float precio){
         setNombre(nombre);
         setPrecio(precio);
         setId(id);
@@ -28,7 +28,7 @@ public class Articulo implements IArticulo {
     }
 
     @Override
-    public double getPrecio() {
+    public float getPrecio() {
         return precio;
     }
 
@@ -52,7 +52,7 @@ public class Articulo implements IArticulo {
     }
 
     @Override
-    public boolean setPrecio(double precio) {
+    public boolean setPrecio(float precio) {
         boolean bExito = false;
         if (precio > 0 && precio < 500){
             this.precio = precio;
