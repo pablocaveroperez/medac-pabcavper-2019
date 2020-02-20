@@ -6,7 +6,7 @@ import Tienda.Modelos.Cliente;
 
 public class mainTienda {
     public static void main(String[] args) {
-        Tienda tienda = new Tienda();
+        TiendaView tienda = new TiendaView();
 
         // ADD CLIENTE
         System.out.println(ClienteView.altaCliente(tienda));

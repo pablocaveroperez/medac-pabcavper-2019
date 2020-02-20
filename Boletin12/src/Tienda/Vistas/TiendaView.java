@@ -46,16 +46,24 @@ public class TiendaView {
 
     public void gestionOpcionMenuPrincipal(Tienda tienda){
         menuPrincipal();
-        switch (getOpcionMenuPrincipal()){
-            case 1://  GESTION DE CLIENTES
-                clienteView.menuClientes(tienda);
-                break;
-            case 2:
-                articuloView.menuArticulos(tienda);
-            default:
-                System.out.println("Opcion introducida incorrecta.");
-                break;
+        do {
+            switch (getOpcionMenuPrincipal()){
+                case 1://  GESTION DE CLIENTES
+                    clienteView.menuClientes(tienda);
+                    break;
+                case 2:
+                    articuloView.menuArticulos(tienda);
+                    break;
+                case 3:
+                    System.out.println("ADIOS.");
+                    System.exit(0);
+                    break;
+                default:
+                    System.out.println("Opcion introducida incorrecta.");
+                    break;
+            }
         }
+
     }
 
     public static byte subMenu(){
