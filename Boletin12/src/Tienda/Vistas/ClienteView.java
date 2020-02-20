@@ -59,4 +59,8 @@ public class ClienteView {
             sResultado = "El socio se ha podido registrar correctamente";
         return sResultado;
     }
+
+    public void menuClientes(Tienda tienda) {
+
+    }
 }
