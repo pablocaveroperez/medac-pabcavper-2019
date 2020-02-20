@@ -27,7 +27,7 @@ public class TiendaView {
         return opcionMenuPrincipal;
     }
 
-    private static boolean setOpcionMenuPrincipal(byte opcionMenuPrincipal) {
+    private boolean setOpcionMenuPrincipal(byte opcionMenuPrincipal) {
         boolean bExito = false;
         if (opcionMenuPrincipal >=1 && opcionMenuPrincipal <= 3){
             this.opcionMenuPrincipal = opcionMenuPrincipal;
