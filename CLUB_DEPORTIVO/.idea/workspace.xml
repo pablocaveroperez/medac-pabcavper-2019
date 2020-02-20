@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="99d860ae-45cb-466a-a9b5-2358a49736a5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../Boletin12/src/Tienda/Vistas/ClienteView.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Boletin12/src/Tienda/Vistas/ClienteView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Boletin12/src/Tienda/Vistas/mainTienda.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Boletin12/src/Tienda/Vistas/mainTienda.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

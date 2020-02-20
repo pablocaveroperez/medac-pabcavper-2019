@@ -18,5 +18,11 @@ public class mainTienda {
 
         System.out.println("Estos son todos los clientes registrados: \n" + tienda.getClienteController().printAll());
         System.out.println("Estos son todos los articulos registrados: \n" + tienda.getArticuloController().printAll());
+
+        if (tienda.getClienteController().remove(new Cliente(1)))
+            System.out.println("Cliente Borrado");
+        else
+            System.out.println("No se ha podido borrado");
+        System.out.println("Estos son todos los clientes registrados: \n" + tienda.getClienteController().printAll());
     }
 }
