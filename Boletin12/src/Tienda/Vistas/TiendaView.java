@@ -6,7 +6,6 @@ import Tienda.Controladores.Tienda;
 import static Libreria.LibreriaValida.valida;
 
 public class TiendaView {
-    private Tienda tienda;
     private ArticuloView articuloView;
     private ClienteView clienteView;
     private byte opcionMenuPrincipal;
@@ -17,10 +16,6 @@ public class TiendaView {
 
     public ClienteView getClienteView() {
         return clienteView;
-    }
-
-    public Tienda getTienda() {
-        return tienda;
     }
 
     public byte getOpcionMenuPrincipal() {
@@ -45,9 +40,9 @@ public class TiendaView {
     }
 
     public void gestionOpcionMenuPrincipal(Tienda tienda){
-        menuPrincipal();
         do {
-            switch (getOpcionMenuPrincipal()){
+            byte opcion = menuPrincipal();
+            switch (opcion){
                 case 1://  GESTION DE CLIENTES
                     clienteView.menuClientes(tienda);
                     break;
@@ -62,7 +57,7 @@ public class TiendaView {
                     System.out.println("Opcion introducida incorrecta.");
                     break;
             }
-        }
+        }while (opcionMenuPrincipal > 3 || opcionMenuPrincipal < 1);
 
     }
 
