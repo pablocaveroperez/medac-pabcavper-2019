@@ -64,6 +64,9 @@ public class ClienteView {
         byte opcion;
         boolean bExito;
 
+        do {
+
+        }while(opcion != 6);
 
     }
 }
