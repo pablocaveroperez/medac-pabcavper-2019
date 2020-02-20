@@ -50,6 +50,9 @@ public class TiendaView {
             case 1://  GESTION DE CLIENTES
                 clienteView.menuClientes(tienda);
                 break;
+            default:
+                System.out.println("Opcion introducida incorrecta.");
+                break;
         }
     }
 

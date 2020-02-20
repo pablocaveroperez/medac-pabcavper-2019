@@ -62,5 +62,6 @@ public class ClienteView {
 
     public void menuClientes(Tienda tienda) {
 
+
     }
 }
