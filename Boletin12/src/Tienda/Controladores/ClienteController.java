@@ -73,4 +73,15 @@ public class ClienteController implements ICrud<Cliente> {
         }
         return bExito;
     }
+
+    @Override
+    public boolean update(Cliente oObjeto) {
+        boolean bExito = false;
+        int iPosicion = search(oObjeto);
+        if (iPosicion != -1) {
+            vClientes[iPosicion] = oObjeto;
+            bExito = true;
+        }
+        return bExito;
+    }
 }

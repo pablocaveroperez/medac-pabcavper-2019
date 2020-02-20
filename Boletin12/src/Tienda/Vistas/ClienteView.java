@@ -23,18 +23,19 @@ public class ClienteView {
         boolean bExito = false;
         switch (opcion){
             case 1: // ADD CLIENTE
-                bExito = aniadirCliente(tienda);
-
+                bExito = altaCliente(tienda);
+                break;
+            case 2:// MODIFICAR CLIENTE
+                bExito = modificarCliente(tienda);
         }
         return bExito;
     }
 
-    private boolean aniadirCliente(Tienda tienda) {
-        boolean bExito = false;
-        return bExito;
+    private boolean modificarCliente(Tienda tienda) {
+        return false;
     }
 
-    public static String altaCliente(Tienda tienda){
+    public boolean altaCliente(Tienda tienda){
         String sDni;
         String sNombre;
         float saldo = 0;
@@ -76,14 +77,8 @@ public class ClienteView {
             }
         }while(!bExito);
 
-
-
-
         Cliente oCliente = new Cliente(sDni,sNombre,sApellidos,saldo,idCliente);
-        if (!(tienda.getClienteController().add(oCliente)))
-            sResultado = "El socio no se ha podido registrar correctamente";
-        else
-            sResultado = "El socio se ha podido registrar correctamente";
-        return sResultado;
+
+        return tienda.getClienteController().add(oCliente);
     }
 }
