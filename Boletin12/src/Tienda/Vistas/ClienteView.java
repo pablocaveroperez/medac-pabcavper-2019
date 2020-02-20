@@ -7,6 +7,33 @@ import static Libreria.LibreriaValida.*;
 
 
 public class ClienteView {
+
+    public void menuClientes(Tienda tienda) {
+        byte opcion;
+        boolean bExito;
+
+        do {
+            opcion = TiendaView.subMenu();
+            bExito = gestionMenuCliente(tienda, opcion);
+        }while(opcion != 6);
+
+    }
+
+    private boolean gestionMenuCliente(Tienda tienda, byte opcion) {
+        boolean bExito = false;
+        switch (opcion){
+            case 1: // ADD CLIENTE
+                bExito = aniadirCliente(tienda);
+
+        }
+        return bExito;
+    }
+
+    private boolean aniadirCliente(Tienda tienda) {
+        boolean bExito = false;
+        return bExito;
+    }
+
     public static String altaCliente(Tienda tienda){
         String sDni;
         String sNombre;
@@ -58,15 +85,5 @@ public class ClienteView {
         else
             sResultado = "El socio se ha podido registrar correctamente";
         return sResultado;
-    }
-
-    public void menuClientes(Tienda tienda) {
-        byte opcion;
-        boolean bExito;
-
-        do {
-
-        }while(opcion != 6);
-
     }
 }
