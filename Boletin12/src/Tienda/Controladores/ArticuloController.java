@@ -1,6 +1,7 @@
 package Tienda.Controladores;
 
 import Tienda.Modelos.Articulo;
+import Tienda.Modelos.Cliente;
 
 public class ArticuloController implements ICrud<Articulo> {
     private Articulo[] vArticulos;
@@ -46,6 +47,16 @@ public class ArticuloController implements ICrud<Articulo> {
             }
         }
         return salida;
+    }
+
+    @Override
+    public boolean update(Articulo oObjeto, int iPosicion) {
+        boolean bExito = false;
+        if (iPosicion != -1) {
+            vArticulos[iPosicion] = oObjeto;
+            bExito = true;
+        }
+        return bExito;
     }
 
     @Override

@@ -10,5 +10,5 @@ public interface ICrud<T> {
     public int search(T oObject);
     public String printAll();
 
-    boolean update(Cliente oObjeto, int iPosicion);
+    boolean update(T oObjeto, int iPosicion);
 }
