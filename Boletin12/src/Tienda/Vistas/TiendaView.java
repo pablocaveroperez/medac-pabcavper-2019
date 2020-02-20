@@ -50,6 +50,8 @@ public class TiendaView {
             case 1://  GESTION DE CLIENTES
                 clienteView.menuClientes(tienda);
                 break;
+            case 2:
+                articuloView.menuArticulos(tienda);
             default:
                 System.out.println("Opcion introducida incorrecta.");
                 break;
