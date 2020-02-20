@@ -43,7 +43,12 @@ public class ClienteView {
             case 5: // MOSTRAR CLIENTES
                 System.out.println(mostrarClientes(tienda));
                 break;
-
+            case 6:
+                System.out.println("Volviendo al menus principal");
+                break;
+            default:
+                System.out.println("Opcion introducida incorrecta");
+                break;
         }
         return bExito;
     }
