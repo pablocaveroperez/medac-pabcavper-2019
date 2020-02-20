@@ -3,6 +3,8 @@ package Tienda.Vistas;
 import Tienda.Controladores.Tienda;
 import Tienda.Modelos.Cliente;
 
+import java.text.SimpleDateFormat;
+
 import static Libreria.LibreriaValida.*;
 
 
@@ -32,7 +34,17 @@ public class ClienteView {
     }
 
     private boolean modificarCliente(Tienda tienda) {
-        return false;
+        int id;
+        boolean bExito = false;
+        id = (int) valida("Introduce un DNI de un cliente que desees modificar: ",0,-1,1);
+        int iPosicion = tienda.getClienteController().search(new Cliente(id));
+        if (iPosicion != -1) {
+            tienda.getClienteController().getaVector()[iPosicion].setsNombre(leer("Introduce el nuevo nombre del cliente: "));
+            tienda.getClienteController().getaVector()[iPosicion].setsApellidos(leer("Introduce los nuevos apellidos del cliente: "));
+            tienda.getClienteController().getaVector()[iPosicion].setsDni(leer("Introduce el nuevo DNI del cliente: "));
+            tienda.getClienteController().getaVector()[iPosicion].setSaldo((float) valida("Introduce el nuevo saldo del cliente(0-2000): ",0,2000,2));
+        }
+        return bExito;
     }
 
     public boolean altaCliente(Tienda tienda){
