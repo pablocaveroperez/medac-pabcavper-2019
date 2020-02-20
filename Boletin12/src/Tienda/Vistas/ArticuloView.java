@@ -79,7 +79,7 @@ public class ArticuloView {
         return bExito;
     }
 
-    public static String altaArticulo(Tienda tienda){
+    public static boolean altaArticulo(Tienda tienda){
         int id = 0;
         String sNombre;
         float precio = 0;
@@ -118,10 +118,8 @@ public class ArticuloView {
         }while(!bExito);
 
         Articulo articulo = new Articulo(id,sNombre,precio);
-        if (!(tienda.getArticuloController().add(articulo)))
-            sResultado = "El articulo no se ha podido registrar correctamente";
-        else
-            sResultado = "El articulo se ha podido registrar correctamente";
-        return sResultado;
+
+
+        return tienda.getArticuloController().add(articulo);
     }
 }
