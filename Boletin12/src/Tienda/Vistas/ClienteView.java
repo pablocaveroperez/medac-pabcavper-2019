@@ -43,6 +43,7 @@ public class ClienteView {
             tienda.getClienteController().getaVector()[iPosicion].setsApellidos(leer("Introduce los nuevos apellidos del cliente: "));
             tienda.getClienteController().getaVector()[iPosicion].setsDni(leer("Introduce el nuevo DNI del cliente: "));
             tienda.getClienteController().getaVector()[iPosicion].setSaldo((float) valida("Introduce el nuevo saldo del cliente(0-2000): ",0,2000,2));
+            bExito = true;
         }
         return bExito;
     }
