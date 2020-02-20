@@ -31,9 +31,30 @@ public class ClienteView {
                 bExito = modificarCliente(tienda);
                 break;
             case 3: // ELIMINAR CLIENTE
-                bExito =
+                bExito = eliminarCliente(tienda);
+                break;
+            case 4: // BUSCAR CLIENTE
+                Cliente oCliente = buscarCliente(tienda);
+                if (oCliente != null)
+                    System.out.println(oCliente);
+                else
+                    System.out.println("No se ha encontrado ningun cliente con esa ID.");
+                break;
+            case 5: // MOSTRAR CLIENTES
+                System.out.println(mostrarClientes(tienda));
+                break;
+
         }
         return bExito;
+    }
+
+    private String mostrarClientes(Tienda tienda){
+        return tienda.getClienteController().printAll();
+    }
+
+    private Cliente buscarCliente(Tienda tienda){
+        int id = (int) valida("Introduce el id del cliente que desea buscar: ",0,-1,1);
+        return tienda.getClienteController().getaVector()[tienda.getClienteController().search(new Cliente(id))];
     }
 
     private boolean eliminarCliente(Tienda tienda){
