@@ -29,8 +29,17 @@ public class ClienteView {
                 break;
             case 2:// MODIFICAR CLIENTE
                 bExito = modificarCliente(tienda);
+                break;
+            case 3: // ELIMINAR CLIENTE
+                bExito =
         }
         return bExito;
+    }
+
+    private boolean eliminarCliente(Tienda tienda){
+        int id = (int) valida("Introduce el id del cliente que desea eliminar: ",0,-1,1);
+        return tienda.getClienteController().remove(new Cliente(id));
+
     }
 
     private boolean modificarCliente(Tienda tienda) {
