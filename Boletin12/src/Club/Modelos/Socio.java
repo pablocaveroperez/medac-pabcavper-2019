@@ -20,6 +20,26 @@ public class Socio implements ISocio {
     }
 
     @Override
+    public String getsTelefono() {
+        return sTelefono;
+    }
+
+    @Override
+    public void setsTelefono(String sTelefono) {
+        this.sTelefono = sTelefono;
+    }
+
+    @Override
+    public String getsEmail() {
+        return sEmail;
+    }
+
+    @Override
+    public void setsEmail(String sEmail) {
+        this.sEmail = sEmail;
+    }
+
+    @Override
     public int getId() {
         return id;
     }

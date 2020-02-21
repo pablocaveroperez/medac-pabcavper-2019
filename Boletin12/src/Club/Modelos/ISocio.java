@@ -1,6 +1,14 @@
 package Club.Modelos;
 
 public interface ISocio {
+    String getsTelefono();
+
+    void setsTelefono(String sTelefono);
+
+    String getsEmail();
+
+    void setsEmail(String sEmail);
+
     int getId();
 
     String getsDni();
