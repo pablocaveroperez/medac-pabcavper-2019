@@ -77,8 +77,36 @@ public class ArticuloView {
         id = (int) valida("Introduce un DNI de un articulo que desees modificar: ",0,-1,1);
         int iPosicion = tienda.getArticuloController().search(new Articulo(id));
         if (iPosicion != -1) {
-            tienda.getArticuloController().getaVector()[iPosicion].setNombre(leer("Introduce el nuevo nombre del articulo: "));
-            tienda.getArticuloController().getaVector()[iPosicion].setPrecio((float) valida("Introduce el nuevo precio del articulo(0-2000): ",0,2000,2));
+            do {
+                try {
+                    tienda.getArticuloController().getaVector()[iPosicion].setNombre(leer("Introduce el nuevo nombre del articulo: "));
+                    bExito = true;
+                }catch (NumberFormatException exc){
+                    System.out.println(exc.getMessage());
+                }catch (Exception exc){
+                    System.out.println(exc.getMessage());
+                }finally {
+                    if (!bExito)
+                        System.out.println("Nombre introducido incorrecto");
+                }
+            }while(!bExito);
+
+            do {
+                bExito = false;
+                try {
+                    tienda.getArticuloController().getaVector()[iPosicion].setPrecio((float) valida("Introduce el nuevo precio del articulo(0-2000): ",0,2000,2));
+                    bExito = true;
+                }catch (NumberFormatException exc){
+                    System.out.println(exc.getMessage());
+                }catch (Exception exc){
+                    System.out.println(exc.getMessage());
+                }finally {
+                    if (!bExito)
+                        System.out.println("Precio introducido incorrecto");
+                }
+            }while(!bExito);
+
+
             bExito = true;
         }
         if (bExito)
