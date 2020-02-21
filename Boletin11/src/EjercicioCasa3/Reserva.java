@@ -7,7 +7,7 @@ public class Reserva {
     private Socio sosio;
     private Instalacion instalasion;
 
-    public Reserva(int idReserva, String fecha, String hora){
+    public Reserva(int idReserva, String fecha, String hora) {
         setIdReserva(idReserva);
         setFecha(fecha);
         setHora(hora);

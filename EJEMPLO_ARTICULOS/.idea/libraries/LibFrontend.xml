@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="LibFrontend">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../CLUB_DEPORTIVO/lib/LibFrontend.jar!/medac/validaciones" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../CLUB_DEPORTIVO/lib/LibFrontend.jar!/" />
+    </SOURCES>
+  </library>
+</component>
