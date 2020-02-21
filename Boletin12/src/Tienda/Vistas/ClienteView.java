@@ -64,14 +64,19 @@ public class ClienteView {
 
     private static boolean eliminarCliente(Tienda tienda){
         int id = (int) valida("Introduce el id del cliente que desea eliminar: ",0,-1,1);
-        return tienda.getClienteController().remove(new Cliente(id));
+        boolean bExito = tienda.getClienteController().remove(new Cliente(id));
+        if (bExito)
+            System.out.println("Cliente eliminado con exito.");
+        else
+            System.out.println("Cliente eliminado sin exito.");
 
+        return bExito;
     }
 
     private static boolean modificarCliente(Tienda tienda) {
         int id;
         boolean bExito = false;
-        id = (int) valida("Introduce un DNI de un cliente que desees modificar: ",0,-1,1);
+        id = (int) valida("Introduce el ID del cliente que desees modificar: ",0,-1,1);
         int iPosicion = tienda.getClienteController().search(new Cliente(id));
         if (iPosicion != -1) {
             tienda.getClienteController().getaVector()[iPosicion].setsNombre(leer("Introduce el nuevo nombre del cliente: "));
@@ -80,6 +85,11 @@ public class ClienteView {
             tienda.getClienteController().getaVector()[iPosicion].setSaldo((float) valida("Introduce el nuevo saldo del cliente(0-2000): ",0,2000,2));
             bExito = true;
         }
+
+        if (bExito)
+            System.out.println("Cliente modificado con exito.");
+        else
+            System.out.println("Cliente modificado sin exito.");
         return bExito;
     }
 
@@ -127,6 +137,12 @@ public class ClienteView {
 
         Cliente oCliente = new Cliente(sDni,sNombre,sApellidos,saldo,idCliente);
 
-        return tienda.getClienteController().add(oCliente);
+        bExito = tienda.getClienteController().add(oCliente);
+        if (bExito)
+            System.out.println("Cliente aniadido con exito.");
+        else
+            System.out.println("Cliente aniadido sin exito.");
+
+        return bExito;
     }
 }
