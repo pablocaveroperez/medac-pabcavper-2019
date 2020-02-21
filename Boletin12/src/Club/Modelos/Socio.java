@@ -1,5 +1,7 @@
 package Club.Modelos;
 
+import java.util.Objects;
+
 public class Socio implements ISocio {
     private int id;
     private String sDni;
@@ -81,5 +83,18 @@ public class Socio implements ISocio {
     @Override
     public void setsApellidos(String sApellidos) {
         this.sApellidos = sApellidos;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Socio socio = (Socio) o;
+        return id == socio.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 }
