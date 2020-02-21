@@ -1,6 +1,6 @@
 package Club.Modelos;
 
-public class Socio implements ISocio{
+public class Socio implements ISocio {
     private int id;
     private String sDni;
     private String sNombre;
@@ -17,11 +17,12 @@ public class Socio implements ISocio{
         setId(id);
     }
 
+    @Override
     public int getId() {
         return id;
     }
 
-    public boolean setId(int id) {
+    private boolean setId(int id) {
         boolean bExito = false;
         if (id > 0){
             this.id = id;
@@ -30,26 +31,32 @@ public class Socio implements ISocio{
         return bExito;
     }
 
+    @Override
     public String getsDni() {
         return sDni;
     }
 
+    @Override
     public void setsDni(String sDni) {
         this.sDni = sDni;
     }
 
+    @Override
     public String getsNombre() {
         return sNombre;
     }
 
+    @Override
     public void setsNombre(String sNombre) {
         this.sNombre = sNombre;
     }
 
+    @Override
     public String getsApellidos() {
         return sApellidos;
     }
 
+    @Override
     public void setsApellidos(String sApellidos) {
         this.sApellidos = sApellidos;
     }
