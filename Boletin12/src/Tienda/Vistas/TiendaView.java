@@ -27,7 +27,22 @@ public class TiendaView {
         System.out.println("* 1. Gestion de Clientes:       *");
         System.out.println("* 2. Gestion de Articulos:      *");
         System.out.println("* 3. Salir del programa:        *");
-        return (byte) valida("Introduce la opcion deseada: ",1,3,3);
+        boolean bExito = false;
+        byte opcion = 0;
+        do {
+            try {
+                opcion = (byte) valida("Introduce una opcion valida: ", 1, 6, 3);
+                bExito = true;
+            }catch (NumberFormatException exc){
+                System.out.println(exc.getMessage());
+            }catch (Exception exc){
+                System.out.println(exc.getMessage());
+            }finally {
+                if (!bExito)
+                    System.out.println("Opcion introducida incorrecto");
+            }
+        }while(!bExito);
+        return opcion;
     }
 
     public void gestionOpcionMenuPrincipal(Tienda tienda){
@@ -61,7 +76,22 @@ public class TiendaView {
         System.out.println("4. Buscar ");
         System.out.println("5. Mostrar ");
         System.out.println("6. Volver a menu principal");
-        return (byte) valida("Introduce una opcion valida: ", 1, 6, 3);
+        boolean bExito = false;
+        byte opcion = 0;
+        do {
+            try {
+                opcion = (byte) valida("Introduce una opcion valida: ", 1, 6, 3);
+                bExito = true;
+            }catch (NumberFormatException exc){
+                System.out.println(exc.getMessage());
+            }catch (Exception exc){
+                System.out.println(exc.getMessage());
+            }finally {
+                if (!bExito)
+                    System.out.println("Opcion introducida incorrecto");
+            }
+        }while(!bExito);
+        return opcion;
     }
 
 

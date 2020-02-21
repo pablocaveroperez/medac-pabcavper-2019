@@ -58,13 +58,41 @@ public class ClienteView {
     }
 
     private static Cliente buscarCliente(Tienda tienda){
-        int id = (int) valida("Introduce el id del cliente que desea buscar: ",0,-1,1);
+        boolean bExito = false;
+        int id = 0;
+        do {
+            try {
+                id = (int) valida("Introduce el id del cliente que desea buscar: ",0,-1,1);
+                bExito = true;
+            }catch (NumberFormatException exc){
+                System.out.println(exc.getMessage());
+            }catch (Exception exc){
+                System.out.println(exc.getMessage());
+            }finally {
+                if (!bExito)
+                    System.out.println("ID introducido incorrecto");
+            }
+        }while(!bExito);
         return tienda.getClienteController().getaVector()[tienda.getClienteController().search(new Cliente(id))];
     }
 
     private static boolean eliminarCliente(Tienda tienda){
-        int id = (int) valida("Introduce el id del cliente que desea eliminar: ",0,-1,1);
-        boolean bExito = tienda.getClienteController().remove(new Cliente(id));
+        boolean bExito = false;
+        int id = 0;
+        do {
+            try {
+                id = (int) valida("Introduce el id del cliente que desea eliminar: ",0,-1,1);
+                bExito = true;
+            }catch (NumberFormatException exc){
+                System.out.println(exc.getMessage());
+            }catch (Exception exc){
+                System.out.println(exc.getMessage());
+            }finally {
+                if (!bExito)
+                    System.out.println("ID introducido incorrecto");
+            }
+        }while(!bExito);
+        bExito = tienda.getClienteController().remove(new Cliente(id));
         if (bExito)
             System.out.println("Cliente eliminado con exito.");
         else
@@ -74,15 +102,76 @@ public class ClienteView {
     }
 
     private static boolean modificarCliente(Tienda tienda) {
-        int id;
+        int id = 0;
         boolean bExito = false;
-        id = (int) valida("Introduce el ID del cliente que desees modificar: ",0,-1,1);
+        do {
+            try {
+                id = (int) valida("Introduce el ID del cliente que desees modificar: ",0,-1,1);
+                bExito = true;
+            }catch (NumberFormatException exc){
+                System.out.println(exc.getMessage());
+            }catch (Exception exc){
+                System.out.println(exc.getMessage());
+            }finally {
+                if (!bExito)
+                    System.out.println("ID introducido incorrecto");
+            }
+        }while(!bExito);
         int iPosicion = tienda.getClienteController().search(new Cliente(id));
+        bExito = false;
         if (iPosicion != -1) {
-            tienda.getClienteController().getaVector()[iPosicion].setsNombre(leer("Introduce el nuevo nombre del cliente: "));
-            tienda.getClienteController().getaVector()[iPosicion].setsApellidos(leer("Introduce los nuevos apellidos del cliente: "));
-            tienda.getClienteController().getaVector()[iPosicion].setsDni(leer("Introduce el nuevo DNI del cliente: "));
-            tienda.getClienteController().getaVector()[iPosicion].setSaldo((float) valida("Introduce el nuevo saldo del cliente(0-2000): ",0,2000,2));
+            do {
+                try {
+                    tienda.getClienteController().getaVector()[iPosicion].setsNombre(leer("Introduce el nuevo nombre del cliente: "));
+                    bExito = true;
+                }catch (Exception exc){
+                    System.out.println(exc.getMessage());
+                }finally {
+                    if (!bExito)
+                        System.out.println("Nombre introducido incorrecto");
+                }
+            }while(!bExito);
+
+            do {
+                bExito = false;
+                try {
+                    tienda.getClienteController().getaVector()[iPosicion].setsApellidos(leer("Introduce los nuevos apellidos del cliente: "));
+                    bExito = true;
+                }catch (Exception exc){
+                    System.out.println(exc.getMessage());
+                }finally {
+                    if (!bExito)
+                        System.out.println("Apellidos introducido incorrecto");
+                }
+            }while(!bExito);
+
+            do {
+                bExito = false;
+                try {
+                    tienda.getClienteController().getaVector()[iPosicion].setsDni(leer("Introduce el nuevo DNI del cliente: "));
+                    bExito = true;
+                }catch (Exception exc){
+                    System.out.println(exc.getMessage());
+                }finally {
+                    if (!bExito)
+                        System.out.println("DNI introducido incorrecto");
+                }
+            }while(!bExito);
+
+            do {
+                bExito = false;
+                try {
+                    tienda.getClienteController().getaVector()[iPosicion].setSaldo((float) valida("Introduce el nuevo saldo del cliente(0-2000): ",0,2000,2));
+                    bExito = true;
+                }catch (NumberFormatException exc){
+                    System.out.println(exc.getMessage());
+                }catch (Exception exc){
+                    System.out.println(exc.getMessage());
+                }finally {
+                    if (!bExito)
+                        System.out.println("Saldo introducido incorrecto");
+                }
+            }while(!bExito);
             bExito = true;
         }
 
@@ -94,12 +183,11 @@ public class ClienteView {
     }
 
     public static boolean altaCliente(Tienda tienda){
-        String sDni;
-        String sNombre;
+        String sDni = "";
+        String sNombre = "";
         float saldo = 0;
-        String sApellidos;
+        String sApellidos = "";
         int idCliente = 0;
-        String sResultado;
 
         boolean bExito = false;
         do {
@@ -116,9 +204,44 @@ public class ClienteView {
             }
         }while(!bExito);
 
-        sDni = leer("Introduce el DNI del socio: ");
-        sNombre = leer("Introduce el nombre del socio: ");
-        sApellidos = leer("Introduce los apellidos del socio: ");
+        do {
+            bExito = false;
+            try {
+                sDni = leer("Introduce el DNI del socio: ");
+                bExito = true;
+            }catch (Exception exc){
+                System.out.println(exc.getMessage());
+            }finally {
+                if (!bExito)
+                    System.out.println("DNI introducido incorrecto");
+            }
+        }while(!bExito);
+
+        do {
+            bExito = false;
+            try {
+                sNombre = leer("Introduce el nombre del socio: ");
+                bExito = true;
+            }catch (Exception exc){
+                System.out.println(exc.getMessage());
+            }finally {
+                if (!bExito)
+                    System.out.println("Nombre introducido incorrecto");
+            }
+        }while(!bExito);
+
+        do {
+            bExito = false;
+            try {
+                sApellidos = leer("Introduce los apellidos del socio: ");
+                bExito = true;
+            }catch (Exception exc){
+                System.out.println(exc.getMessage());
+            }finally {
+                if (!bExito)
+                    System.out.println("Apellidos introducido incorrecto");
+            }
+        }while(!bExito);
 
         do {
             bExito = false;

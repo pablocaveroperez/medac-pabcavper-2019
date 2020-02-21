@@ -56,13 +56,41 @@ public class ArticuloView {
     }
 
     private static Articulo buscarArticulo(Tienda tienda){
-        int id = (int) valida("Introduce el id del articulo que desea buscar: ",0,-1,1);
+        boolean bExito = false;
+        int id = 0;
+        do {
+            try {
+                id = (int) valida("Introduce el id del articulo que desea buscar: ",0,-1,1);
+                bExito = true;
+            }catch (NumberFormatException exc){
+                System.out.println(exc.getMessage());
+            }catch (Exception exc){
+                System.out.println(exc.getMessage());
+            }finally {
+                if (!bExito)
+                    System.out.println("ID introducido incorrecto");
+            }
+        }while(!bExito);
         return tienda.getArticuloController().getaVector()[tienda.getArticuloController().search(new Articulo(id))];
     }
 
     private static boolean eliminarArticulo(Tienda tienda){
-        int id = (int) valida("Introduce el id del articulo que desea eliminar: ",0,-1,1);
-        boolean bExito = tienda.getArticuloController().remove(new Articulo(id));
+        int id = 0;
+        boolean bExito = false;
+        do {
+            try {
+                id = (int) valida("Introduce el id del articulo que desea eliminar: ",0,-1,1);
+                bExito = true;
+            }catch (NumberFormatException exc){
+                System.out.println(exc.getMessage());
+            }catch (Exception exc){
+                System.out.println(exc.getMessage());
+            }finally {
+                if (!bExito)
+                    System.out.println("ID introducido incorrecto");
+            }
+        }while(!bExito);
+        bExito = tienda.getArticuloController().remove(new Articulo(id));
         if (bExito)
             System.out.println("Articulo eliminado con exito.");
         else
@@ -72,17 +100,27 @@ public class ArticuloView {
     }
 
     private static boolean modificarArticulo(Tienda tienda) {
-        int id;
+        int id = 0;
         boolean bExito = false;
-        id = (int) valida("Introduce un DNI de un articulo que desees modificar: ",0,-1,1);
+        do {
+            try {
+                id = (int) valida("Introduce un DNI de un articulo que desees modificar: ",0,-1,1);
+                bExito = true;
+            }catch (NumberFormatException exc){
+                System.out.println(exc.getMessage());
+            }catch (Exception exc){
+                System.out.println(exc.getMessage());
+            }finally {
+                if (!bExito)
+                    System.out.println("ID introducido incorrecto");
+            }
+        }while(!bExito);
         int iPosicion = tienda.getArticuloController().search(new Articulo(id));
         if (iPosicion != -1) {
             do {
                 try {
                     tienda.getArticuloController().getaVector()[iPosicion].setNombre(leer("Introduce el nuevo nombre del articulo: "));
                     bExito = true;
-                }catch (NumberFormatException exc){
-                    System.out.println(exc.getMessage());
                 }catch (Exception exc){
                     System.out.println(exc.getMessage());
                 }finally {
@@ -119,7 +157,7 @@ public class ArticuloView {
 
     public static boolean altaArticulo(Tienda tienda){
         int id = 0;
-        String sNombre;
+        String sNombre = "";
         float precio = 0;
         String sResultado;
 
@@ -138,7 +176,19 @@ public class ArticuloView {
             }
         }while(!bExito);
 
-        sNombre = leer("Introduce el nombre del articulo: ");
+
+        do {
+            bExito = false;
+            try {
+                sNombre = leer("Introduce el nombre del articulo: ");
+                bExito = true;
+            }catch (Exception exc){
+                System.out.println(exc.getMessage());
+            }finally {
+                if (!bExito)
+                    System.out.println("Nombre introducido incorrecto");
+            }
+        }while(!bExito);
 
         do {
             bExito = false;
