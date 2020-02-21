@@ -62,7 +62,12 @@ public class ArticuloView {
 
     private static boolean eliminarArticulo(Tienda tienda){
         int id = (int) valida("Introduce el id del articulo que desea eliminar: ",0,-1,1);
-        return tienda.getArticuloController().remove(new Articulo(id));
+        boolean bExito = tienda.getArticuloController().remove(new Articulo(id));
+        if (bExito)
+            System.out.println("Articulo eliminado con exito.");
+        else
+            System.out.println("Articulo eliminado sin exito.");
+        return bExito;
 
     }
 
@@ -76,6 +81,11 @@ public class ArticuloView {
             tienda.getArticuloController().getaVector()[iPosicion].setPrecio((float) valida("Introduce el nuevo precio del articulo(0-2000): ",0,2000,2));
             bExito = true;
         }
+        if (bExito)
+            System.out.println("Articulo modificado con exito.");
+        else
+            System.out.println("Articulo modificado sin exito.");
+
         return bExito;
     }
 
@@ -119,7 +129,12 @@ public class ArticuloView {
 
         Articulo articulo = new Articulo(id,sNombre,precio);
 
+        bExito = tienda.getArticuloController().add(articulo);
+        if (bExito)
+            System.out.println("Articulo aniadido con exito.");
+        else
+            System.out.println("Articulo aniadido sin exito.");
 
-        return tienda.getArticuloController().add(articulo);
+        return bExito;
     }
 }
