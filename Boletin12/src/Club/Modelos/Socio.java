@@ -21,7 +21,9 @@ public class Socio implements ISocio{
         return id;
     }
 
-    public void setId(int id) {
+    public boolean setId(int id) {
+        boolean bExito = false;
+        if (id() > )
         this.id = id;
     }
 
