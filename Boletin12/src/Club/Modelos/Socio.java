@@ -5,6 +5,8 @@ public class Socio implements ISocio {
     private String sDni;
     private String sNombre;
     private String sApellidos;
+    private String sTelefono;
+    private String sEmail;
 
     public Socio(int id, String sDni, String sNombre, String sApellidos){
         setId(id);
