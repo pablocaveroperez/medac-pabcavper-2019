@@ -97,4 +97,17 @@ public class Socio implements ISocio {
     public int hashCode() {
         return Objects.hash(id);
     }
+
+    @Override
+    public String toString() {
+        String salida = "";
+        salida += "\n**********************************";
+        salida += "\nID del socio: " + getId();
+        salida += "\nDNI del socio: " + getsDni();
+        salida += "\nNombre del socio: " + getsNombre();
+        salida += "\nApellidos del socio: " + getsApellidos();
+        salida += "\nTelefono del socio: " + getsTelefono();
+        salida += "\nEmail del socio: " + getsEmail();
+        return salida;
+    }
 }
