@@ -42,13 +42,8 @@ public class Articulo implements IArticulo {
     }
 
     @Override
-    public boolean setNombre(String nombre) {
-        boolean bExito = false;
-        if (nombre.length() < 5){
-            this.nombre = nombre;
-            bExito = true;
-        }
-        return bExito;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     @Override
