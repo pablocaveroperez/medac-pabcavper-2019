@@ -21,6 +21,11 @@ public class Socio implements ISocio {
         setId(id);
     }
 
+    private boolean comprobarEmail(String sEmail){
+        boolean bExito = false;
+
+    }
+
     @Override
     public String getsTelefono() {
         return sTelefono;
