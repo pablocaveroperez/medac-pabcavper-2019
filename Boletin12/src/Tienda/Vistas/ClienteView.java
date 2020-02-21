@@ -1,9 +1,8 @@
 package Tienda.Vistas;
 
+
 import Tienda.Controladores.Tienda;
 import Tienda.Modelos.Cliente;
-
-import java.text.SimpleDateFormat;
 
 import static Libreria.LibreriaValida.*;
 

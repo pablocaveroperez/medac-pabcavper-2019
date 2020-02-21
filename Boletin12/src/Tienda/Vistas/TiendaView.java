@@ -1,9 +1,10 @@
 package Tienda.Vistas;
 
-import Libreria.LibreriaValida;
 import Tienda.Controladores.Tienda;
 
+
 import static Libreria.LibreriaValida.valida;
+
 
 public class TiendaView {
 
