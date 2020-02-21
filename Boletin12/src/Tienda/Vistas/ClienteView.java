@@ -21,7 +21,7 @@ public class ClienteView {
 
     }
 
-    private boolean gestionMenuCliente(Tienda tienda, byte opcion) {
+    private static boolean gestionMenuCliente(Tienda tienda, byte opcion) {
         boolean bExito = false;
         switch (opcion){
             case 1: // ADD CLIENTE
@@ -53,22 +53,22 @@ public class ClienteView {
         return bExito;
     }
 
-    private String mostrarClientes(Tienda tienda){
+    private static String mostrarClientes(Tienda tienda){
         return tienda.getClienteController().printAll();
     }
 
-    private Cliente buscarCliente(Tienda tienda){
+    private static Cliente buscarCliente(Tienda tienda){
         int id = (int) valida("Introduce el id del cliente que desea buscar: ",0,-1,1);
         return tienda.getClienteController().getaVector()[tienda.getClienteController().search(new Cliente(id))];
     }
 
-    private boolean eliminarCliente(Tienda tienda){
+    private static boolean eliminarCliente(Tienda tienda){
         int id = (int) valida("Introduce el id del cliente que desea eliminar: ",0,-1,1);
         return tienda.getClienteController().remove(new Cliente(id));
 
     }
 
-    private boolean modificarCliente(Tienda tienda) {
+    private static boolean modificarCliente(Tienda tienda) {
         int id;
         boolean bExito = false;
         id = (int) valida("Introduce un DNI de un cliente que desees modificar: ",0,-1,1);
@@ -83,7 +83,7 @@ public class ClienteView {
         return bExito;
     }
 
-    public boolean altaCliente(Tienda tienda){
+    public static boolean altaCliente(Tienda tienda){
         String sDni;
         String sNombre;
         float saldo = 0;
