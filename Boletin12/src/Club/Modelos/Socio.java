@@ -23,8 +23,11 @@ public class Socio implements ISocio{
 
     public boolean setId(int id) {
         boolean bExito = false;
-        if (id() > )
-        this.id = id;
+        if (id > 0){
+            this.id = id;
+            bExito = true;
+        }
+        return bExito;
     }
 
     public String getsDni() {
