@@ -8,7 +8,7 @@ import static Libreria.LibreriaValida.*;
 
 public class ArticuloView {
 
-    public void menuArticulos(Tienda tienda) {
+    public static void menuArticulos(Tienda tienda) {
         byte opcion;
         boolean bExito;
 
@@ -19,7 +19,7 @@ public class ArticuloView {
 
     }
 
-    private boolean gestionMenuArticulos(Tienda tienda, byte opcion) {
+    private static boolean gestionMenuArticulos(Tienda tienda, byte opcion) {
         boolean bExito = false;
         switch (opcion){
             case 1: // ADD CLIENTE
@@ -51,22 +51,22 @@ public class ArticuloView {
         return bExito;
     }
 
-    private String mostrarArticulos(Tienda tienda){
+    private static String mostrarArticulos(Tienda tienda){
         return tienda.getArticuloController().printAll();
     }
 
-    private Articulo buscarArticulo(Tienda tienda){
+    private static Articulo buscarArticulo(Tienda tienda){
         int id = (int) valida("Introduce el id del articulo que desea buscar: ",0,-1,1);
         return tienda.getArticuloController().getaVector()[tienda.getArticuloController().search(new Articulo(id))];
     }
 
-    private boolean eliminarArticulo(Tienda tienda){
+    private static boolean eliminarArticulo(Tienda tienda){
         int id = (int) valida("Introduce el id del articulo que desea eliminar: ",0,-1,1);
         return tienda.getArticuloController().remove(new Articulo(id));
 
     }
 
-    private boolean modificarArticulo(Tienda tienda) {
+    private static boolean modificarArticulo(Tienda tienda) {
         int id;
         boolean bExito = false;
         id = (int) valida("Introduce un DNI de un articulo que desees modificar: ",0,-1,1);

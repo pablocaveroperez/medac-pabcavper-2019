@@ -4,13 +4,6 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 import controlador.Terminal;
-import modelo.Instalacion;
-import modelo.Reserva;
-import modelo.Socio;
-import vista.SocioView;
-import vista.InstalacionView;
-
-import static medac.validaciones.LibFrontend.valida;
 
 public class CLUB_DEPORTIVO {
 

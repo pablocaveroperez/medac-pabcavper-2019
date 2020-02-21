@@ -6,17 +6,8 @@ import Tienda.Controladores.Tienda;
 import static Libreria.LibreriaValida.valida;
 
 public class TiendaView {
-    private ArticuloView articuloView;
-    private ClienteView clienteView;
+
     private byte opcionMenuPrincipal;
-
-    public ArticuloView getArticuloView() {
-        return articuloView;
-    }
-
-    public ClienteView getClienteView() {
-        return clienteView;
-    }
 
     public byte getOpcionMenuPrincipal() {
         return opcionMenuPrincipal;
@@ -44,10 +35,10 @@ public class TiendaView {
             byte opcion = menuPrincipal();
             switch (opcion){
                 case 1://  GESTION DE CLIENTES
-                    clienteView.menuClientes(tienda);
+                    ClienteView.menuClientes(tienda);
                     break;
                 case 2:
-                    articuloView.menuArticulos(tienda);
+                    ArticuloView.menuArticulos(tienda);
                     break;
                 case 3:
                     System.out.println("ADIOS.");

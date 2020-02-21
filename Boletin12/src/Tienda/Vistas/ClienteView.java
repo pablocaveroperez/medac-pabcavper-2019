@@ -10,7 +10,7 @@ import static Libreria.LibreriaValida.*;
 
 public class ClienteView {
 
-    public void menuClientes(Tienda tienda) {
+    public static void menuClientes(Tienda tienda) {
         byte opcion;
         boolean bExito;
 
