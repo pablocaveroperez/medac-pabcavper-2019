@@ -7,7 +7,7 @@ public interface ISocio {
 
     String getsEmail();
 
-    void setsEmail(String sEmail);
+    boolean setsEmail(String sEmail);
 
     int getId();
 

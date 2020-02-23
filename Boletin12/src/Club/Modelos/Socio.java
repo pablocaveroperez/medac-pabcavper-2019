@@ -24,7 +24,6 @@ public class Socio implements ISocio {
     private boolean comprobarEmail(String sEmail){
         boolean bExito = false;
         if (sEmail.contains("@")){
-            this.sEmail = sEmail;
             bExito = true;
         }
         return bExito;
@@ -46,8 +45,13 @@ public class Socio implements ISocio {
     }
 
     @Override
-    public void setsEmail(String sEmail) {
-        this.sEmail = sEmail;
+    public boolean setsEmail(String sEmail) {
+        boolean bExito = false;
+        if (comprobarEmail(sEmail)) {
+            this.sEmail = sEmail;
+            bExito = true;
+        }
+        return bExito;
     }
 
     @Override
