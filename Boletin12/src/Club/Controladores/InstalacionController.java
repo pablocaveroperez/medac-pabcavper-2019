@@ -10,17 +10,23 @@ public class InstalacionController implements ICrud<Instalacion> {
 
     @Override
     public Instalacion[] getaVector() {
-        return new Instalacion[0];
+        return vInstalaciones;
     }
 
     @Override
     public byte getbContadorArray() {
-        return 0;
+        return contadorInstalaciones;
     }
 
     @Override
     public boolean add(Instalacion oObject) {
-        return false;
+        boolean bExito = false;
+        if (oObject.instalacionValida() && contadorInstalaciones < MAXINSTALACIONES && search(oObject) == -1){
+            vInstalaciones[contadorInstalaciones] = oObject;
+            contadorInstalaciones++;
+            bExito = true;
+        }
+        return bExito;
     }
 
     @Override
