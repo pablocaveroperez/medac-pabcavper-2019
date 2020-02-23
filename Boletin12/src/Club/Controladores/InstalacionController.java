@@ -57,7 +57,15 @@ public class InstalacionController implements ICrud<Instalacion> {
 
     @Override
     public String printAll() {
-        return null;
+        String salida = "";
+        if (contadorInstalaciones == 0)
+            salida += "No hay instalaciones registradas";
+        else{
+            for (int i = 0; i < contadorInstalaciones; i++) {
+                salida += vInstalaciones[i]+"\n";
+            }
+        }
+        return salida;
     }
 
     @Override
