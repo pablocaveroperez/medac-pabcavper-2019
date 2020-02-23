@@ -23,7 +23,11 @@ public class Socio implements ISocio {
 
     private boolean comprobarEmail(String sEmail){
         boolean bExito = false;
-
+        if (sEmail.contains("@")){
+            this.sEmail = sEmail;
+            bExito = true;
+        }
+        return bExito;
     }
 
     @Override
