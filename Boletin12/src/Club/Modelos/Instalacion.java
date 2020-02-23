@@ -46,4 +46,15 @@ public class Instalacion {
     public void setbEstado(boolean bEstado) {
         this.bEstado = bEstado;
     }
+
+    public String tipoString(){
+        String salida = "";
+        if (getTipo() == FUTBOL)
+            salida = "FUTBOL";
+        else if (getTipo() == PADEL)
+            salida = "PADEL";
+        else if (getTipo() == BALONCESTO)
+            salida = "BALONCESTO";
+        return salida;
+    }
 }
