@@ -54,6 +54,10 @@ public class SocioView {
         return bExito;
     }
 
+    private static String mostrarSocios(Terminal terminal) {
+        return terminal.getSocioController().printAll();
+    }
+
     private static Socio buscarSocio(Terminal terminal) {
         boolean bExito = false;
         int id = 0;
