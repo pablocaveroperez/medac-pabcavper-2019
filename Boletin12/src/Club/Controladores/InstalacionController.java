@@ -45,7 +45,14 @@ public class InstalacionController implements ICrud<Instalacion> {
 
     @Override
     public int search(Instalacion oObject) {
-        return 0;
+        int iPosicion = -1;
+        int iContador = 0;
+        while (iPosicion == -1 && iContador < contadorInstalaciones){
+            if (oObject.equals(vInstalaciones[iContador]))
+                iPosicion = iContador;
+            iContador++;
+        }
+        return iPosicion;
     }
 
     @Override
