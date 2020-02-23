@@ -1,12 +1,10 @@
-package Tienda.Vistas;
+package Club.Vistas;
 
-import Tienda.Controladores.Tienda;
+import Club.Controladores.Terminal;
 
+import static Libreria.LibreriaValida.*;
 
-import static Libreria.LibreriaValida.valida;
-
-
-public class TiendaView {
+public class TerminalView {
 
     private byte opcionMenuPrincipal;
 
@@ -16,7 +14,7 @@ public class TiendaView {
 
     private boolean setOpcionMenuPrincipal(byte opcionMenuPrincipal) {
         boolean bExito = false;
-        if (opcionMenuPrincipal >=1 && opcionMenuPrincipal <= 3){
+        if (opcionMenuPrincipal >=1 && opcionMenuPrincipal <= 4){
             this.opcionMenuPrincipal = opcionMenuPrincipal;
             bExito = true;
         }
@@ -25,14 +23,15 @@ public class TiendaView {
 
     private static byte menuPrincipal(){
         System.out.println("*********************************");
-        System.out.println("* 1. Gestion de Clientes:       *");
-        System.out.println("* 2. Gestion de Articulos:      *");
-        System.out.println("* 3. Salir del programa:        *");
+        System.out.println("* 1. Gestion de Socios:       *");
+        System.out.println("* 2. Gestion de Instalaciones:      *");
+        System.out.println("* 3. Gestion de Reservas:      *");
+        System.out.println("* 4. Salir del programa:        *");
         boolean bExito = false;
         byte opcion = 0;
         do {
             try {
-                opcion = (byte) valida("Introduce una opcion valida: ", 1, 3, 3);
+                opcion = (byte) valida("Introduce una opcion valida: ", 1, 4, 3);
                 bExito = true;
             }catch (NumberFormatException exc){
                 System.out.println(exc.getMessage());
@@ -46,17 +45,20 @@ public class TiendaView {
         return opcion;
     }
 
-    public void gestionOpcionMenuPrincipal(Tienda tienda){
+    public void gestionOpcionMenuPrincipal(Terminal terminal){
         do {
             byte opcion = menuPrincipal();
             switch (opcion){
                 case 1://  GESTION DE CLIENTES
-                    ClienteView.menuClientes(tienda);
+                    SocioView.menuSocios(terminal);
                     break;
                 case 2:
-                    ArticuloView.menuArticulos(tienda);
+                    InstalacionView.menuInstalaciones(terminal);
                     break;
                 case 3:
+                    ReservaView.menuReservas(terminal);
+                    break;
+                case 4:
                     System.out.println("ADIOS.");
                     System.exit(0);
                     break;
@@ -64,7 +66,7 @@ public class TiendaView {
                     System.out.println("Opcion introducida incorrecta.");
                     break;
             }
-        }while (opcionMenuPrincipal > 3 || opcionMenuPrincipal < 1);
+        }while (opcionMenuPrincipal > 4 || opcionMenuPrincipal < 1);
 
     }
 
@@ -94,6 +96,4 @@ public class TiendaView {
         }while(!bExito);
         return opcion;
     }
-
-
 }
