@@ -101,4 +101,16 @@ public class Reserva implements IReserva {
     public int hashCode() {
         return Objects.hash(getSocio(), getInstalacion(), getFecha(), getHora(), getMinutos());
     }
+
+    public String toString() {
+        String salida = "";
+        if (reservaValida()) {
+            salida += "*********************************************";
+            salida += "\nReservado por: \n"+ getSocio().toString();
+            salida += "\nInstalacion de la Reserca: \n"+ getInstalacion().toString();
+            salida += "\nFecha de la Reserva: \n"+ fecha.get(Calendar.DAY_OF_MONTH) + "/" +fecha.get(Calendar.MONTH) + "/"
+                        + fecha.get(Calendar.YEAR) + "   -   " + getHora() + ":" + getMinutos();
+        }
+        return salida;
+    }
 }
