@@ -54,6 +54,33 @@ public class SocioView {
         return bExito;
     }
 
+    private static boolean eliminarSocio(Terminal terminal) {
+        boolean bExito = false;
+        int id = 0;
+
+        do {
+            try {
+                id = (int) valida("Introduce el ID del socio que desees eliminar: ",0,-1,1);
+                bExito = true;
+            }catch (NumberFormatException exc){
+                System.out.println(exc.getMessage());
+            }catch (Exception exc){
+                System.out.println(exc.getMessage());
+            }finally {
+                if (!bExito)
+                    System.out.println("ID introducido incorrecto");
+            }
+        }while(!bExito);
+
+        bExito = terminal.getSocioController().remove(new Socio(id));
+
+        if (bExito)
+            System.out.println("Socio eliminado con exito.");
+        else
+            System.out.println("Socio eliminado sin exito.");
+        return bExito;
+    }
+
     private static boolean modificarSocio(Terminal terminal) {
         int id = 0;
         boolean bExito = false;
