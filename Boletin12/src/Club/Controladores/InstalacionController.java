@@ -7,6 +7,10 @@ public class InstalacionController implements ICrud<Instalacion> {
     private final byte MAXINSTALACIONES = 50;
     private byte contadorInstalaciones;
 
+    public InstalacionController() {
+        vInstalaciones = new Instalacion[MAXINSTALACIONES];
+        contadorInstalaciones = 0;
+    }
 
     @Override
     public Instalacion[] getaVector() {
