@@ -29,8 +29,14 @@ public class Instalacion {
         return tipo;
     }
 
-    public void setTipo(byte tipo) {
-        this.tipo = tipo;
+    private boolean setTipo(byte tipo) {
+        boolean bExito = false;
+        if (tipo > 0 && tipo < 4){
+            this.tipo = tipo;
+            bExito = true;
+        }else
+            this.tipo = -1;
+        return bExito;
     }
 
     public boolean isbEstado() {
