@@ -1,6 +1,6 @@
 package Club.Modelos;
 
-public class Instalacion {
+public class Instalacion implements IInstalacion {
     private byte ubicacion;
     private byte tipo;
     private boolean bEstado;
@@ -11,6 +11,7 @@ public class Instalacion {
         setbEstado(true);
     }
 
+    @Override
     public byte getUbicacion() {
         return ubicacion;
     }
@@ -25,6 +26,7 @@ public class Instalacion {
         return bExito;
     }
 
+    @Override
     public byte getTipo() {
         return tipo;
     }
@@ -39,14 +41,17 @@ public class Instalacion {
         return bExito;
     }
 
+    @Override
     public boolean isbEstado() {
         return bEstado;
     }
 
+    @Override
     public void setbEstado(boolean bEstado) {
         this.bEstado = bEstado;
     }
 
+    @Override
     public String tipoString(){
         String salida = "";
         if (getTipo() == FUTBOL)
@@ -58,6 +63,7 @@ public class Instalacion {
         return salida;
     }
 
+    @Override
     public boolean instalacionValida(){
         boolean bExito = false;
         if (getTipo() != -1 && getUbicacion() != -1)
