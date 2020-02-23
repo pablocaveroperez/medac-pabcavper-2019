@@ -87,7 +87,8 @@ public class Reserva implements IReserva {
     public boolean equals(Object o) {
         boolean bExito = false;
         Reserva that = (Reserva) o;
-        if (this != null && that != null && this.getInstalacion().equals(that.getInstalacion()) && this.getFecha().equals(that.getFecha())){
+        if (this != null && that != null && this.getInstalacion().equals(that.getInstalacion())
+                && this.getFecha().equals(that.getFecha())) {
             if ((this.getHora() + 1 == that.getHora() && that.getMinutos() < this.getMinutos())
                     || (this.getHora() - 1 == that.getHora() && that.getMinutos() > this.getMinutos())
                     || this.getHora() == that.getHora())
