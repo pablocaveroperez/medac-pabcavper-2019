@@ -2,7 +2,7 @@ package Club.Modelos;
 
 import java.util.Calendar;
 
-public class Reserva {
+public class Reserva implements IReserva {
     private Socio socio;
     private Instalacion instalacion;
     private Calendar fecha;
@@ -17,6 +17,7 @@ public class Reserva {
         setMinutos(minutos);
     }
 
+    @Override
     public Socio getSocio() {
         return socio;
     }
@@ -25,6 +26,7 @@ public class Reserva {
         this.socio = socio;
     }
 
+    @Override
     public Instalacion getInstalacion() {
         return instalacion;
     }
@@ -33,6 +35,7 @@ public class Reserva {
         this.instalacion = instalacion;
     }
 
+    @Override
     public Calendar getFecha() {
         return fecha;
     }
@@ -41,6 +44,7 @@ public class Reserva {
         this.fecha = fecha;
     }
 
+    @Override
     public byte getHora() {
         return hora;
     }
@@ -55,6 +59,7 @@ public class Reserva {
         return bExito;
     }
 
+    @Override
     public byte getMinutos() {
         return minutos;
     }
@@ -69,6 +74,7 @@ public class Reserva {
         return bExito;
     }
 
+    @Override
     public boolean reservaValida(){
         boolean bExito = false;
         if (getHora() != -1 && getMinutos() != -1 && getFecha() != null && instalacion.instalacionValida() && socio.getId() != 0)
