@@ -16,9 +16,9 @@ public class ReservaView {
         boolean bExito;
 
         do {
-            opcion = TiendaView.subMenu();
+            opcion = subMenuReservas();
             bExito = gestionMenuReserva(terminal,opcion);
-        }while(opcion != 6);
+        }while(opcion != 4);
     }
 
     private static boolean gestionMenuReserva(Terminal terminal, byte opcion) {
@@ -27,24 +27,14 @@ public class ReservaView {
             case 1: // ADD RESERVA
                 bExito = altaReserva(terminal);
                 break;
-            case 2: // MODIFICAR RESERVA
-                bExito = modificarReserva(terminal);
-                break;
-            case 3: // ELIMINAR RESERVA
+            case 2: // ELIMINAR RESERVA
                 bExito = eliminarReserva(terminal);
                 break;
-            case 4: // BUSCAR RESERVA
-                Reserva reserva = buscarReserva(terminal);
-                if (reserva != null)
-                    System.out.println(reserva);
-                else
-                    System.out.println("No se ha encontrado ninguna reserva con esa id");
-                break;
-            case 5: // MOSTRAR RESERVA
+            case 3: // MOSTRAR RESERVA
                 System.out.println(mostrarReserva(terminal));
                 bExito = true;
                 break;
-            case 6:
+            case 4:
                 System.out.println("Volviendo al menus principal");
                 bExito = true;
                 break;
@@ -60,13 +50,7 @@ public class ReservaView {
         return null;
     }
 
-    private static Reserva buscarReserva(Terminal terminal) {
-    }
-
     private static boolean eliminarReserva(Terminal terminal) {
-    }
-
-    private static boolean modificarReserva(Terminal terminal) {
     }
 
     private static boolean altaReserva(Terminal terminal) {
@@ -216,5 +200,30 @@ public class ReservaView {
         else
             System.out.println("Reserva aniadida sin exito");
         return bExito;
+    }
+
+    public static byte subMenuReservas(){
+        System.out.println("¿Que deseas hacer?");
+        System.out.println("*********************************");
+        System.out.println("1. Añadir ");
+        System.out.println("2. Eliminar ");
+        System.out.println("3. Mostrar ");
+        System.out.println("4. Volver a menu principal");
+        boolean bExito = false;
+        byte opcion = 0;
+        do {
+            try {
+                opcion = (byte) valida("Introduce una opcion valida: ", 1, 4, 3);
+                bExito = true;
+            }catch (NumberFormatException exc){
+                System.out.println(exc.getMessage());
+            }catch (Exception exc){
+                System.out.println(exc.getMessage());
+            }finally {
+                if (!bExito)
+                    System.out.println("Opcion introducida incorrecto");
+            }
+        }while(!bExito);
+        return opcion;
     }
 }
