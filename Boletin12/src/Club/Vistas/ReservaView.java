@@ -47,10 +47,156 @@ public class ReservaView {
     }
 
     private static String mostrarReserva(Terminal terminal) {
-        return null;
+        return terminal.getReservaController().printAll();
     }
 
     private static boolean eliminarReserva(Terminal terminal) {
+        boolean bExito = false;
+        Socio socio;
+        Instalacion instalacion;
+        Calendar fecha = null;
+        byte hora = 0;
+        byte minutos = 0;
+
+        int idSocio = 0;
+        do {
+            try {
+                idSocio = (int) valida("Introduce la id del socio: ",0,-1,1);
+                bExito = true;
+            }catch (NumberFormatException exc){
+                System.out.println("Error: " + exc.getMessage());
+            }catch (Exception exc){
+                System.out.println("Error generico: " + exc.getMessage());
+            }finally {
+                if (!bExito)
+                    System.out.println("ID del socio introducido incorrecto");
+            }
+        }while(!bExito);
+
+        socio = terminal.getSocioController().getaVector()[terminal.getSocioController().search(new Socio(idSocio))];
+
+        byte ubicacion = 0, tipo = 0;
+        do {
+            bExito = false;
+            try {
+                ubicacion = (byte) valida("Introduce la ubicacion de la instalacion: ",0,-1,3);
+                bExito = true;
+            }catch (NumberFormatException exc){
+                System.out.println("Error: " + exc.getMessage());
+            }catch (Exception exc){
+                System.out.println("Error generico: " + exc.getMessage());
+            }finally {
+                if (!bExito)
+                    System.out.println("Ubicacion de la instalacion introducido incorrecto");
+            }
+        }while(!bExito);
+
+        do {
+            bExito = false;
+            try {
+                ubicacion = (byte) valida("Introduce el tipo de la instalacion: ",1,3,3);
+                bExito = true;
+            }catch (NumberFormatException exc){
+                System.out.println("Error: " + exc.getMessage());
+            }catch (Exception exc){
+                System.out.println("Error generico: " + exc.getMessage());
+            }finally {
+                if (!bExito)
+                    System.out.println("Tipo de la instalacion introducido incorrecto");
+            }
+        }while(!bExito);
+
+        instalacion = terminal.getInstalacionController().getaVector()[terminal.getInstalacionController().search(new Instalacion(ubicacion,tipo))];
+
+        short year = 0;
+        byte month = 0, day = 0;
+
+        do {
+            bExito = false;
+            try {
+                year = (byte) valida("Introduce el anio de la reserva: ",1900,2020,4);
+                bExito = true;
+            }catch (NumberFormatException exc){
+                System.out.println("Error: " + exc.getMessage());
+            }catch (Exception exc){
+                System.out.println("Error generico: " + exc.getMessage());
+            }finally {
+                if (!bExito)
+                    System.out.println("Anio de la reserva introducido incorrecto");
+            }
+        }while(!bExito);
+
+        do {
+            bExito = false;
+            try {
+                month = (byte) valida("Introduce el mes de la reserva: ",1,12,3);
+                bExito = true;
+            }catch (NumberFormatException exc){
+                System.out.println("Error: " + exc.getMessage());
+            }catch (Exception exc){
+                System.out.println("Error generico: " + exc.getMessage());
+            }finally {
+                if (!bExito)
+                    System.out.println("Mes de la reserva introducido incorrecto");
+            }
+        }while(!bExito);
+
+        do {
+            bExito = false;
+            try {
+                day = (byte) valida("Introduce el dia de la reserva: ",1,31,3);
+                bExito = true;
+            }catch (NumberFormatException exc){
+                System.out.println("Error: " + exc.getMessage());
+            }catch (Exception exc){
+                System.out.println("Error generico: " + exc.getMessage());
+            }finally {
+                if (!bExito)
+                    System.out.println("Dia de la reserva introducido incorrecto");
+            }
+        }while(!bExito);
+
+        fecha.set(year,month,day);
+
+        do {
+            bExito = false;
+            try {
+                hora = (byte) valida("Introduce la hora de la reserva: ",0,23,3);
+                bExito = true;
+            }catch (NumberFormatException exc){
+                System.out.println("Error: " + exc.getMessage());
+            }catch (Exception exc){
+                System.out.println("Error generico: " + exc.getMessage());
+            }finally {
+                if (!bExito)
+                    System.out.println("Hora de la reserva introducido incorrecto");
+            }
+        }while(!bExito);
+
+        do {
+            bExito = false;
+            try {
+                minutos = (byte) valida("Introduce el minuto de la reserva: ",0,59,3);
+                bExito = true;
+            }catch (NumberFormatException exc){
+                System.out.println("Error: " + exc.getMessage());
+            }catch (Exception exc){
+                System.out.println("Error generico: " + exc.getMessage());
+            }finally {
+                if (!bExito)
+                    System.out.println("Minuto de la reserva introducido incorrecto");
+            }
+        }while(!bExito);
+
+        Reserva reserva = new Reserva(socio,instalacion,fecha,hora,minutos);
+
+        bExito = terminal.getReservaController().remove(reserva);
+
+        if (bExito)
+            System.out.println("Reserva eliminada con exito");
+        else
+            System.out.println("Reserva eliminada sin exito");
+        return bExito;
     }
 
     private static boolean altaReserva(Terminal terminal) {
