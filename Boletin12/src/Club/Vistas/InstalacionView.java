@@ -87,12 +87,20 @@ public class InstalacionView {
         }while (!bExito);
 
         int iPosicion = terminal.getInstalacionController().search(new Instalacion(bUbicacion,bTipo));
+        bExito = false;
         if (iPosicion != 1) {
-            terminal.getInstalacionController().getaVector()[iPosicion].setbEstado();
+            terminal.getInstalacionController().getaVector()[iPosicion].setbEstado(selectorEstado());
+            bExito = true;
         }
+
+        if (bExito)
+            System.out.println("Modificacion del estado con exito");
+        else
+            System.out.println("Modificacion del estado sin exito");
+        return bExito;
     }
 
-    private boolean selectorEstado() {
+    private static boolean selectorEstado() {
         boolean bExito = false;
         byte opcion = 0;
 
