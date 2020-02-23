@@ -21,6 +21,15 @@ public class Socio implements ISocio {
         setId(id);
     }
 
+    public Socio(int id, String sDni, String sNombre, String sApellidos, String sEmail, String sTelefono) {
+        setId(id);
+        setsDni(sDni);
+        setsNombre(sNombre);
+        setsApellidos(sApellidos);
+        setsEmail(sEmail);
+        setsTelefono(sTelefono);
+    }
+
     private boolean comprobarEmail(String sEmail){
         boolean bExito = false;
         if (sEmail.contains("@")){

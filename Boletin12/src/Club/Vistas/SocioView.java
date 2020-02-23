@@ -54,8 +54,8 @@ public class SocioView {
     }
 
     private static boolean altaSocio(Terminal terminal) {
-        String sDni, sNombre, sApellidos, sTelefono, sEmail;
-        int id;
+        String sDni = null, sNombre = null, sApellidos = null, sTelefono = null, sEmail = null;
+        int id = 0;
 
         boolean bExito = false;
         do {
@@ -110,5 +110,40 @@ public class SocioView {
                     System.out.println("Apellidos introducido incorrecto");
             }
         }while(!bExito);
+
+        do {
+            bExito = false;
+            try {
+                sTelefono = leer("Introduce el telefono del socio: ");
+                bExito = true;
+            }catch (Exception exc){
+                System.out.println(exc.getMessage());
+            }finally {
+                if (!bExito)
+                    System.out.println("Telefono introducido incorrecto");
+            }
+        }while(!bExito);
+
+        do {
+            bExito = false;
+            try {
+                sEmail = leer("Introduce el email del socio: ");
+                bExito = true;
+            }catch (Exception exc){
+                System.out.println(exc.getMessage());
+            }finally {
+                if (!bExito)
+                    System.out.println("Email introducido incorrecto");
+            }
+        }while(!bExito);
+
+        Socio socio = new Socio(id,sDni,sNombre,sApellidos,sEmail,sTelefono);
+
+        bExito = terminal.getSocioController().add(socio);
+        if (bExito)
+            System.out.println("Cliente aniadido con exito");
+        else
+            System.out.println("Cliente aniadido sin exito");
+        return bExito;
     }
 }
