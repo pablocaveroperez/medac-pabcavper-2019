@@ -1,7 +1,6 @@
 package Club.Controladores;
 
 import Club.Modelos.Reserva;
-import Tienda.Controladores.ClienteController;
 
 public class Terminal {
     private SocioController socioController;
