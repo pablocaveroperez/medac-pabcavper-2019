@@ -208,5 +208,13 @@ public class ReservaView {
         }while(!bExito);
 
         Reserva reserva = new Reserva(socio,instalacion,fecha,hora,minutos);
+
+        bExito = terminal.add(reserva);
+
+        if (bExito)
+            System.out.println("Reserva aniadida con exito");
+        else
+            System.out.println("Reserva aniadida sin exito");
+        return bExito;
     }
 }
