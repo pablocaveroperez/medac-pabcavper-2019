@@ -117,7 +117,7 @@ public class Reserva implements IReserva {
 	@Override
 	public boolean validarReserva() {
 		boolean bExito = false;
-		if (this.bHora != -1 && this.bMinutos != -1 && !cFecha.equals(null) && oInstalacion.validarInstalacion()
+		if (this.bHora != -1 && this.bMinutos != -1 && cFecha != null && oInstalacion.validarInstalacion()
 				&& this.oSocio.getsDni() != null) {
 			bExito = true;
 		}

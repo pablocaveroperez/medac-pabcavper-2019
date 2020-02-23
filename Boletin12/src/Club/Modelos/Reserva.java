@@ -60,7 +60,19 @@ public class Reserva {
     }
 
     private boolean setMinutos(byte minutos) {
+        boolean bExito = false;
+        if (minutos >= 0 && minutos < 60){
+            this.minutos = minutos;
+            bExito = true;
+        }else
+            this.minutos = -1;
+        return bExito;
+    }
 
-        this.minutos = minutos;
+    public boolean reservaValida(){
+        boolean bExito = false;
+        if (getHora() != -1 && getMinutos() != -1 && getFecha() != null && instalacion.instalacionValida() && socio.getId() != 0)
+            bExito = true;
+        return bExito;
     }
 }
