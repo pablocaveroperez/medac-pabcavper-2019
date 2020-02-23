@@ -4,6 +4,9 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 import controlador.Terminal;
+import modelo.Instalacion;
+import modelo.Reserva;
+import modelo.Socio;
 
 public class CLUB_DEPORTIVO {
 
@@ -21,14 +24,16 @@ public class CLUB_DEPORTIVO {
 		//Reserva
 		Calendar calendar = new GregorianCalendar();
 		calendar.set(2008, 2, 6);
-		
-		/*Reserva oReserva = new Reserva(oSocio,oInst,calendar,(byte)10,(byte)30);
+
+		Socio oSocio = null;
+		Instalacion oInst = null;
+		Reserva oReserva = new Reserva(oSocio,oInst,calendar,(byte)10,(byte)30);
 
 		if(t.add(oReserva)) {
 			System.out.println("Reserva añadida con exito");
 		}else {
 			System.out.println("No se ha registrado la reserva.");
-		}*/
+		}
 		
 		System.out.println("Numero de reservas registradas: "+t.getResController().getbContadorArray());
 

@@ -25,7 +25,7 @@ public class InstalacionView {
                 bExito = altaInstalacion(terminal);
                 break;
             case 2: // MODIFICAR INSTALACION
-                bExito = modificarInstalacion(terminal);
+                bExito = modificarEstadoInstalacion(terminal);
                 break;
             case 3: // ELIMINAR INSTALACION
                 bExito = eliminarInstalacion(terminal);
@@ -51,6 +51,41 @@ public class InstalacionView {
                 break;
         }
         return bExito;
+    }
+
+    private static boolean modificarEstadoInstalacion(Terminal terminal) {
+        boolean bExito = false;
+        byte bTipo = 0, bUbicacion = 0;
+
+        do {
+            try {
+                bTipo = (byte) valida("Introduce el número del tipo de la instalacion que quieres modificar (1-3): ", 1, 3, 3);
+                bExito = true;
+            }catch (NumberFormatException exc){
+                System.out.println("Error: " + exc.getMessage());
+            }catch (Exception exc){
+                System.out.println("Error generico: " + exc.getMessage());
+            }finally {
+                if (!bExito)
+                    System.out.println("Tipo introducido incorrecto.");
+            }
+        }while (!bExito);
+
+        do {
+            bExito = false;
+            try {
+                bUbicacion = (byte) valida("Introduce el número de ubicaicon de la instalacion que quieres modificar: ", 0, -1, 3);
+                bExito = true;
+            }catch (NumberFormatException exc){
+                System.out.println("Error: " + exc.getMessage());
+            }catch (Exception exc){
+                System.out.println("Error generico: " + exc.getMessage());
+            }finally {
+                if (!bExito)
+                    System.out.println("Ubicaicon introducido incorrecto.");
+            }
+        }while (!bExito);
+
     }
 
     public static boolean altaInstalacion(Terminal terminal) {
