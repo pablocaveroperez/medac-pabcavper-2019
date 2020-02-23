@@ -53,6 +53,10 @@ public class InstalacionView {
         return bExito;
     }
 
+    private static String mostrarInstalaciones(Terminal terminal) {
+        return terminal.getInstalacionController().printAll();
+    }
+
     private static Instalacion buscarInstalacion(Terminal terminal) {
         boolean bExito = false;
         byte bTipo = 0, bUbicacion = 0;
