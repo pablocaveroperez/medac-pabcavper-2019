@@ -2,6 +2,7 @@ package Club.Vistas;
 
 import Club.Controladores.Terminal;
 import Club.Modelos.Socio;
+import Tienda.Modelos.Cliente;
 import Tienda.Vistas.TiendaView;
 
 import static Libreria.LibreriaValida.*;
@@ -50,6 +51,98 @@ public class SocioView {
                 bExito = false;
                 break;
         }
+        return bExito;
+    }
+
+    private static boolean modificarSocio(Terminal terminal) {
+        int id = 0;
+        boolean bExito = false;
+        do {
+            try {
+                id = (int) valida("Introduce el ID del socio que desees modificar: ",0,-1,1);
+                bExito = true;
+            }catch (NumberFormatException exc){
+                System.out.println(exc.getMessage());
+            }catch (Exception exc){
+                System.out.println(exc.getMessage());
+            }finally {
+                if (!bExito)
+                    System.out.println("ID introducido incorrecto");
+            }
+        }while(!bExito);
+
+        int iPosicion = terminal.getSocioController().search(new Socio(id));
+        bExito = false;
+        if (iPosicion != 1) {
+            do {
+                try {
+                    terminal.getSocioController().getaVector()[iPosicion].setsDni(leer("Introduce el DNI del socio: "));
+                    bExito = true;
+                }catch (Exception exc){
+                    System.out.println(exc.getMessage());
+                }finally {
+                    if (!bExito)
+                        System.out.println("DNI introducido incorrecto");
+                }
+            }while(!bExito);
+
+            do {
+                bExito = false;
+                try {
+                    terminal.getSocioController().getaVector()[iPosicion].setsNombre(leer("Introduce el nombre del socio: "));
+                    bExito = true;
+                }catch (Exception exc){
+                    System.out.println(exc.getMessage());
+                }finally {
+                    if (!bExito)
+                        System.out.println("Nombre introducido incorrecto");
+                }
+            }while(!bExito);
+
+            do {
+                bExito = false;
+                try {
+                    terminal.getSocioController().getaVector()[iPosicion].setsApellidos(leer("Introduce los apellidos del socio: "));
+                    bExito = true;
+                }catch (Exception exc){
+                    System.out.println(exc.getMessage());
+                }finally {
+                    if (!bExito)
+                        System.out.println("Apellidos introducido incorrecto");
+                }
+            }while(!bExito);
+
+            do {
+                bExito = false;
+                try {
+                    terminal.getSocioController().getaVector()[iPosicion].setsTelefono(leer("Introduce el telefono del socio: "));
+                    bExito = true;
+                }catch (Exception exc){
+                    System.out.println(exc.getMessage());
+                }finally {
+                    if (!bExito)
+                        System.out.println("Telefono introducido incorrecto");
+                }
+            }while(!bExito);
+
+            do {
+                bExito = false;
+                try {
+                    terminal.getSocioController().getaVector()[iPosicion].setsEmail(leer("Introduce el email del socio: "));
+                    bExito = true;
+                }catch (Exception exc){
+                    System.out.println(exc.getMessage());
+                }finally {
+                    if (!bExito)
+                        System.out.println("Email introducido incorrecto");
+                }
+            }while(!bExito);
+            bExito = true;
+        }
+        if (bExito)
+            System.out.println("Socio modificado con exito.");
+        else
+            System.out.println("Socio midificado sin exito.");
         return bExito;
     }
 
