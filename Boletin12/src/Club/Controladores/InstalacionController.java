@@ -70,6 +70,11 @@ public class InstalacionController implements ICrud<Instalacion> {
 
     @Override
     public boolean update(Instalacion oObjeto, int iPosicion) {
-        return false;
+        boolean bExito = false;
+        if (iPosicion != -1) {
+            vInstalaciones[iPosicion]= oObjeto;
+            bExito = true;
+        }
+        return bExito;
     }
 }
