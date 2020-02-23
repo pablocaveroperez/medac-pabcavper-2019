@@ -2,7 +2,6 @@ package Club.Vistas;
 
 import Club.Controladores.Terminal;
 import Club.Modelos.Socio;
-import Tienda.Modelos.Cliente;
 import Tienda.Vistas.TiendaView;
 
 import static Libreria.LibreriaValida.*;
@@ -36,7 +35,7 @@ public class SocioView {
                 if (socio != null)
                     System.out.println(socio);
                 else
-                    System.out.println("No se ha encontrado ningun cliente con esa id");
+                    System.out.println("No se ha encontrado ningun socio con esa id");
                 break;
             case 5: // MOSTRAR SOCIOS
                 System.out.println(mostrarSocios(terminal));
