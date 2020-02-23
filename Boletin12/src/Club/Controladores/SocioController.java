@@ -1,21 +1,20 @@
 package Club.Controladores;
 
 import Club.Modelos.Socio;
-import Tienda.Modelos.Cliente;
 
 public class SocioController implements ICrud<Socio> {
     private byte contadorSocios;
-    private Socio[] socios;
+    private Socio[] vSocios;
     private final byte MAXSOCIOS = 20;
 
     public SocioController(){
-        socios = new Socio[MAXSOCIOS];
+        vSocios = new Socio[MAXSOCIOS];
         contadorSocios = 0;
     }
 
     @Override
     public Socio[] getaVector() {
-        return socios;
+        return vSocios;
     }
 
     @Override
@@ -29,7 +28,7 @@ public class SocioController implements ICrud<Socio> {
         int iContador = 0;
 
         while(iPosicion == -1 && iContador < contadorSocios){
-            if (oObject.equals(socios[iContador]))
+            if (oObject.equals(vSocios[iContador]))
                 iPosicion = iContador;
             iContador++;
         }
@@ -44,7 +43,7 @@ public class SocioController implements ICrud<Socio> {
             salida = "No hay socios registrados.";
         else {
             for (int i = 0; i < contadorSocios; i++){
-                salida += socios[i]+"\n";
+                salida += vSocios[i]+"\n";
             }
         }
         return salida;
@@ -54,7 +53,7 @@ public class SocioController implements ICrud<Socio> {
     public boolean add(Socio oObject) {
         boolean bExito = false;
         if (oObject.getId() != 0 && contadorSocios < MAXSOCIOS && search(oObject) == -1){
-            socios[contadorSocios] = oObject;
+            vSocios[contadorSocios] = oObject;
             contadorSocios++;
             bExito = true;
         }
@@ -67,8 +66,8 @@ public class SocioController implements ICrud<Socio> {
         int iPosicion = search(oObject);
         if (iPosicion != -1){
             for (int i = iPosicion; i < contadorSocios; i++)
-                socios[i] = socios[i+1];
-            socios[contadorSocios] = null;
+                vSocios[i] = vSocios[i+1];
+            vSocios[contadorSocios] = null;
             contadorSocios--;
             bExito = true;
         }
@@ -79,7 +78,7 @@ public class SocioController implements ICrud<Socio> {
     public boolean update(Socio oObjeto, int iPosicion) {
         boolean bExito = false;
         if (iPosicion != -1) {
-            socios[iPosicion] = oObjeto;
+            vSocios[iPosicion] = oObjeto;
             bExito = true;
         }
         return bExito;
