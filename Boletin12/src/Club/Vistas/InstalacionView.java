@@ -31,9 +31,9 @@ public class InstalacionView {
                 bExito = eliminarInstalacion(terminal);
                 break;
             case 4: // BUSCAR INSTALACION
-                Socio socio = buscarInstalacion(terminal);
-                if (socio != null)
-                    System.out.println(socio);
+                Instalacion instalacion = buscarInstalacion(terminal);
+                if (instalacion != null)
+                    System.out.println(instalacion);
                 else
                     System.out.println("No se ha encontrado ninguna instalacion con esa id");
                 break;
@@ -53,13 +53,13 @@ public class InstalacionView {
         return bExito;
     }
 
-    private static boolean eliminarInstalacion(Terminal terminal) {
+    private static Instalacion buscarInstalacion(Terminal terminal) {
         boolean bExito = false;
         byte bTipo = 0, bUbicacion = 0;
 
         do {
             try {
-                bTipo = (byte) valida("Introduce el número del tipo de la instalacion que quieres modificar (1-3): ", 1, 3, 3);
+                bTipo = (byte) valida("Introduce el número del tipo de la instalacion que quieres buscar (1-3): ", 1, 3, 3);
                 bExito = true;
             }catch (NumberFormatException exc){
                 System.out.println("Error: " + exc.getMessage());
@@ -74,7 +74,43 @@ public class InstalacionView {
         do {
             bExito = false;
             try {
-                bUbicacion = (byte) valida("Introduce el número de ubicaicon de la instalacion que quieres modificar: ", 0, -1, 3);
+                bUbicacion = (byte) valida("Introduce el número de ubicaicon de la instalacion que quieres buscar: ", 0, -1, 3);
+                bExito = true;
+            }catch (NumberFormatException exc){
+                System.out.println("Error: " + exc.getMessage());
+            }catch (Exception exc){
+                System.out.println("Error generico: " + exc.getMessage());
+            }finally {
+                if (!bExito)
+                    System.out.println("Ubicaicon introducido incorrecto.");
+            }
+        }while (!bExito);
+
+        return terminal.getInstalacionController().getaVector()[terminal.getInstalacionController().search(new Instalacion(bUbicacion,bTipo))];
+    }
+
+    private static boolean eliminarInstalacion(Terminal terminal) {
+        boolean bExito = false;
+        byte bTipo = 0, bUbicacion = 0;
+
+        do {
+            try {
+                bTipo = (byte) valida("Introduce el número del tipo de la instalacion que quieres eliminar (1-3): ", 1, 3, 3);
+                bExito = true;
+            }catch (NumberFormatException exc){
+                System.out.println("Error: " + exc.getMessage());
+            }catch (Exception exc){
+                System.out.println("Error generico: " + exc.getMessage());
+            }finally {
+                if (!bExito)
+                    System.out.println("Tipo introducido incorrecto.");
+            }
+        }while (!bExito);
+
+        do {
+            bExito = false;
+            try {
+                bUbicacion = (byte) valida("Introduce el número de ubicaicon de la instalacion que quieres eliminar: ", 0, -1, 3);
                 bExito = true;
             }catch (NumberFormatException exc){
                 System.out.println("Error: " + exc.getMessage());
