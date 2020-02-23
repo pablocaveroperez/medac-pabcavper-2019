@@ -54,6 +54,27 @@ public class SocioView {
         return bExito;
     }
 
+    private static Socio buscarSocio(Terminal terminal) {
+        boolean bExito = false;
+        int id = 0;
+
+        do {
+            try {
+                id = (int) valida("Introduce el ID del socio que desees buscar: ",0,-1,1);
+                bExito = true;
+            }catch (NumberFormatException exc){
+                System.out.println(exc.getMessage());
+            }catch (Exception exc){
+                System.out.println(exc.getMessage());
+            }finally {
+                if (!bExito)
+                    System.out.println("ID introducido incorrecto");
+            }
+        }while(!bExito);
+
+        return terminal.getSocioController().getaVector()[terminal.getSocioController().search(new Socio(id))];
+    }
+
     private static boolean eliminarSocio(Terminal terminal) {
         boolean bExito = false;
         int id = 0;
