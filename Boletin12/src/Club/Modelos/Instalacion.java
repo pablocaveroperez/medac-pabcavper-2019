@@ -1,5 +1,7 @@
 package Club.Modelos;
 
+import java.util.Objects;
+
 public class Instalacion implements IInstalacion {
     private byte ubicacion;
     private byte tipo;
@@ -69,5 +71,30 @@ public class Instalacion implements IInstalacion {
         if (getTipo() != -1 && getUbicacion() != -1)
             bExito = true;
         return bExito;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
+        Instalacion that = (Instalacion) o;
+        return getUbicacion() == that.getUbicacion() && getTipo() == that.getTipo();
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getUbicacion(), getTipo());
+    }
+
+    public String toString(){
+        String salida = "";
+        if (instalacionValida()){
+            salida += "*********************************************";
+            salida += "\nNombre de la instalacion: " + tipoString() + " " + getUbicacion();
+            salida += "\nEstado de la instalacion: " + isbEstado();
+        }
+        return salida;
     }
 }
