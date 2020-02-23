@@ -57,4 +57,11 @@ public class Instalacion {
             salida = "BALONCESTO";
         return salida;
     }
+
+    public boolean instalacionValida(){
+        boolean bExito = false;
+        if (getTipo() != -1 && getUbicacion() != -1)
+            bExito = true;
+        return bExito;
+    }
 }
