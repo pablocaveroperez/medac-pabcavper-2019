@@ -86,6 +86,38 @@ public class InstalacionView {
             }
         }while (!bExito);
 
+        int iPosicion = terminal.getInstalacionController().search(new Instalacion(bUbicacion,bTipo));
+        if (iPosicion != 1) {
+            terminal.getInstalacionController().getaVector()[iPosicion].setbEstado();
+        }
+    }
+
+    private boolean selectorEstado() {
+        boolean bExito = false;
+        byte opcion = 0;
+
+        do {
+            try {
+                opcion = (byte) valida("Introduce 1 para liberar la instalacion o 2 para ocuparla.",1,2,3);
+                bExito = true;
+            }catch (NumberFormatException exc) {
+                System.out.println("Error: " +exc.getMessage());
+            }catch (Exception exc){
+                System.out.println("Error generico: " + exc.getMessage());
+            }finally {
+                if (!bExito)
+                    System.out.println("Opcion introducida incorrecta");
+            }
+        }while(!bExito);
+
+        if (opcion == 1)
+            bExito = true;
+        else if (opcion == 2)
+            bExito = false;
+        else
+            System.out.println("Opcion introducida incorrecta");
+        return bExito;
+
     }
 
     public static boolean altaInstalacion(Terminal terminal) {
