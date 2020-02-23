@@ -31,7 +31,16 @@ public class InstalacionController implements ICrud<Instalacion> {
 
     @Override
     public boolean remove(Instalacion oObject) {
-        return false;
+        boolean bExito = false;
+        int iPosicion = search(oObject);
+        if (iPosicion != -1){
+            for (int i = iPosicion; i < contadorInstalaciones; i++)
+                vInstalaciones[i] = vInstalaciones[i+1];
+            vInstalaciones[contadorInstalaciones] = null;
+            contadorInstalaciones--;
+            bExito = true;
+        }
+        return bExito;
     }
 
     @Override
