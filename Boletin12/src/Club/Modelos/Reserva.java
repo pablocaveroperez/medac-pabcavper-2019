@@ -1,6 +1,7 @@
 package Club.Modelos;
 
 import java.util.Calendar;
+import java.util.Objects;
 
 public class Reserva implements IReserva {
     private Socio socio;
@@ -80,5 +81,23 @@ public class Reserva implements IReserva {
         if (getHora() != -1 && getMinutos() != -1 && getFecha() != null && instalacion.instalacionValida() && socio.getId() != 0)
             bExito = true;
         return bExito;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        boolean bExito = false;
+        Reserva that = (Reserva) o;
+        if (this != null && that != null && this.getInstalacion().equals(that.getInstalacion()) && this.getFecha().equals(that.getFecha())){
+            if ((this.getHora() + 1 == that.getHora() && that.getMinutos() < this.getMinutos())
+                    || (this.getHora() - 1 == that.getHora() && that.getMinutos() > this.getMinutos())
+                    || this.getHora() == that.getHora())
+                bExito = true;
+        }
+        return bExito;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getSocio(), getInstalacion(), getFecha(), getHora(), getMinutos());
     }
 }
