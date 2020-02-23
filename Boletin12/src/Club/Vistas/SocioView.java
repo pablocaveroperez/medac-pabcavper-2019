@@ -4,6 +4,8 @@ import Club.Controladores.Terminal;
 import Club.Modelos.Socio;
 import Tienda.Vistas.TiendaView;
 
+import static Libreria.LibreriaValida.*;
+
 public class SocioView {
 
     public static void menuSocios(Terminal terminal) {
@@ -49,5 +51,64 @@ public class SocioView {
                 break;
         }
         return bExito;
+    }
+
+    private static boolean altaSocio(Terminal terminal) {
+        String sDni, sNombre, sApellidos, sTelefono, sEmail;
+        int id;
+
+        boolean bExito = false;
+        do {
+            try {
+                id = (int) valida("Introduce el ID del socio",0,-1,1);
+                bExito = true;
+            }catch (NumberFormatException exc){
+                System.out.println(exc.getMessage());
+            }catch (Exception exc){
+                System.out.println(exc.getMessage());
+            }finally {
+                if (!bExito)
+                    System.out.println("ID introducido incorrecto");
+            }
+        }while(!bExito);
+
+        do {
+            bExito = false;
+            try {
+                sDni = leer("Introduce el DNI del socio: ");
+                bExito = true;
+            }catch (Exception exc){
+                System.out.println(exc.getMessage());
+            }finally {
+                if (!bExito)
+                    System.out.println("DNI introducido incorrecto");
+            }
+        }while(!bExito);
+
+        do {
+            bExito = false;
+            try {
+                sNombre = leer("Introduce el nombre del socio: ");
+                bExito = true;
+            }catch (Exception exc){
+                System.out.println(exc.getMessage());
+            }finally {
+                if (!bExito)
+                    System.out.println("Nombre introducido incorrecto");
+            }
+        }while(!bExito);
+
+        do {
+            bExito = false;
+            try {
+                sApellidos = leer("Introduce los apellidos del socio: ");
+                bExito = true;
+            }catch (Exception exc){
+                System.out.println(exc.getMessage());
+            }finally {
+                if (!bExito)
+                    System.out.println("Apellidos introducido incorrecto");
+            }
+        }while(!bExito);
     }
 }
