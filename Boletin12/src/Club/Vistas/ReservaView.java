@@ -77,9 +77,10 @@ public class ReservaView {
         byte hora = 0;
         byte minutos = 0;
 
+        int idSocio = 0;
         do {
             try {
-                socio = terminal.getSocioController().getaVector()[terminal.getSocioController().search(new Socio((int) valida("Introduce la id del socio: ",0,-1,1)))];
+                idSocio = (int) valida("Introduce la id del socio: ",0,-1,1);
                 bExito = true;
             }catch (NumberFormatException exc){
                 System.out.println("Error: " + exc.getMessage());
@@ -90,6 +91,8 @@ public class ReservaView {
                     System.out.println("ID del socio introducido incorrecto");
             }
         }while(!bExito);
+
+        socio = terminal.getSocioController().getaVector()[terminal.getSocioController().search(new Socio(idSocio))];
 
         byte ubicacion = 0, tipo = 0;
         do {
@@ -204,6 +207,6 @@ public class ReservaView {
             }
         }while(!bExito);
 
-
+        Reserva reserva = new Reserva(socio,instalacion,fecha,hora,minutos);
     }
 }
