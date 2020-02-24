@@ -3,7 +3,7 @@ package Club.Modelos;
 public interface ISocio {
     String getsTelefono();
 
-    void setsTelefono(String sTelefono);
+    boolean setsTelefono(String sTelefono);
 
     String getsEmail();
 

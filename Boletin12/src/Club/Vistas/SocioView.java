@@ -283,11 +283,13 @@ public class SocioView {
 
         Socio socio = new Socio(id,sDni,sNombre,sApellidos);
         if (socio.setsEmail(sEmail)){
-            socio.setsTelefono(sTelefono);
-            bExito = terminal.getSocioController().add(socio);
-            if (bExito)
-                System.out.println("Cliente aniadido con exito");
-            else
+            if (socio.setsTelefono(sTelefono)){
+                bExito = terminal.getSocioController().add(socio);
+                if (bExito)
+                    System.out.println("Cliente aniadido con exito");
+                else
+                    System.out.println("Cliente aniadido sin exito");
+            }else
                 System.out.println("Cliente aniadido sin exito");
         }else
             System.out.println("Cliente aniadido sin exito");
