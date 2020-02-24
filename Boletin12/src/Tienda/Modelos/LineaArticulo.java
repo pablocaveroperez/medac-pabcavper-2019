@@ -18,8 +18,13 @@ public class LineaArticulo {
         this.articulo = articulo;
     }
 
-    public void setCantidad(short cantidad) {
-        this.cantidad = cantidad;
+    public boolean setCantidad(short cantidad) {
+        boolean bExito = false;
+        if (cantidad > 0 && cantidad < getArticulo().getStock()){
+            this.cantidad = cantidad;
+            bExito = true;
+        }
+        return bExito;
     }
 
     public Articulo getArticulo() {
