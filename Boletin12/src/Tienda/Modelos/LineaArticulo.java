@@ -1,6 +1,6 @@
 package Tienda.Modelos;
 
-public class LineaArticulo {
+public class LineaArticulo implements ILineaArticulo {
     private Articulo articulo;
     private short cantidad;
 
@@ -14,10 +14,12 @@ public class LineaArticulo {
         setCantidad((short) 0);
     }
 
+    @Override
     public void setArticulo(Articulo articulo) {
         this.articulo = articulo;
     }
 
+    @Override
     public boolean setCantidad(short cantidad) {
         boolean bExito = false;
         if (cantidad > 0 && cantidad < getArticulo().getStock()){
@@ -27,10 +29,12 @@ public class LineaArticulo {
         return bExito;
     }
 
+    @Override
     public Articulo getArticulo() {
         return articulo;
     }
 
+    @Override
     public short getCantidad() {
         return cantidad;
     }
