@@ -55,4 +55,14 @@ public class Carrito implements ICarrito {
     public int hashCode() {
         return Objects.hash(getIdCarrito());
     }
+
+    public String toString() {
+        String salida = "";
+        salida += "ID del carrito: " + getIdCarrito()+"\n";
+        for (int i = 0; i < contadorCarrito; i++){
+            salida += lineaArticulos[i] + "\n";
+        }
+        salida += "Articulos en el carrito: " + getContadorCarrito();
+        return salida;
+    }
 }

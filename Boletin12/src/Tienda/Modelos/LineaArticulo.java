@@ -38,4 +38,11 @@ public class LineaArticulo implements ILineaArticulo {
     public short getCantidad() {
         return cantidad;
     }
+
+    public String toString() {
+        String salida = "";
+        salida += articulo.toString();
+        salida += "\nCantidad seleccionada: " + getCantidad();
+        return salida;
+    }
 }
