@@ -6,11 +6,11 @@ public class Carrito implements ICarrito {
     private byte idCarrito;
     private LineaArticulo[] lineaArticulos;
     private final byte MAXLINEAARTICULOS = 100;
-    private byte contadorCarrito;
+    private byte articulosCarrito;
 
     public Carrito(byte idCarrito) {
         lineaArticulos = new LineaArticulo[MAXLINEAARTICULOS];
-        contadorCarrito = 0;
+        articulosCarrito = 0;
         setIdCarrito(idCarrito);
     }
 
@@ -20,13 +20,13 @@ public class Carrito implements ICarrito {
     }
 
     @Override
-    public byte getContadorCarrito() {
-        return contadorCarrito;
+    public byte getArticulosCarrito() {
+        return articulosCarrito;
     }
 
     @Override
-    public void setContadorCarrito(byte contadorCarrito) {
-        this.contadorCarrito = contadorCarrito;
+    public void setArticulosCarrito(byte articulosCarrito) {
+        this.articulosCarrito = articulosCarrito;
     }
 
     private boolean setIdCarrito(byte idCarrito) {
@@ -59,10 +59,10 @@ public class Carrito implements ICarrito {
     public String toString() {
         String salida = "";
         salida += "ID del carrito: " + getIdCarrito()+"\n";
-        for (int i = 0; i < contadorCarrito; i++){
+        for (int i = 0; i < articulosCarrito; i++){
             salida += lineaArticulos[i] + "\n";
         }
-        salida += "Articulos en el carrito: " + getContadorCarrito();
+        salida += "Articulos en el carrito: " + getArticulosCarrito();
         return salida;
     }
 }

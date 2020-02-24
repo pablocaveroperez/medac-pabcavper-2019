@@ -3,9 +3,9 @@ package Tienda.Modelos;
 public interface ICarrito {
     LineaArticulo[] getLineaArticulos();
 
-    byte getContadorCarrito();
+    byte getArticulosCarrito();
 
-    void setContadorCarrito(byte contadorCarrito);
+    void setArticulosCarrito(byte articulosCarrito);
 
     byte getIdCarrito();
 }
