@@ -1,46 +1,44 @@
-package Tienda.Vistas;
+package Club.Vistas;
 
-
-import Tienda.Controladores.Tienda;
-import Tienda.Modelos.Cliente;
+import Club.Controladores.Terminal;
+import Club.Modelos.Socio;
+import Tienda.Vistas.TiendaView;
 
 import static Libreria.LibreriaValida.*;
 
+public class SocioView {
 
-public class ClienteView {
-
-    public static void menuClientes(Tienda tienda) {
+    public static void menuSocios(Terminal terminal) {
         byte opcion;
         boolean bExito;
 
         do {
             opcion = TiendaView.subMenu();
-            bExito = gestionMenuCliente(tienda, opcion);
+            bExito = gestionMenuSocio(terminal, opcion);
         }while(opcion != 6);
-
     }
 
-    private static boolean gestionMenuCliente(Tienda tienda, byte opcion) {
+    private static boolean gestionMenuSocio(Terminal terminal, byte opcion) {
         boolean bExito = false;
-        switch (opcion){
-            case 1: // ADD CLIENTE
-                bExito = altaCliente(tienda);
+        switch (opcion) {
+            case 1: // ADD SOCIO
+                bExito = altaSocio(terminal);
                 break;
-            case 2:// MODIFICAR CLIENTE
-                bExito = modificarCliente(tienda);
+            case 2: // MODIFICAR SOCIO
+                bExito = modificarSocio(terminal);
                 break;
-            case 3: // ELIMINAR CLIENTE
-                bExito = eliminarCliente(tienda);
+            case 3: // ELIMINAR SOCIO
+                bExito = eliminarSocio(terminal);
                 break;
-            case 4: // BUSCAR CLIENTE
-                Cliente oCliente = buscarCliente(tienda);
-                if (oCliente != null)
-                    System.out.println(oCliente);
+            case 4: // BUSCAR SOCIO
+                Socio socio = buscarSocio(terminal);
+                if (socio != null)
+                    System.out.println(socio);
                 else
-                    System.out.println("No se ha encontrado ningun cliente con esa ID.");
+                    System.out.println("No se ha encontrado ningun socio con esa id");
                 break;
-            case 5: // MOSTRAR CLIENTES
-                System.out.println(mostrarClientes(tienda));
+            case 5: // MOSTRAR SOCIOS
+                System.out.println(mostrarSocios(terminal));
                 bExito = true;
                 break;
             case 6:
@@ -55,16 +53,17 @@ public class ClienteView {
         return bExito;
     }
 
-    private static String mostrarClientes(Tienda tienda){
-        return tienda.getClienteController().printAll();
+    private static String mostrarSocios(Terminal terminal) {
+        return terminal.getSocioController().printAll();
     }
 
-    private static Cliente buscarCliente(Tienda tienda){
+    private static Socio buscarSocio(Terminal terminal) {
         boolean bExito = false;
         int id = 0;
+
         do {
             try {
-                id = (int) valida("Introduce el id del cliente que desea buscar: ",0,-1,1);
+                id = (int) valida("Introduce el ID del socio que desees buscar: ",0,-1,1);
                 bExito = true;
             }catch (NumberFormatException exc){
                 System.out.println(exc.getMessage());
@@ -75,15 +74,17 @@ public class ClienteView {
                     System.out.println("ID introducido incorrecto");
             }
         }while(!bExito);
-        return tienda.getClienteController().getaVector()[tienda.getClienteController().search(new Cliente(id))];
+
+        return terminal.getSocioController().getaVector()[terminal.getSocioController().search(new Socio(id))];
     }
 
-    private static boolean eliminarCliente(Tienda tienda){
+    private static boolean eliminarSocio(Terminal terminal) {
         boolean bExito = false;
         int id = 0;
+
         do {
             try {
-                id = (int) valida("Introduce el id del cliente que desea eliminar: ",0,-1,1);
+                id = (int) valida("Introduce el ID del socio que desees eliminar: ",0,-1,1);
                 bExito = true;
             }catch (NumberFormatException exc){
                 System.out.println(exc.getMessage());
@@ -94,21 +95,22 @@ public class ClienteView {
                     System.out.println("ID introducido incorrecto");
             }
         }while(!bExito);
-        bExito = tienda.getClienteController().remove(new Cliente(id));
+
+        bExito = terminal.getSocioController().remove(new Socio(id));
+
         if (bExito)
-            System.out.println("Cliente eliminado con exito.");
+            System.out.println("Socio eliminado con exito.");
         else
-            System.out.println("Cliente eliminado sin exito.");
-
+            System.out.println("Socio eliminado sin exito.");
         return bExito;
     }
 
-    private static boolean modificarCliente(Tienda tienda) {
+    private static boolean modificarSocio(Terminal terminal) {
         int id = 0;
         boolean bExito = false;
         do {
             try {
-                id = (int) valida("Introduce el ID del cliente que desees modificar: ",0,-1,1);
+                id = (int) valida("Introduce el ID del socio que desees modificar: ",0,-1,1);
                 bExito = true;
             }catch (NumberFormatException exc){
                 System.out.println(exc.getMessage());
@@ -119,38 +121,13 @@ public class ClienteView {
                     System.out.println("ID introducido incorrecto");
             }
         }while(!bExito);
-        int iPosicion = tienda.getClienteController().search(new Cliente(id));
+
+        int iPosicion = terminal.getSocioController().search(new Socio(id));
         bExito = false;
-        if (iPosicion != -1) {
+        if (iPosicion != 1) {
             do {
                 try {
-                    tienda.getClienteController().getaVector()[iPosicion].setsNombre(leer("Introduce el nuevo nombre del cliente: "));
-                    bExito = true;
-                }catch (Exception exc){
-                    System.out.println(exc.getMessage());
-                }finally {
-                    if (!bExito)
-                        System.out.println("Nombre introducido incorrecto");
-                }
-            }while(!bExito);
-
-            do {
-                bExito = false;
-                try {
-                    tienda.getClienteController().getaVector()[iPosicion].setsApellidos(leer("Introduce los nuevos apellidos del cliente: "));
-                    bExito = true;
-                }catch (Exception exc){
-                    System.out.println(exc.getMessage());
-                }finally {
-                    if (!bExito)
-                        System.out.println("Apellidos introducido incorrecto");
-                }
-            }while(!bExito);
-
-            do {
-                bExito = false;
-                try {
-                    tienda.getClienteController().getaVector()[iPosicion].setsDni(leer("Introduce el nuevo DNI del cliente: "));
+                    terminal.getSocioController().getaVector()[iPosicion].setsDni(leer("Introduce el DNI del socio: "));
                     bExito = true;
                 }catch (Exception exc){
                     System.out.println(exc.getMessage());
@@ -163,38 +140,71 @@ public class ClienteView {
             do {
                 bExito = false;
                 try {
-                    tienda.getClienteController().getaVector()[iPosicion].setSaldo((float) valida("Introduce el nuevo saldo del cliente(0-2000): ",0,2000,2));
+                    terminal.getSocioController().getaVector()[iPosicion].setsNombre(leer("Introduce el nombre del socio: "));
                     bExito = true;
-                }catch (NumberFormatException exc){
-                    System.out.println(exc.getMessage());
                 }catch (Exception exc){
                     System.out.println(exc.getMessage());
                 }finally {
                     if (!bExito)
-                        System.out.println("Saldo introducido incorrecto");
+                        System.out.println("Nombre introducido incorrecto");
+                }
+            }while(!bExito);
+
+            do {
+                bExito = false;
+                try {
+                    terminal.getSocioController().getaVector()[iPosicion].setsApellidos(leer("Introduce los apellidos del socio: "));
+                    bExito = true;
+                }catch (Exception exc){
+                    System.out.println(exc.getMessage());
+                }finally {
+                    if (!bExito)
+                        System.out.println("Apellidos introducido incorrecto");
+                }
+            }while(!bExito);
+
+            do {
+                bExito = false;
+                try {
+                    terminal.getSocioController().getaVector()[iPosicion].setsTelefono(leer("Introduce el telefono del socio: "));
+                    bExito = true;
+                }catch (Exception exc){
+                    System.out.println(exc.getMessage());
+                }finally {
+                    if (!bExito)
+                        System.out.println("Telefono introducido incorrecto");
+                }
+            }while(!bExito);
+
+            do {
+                bExito = false;
+                try {
+                    terminal.getSocioController().getaVector()[iPosicion].setsEmail(leer("Introduce el email del socio: "));
+                    bExito = true;
+                }catch (Exception exc){
+                    System.out.println(exc.getMessage());
+                }finally {
+                    if (!bExito)
+                        System.out.println("Email introducido incorrecto");
                 }
             }while(!bExito);
             bExito = true;
         }
-
         if (bExito)
-            System.out.println("Cliente modificado con exito.");
+            System.out.println("Socio modificado con exito.");
         else
-            System.out.println("Cliente modificado sin exito.");
+            System.out.println("Socio midificado sin exito.");
         return bExito;
     }
 
-    public static boolean altaCliente(Tienda tienda){
-        String sDni = "";
-        String sNombre = "";
-        float saldo = 0;
-        String sApellidos = "";
-        int idCliente = 0;
+    private static boolean altaSocio(Terminal terminal) {
+        String sDni = null, sNombre = null, sApellidos = null, sTelefono = null, sEmail = null;
+        int id = 0;
 
         boolean bExito = false;
         do {
             try {
-                idCliente = (int) valida("Introduce el ID del socio",0,-1,1);
+                id = (int) valida("Introduce el ID del socio",0,-1,1);
                 bExito = true;
             }catch (NumberFormatException exc){
                 System.out.println(exc.getMessage());
@@ -248,26 +258,36 @@ public class ClienteView {
         do {
             bExito = false;
             try {
-                saldo = (float) valida("Introduce el saldo del socio: ",0,2000,2);
+                sTelefono = leer("Introduce el telefono del socio: ");
                 bExito = true;
-            }catch (NumberFormatException exc){
-                System.out.println(exc.getMessage());
             }catch (Exception exc){
                 System.out.println(exc.getMessage());
             }finally {
                 if (!bExito)
-                    System.out.println("Saldo introducido incorrecto");
+                    System.out.println("Telefono introducido incorrecto");
             }
         }while(!bExito);
 
-        Cliente oCliente = new Cliente(sDni,sNombre,sApellidos,saldo,idCliente);
+        do {
+            bExito = false;
+            try {
+                sEmail = leer("Introduce el email del socio: ");
+                bExito = true;
+            }catch (Exception exc){
+                System.out.println(exc.getMessage());
+            }finally {
+                if (!bExito)
+                    System.out.println("Email introducido incorrecto");
+            }
+        }while(!bExito);
 
-        bExito = tienda.getClienteController().add(oCliente);
+        Socio socio = new Socio(id,sDni,sNombre,sApellidos,sEmail,sTelefono);
+
+        bExito = terminal.getSocioController().add(socio);
         if (bExito)
-            System.out.println("Cliente aniadido con exito.");
+            System.out.println("Cliente aniadido con exito");
         else
-            System.out.println("Cliente aniadido sin exito.");
-
+            System.out.println("Cliente aniadido sin exito");
         return bExito;
     }
 }
