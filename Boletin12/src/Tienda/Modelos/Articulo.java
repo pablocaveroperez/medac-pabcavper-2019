@@ -8,10 +8,11 @@ public class Articulo implements IArticulo {
     private float precio;
     private short stock;
 
-    public Articulo(int id, String nombre, float precio, int stock){
+    public Articulo(int id, String nombre, float precio, short stock){
         setNombre(nombre);
         setPrecio(precio);
         setId(id);
+        setStock(stock);
     }
 
     public Articulo(int id){
