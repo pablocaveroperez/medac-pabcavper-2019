@@ -6,9 +6,10 @@ public class Carrito {
     private final byte MAXLINEAARTICULOS = 100;
     private byte contadorCarrito;
 
-    public Carrito() {
+    public Carrito(byte idCarrito) {
         lineaArticulos = new LineaArticulo[MAXLINEAARTICULOS];
         contadorCarrito = 0;
+        setIdCarrito(idCarrito);
     }
 
     public LineaArticulo[] getLineaArticulos() {
