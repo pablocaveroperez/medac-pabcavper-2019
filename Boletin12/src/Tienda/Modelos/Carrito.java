@@ -1,6 +1,6 @@
 package Tienda.Modelos;
 
-public class Carrito {
+public class Carrito implements ICarrito {
     private byte idCarrito;
     private LineaArticulo[] lineaArticulos;
     private final byte MAXLINEAARTICULOS = 100;
@@ -12,23 +12,31 @@ public class Carrito {
         setIdCarrito(idCarrito);
     }
 
+    @Override
     public LineaArticulo[] getLineaArticulos() {
         return lineaArticulos;
     }
 
+    @Override
     public byte getContadorCarrito() {
         return contadorCarrito;
     }
 
+    @Override
     public void setContadorCarrito(byte contadorCarrito) {
         this.contadorCarrito = contadorCarrito;
     }
 
-    private void setIdCarrito(byte idCarrito) {
-
-        this.idCarrito = idCarrito;
+    private boolean setIdCarrito(byte idCarrito) {
+        boolean bExito = false;
+        if (idCarrito > 0){
+            this.idCarrito = idCarrito;
+            bExito = true;
+        }
+        return bExito;
     }
 
+    @Override
     public byte getIdCarrito() {
         return idCarrito;
     }

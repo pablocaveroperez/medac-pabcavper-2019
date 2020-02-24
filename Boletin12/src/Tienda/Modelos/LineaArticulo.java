@@ -1,7 +1,6 @@
 package Tienda.Modelos;
 
 public class LineaArticulo {
-    private byte idLineaArticulo;
     private Articulo articulo;
     private short cantidad;
 
