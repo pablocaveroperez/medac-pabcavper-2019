@@ -1,5 +1,7 @@
 package Tienda.Modelos;
 
+import java.util.Objects;
+
 public class Carrito implements ICarrito {
     private byte idCarrito;
     private LineaArticulo[] lineaArticulos;
@@ -39,5 +41,18 @@ public class Carrito implements ICarrito {
     @Override
     public byte getIdCarrito() {
         return idCarrito;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Carrito carrito = (Carrito) o;
+        return getIdCarrito() == carrito.getIdCarrito();
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getIdCarrito());
     }
 }
