@@ -144,6 +144,19 @@ public class ArticuloView {
                 }
             }while(!bExito);
 
+            do {
+                bExito = false;
+                try {
+                    tienda.getArticuloController().getaVector()[iPosicion].setStock((short) valida("Introduce el stock del articulo: ", 0,1000,4));
+                    bExito = true;
+                }catch (Exception exc){
+                    System.out.println(exc.getMessage());
+                }finally {
+                    if (!bExito)
+                        System.out.println("Stock introducido incorrecto");
+                }
+            }while(!bExito);
+
 
             bExito = true;
         }
