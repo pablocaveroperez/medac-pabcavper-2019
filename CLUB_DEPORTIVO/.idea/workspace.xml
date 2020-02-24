@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="99d860ae-45cb-466a-a9b5-2358a49736a5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../Boletin12/src/Club/Modelos/ISocio.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Boletin12/src/Club/Modelos/ISocio.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Boletin12/src/Club/Modelos/Socio.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Boletin12/src/Club/Modelos/Socio.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -12,6 +11,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="ProjectId" id="1Xw0U2thHPnOiYUnZhJjsYUaoai" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -103,6 +103,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1581942554103" />
+    <state x="769" y="436" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1582529861599">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="769" y="436" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1582529861599" />
+    <state x="645" y="311" key="git4idea.merge.GitPullDialog" timestamp="1582529878626">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="645" y="311" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582529878626" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1581942392164">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
