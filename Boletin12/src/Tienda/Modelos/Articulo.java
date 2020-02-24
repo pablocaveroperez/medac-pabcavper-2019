@@ -95,6 +95,7 @@ public class Articulo implements IArticulo {
         salida += "\nID ARTICULO: "+ getId();
         salida += "\nNOMBRE: "+ getNombre();
         salida += "\nPRECIO: "+ getPrecio();
+        salida += "\nSTOCK: "+ getStock();
         return salida;
     }
 }
