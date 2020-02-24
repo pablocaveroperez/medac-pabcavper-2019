@@ -9,6 +9,11 @@ public class LineaArticulo {
         setCantidad(cantidad);
     }
 
+    public LineaArticulo(){
+        setArticulo(null);
+        setCantidad((short) 0);
+    }
+
     public void setArticulo(Articulo articulo) {
         this.articulo = articulo;
     }
