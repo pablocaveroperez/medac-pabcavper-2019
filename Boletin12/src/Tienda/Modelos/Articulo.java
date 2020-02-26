@@ -6,11 +6,13 @@ public class Articulo implements IArticulo {
     private int id;
     private String nombre;
     private float precio;
+    private short stock;
 
-    public Articulo(int id, String nombre, float precio){
+    public Articulo(int id, String nombre, float precio, short stock){
         setNombre(nombre);
         setPrecio(precio);
         setId(id);
+        setStock(stock);
     }
 
     public Articulo(int id){
@@ -20,6 +22,21 @@ public class Articulo implements IArticulo {
     @Override
     public int getId() {
         return id;
+    }
+
+    @Override
+    public boolean setStock(short stock) {
+        boolean bExito = false;
+        if (stock > 0 && stock < 1000){
+            this.stock = stock;
+            bExito = true;
+        }
+        return bExito;
+    }
+
+    @Override
+    public int getStock() {
+        return stock;
     }
 
     @Override
@@ -78,6 +95,7 @@ public class Articulo implements IArticulo {
         salida += "\nID ARTICULO: "+ getId();
         salida += "\nNOMBRE: "+ getNombre();
         salida += "\nPRECIO: "+ getPrecio();
+        salida += "\nSTOCK: "+ getStock();
         return salida;
     }
 }

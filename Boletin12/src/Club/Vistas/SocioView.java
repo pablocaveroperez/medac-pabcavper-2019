@@ -281,12 +281,17 @@ public class SocioView {
             }
         }while(!bExito);
 
-        Socio socio = new Socio(id,sDni,sNombre,sApellidos,sEmail,sTelefono);
-
-        bExito = terminal.getSocioController().add(socio);
-        if (bExito)
-            System.out.println("Cliente aniadido con exito");
-        else
+        Socio socio = new Socio(id,sDni,sNombre,sApellidos);
+        if (socio.setsEmail(sEmail)){
+            if (socio.setsTelefono(sTelefono)){
+                bExito = terminal.getSocioController().add(socio);
+                if (bExito)
+                    System.out.println("Cliente aniadido con exito");
+                else
+                    System.out.println("Cliente aniadido sin exito");
+            }else
+                System.out.println("Cliente aniadido sin exito");
+        }else
             System.out.println("Cliente aniadido sin exito");
         return bExito;
     }

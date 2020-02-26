@@ -7,6 +7,7 @@ import Club.Modelos.Socio;
 import Tienda.Vistas.TiendaView;
 
 import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 import static Libreria.LibreriaValida.*;
 
@@ -54,7 +55,7 @@ public class ReservaView {
         boolean bExito = false;
         Socio socio;
         Instalacion instalacion;
-        Calendar fecha = null;
+        Calendar fecha = new GregorianCalendar();
         byte hora = 0;
         byte minutos = 0;
 
@@ -156,7 +157,9 @@ public class ReservaView {
             }
         }while(!bExito);
 
+
         fecha.set(year,month,day);
+
 
         do {
             bExito = false;
@@ -203,7 +206,7 @@ public class ReservaView {
         boolean bExito = false;
         Socio socio;
         Instalacion instalacion;
-        Calendar fecha = null;
+        Calendar fecha = new GregorianCalendar();
         byte hora = 0;
         byte minutos = 0;
 
@@ -243,7 +246,7 @@ public class ReservaView {
         do {
             bExito = false;
             try {
-                ubicacion = (byte) valida("Introduce el tipo de la instalacion: ",1,3,3);
+                tipo = (byte) valida("Introduce el tipo de la instalacion: ",1,3,3);
                 bExito = true;
             }catch (NumberFormatException exc){
                 System.out.println("Error: " + exc.getMessage());
@@ -263,7 +266,7 @@ public class ReservaView {
         do {
             bExito = false;
             try {
-                year = (byte) valida("Introduce el anio de la reserva: ",1900,2020,4);
+                year = (short) valida("Introduce el anio de la reserva: ",1900,2020,4);
                 bExito = true;
             }catch (NumberFormatException exc){
                 System.out.println("Error: " + exc.getMessage());

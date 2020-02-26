@@ -144,6 +144,19 @@ public class ArticuloView {
                 }
             }while(!bExito);
 
+            do {
+                bExito = false;
+                try {
+                    tienda.getArticuloController().getaVector()[iPosicion].setStock((short) valida("Introduce el stock del articulo: ", 0,1000,4));
+                    bExito = true;
+                }catch (Exception exc){
+                    System.out.println(exc.getMessage());
+                }finally {
+                    if (!bExito)
+                        System.out.println("Stock introducido incorrecto");
+                }
+            }while(!bExito);
+
 
             bExito = true;
         }
@@ -159,6 +172,7 @@ public class ArticuloView {
         int id = 0;
         String sNombre = "";
         float precio = 0;
+        short stock = 0;
         String sResultado;
 
         boolean bExito = false;
@@ -176,6 +190,18 @@ public class ArticuloView {
             }
         }while(!bExito);
 
+        do {
+            bExito = false;
+            try {
+                stock = (short) valida("Introduce el stock del articulo: ", 0,1000,4);
+                bExito = true;
+            }catch (Exception exc){
+                System.out.println(exc.getMessage());
+            }finally {
+                if (!bExito)
+                    System.out.println("Stock introducido incorrecto");
+            }
+        }while(!bExito);
 
         do {
             bExito = false;
@@ -205,7 +231,7 @@ public class ArticuloView {
             }
         }while(!bExito);
 
-        Articulo articulo = new Articulo(id,sNombre,precio);
+        Articulo articulo = new Articulo(id,sNombre,precio,stock);
 
         bExito = tienda.getArticuloController().add(articulo);
         if (bExito)

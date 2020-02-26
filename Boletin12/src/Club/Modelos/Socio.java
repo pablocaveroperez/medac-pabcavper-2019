@@ -44,8 +44,13 @@ public class Socio implements ISocio {
     }
 
     @Override
-    public void setsTelefono(String sTelefono) {
-        this.sTelefono = sTelefono;
+    public boolean setsTelefono(String sTelefono) {
+        boolean bExito = false;
+        if (sTelefono.length() == 9){
+            this.sTelefono = sTelefono;
+            bExito = true;
+        }
+        return bExito;
     }
 
     @Override
