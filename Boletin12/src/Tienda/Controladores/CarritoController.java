@@ -61,11 +61,23 @@ public class CarritoController implements ICrud<Carrito> {
 
     @Override
     public String printAll() {
-        return null;
+        String salida = "";
+        if (contadorCarritos == 0)
+            salida = "No hay carritos registrados";
+        else {
+            for (int i = 0; i < contadorCarritos;i++)
+                salida += vCarritos[i]+"\n";
+        }
+        return salida;
     }
 
     @Override
     public boolean update(Carrito oObjeto, int iPosicion) {
-        return false;
+        boolean bExito = false;
+        if (iPosicion != -1){
+            vCarritos[iPosicion] = oObjeto;
+            bExito = true;
+        }
+        return bExito;
     }
 }
