@@ -49,7 +49,14 @@ public class CarritoController implements ICrud<Carrito> {
 
     @Override
     public int search(Carrito oObject) {
-        return 0;
+        int iPosicion = -1;
+        int iContador = 0;
+        while (iPosicion == -1 && iContador < contadorCarritos){
+            if (oObject.equals(vCarritos[iContador]))
+                iPosicion = iContador;
+            iContador++;
+        }
+        return iPosicion;
     }
 
     @Override
