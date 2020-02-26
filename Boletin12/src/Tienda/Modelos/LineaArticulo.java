@@ -1,17 +1,27 @@
 package Tienda.Modelos;
 
 public class LineaArticulo implements ILineaArticulo {
+    private int idLineaArticulo;
     private Articulo articulo;
     private short cantidad;
 
-    public LineaArticulo(Articulo articulo, short cantidad){
+    public LineaArticulo(int idLineaArticulo, Articulo articulo, short cantidad){
         setArticulo(articulo);
         setCantidad(cantidad);
     }
 
-    public LineaArticulo(){
+    public LineaArticulo(int idLineaArticulo){
         setArticulo(null);
         setCantidad((short) 0);
+    }
+
+    @Override
+    public int getIdLineaArticulo() {
+        return idLineaArticulo;
+    }
+
+    private void setIdLineaArticulo(int idLineaArticulo) {
+        this.idLineaArticulo = idLineaArticulo;
     }
 
     @Override

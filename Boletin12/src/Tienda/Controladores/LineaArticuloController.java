@@ -1,5 +1,6 @@
 package Tienda.Controladores;
 
+import Tienda.Modelos.Articulo;
 import Tienda.Modelos.LineaArticulo;
 
 public class LineaArticuloController implements ICrud<LineaArticulo> {
@@ -24,7 +25,13 @@ public class LineaArticuloController implements ICrud<LineaArticulo> {
 
     @Override
     public boolean add(LineaArticulo oObject) {
-        return false;
+        boolean bExito = false;
+        if (oObject.getIdCarrito() != 0 && contadorCarritos < MAXCARRITOS && search(oObject) == -1){
+            vCarritos[contadorCarritos] = oObject;
+            contadorCarritos++;
+            bExito = true;
+        }
+        return bExito;
     }
 
     @Override
