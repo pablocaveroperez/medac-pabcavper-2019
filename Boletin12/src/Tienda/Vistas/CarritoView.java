@@ -186,6 +186,28 @@ public class CarritoView {
     }
 
     private static LineaArticulo buscarCarrito(Tienda tienda) {
+        boolean bExito = false;
+        int idArticulo = 0;
+        do {
+            try {
+                idArticulo = (int) valida("Instroduce el ID del articulo del carrito que quieres buscar: ",0,-1,1);
+                bExito = true;
+            }catch (NumberFormatException exc){
+                System.out.println(exc.getMessage());
+            }catch (Exception exc){
+                System.out.println(exc.getMessage());
+            }finally {
+                if (!bExito)
+                    System.out.println("ID introducido incorrecto.");
+            }
+        }while(!bExito);
+
+        int iPosicion = tienda.getArticuloController().search(new Articulo(idArticulo));
+        Articulo oArticulo = tienda.getArticuloController().getaVector()[iPosicion];
+        LineaArticulo oLineaArticulo = new LineaArticulo(oArticulo);
+
+        LineaArticulo oLineaArticuloAux = tienda.getCarritoController().getaVector()[tienda.getCarritoController().search(oLineaArticulo)];
+        return oLineaArticuloAux;
     }
 
     private static boolean mostrarCarrito(Tienda tienda) {
