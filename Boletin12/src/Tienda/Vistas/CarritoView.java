@@ -14,9 +14,9 @@ public class CarritoView {
         boolean bExito;
 
         do {
-            opcion = TiendaView.subMenuCarrito();
+            opcion = subMenuCarrito();
             bExito = gestionMenuCarrito(tienda, opcion);
-        }while (opcion != 6);
+        }while (opcion != 8);
     }
 
     private static boolean gestionMenuCarrito(Tienda tienda, byte opcion) {
@@ -43,6 +43,12 @@ public class CarritoView {
                 bExito = true;
                 break;
             case 6:
+                comprarCarrito(tienda);
+                break;
+            case 7:
+                vaciarCarrito(tienda);
+                break;
+            case 8:
                 System.out.println("Volviendo al menus principal.");
                 bExito = true;
                 break;
@@ -52,6 +58,14 @@ public class CarritoView {
                 break;
         }
         return bExito;
+    }
+
+    private static void vaciarCarrito(Tienda tienda) {
+
+    }
+
+    private static void comprarCarrito(Tienda tienda) {
+
     }
 
     private static boolean aniadirAlCarrito(Tienda tienda) {
