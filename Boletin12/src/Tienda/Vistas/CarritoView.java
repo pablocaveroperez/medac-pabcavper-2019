@@ -61,7 +61,10 @@ public class CarritoView {
     }
 
     private static void vaciarCarrito(Tienda tienda) {
-
+        tienda.getCarritoController().vaciarCarrito();
+        System.out.println("*****************");
+        System.out.println("*CARRITO VACIADO*");
+        System.out.println("*****************");
     }
 
     private static boolean comprarCarrito(Tienda tienda) {
