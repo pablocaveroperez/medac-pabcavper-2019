@@ -210,8 +210,7 @@ public class CarritoView {
         return oLineaArticuloAux;
     }
 
-    private static boolean mostrarCarrito(Tienda tienda) {
+    private static String mostrarCarrito(Tienda tienda) {
+        return tienda.getCarritoController().printAll();
     }
-
-
 }
