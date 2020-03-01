@@ -93,6 +93,12 @@ public class CarritoView {
             }while(!bExito);
 
             LineaArticulo oLineaArticulo = new LineaArticulo(oArticulo,iCantidad);
+
+            bExito = tienda.getCarritoController().add(oLineaArticulo,tienda);
+            if (bExito)
+                System.out.println("Articulo aniadido al carrito con exito");
+            else
+                System.out.println("Articulo aniadido al carrito sin exito");
         }
 
     }
