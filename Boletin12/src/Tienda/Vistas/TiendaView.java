@@ -59,6 +59,7 @@ public class TiendaView {
                     break;
                 case 3:
                     CarritoView.menuCarrito(tienda);
+                    break;
                 case 4:
                     System.out.println("ADIOS.");
                     System.exit(0);

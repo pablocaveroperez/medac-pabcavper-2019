@@ -9,6 +9,7 @@ public class Tienda {
     public Tienda(){
         clienteController = new ClienteController();
         articuloController = new ArticuloController();
+        carritoController = new CarritoController();
     }
 
     public ArticuloController getArticuloController() {
