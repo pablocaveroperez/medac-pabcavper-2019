@@ -61,7 +61,7 @@ public class CarritoView {
 
         do {
             try {
-                idArticulo = (int) valida("Instroduce el ID del articulo: ",0,-1,1);
+                idArticulo = (int) valida("Instroduce el ID del articulo que quieres aniadir al carrito: ",0,-1,1);
                 bExito = true;
             }catch (NumberFormatException exc){
                 System.out.println(exc.getMessage());
@@ -100,10 +100,28 @@ public class CarritoView {
             else
                 System.out.println("Articulo aniadido al carrito sin exito");
         }
-
+        return bExito;
     }
 
     private static boolean modificarCarrito(Tienda tienda) {
+        boolean bExito = false;
+        int idArticulo = 0;
+
+        do {
+            try {
+                idArticulo = (int) valida("Instroduce el ID del articulo del carrito que quieres modificar: ",0,-1,1);
+                bExito = true;
+            }catch (NumberFormatException exc){
+                System.out.println(exc.getMessage());
+            }catch (Exception exc){
+                System.out.println(exc.getMessage());
+            }finally {
+                if (!bExito)
+                    System.out.println("ID introducido incorrecto");
+            }
+        }while(!bExito);
+
+        int iPosicion = tienda.getArticuloController().search(new Articulo(idArticulo));
     }
 
     private static boolean eliminarDelCarrito(Tienda tienda) {
