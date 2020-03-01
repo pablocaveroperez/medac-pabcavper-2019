@@ -50,7 +50,6 @@ public class CarritoController implements ICarritoController {
         for (int i = 0; i < contadorCarrito; i++){
             iImporteCarrito += vLineaArticulos[i].getCantidad() * vLineaArticulos[i].getArticulo().getPrecio();
         }
-        vaciarCarrito();
         return iImporteCarrito;
     }
 
