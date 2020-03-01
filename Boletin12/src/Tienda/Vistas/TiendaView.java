@@ -33,7 +33,7 @@ public class TiendaView {
         byte opcion = 0;
         do {
             try {
-                opcion = (byte) valida("Introduce una opcion valida: ", 1, 3, 3);
+                opcion = (byte) valida("Introduce una opcion valida: ", 1, 4, 3);
                 bExito = true;
             }catch (NumberFormatException exc){
                 System.out.println(exc.getMessage());
