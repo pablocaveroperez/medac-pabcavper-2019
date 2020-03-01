@@ -43,7 +43,7 @@ public class CarritoView {
                 bExito = true;
                 break;
             case 6:
-                comprarCarrito(tienda);
+                bExito = comprarCarrito(tienda);
                 break;
             case 7:
                 vaciarCarrito(tienda);
@@ -64,8 +64,43 @@ public class CarritoView {
 
     }
 
-    private static void comprarCarrito(Tienda tienda) {
+    private static boolean comprarCarrito(Tienda tienda) {
+        int idCliente = 0;
+        boolean bExito = false;
 
+        do {
+            try {
+                idCliente = (int) valida("Introduce el ID del socio que va a pagar el carrito",0,-1,1);
+                bExito = true;
+            }catch (NumberFormatException exc){
+                System.out.println(exc.getMessage());
+            }catch (Exception exc){
+                System.out.println(exc.getMessage());
+            }finally {
+                if (!bExito)
+                    System.out.println("ID introducido incorrecto");
+            }
+        }while(!bExito);
+
+        bExito = false;
+        int iPosicion = tienda.getClienteController().search(new Cliente(idCliente));
+        if (iPosicion == -1)
+            System.out.println("El ID introducido no corresponde con ningun cliente");
+        else{
+            Cliente oCliente = tienda.getClienteController().getaVector()[iPosicion];
+            if (tienda.getCarritoController().comprarCarrito() > oCliente.getSaldo())
+                System.out.println("El cliente "+oCliente.getsNombre()+" no tiene suficiente saldo");
+            else{
+                oCliente.setSaldo(oCliente.getSaldo() - tienda.getCarritoController().comprarCarrito());
+                bExito = true;
+            }
+        }
+        if (bExito) {
+            System.out.println("Se ha comprado el carrito por un valor de: " + tienda.getCarritoController().comprarCarrito());
+            tienda.getCarritoController().vaciarCarrito();
+        }else
+            System.out.println("No se ha podido comprar el carrito con exito.");
+        return bExito;
     }
 
     private static boolean aniadirAlCarrito(Tienda tienda) {
