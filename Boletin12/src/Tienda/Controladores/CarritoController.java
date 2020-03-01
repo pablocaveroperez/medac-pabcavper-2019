@@ -40,7 +40,16 @@ public class CarritoController implements ICarritoController {
 
     @Override
     public boolean remove(LineaArticulo oObject) {
-        return false;
+        boolean bExito = false;
+        int iPosicion = search(oObject);
+        if (iPosicion != -1) {
+            for (int i = iPosicion; i < contadorCarrito; i++)
+                vLineaArticulos[i] = vLineaArticulos[i+1];
+            vLineaArticulos[contadorCarrito] = null;
+            contadorCarrito--;
+            bExito = true;
+        }
+        return bExito;
     }
 
     @Override
