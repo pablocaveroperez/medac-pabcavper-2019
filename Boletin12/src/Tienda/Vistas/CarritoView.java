@@ -14,7 +14,7 @@ public class CarritoView {
         boolean bExito;
 
         do {
-            opcion = TiendaView.subMenu();
+            opcion = TiendaView.subMenuCarrito();
             bExito = gestionMenuCarrito(tienda, opcion);
         }while (opcion != 6);
     }
@@ -212,5 +212,34 @@ public class CarritoView {
 
     private static String mostrarCarrito(Tienda tienda) {
         return tienda.getCarritoController().printAll();
+    }
+
+    public static byte subMenuCarrito(){
+        System.out.println("¿Que deseas hacer?");
+        System.out.println("*********************************");
+        System.out.println("1. Añadir ");
+        System.out.println("2. Modificar ");
+        System.out.println("3. Eliminar ");
+        System.out.println("4. Buscar ");
+        System.out.println("5. Mostrar ");
+        System.out.println("6. Comprar Carrito ");
+        System.out.println("7. Vaciar Carrito ");
+        System.out.println("8. Volver a menu principal");
+        boolean bExito = false;
+        byte opcion = 0;
+        do {
+            try {
+                opcion = (byte) valida("Introduce una opcion valida: ", 1, 8, 3);
+                bExito = true;
+            }catch (NumberFormatException exc){
+                System.out.println(exc.getMessage());
+            }catch (Exception exc){
+                System.out.println(exc.getMessage());
+            }finally {
+                if (!bExito)
+                    System.out.println("Opcion introducida incorrecto");
+            }
+        }while(!bExito);
+        return opcion;
     }
 }
