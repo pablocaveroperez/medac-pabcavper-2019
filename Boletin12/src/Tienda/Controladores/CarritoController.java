@@ -38,11 +38,13 @@ public class CarritoController implements ICarritoController {
         return bExito;
     }
 
+    @Override
     public void vaciarCarrito(){
         LineaArticulo[] lineaArticulosAux = new LineaArticulo[MAXCARRITO];
         contadorCarrito = 0;
     }
 
+    @Override
     public int comprarCarrito(){
         int iImporteCarrito = 0;
         for (int i = 0; i < contadorCarrito; i++){

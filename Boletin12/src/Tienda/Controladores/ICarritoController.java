@@ -9,6 +9,10 @@ public interface ICarritoController {
 
     boolean add(LineaArticulo oObject, Tienda tienda);
 
+    void vaciarCarrito();
+
+    int comprarCarrito();
+
     boolean remove(LineaArticulo oObject);
 
     int search(LineaArticulo oObject);
