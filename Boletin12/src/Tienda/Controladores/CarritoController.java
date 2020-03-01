@@ -1,5 +1,6 @@
 package Tienda.Controladores;
 
+import Tienda.Modelos.Articulo;
 import Tienda.Modelos.LineaArticulo;
 
 public class CarritoController implements ICarritoController {
@@ -25,7 +26,16 @@ public class CarritoController implements ICarritoController {
     @Override
     public boolean add(LineaArticulo oObject, Tienda tienda) {
         boolean bExito = false;
-        if (contadorCarrito < MAXCARRITO && search(oObject) == -1 && )
+        int iPosicion = tienda.getArticuloController().search(oObject.getArticulo());
+        Articulo[] aux = tienda.getArticuloController().getaVector();
+
+        if (contadorCarrito < MAXCARRITO && search(oObject) == -1 && aux[iPosicion].getStock() >= oObject.getCantidad()){
+            aux[iPosicion].setStock((short) (aux[iPosicion].getStock() - oObject.getCantidad()));
+            vLineaArticulos[contadorCarrito] = oObject;
+            contadorCarrito++;
+            bExito = true;
+        }
+        return bExito;
     }
 
     @Override
