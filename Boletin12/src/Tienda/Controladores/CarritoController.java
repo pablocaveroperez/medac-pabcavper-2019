@@ -38,6 +38,20 @@ public class CarritoController implements ICarritoController {
         return bExito;
     }
 
+    public void vaciarCarrito(){
+        LineaArticulo[] lineaArticulosAux = new LineaArticulo[MAXCARRITO];
+        contadorCarrito = 0;
+    }
+
+    public int comprarCarrito(){
+        int iImporteCarrito = 0;
+        for (int i = 0; i < contadorCarrito; i++){
+            iImporteCarrito += vLineaArticulos[i].getCantidad() * vLineaArticulos[i].getArticulo().getPrecio();
+        }
+        vaciarCarrito();
+        return iImporteCarrito;
+    }
+
     @Override
     public boolean remove(LineaArticulo oObject) {
         boolean bExito = false;
