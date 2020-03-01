@@ -43,11 +43,11 @@ public class CarritoView {
                 bExito = true;
                 break;
             case 6:
-                System.out.println("Volviendo al menus principal");
+                System.out.println("Volviendo al menus principal.");
                 bExito = true;
                 break;
             default:
-                System.out.println("Opcion introducida incorrecta");
+                System.out.println("Opcion introducida incorrecta.");
                 bExito = false;
                 break;
         }
@@ -69,13 +69,13 @@ public class CarritoView {
                 System.out.println(exc.getMessage());
             }finally {
                 if (!bExito)
-                    System.out.println("ID introducido incorrecto");
+                    System.out.println("ID introducido incorrecto.");
             }
         }while(!bExito);
 
         int iPosicion = tienda.getArticuloController().search(new Articulo(idArticulo));
         if (iPosicion == -1)
-            System.out.println("No existe ningun articulo con esa ID");
+            System.out.println("No existe ningun articulo con esa ID.");
         else{
             Articulo oArticulo = tienda.getArticuloController().getaVector()[iPosicion];
 
@@ -88,7 +88,7 @@ public class CarritoView {
                     System.out.println(exc.getMessage());
                 }finally {
                     if (!bExito)
-                        System.out.println("Cantidad introducida incorrecto");
+                        System.out.println("Cantidad introducida incorrecto.");
                 }
             }while(!bExito);
 
@@ -96,9 +96,9 @@ public class CarritoView {
 
             bExito = tienda.getCarritoController().add(oLineaArticulo,tienda);
             if (bExito)
-                System.out.println("Articulo aniadido al carrito con exito");
+                System.out.println("Articulo aniadido al carrito con exito.");
             else
-                System.out.println("Articulo aniadido al carrito sin exito");
+                System.out.println("Articulo aniadido al carrito sin exito.");
         }
         return bExito;
     }
@@ -117,11 +117,39 @@ public class CarritoView {
                 System.out.println(exc.getMessage());
             }finally {
                 if (!bExito)
-                    System.out.println("ID introducido incorrecto");
+                    System.out.println("ID introducido incorrecto.");
             }
         }while(!bExito);
+        bExito = false;
 
         int iPosicion = tienda.getArticuloController().search(new Articulo(idArticulo));
+        Articulo oArticulo = tienda.getArticuloController().getaVector()[iPosicion];
+        LineaArticulo oLineaArticulo = new LineaArticulo(oArticulo);
+        iPosicion = tienda.getCarritoController().search(oLineaArticulo);
+        if (iPosicion == -1)
+            System.out.println("No existe ningun articulo con esa ID.");
+        else{
+            do {
+                bExito = false;
+                try {
+                    tienda.getCarritoController().getaVector()[iPosicion].setCantidad((short) valida("Introduce la cantidad del articulo: ", 0,1000,4));
+                    bExito = true;
+                }catch (Exception exc){
+                    System.out.println(exc.getMessage());
+                }finally {
+                    if (!bExito)
+                        System.out.println("Cantidad introducida incorrecto.");
+                }
+            }while(!bExito);
+
+            bExito = true;
+        }
+
+        if (bExito)
+            System.out.println("Articulo del carrito modificado con exito.");
+        else
+            System.out.println("Articulo del carrito modificado sin exito.");
+        return bExito;
     }
 
     private static boolean eliminarDelCarrito(Tienda tienda) {

@@ -4,8 +4,9 @@ public class LineaArticulo {
     private Articulo articulo;
     private int cantidad;
 
-    public LineaArticulo() {
-
+    public LineaArticulo(Articulo articulo) {
+        setArticulo(articulo);
+        setCantidad(0);
     }
 
     public LineaArticulo(Articulo articulo, int cantidad) {
