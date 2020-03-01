@@ -1,8 +1,11 @@
 package Tienda.Vistas;
 
 import Tienda.Controladores.Tienda;
+import Tienda.Modelos.Articulo;
 import Tienda.Modelos.Cliente;
 import Tienda.Modelos.LineaArticulo;
+
+import static Libreria.LibreriaValida.valida;
 
 public class CarritoView {
 
@@ -49,6 +52,61 @@ public class CarritoView {
                 break;
         }
         return bExito;
+    }
+
+    private static boolean aniadirAlCarrito(Tienda tienda) {
+        boolean bExito = false;
+        int idArticulo = 0;
+        int iCantidad = 0;
+
+        do {
+            try {
+                idArticulo = (int) valida("Instroduce el ID del articulo: ",0,-1,1);
+                bExito = true;
+            }catch (NumberFormatException exc){
+                System.out.println(exc.getMessage());
+            }catch (Exception exc){
+                System.out.println(exc.getMessage());
+            }finally {
+                if (!bExito)
+                    System.out.println("ID introducido incorrecto");
+            }
+        }while(!bExito);
+
+        int iPosicion = tienda.getArticuloController().search(new Articulo(idArticulo));
+        if (iPosicion == -1)
+            System.out.println("No existe ningun articulo con esa ID");
+        else{
+            Articulo oArticulo = tienda.getArticuloController().getaVector()[iPosicion];
+
+            do {
+                bExito = false;
+                try {
+                    iCantidad = (short) valida("Introduce la cantidad del articulo: ", 0,1000,4);
+                    bExito = true;
+                }catch (Exception exc){
+                    System.out.println(exc.getMessage());
+                }finally {
+                    if (!bExito)
+                        System.out.println("Cantidad introducida incorrecto");
+                }
+            }while(!bExito);
+
+            LineaArticulo oLineaArticulo = new LineaArticulo(oArticulo,iCantidad);
+        }
+
+    }
+
+    private static boolean modificarCarrito(Tienda tienda) {
+    }
+
+    private static boolean eliminarDelCarrito(Tienda tienda) {
+    }
+
+    private static LineaArticulo buscarCarrito(Tienda tienda) {
+    }
+
+    private static boolean mostrarCarrito(Tienda tienda) {
     }
 
 
