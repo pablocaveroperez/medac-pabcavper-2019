@@ -54,16 +54,25 @@ public class CarritoController implements ICarritoController {
 
     @Override
     public int search(LineaArticulo oObject) {
-        return 0;
+        int iPosicion = -1;
+        int iContador = 0;
+        while (iPosicion == -1 && iContador < contadorCarrito) {
+            if (oObject.getArticulo().equals(vLineaArticulos[iContador].getArticulo()))
+                iPosicion = iContador;
+            iContador++;
+        }
+        return iPosicion;
     }
 
     @Override
     public String printAll() {
-        return null;
-    }
-
-    @Override
-    public boolean update(LineaArticulo oObjeto, int iPosicion) {
-        return false;
+        String salida = "";
+        if (contadorCarrito == 0)
+            salida = "No hay nada en el carrito";
+        else {
+            for (int i = 0; i < contadorCarrito; i++)
+                salida += vLineaArticulos[i]+"\n";
+        }
+        return salida;
     }
 }

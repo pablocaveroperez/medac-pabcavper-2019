@@ -14,6 +14,4 @@ public interface ICarritoController {
     int search(LineaArticulo oObject);
 
     String printAll();
-
-    boolean update(LineaArticulo oObjeto, int iPosicion);
 }

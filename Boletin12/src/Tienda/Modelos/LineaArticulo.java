@@ -28,4 +28,11 @@ public class LineaArticulo {
     public int getCantidad() {
         return cantidad;
     }
+
+    public String toString(){
+        String salida = "";
+        salida += getArticulo().toString();
+        salida += "\nCantidad en el carrito: " + getCantidad()+"\n";
+        return salida;
+    }
 }
