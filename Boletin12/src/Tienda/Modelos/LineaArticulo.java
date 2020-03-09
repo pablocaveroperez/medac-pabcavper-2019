@@ -1,48 +1,39 @@
 package Tienda.Modelos;
 
-public class LineaArticulo implements ILineaArticulo {
+public class LineaArticulo {
     private Articulo articulo;
-    private short cantidad;
+    private int cantidad;
 
-    public LineaArticulo(Articulo articulo, short cantidad){
+    public LineaArticulo(Articulo articulo) {
+        setArticulo(articulo);
+        setCantidad(0);
+    }
+
+    public LineaArticulo(Articulo articulo, int cantidad) {
         setArticulo(articulo);
         setCantidad(cantidad);
     }
 
-    public LineaArticulo(){
-        setArticulo(null);
-        setCantidad((short) 0);
-    }
-
-    @Override
     public void setArticulo(Articulo articulo) {
         this.articulo = articulo;
     }
 
-    @Override
-    public boolean setCantidad(short cantidad) {
-        boolean bExito = false;
-        if (cantidad > 0 && cantidad < getArticulo().getStock()){
-            this.cantidad = cantidad;
-            bExito = true;
-        }
-        return bExito;
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
     }
 
-    @Override
     public Articulo getArticulo() {
         return articulo;
     }
 
-    @Override
-    public short getCantidad() {
+    public int getCantidad() {
         return cantidad;
     }
 
-    public String toString() {
+    public String toString(){
         String salida = "";
-        salida += articulo.toString();
-        salida += "\nCantidad seleccionada: " + getCantidad();
+        salida += getArticulo().toString();
+        salida += "\nCantidad en el carrito: " + getCantidad()+"\n";
         return salida;
     }
 }

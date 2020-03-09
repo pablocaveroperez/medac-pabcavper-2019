@@ -115,6 +115,7 @@ public class ArticuloView {
                     System.out.println("ID introducido incorrecto");
             }
         }while(!bExito);
+        bExito = false;
         int iPosicion = tienda.getArticuloController().search(new Articulo(id));
         if (iPosicion != -1) {
             do {

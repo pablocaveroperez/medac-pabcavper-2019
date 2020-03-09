@@ -27,12 +27,13 @@ public class TiendaView {
         System.out.println("*********************************");
         System.out.println("* 1. Gestion de Clientes:       *");
         System.out.println("* 2. Gestion de Articulos:      *");
-        System.out.println("* 3. Salir del programa:        *");
+        System.out.println("* 3. Gestion del Carrito:      *");
+        System.out.println("* 4. Salir del programa:        *");
         boolean bExito = false;
         byte opcion = 0;
         do {
             try {
-                opcion = (byte) valida("Introduce una opcion valida: ", 1, 3, 3);
+                opcion = (byte) valida("Introduce una opcion valida: ", 1, 4, 3);
                 bExito = true;
             }catch (NumberFormatException exc){
                 System.out.println(exc.getMessage());
@@ -57,6 +58,9 @@ public class TiendaView {
                     ArticuloView.menuArticulos(tienda);
                     break;
                 case 3:
+                    CarritoView.menuCarrito(tienda);
+                    break;
+                case 4:
                     System.out.println("ADIOS.");
                     System.exit(0);
                     break;
@@ -64,7 +68,7 @@ public class TiendaView {
                     System.out.println("Opcion introducida incorrecta.");
                     break;
             }
-        }while (opcionMenuPrincipal > 3 || opcionMenuPrincipal < 1);
+        }while (opcionMenuPrincipal > 4 || opcionMenuPrincipal < 1);
 
     }
 

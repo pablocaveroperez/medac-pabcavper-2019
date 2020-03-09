@@ -1,6 +1,7 @@
 package Tienda.Controladores;
 
 import Tienda.Modelos.Cliente;
+import Tienda.Modelos.LineaArticulo;
 
 public interface ICrud<T> {
     public T[] getaVector();
