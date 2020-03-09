@@ -11,4 +11,6 @@ public interface IArticulo {
 
     public String getNombre();
     public int getId();
+	boolean setIdProveedor(byte idProveedor);
+	byte getIdProveedor();
 }

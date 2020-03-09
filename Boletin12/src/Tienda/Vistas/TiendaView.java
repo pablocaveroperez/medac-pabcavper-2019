@@ -16,7 +16,7 @@ public class TiendaView {
 
     private boolean setOpcionMenuPrincipal(byte opcionMenuPrincipal) {
         boolean bExito = false;
-        if (opcionMenuPrincipal >=1 && opcionMenuPrincipal <= 3){
+        if (opcionMenuPrincipal >=1 && opcionMenuPrincipal <= 5){
             this.opcionMenuPrincipal = opcionMenuPrincipal;
             bExito = true;
         }
@@ -27,13 +27,14 @@ public class TiendaView {
         System.out.println("*********************************");
         System.out.println("* 1. Gestion de Clientes:       *");
         System.out.println("* 2. Gestion de Articulos:      *");
-        System.out.println("* 3. Gestion del Carrito:      *");
-        System.out.println("* 4. Salir del programa:        *");
+        System.out.println("* 3. Gestion del Carrito:       *");
+        System.out.println("* 4. Gestion de Proveedores:    *");
+        System.out.println("* 5. Salir del programa:        *");
         boolean bExito = false;
         byte opcion = 0;
         do {
             try {
-                opcion = (byte) valida("Introduce una opcion valida: ", 1, 4, 3);
+                opcion = (byte) valida("Introduce una opcion valida: ", 1, 5, 3);
                 bExito = true;
             }catch (NumberFormatException exc){
                 System.out.println(exc.getMessage());
@@ -61,6 +62,9 @@ public class TiendaView {
                     CarritoView.menuCarrito(tienda);
                     break;
                 case 4:
+                	ProveedorView.menuProveedores(tienda);
+                	break;
+                case 5:
                     System.out.println("ADIOS.");
                     System.exit(0);
                     break;
@@ -68,14 +72,14 @@ public class TiendaView {
                     System.out.println("Opcion introducida incorrecta.");
                     break;
             }
-        }while (opcionMenuPrincipal > 4 || opcionMenuPrincipal < 1);
+        }while (opcionMenuPrincipal > 5 || opcionMenuPrincipal < 1);
 
     }
 
     public static byte subMenu(){
-        System.out.println("¿Que deseas hacer?");
+        System.out.println("�Que deseas hacer?");
         System.out.println("*********************************");
-        System.out.println("1. Añadir ");
+        System.out.println("1. Aniadir ");
         System.out.println("2. Modificar ");
         System.out.println("3. Eliminar ");
         System.out.println("4. Buscar ");

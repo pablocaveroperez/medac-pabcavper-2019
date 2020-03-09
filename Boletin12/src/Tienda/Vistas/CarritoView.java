@@ -5,7 +5,7 @@ import Tienda.Modelos.Articulo;
 import Tienda.Modelos.Cliente;
 import Tienda.Modelos.LineaArticulo;
 
-import static Libreria.LibreriaValida.valida;
+import static Libreria.LibreriaValida.*;
 
 public class CarritoView {
 
@@ -269,7 +269,7 @@ public class CarritoView {
     public static byte subMenuCarrito(){
         System.out.println("¿Que deseas hacer?");
         System.out.println("*********************************");
-        System.out.println("1. Añadir ");
+        System.out.println("1. Aniadir ");
         System.out.println("2. Modificar ");
         System.out.println("3. Eliminar ");
         System.out.println("4. Buscar ");
