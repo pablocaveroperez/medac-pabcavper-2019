@@ -2,6 +2,7 @@ package Tienda.Controladores;
 
 import Tienda.Modelos.Articulo;
 import Tienda.Modelos.Cliente;
+import Tienda.Modelos.Proveedor;
 
 public class ArticuloController implements ICrud<Articulo> {
     private Articulo[] vArticulos;
@@ -83,4 +84,10 @@ public class ArticuloController implements ICrud<Articulo> {
         }
         return bExito;
     }
+
+	@Override
+	public Proveedor searchObject(byte idProveedor) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

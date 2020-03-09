@@ -7,6 +7,7 @@ public class Articulo implements IArticulo {
     private String nombre;
     private float precio;
     private short stock;
+    private byte idProveedor;
 
     public Articulo(int id, String nombre, float precio, short stock){
         setNombre(nombre);
@@ -18,6 +19,21 @@ public class Articulo implements IArticulo {
     public Articulo(int id){
         setId(id);
     }
+    
+    @Override
+    public byte getIdProveedor() {
+		return idProveedor;
+	}
+    
+    @Override
+    public boolean setIdProveedor(byte idProveedor) {
+    	boolean bExito = false;
+		if (idProveedor > 0) {
+			this.idProveedor = idProveedor;
+			bExito = true;
+		}
+		return bExito;
+	}
 
     @Override
     public int getId() {
@@ -96,6 +112,7 @@ public class Articulo implements IArticulo {
         salida += "\nNOMBRE: "+ getNombre();
         salida += "\nPRECIO: "+ getPrecio();
         salida += "\nSTOCK: "+ getStock();
+        salida += "\nID PROVEEDOR: " + getIdProveedor();
         return salida;
     }
 }

@@ -1,6 +1,7 @@
 package Tienda.Controladores;
 
 import Tienda.Modelos.Cliente;
+import Tienda.Modelos.Proveedor;
 
 public class ClienteController implements ICrud<Cliente> {
     private byte contadorClientes;
@@ -83,4 +84,10 @@ public class ClienteController implements ICrud<Cliente> {
         }
         return bExito;
     }
+
+	@Override
+	public Proveedor searchObject(byte idProveedor) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
