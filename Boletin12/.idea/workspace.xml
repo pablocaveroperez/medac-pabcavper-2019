@@ -1,0 +1,593 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="45c644aa-6205-457b-9f12-32042e894002" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="cenciapp" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="C:\Users\Medac\Desktop\PROG-REPO\medac-pabcavper-2019\Boletin12\.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectId" id="1XhM3vzebRgS0ttzC5m7zMXYc4s" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../CLUB_DEPORTIVO/lib/LibFrontend.jar!/medac/validaciones" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="Tienda.Modelos" />
+      <recent name="Club.Modelos" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="Club.Modelos" />
+      <recent name="Tienda.Vistas" />
+      <recent name="Tienda.Modelos" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.mainTienda (1)">
+    <configuration name="ClubDeportivo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Club.Vistas.ClubDeportivo" />
+      <module name="Boletin12" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Club.Vistas.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="mainReloj" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="EjercicioClase1.mainReloj" />
+      <module name="Boletin12" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="EjercicioClase1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="mainTienda (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Tienda.Vistas.mainTienda" />
+      <module name="Boletin12" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Tienda.Vistas.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="mainTienda" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="EjercicioCasa1Tienda.Vistas.mainTienda" />
+      <module name="Boletin12" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Tienda.Vistas.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.mainTienda (1)" />
+        <item itemvalue="Application.ClubDeportivo" />
+        <item itemvalue="Application.mainTienda" />
+        <item itemvalue="Application.mainReloj" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="45c644aa-6205-457b-9f12-32042e894002" name="Default Changelist" comment="" />
+      <created>1581493677220</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1581493677220</updated>
+    </task>
+    <task id="LOCAL-00089" summary="Boletin12 Tienda">
+      <created>1582203824018</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1582203824018</updated>
+    </task>
+    <task id="LOCAL-00090" summary="Boletin12 Tienda">
+      <created>1582204277915</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1582204277915</updated>
+    </task>
+    <task id="LOCAL-00091" summary="Boletin12 Tienda">
+      <created>1582272183458</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1582272183459</updated>
+    </task>
+    <task id="LOCAL-00092" summary="Boletin12 Tienda">
+      <created>1582272288769</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1582272288769</updated>
+    </task>
+    <task id="LOCAL-00093" summary="Boletin12 Tienda">
+      <created>1582273842783</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1582273842783</updated>
+    </task>
+    <task id="LOCAL-00094" summary="Boletin12 Tienda">
+      <created>1582274010494</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1582274010494</updated>
+    </task>
+    <task id="LOCAL-00095" summary="Boletin12 Tienda">
+      <created>1582274691512</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1582274691512</updated>
+    </task>
+    <task id="LOCAL-00096" summary="Boletin12 Tienda">
+      <created>1582275052486</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1582275052486</updated>
+    </task>
+    <task id="LOCAL-00097" summary="Boletin12 Tienda">
+      <created>1582276323082</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1582276323082</updated>
+    </task>
+    <task id="LOCAL-00098" summary="Boletin12 Tienda">
+      <created>1582288851517</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1582288851517</updated>
+    </task>
+    <task id="LOCAL-00099" summary="Boletin12 Tienda">
+      <created>1582290727588</created>
+      <option name="number" value="00099" />
+      <option name="presentableId" value="LOCAL-00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1582290727588</updated>
+    </task>
+    <task id="LOCAL-00100" summary="Boletin12 Tienda">
+      <created>1582291306617</created>
+      <option name="number" value="00100" />
+      <option name="presentableId" value="LOCAL-00100" />
+      <option name="project" value="LOCAL" />
+      <updated>1582291306617</updated>
+    </task>
+    <task id="LOCAL-00101" summary="Boletin12 Tienda">
+      <created>1582291583622</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1582291583622</updated>
+    </task>
+    <task id="LOCAL-00102" summary="Boletin12 Tienda">
+      <created>1582291659346</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1582291659346</updated>
+    </task>
+    <task id="LOCAL-00103" summary="Boletin12 Tienda">
+      <created>1582291766017</created>
+      <option name="number" value="00103" />
+      <option name="presentableId" value="LOCAL-00103" />
+      <option name="project" value="LOCAL" />
+      <updated>1582291766017</updated>
+    </task>
+    <task id="LOCAL-00104" summary="Boletin12 Tienda">
+      <created>1582291829759</created>
+      <option name="number" value="00104" />
+      <option name="presentableId" value="LOCAL-00104" />
+      <option name="project" value="LOCAL" />
+      <updated>1582291829759</updated>
+    </task>
+    <task id="LOCAL-00105" summary="Boletin12 Tienda">
+      <created>1582291871193</created>
+      <option name="number" value="00105" />
+      <option name="presentableId" value="LOCAL-00105" />
+      <option name="project" value="LOCAL" />
+      <updated>1582291871193</updated>
+    </task>
+    <task id="LOCAL-00106" summary="Boletin12 Tienda">
+      <created>1582292031744</created>
+      <option name="number" value="00106" />
+      <option name="presentableId" value="LOCAL-00106" />
+      <option name="project" value="LOCAL" />
+      <updated>1582292031744</updated>
+    </task>
+    <task id="LOCAL-00107" summary="Boletin12 Tienda">
+      <created>1582292268176</created>
+      <option name="number" value="00107" />
+      <option name="presentableId" value="LOCAL-00107" />
+      <option name="project" value="LOCAL" />
+      <updated>1582292268176</updated>
+    </task>
+    <task id="LOCAL-00108" summary="Boletin12 Tienda">
+      <created>1582292376082</created>
+      <option name="number" value="00108" />
+      <option name="presentableId" value="LOCAL-00108" />
+      <option name="project" value="LOCAL" />
+      <updated>1582292376082</updated>
+    </task>
+    <task id="LOCAL-00109" summary="Boletin12 Tienda">
+      <created>1582531096009</created>
+      <option name="number" value="00109" />
+      <option name="presentableId" value="LOCAL-00109" />
+      <option name="project" value="LOCAL" />
+      <updated>1582531096009</updated>
+    </task>
+    <task id="LOCAL-00110" summary="Boletin12 Tienda">
+      <created>1582535220311</created>
+      <option name="number" value="00110" />
+      <option name="presentableId" value="LOCAL-00110" />
+      <option name="project" value="LOCAL" />
+      <updated>1582535220312</updated>
+    </task>
+    <task id="LOCAL-00111" summary="Boletin12 Tienda">
+      <created>1582535444288</created>
+      <option name="number" value="00111" />
+      <option name="presentableId" value="LOCAL-00111" />
+      <option name="project" value="LOCAL" />
+      <updated>1582535444288</updated>
+    </task>
+    <task id="LOCAL-00112" summary="Boletin12 Tienda">
+      <created>1582535879238</created>
+      <option name="number" value="00112" />
+      <option name="presentableId" value="LOCAL-00112" />
+      <option name="project" value="LOCAL" />
+      <updated>1582535879238</updated>
+    </task>
+    <task id="LOCAL-00113" summary="Boletin12 Tienda">
+      <created>1582536332312</created>
+      <option name="number" value="00113" />
+      <option name="presentableId" value="LOCAL-00113" />
+      <option name="project" value="LOCAL" />
+      <updated>1582536332312</updated>
+    </task>
+    <task id="LOCAL-00114" summary="Boletin12 Tienda">
+      <created>1582536497758</created>
+      <option name="number" value="00114" />
+      <option name="presentableId" value="LOCAL-00114" />
+      <option name="project" value="LOCAL" />
+      <updated>1582536497758</updated>
+    </task>
+    <task id="LOCAL-00115" summary="Boletin12 Tienda">
+      <created>1582536559416</created>
+      <option name="number" value="00115" />
+      <option name="presentableId" value="LOCAL-00115" />
+      <option name="project" value="LOCAL" />
+      <updated>1582536559416</updated>
+    </task>
+    <task id="LOCAL-00116" summary="Boletin12 Tienda">
+      <created>1582536678139</created>
+      <option name="number" value="00116" />
+      <option name="presentableId" value="LOCAL-00116" />
+      <option name="project" value="LOCAL" />
+      <updated>1582536678139</updated>
+    </task>
+    <task id="LOCAL-00117" summary="Boletin12 Tienda">
+      <created>1582539653344</created>
+      <option name="number" value="00117" />
+      <option name="presentableId" value="LOCAL-00117" />
+      <option name="project" value="LOCAL" />
+      <updated>1582539653344</updated>
+    </task>
+    <task id="LOCAL-00118" summary="Boletin12 Tienda">
+      <created>1582539744415</created>
+      <option name="number" value="00118" />
+      <option name="presentableId" value="LOCAL-00118" />
+      <option name="project" value="LOCAL" />
+      <updated>1582539744415</updated>
+    </task>
+    <task id="LOCAL-00119" summary="Boletin12 Tienda">
+      <created>1582549334024</created>
+      <option name="number" value="00119" />
+      <option name="presentableId" value="LOCAL-00119" />
+      <option name="project" value="LOCAL" />
+      <updated>1582549334024</updated>
+    </task>
+    <task id="LOCAL-00120" summary="Boletin12 Tienda">
+      <created>1582549880182</created>
+      <option name="number" value="00120" />
+      <option name="presentableId" value="LOCAL-00120" />
+      <option name="project" value="LOCAL" />
+      <updated>1582549880182</updated>
+    </task>
+    <task id="LOCAL-00121" summary="Boletin12 Tienda">
+      <created>1582549994684</created>
+      <option name="number" value="00121" />
+      <option name="presentableId" value="LOCAL-00121" />
+      <option name="project" value="LOCAL" />
+      <updated>1582549994684</updated>
+    </task>
+    <task id="LOCAL-00122" summary="Boletin12 Tienda">
+      <created>1582550092981</created>
+      <option name="number" value="00122" />
+      <option name="presentableId" value="LOCAL-00122" />
+      <option name="project" value="LOCAL" />
+      <updated>1582550092981</updated>
+    </task>
+    <task id="LOCAL-00123" summary="Boletin12 Tienda">
+      <created>1582550309336</created>
+      <option name="number" value="00123" />
+      <option name="presentableId" value="LOCAL-00123" />
+      <option name="project" value="LOCAL" />
+      <updated>1582550309336</updated>
+    </task>
+    <task id="LOCAL-00124" summary="Boletin12 Tienda">
+      <created>1582550507377</created>
+      <option name="number" value="00124" />
+      <option name="presentableId" value="LOCAL-00124" />
+      <option name="project" value="LOCAL" />
+      <updated>1582550507377</updated>
+    </task>
+    <task id="LOCAL-00125" summary="Boletin12 Tienda">
+      <created>1582550642619</created>
+      <option name="number" value="00125" />
+      <option name="presentableId" value="LOCAL-00125" />
+      <option name="project" value="LOCAL" />
+      <updated>1582550642619</updated>
+    </task>
+    <task id="LOCAL-00126" summary="Boletin12 Tienda">
+      <created>1582550718658</created>
+      <option name="number" value="00126" />
+      <option name="presentableId" value="LOCAL-00126" />
+      <option name="project" value="LOCAL" />
+      <updated>1582550718658</updated>
+    </task>
+    <task id="LOCAL-00127" summary="Boletin12 Tienda">
+      <created>1582551315992</created>
+      <option name="number" value="00127" />
+      <option name="presentableId" value="LOCAL-00127" />
+      <option name="project" value="LOCAL" />
+      <updated>1582551315992</updated>
+    </task>
+    <task id="LOCAL-00128" summary="Boletin12 Tienda">
+      <created>1582551390486</created>
+      <option name="number" value="00128" />
+      <option name="presentableId" value="LOCAL-00128" />
+      <option name="project" value="LOCAL" />
+      <updated>1582551390486</updated>
+    </task>
+    <task id="LOCAL-00129" summary="Boletin12 Tienda">
+      <created>1582551794231</created>
+      <option name="number" value="00129" />
+      <option name="presentableId" value="LOCAL-00129" />
+      <option name="project" value="LOCAL" />
+      <updated>1582551794231</updated>
+    </task>
+    <task id="LOCAL-00130" summary="Boletin12 Tienda">
+      <created>1582551939054</created>
+      <option name="number" value="00130" />
+      <option name="presentableId" value="LOCAL-00130" />
+      <option name="project" value="LOCAL" />
+      <updated>1582551939054</updated>
+    </task>
+    <task id="LOCAL-00131" summary="Boletin12 Tienda">
+      <created>1582551995737</created>
+      <option name="number" value="00131" />
+      <option name="presentableId" value="LOCAL-00131" />
+      <option name="project" value="LOCAL" />
+      <updated>1582551995737</updated>
+    </task>
+    <task id="LOCAL-00132" summary="master pc medac">
+      <created>1583740675441</created>
+      <option name="number" value="00132" />
+      <option name="presentableId" value="LOCAL-00132" />
+      <option name="project" value="LOCAL" />
+      <updated>1583740675442</updated>
+    </task>
+    <task id="LOCAL-00133" summary="master pc medac">
+      <created>1583740698014</created>
+      <option name="number" value="00133" />
+      <option name="presentableId" value="LOCAL-00133" />
+      <option name="project" value="LOCAL" />
+      <updated>1583740698014</updated>
+    </task>
+    <task id="LOCAL-00134" summary="master pc medac">
+      <created>1583740740034</created>
+      <option name="number" value="00134" />
+      <option name="presentableId" value="LOCAL-00134" />
+      <option name="project" value="LOCAL" />
+      <updated>1583740740034</updated>
+    </task>
+    <task id="LOCAL-00135" summary="Tienda con los Proveedores">
+      <created>1583741024273</created>
+      <option name="number" value="00135" />
+      <option name="presentableId" value="LOCAL-00135" />
+      <option name="project" value="LOCAL" />
+      <updated>1583741024273</updated>
+    </task>
+    <task id="LOCAL-00136" summary="Tienda con los Proveedores">
+      <created>1583741071864</created>
+      <option name="number" value="00136" />
+      <option name="presentableId" value="LOCAL-00136" />
+      <option name="project" value="LOCAL" />
+      <updated>1583741071864</updated>
+    </task>
+    <task id="LOCAL-00137" summary="Atributos de privados a protegidos en el Proveedor">
+      <created>1583760757531</created>
+      <option name="number" value="00137" />
+      <option name="presentableId" value="LOCAL-00137" />
+      <option name="project" value="LOCAL" />
+      <updated>1583760757532</updated>
+    </task>
+    <option name="localTasksCounter" value="138" />
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Boletin12" />
+    <MESSAGE value="Boletin12 Tienda ARREGLAO REMOVE MAL HECHO POR URELIO" />
+    <MESSAGE value="Boletin12 Tienda" />
+    <MESSAGE value="master pc medac" />
+    <MESSAGE value="Tienda con los Proveedores" />
+    <MESSAGE value="Atributos de privados a protegidos en el Proveedor" />
+    <option name="LAST_COMMIT_MESSAGE" value="Atributos de privados a protegidos en el Proveedor" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1245" y="232" key="#com.intellij.ide.util.MemberChooser" timestamp="1582551859435">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1245" y="232" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1582551859435" />
+    <state x="704" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1582550607244">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="704" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582550607244" />
+    <state x="1033" y="117" key="CommitChangelistDialog2" timestamp="1583760757056">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1033" y="117" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1583760757056" />
+    <state x="714" y="235" key="DetectedRootsChooserDialog" timestamp="1582016973516">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="714" y="235" key="DetectedRootsChooserDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582016973516" />
+    <state x="666" y="261" key="FileChooserDialogImpl" timestamp="1582016969100">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="666" y="261" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1582016969100" />
+    <state width="696" height="912" key="GridCell.Tab.0.bottom" timestamp="1582552006825">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="696" height="912" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1582552006825" />
+    <state width="696" height="912" key="GridCell.Tab.0.center" timestamp="1582552006825">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="696" height="912" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1582552006825" />
+    <state width="696" height="912" key="GridCell.Tab.0.left" timestamp="1582552006825">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="696" height="912" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1582552006825" />
+    <state width="696" height="912" key="GridCell.Tab.0.right" timestamp="1582552006825">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="696" height="912" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1582552006825" />
+    <state width="696" height="912" key="GridCell.Tab.1.bottom" timestamp="1582552006825">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="696" height="912" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1582552006825" />
+    <state width="696" height="912" key="GridCell.Tab.1.center" timestamp="1582552006825">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="696" height="912" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1582552006825" />
+    <state width="696" height="912" key="GridCell.Tab.1.left" timestamp="1582552006825">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="696" height="912" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1582552006825" />
+    <state width="696" height="912" key="GridCell.Tab.1.right" timestamp="1582552006825">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="696" height="912" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1582552006825" />
+    <state x="672" y="235" key="MultipleFileMergeDialog" timestamp="1583747180640">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="672" y="235" key="MultipleFileMergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583747180640" />
+    <state x="440" y="94" width="1209" height="852" key="SettingsEditor" timestamp="1582028797681">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="440" y="94" width="1209" height="852" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1582028797681" />
+    <state width="498" height="452" key="SwitcherDM" timestamp="1582197427889">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="498" height="452" key="SwitcherDM/0.0.1920.1040@0.0.1920.1040" timestamp="1582197427889" />
+    <state x="1032" y="244" key="Vcs.Push.Dialog.v2" timestamp="1583831546953">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1032" y="244" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1583831546953" />
+    <state x="-7" y="0" width="860" height="1047" key="dock-window-1" timestamp="1582014980700">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-7" y="0" width="860" height="1047" key="dock-window-1/0.0.1920.1040@0.0.1920.1040" timestamp="1582014980700" />
+    <state x="-7" y="0" width="974" height="1047" key="dock-window-2" timestamp="1582027428744">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-7" y="0" width="974" height="1047" key="dock-window-2/0.0.1920.1040@0.0.1920.1040" timestamp="1582027428744" />
+    <state x="680" y="232" key="git4idea.branch.GitSmartOperationDialog" timestamp="1583740657527">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="680" y="232" key="git4idea.branch.GitSmartOperationDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583740657527" />
+    <state x="645" y="311" key="git4idea.merge.GitPullDialog" timestamp="1583761026878">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="645" y="311" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583761026878" />
+    <state x="0" y="140" key="new project wizard" timestamp="1581584478918">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="0" y="140" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1581584478918" />
+    <state x="666" y="148" key="refactoring.ChangeSignatureDialog" timestamp="1582288317861">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="666" y="148" key="refactoring.ChangeSignatureDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582288317861" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Club/Vistas/SocioView.java</url>
+          <line>21</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
