@@ -1,7 +1,7 @@
-añadir tema de universidades, departamentos y eso
-cambiar la categoria de los articulos por un n/n
-es el miembro quien hace el articulo
-el miembro pertenece a un equipo de investigacion
-este equipo es el que perteneece a un departamento de la facultad de una universidad
+añadir tema de universidades, departamentos y eso ------------------------------------------------------------------- HECHO
+cambiar la categoria de los articulos por un n/n -------------------------------------------------------------------- HECHO
+es el miembro quien hace el articulo -------------------------------------------------------------------------------- HECHO
+el miembro pertenece a un equipo de investigacion ------------------------------------------------------------------- HECHO
+este equipo es el que perteneece a un departamento de la facultad de una universidad -------------------------------- HECHO
 hacer la estructura del articulo(tipo del articulo(jcr, congreso,etc.))
-Son los miembros los que valoran los articulos, no va a venir un nota de la eso a valorar un articulo cientefico
+Son los miembros los que valoran los articulos, no va a venir un nota de la eso a valorar un articulo cientefico ---- HECHO
