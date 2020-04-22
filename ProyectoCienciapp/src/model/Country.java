@@ -24,7 +24,7 @@ public class Country implements ICountry {
     @Override
     public boolean checkCountry(){
         boolean bExito = false;
-        if (sName.length() < 70){
+        if (getsName().length() < 70){
             bExito = true;
         }
         return bExito;
