@@ -26,7 +26,7 @@ public class Category implements ICategory {
     @Override
     public boolean setsDescription(String sDescription) {
         boolean bExito = false;
-        if (sDescription.length() < 200){
+        if (sDescription.length() < 200 && sDescription != null && sDescription.length() > 0){
             this.sDescription = sDescription;
             bExito = true;
         }
@@ -35,7 +35,7 @@ public class Category implements ICategory {
 
     private boolean setsCategoryName(String sCategoryName) {
         boolean bExito = false;
-        if (sCategoryName.length() < 60){
+        if (sCategoryName.length() < 60 && sCategoryName != null && sCategoryName.length() > 0){
             this.sCategoryName = sCategoryName;
             bExito = true;
         }
