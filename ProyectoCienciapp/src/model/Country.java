@@ -1,12 +1,13 @@
 package model;
 
-public class Country {
+public class Country implements ICountry {
     private String sName;
 
     public Country (String sName) {
         setsName(sName);
     }
 
+    @Override
     public String getsName() {
         return sName;
     }
@@ -20,6 +21,7 @@ public class Country {
         return bExito;
     }
 
+    @Override
     public boolean checkCountry(){
         boolean bExito = false;
         if (sName.length() < 70){
