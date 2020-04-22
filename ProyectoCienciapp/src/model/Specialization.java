@@ -9,6 +9,10 @@ public class Specialization implements ISpecialization {
         setsDescription(sDescription);
     }
 
+    public Specialization(String sName) {
+        setsName(sName);
+    }
+
     @Override
     public String getsName() {
         return sName;
