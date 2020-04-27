@@ -2,7 +2,7 @@ package model;
 
 import java.util.Objects;
 
-public class Category implements ICategory {
+public class Category implements ICategory, LimitsDB {
     private String sCategoryName;
     private String sDescription;
 
@@ -28,7 +28,7 @@ public class Category implements ICategory {
     @Override
     public boolean setsDescription(String sDescription) {
         boolean bExito = false;
-        if (sDescription.length() < 200 && sDescription != null && sDescription.length() > 0){
+        if (sDescription.length() < MAXCHAR_DESC && sDescription != null && sDescription.length() > 0){
             this.sDescription = sDescription;
             bExito = true;
         }
@@ -37,7 +37,7 @@ public class Category implements ICategory {
 
     private boolean setsCategoryName(String sCategoryName) {
         boolean bExito = false;
-        if (sCategoryName.length() < 60 && sCategoryName != null && sCategoryName.length() > 0){
+        if (sCategoryName.length() < MAXCHAR_CATEGORY && sCategoryName != null && sCategoryName.length() > 0){
             this.sCategoryName = sCategoryName;
             bExito = true;
         }
@@ -47,7 +47,7 @@ public class Category implements ICategory {
     @Override
     public boolean checkCategory() {
         boolean bExito = false;
-        if (getsCategoryName().length() < 60 && getsDescription().length() < 200 && getsCategoryName() != null){
+        if (getsCategoryName().length() < MAXCHAR_CATEGORY && getsDescription().length() < MAXCHAR_DESC && getsCategoryName() != null){
             bExito = true;
         }
         return bExito;

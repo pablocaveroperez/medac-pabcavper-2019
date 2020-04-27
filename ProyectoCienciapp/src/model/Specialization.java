@@ -2,7 +2,7 @@ package model;
 
 import java.util.Objects;
 
-public class Specialization implements ISpecialization {
+public class Specialization implements ISpecialization, LimitsDB{
     private String sName;
     private String sDescription;
 
@@ -28,7 +28,7 @@ public class Specialization implements ISpecialization {
     @Override
     public boolean setsDescription(String sDescription) {
         boolean bExito = false;
-        if (sDescription.length() < 200) {
+        if (sDescription.length() < MAXCHAR_DESC && sDescription.length() > 0) {
             this.sDescription = sDescription;
             bExito = true;
         }
@@ -37,7 +37,7 @@ public class Specialization implements ISpecialization {
 
     private boolean setsName(String sName) {
         boolean bExito = false;
-        if (sName.length() < 50){
+        if (sName.length() < MAXCHAR_NAME && sName.length() > 0){
             this.sName = sName;
             bExito = true;
         }
@@ -47,7 +47,7 @@ public class Specialization implements ISpecialization {
     @Override
     public boolean checkSpecialization() {
         boolean bExito = false;
-        if (getsName().length() < 50 && getsDescription().length() < 200 && getsName() != null){
+        if (getsName().length() < MAXCHAR_NAME && getsDescription().length() < MAXCHAR_DESC && getsName() != null){
             bExito = true;
         }
         return bExito;

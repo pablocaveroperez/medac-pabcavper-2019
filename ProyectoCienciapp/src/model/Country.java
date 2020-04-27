@@ -2,7 +2,7 @@ package model;
 
 import java.util.Objects;
 
-public class Country implements ICountry {
+public class Country implements ICountry, LimitsDB {
     private String sName;
 
     public Country (String sName) {
@@ -16,7 +16,7 @@ public class Country implements ICountry {
 
     private boolean setsName(String sName) {
         boolean bExito = false;
-        if (sName.length() < 70) {
+        if (sName.length() < MAXCHAR_COUNTRY && sName.length() > 0) {
             this.sName = sName;
             bExito = true;
         }
@@ -26,7 +26,7 @@ public class Country implements ICountry {
     @Override
     public boolean checkCountry(){
         boolean bExito = false;
-        if (getsName().length() < 70 && getsName() != null){
+        if (getsName().length() < MAXCHAR_COUNTRY && getsName() != null){
             bExito = true;
         }
         return bExito;

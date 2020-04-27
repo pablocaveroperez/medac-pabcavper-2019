@@ -2,7 +2,7 @@ package model;
 
 import java.util.Objects;
 
-public class ArticleType implements IArticleType {
+public class ArticleType implements IArticleType, LimitsDB {
     private String sTypeName;
     private String sDescription;
 
@@ -28,7 +28,7 @@ public class ArticleType implements IArticleType {
     @Override
     public boolean setsDescription(String sDescription) {
         boolean bExito = false;
-        if (sDescription.length() < 250){
+        if (sDescription.length() < MAXCHAR_DESCTYPE && sDescription.length() > 0){
             this.sDescription = sDescription;
             bExito = true;
         }
@@ -37,7 +37,7 @@ public class ArticleType implements IArticleType {
 
     private boolean setsTypeName(String sTypeName) {
         boolean bExito = false;
-        if (sTypeName.length() < 50){
+        if (sTypeName.length() < MAXCHAR_NAME && sTypeName.length() > 0){
             this.sTypeName = sTypeName;
             bExito = true;
         }
@@ -47,7 +47,7 @@ public class ArticleType implements IArticleType {
     @Override
     public boolean checkArticleType() {
         boolean bExito = false;
-        if (getsTypeName().length() < 50 && getsDescription().length() < 250 && getsTypeName() != null) {
+        if (getsTypeName().length() < MAXCHAR_NAME && getsDescription().length() < MAXCHAR_DESCTYPE && getsTypeName() != null) {
             bExito = true;
         }
         return bExito;
