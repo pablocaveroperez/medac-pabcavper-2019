@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Objects;
+
 public class Category implements ICategory {
     private String sCategoryName;
     private String sDescription;
@@ -45,9 +47,34 @@ public class Category implements ICategory {
     @Override
     public boolean checkCategory() {
         boolean bExito = false;
-        if (getsCategoryName().length() < 60 && getsDescription().length() < 200){
+        if (getsCategoryName().length() < 60 && getsDescription().length() < 200 && getsCategoryName() != null){
             bExito = true;
         }
         return bExito;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Category category = (Category) o;
+        return getsCategoryName().equals(category.getsCategoryName());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getsCategoryName());
+    }
+
+    @Override
+    public String toString() {
+        String salida = "";
+        if (checkCategory()) {
+            salida += "********************";
+            salida += "\nCategoria: " + sCategoryName;
+            salida += "\nDescripcion: " + sDescription;
+            salida += "\n********************";
+        }
+        return salida;
     }
 }

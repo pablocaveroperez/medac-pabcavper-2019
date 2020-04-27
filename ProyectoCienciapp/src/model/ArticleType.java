@@ -47,7 +47,7 @@ public class ArticleType implements IArticleType {
     @Override
     public boolean checkArticleType() {
         boolean bExito = false;
-        if (getsTypeName().length() < 50 && getsDescription().length() < 250) {
+        if (getsTypeName().length() < 50 && getsDescription().length() < 250 && getsTypeName() != null) {
             bExito = true;
         }
         return bExito;
@@ -71,11 +71,10 @@ public class ArticleType implements IArticleType {
         String salida = "";
         if (checkArticleType()) {
             salida += "**********************";
-            salida += "\nTipo de Articulo: ";
-            salida += "\nDescripcion: ";
+            salida += "\nTipo de Articulo: " + sTypeName;
+            salida += "\nDescripcion: " + sDescription;
             salida += "\n**********************";
-        }else
-            salida += "";
+        }
         return salida;
     }
 }

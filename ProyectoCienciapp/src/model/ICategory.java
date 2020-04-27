@@ -8,4 +8,10 @@ public interface ICategory {
     boolean setsDescription(String sDescription);
 
     boolean checkCategory();
+
+    public boolean equals(Object o);
+
+    public int hashCode();
+
+    public String toString();
 }
