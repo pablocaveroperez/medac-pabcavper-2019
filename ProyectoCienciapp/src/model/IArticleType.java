@@ -8,4 +8,11 @@ public interface IArticleType {
     boolean setsDescription(String sDescription);
 
     boolean checkArticleType();
+
+    public boolean equals(Object o);
+
+    public int hashCode();
+
+    public String toString();
+
 }

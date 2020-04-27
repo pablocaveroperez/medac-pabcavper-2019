@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Objects;
+
 public class ArticleType implements IArticleType {
     private String sTypeName;
     private String sDescription;
@@ -51,4 +53,29 @@ public class ArticleType implements IArticleType {
         return bExito;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ArticleType that = (ArticleType) o;
+        return getsTypeName().equals(that.getsTypeName());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getsTypeName());
+    }
+
+    @Override
+    public String toString() {
+        String salida = "";
+        if (checkArticleType()) {
+            salida += "**********************";
+            salida += "\nTipo de Articulo: ";
+            salida += "\nDescripcion: ";
+            salida += "\n**********************";
+        }else
+            salida += "";
+        return salida;
+    }
 }
