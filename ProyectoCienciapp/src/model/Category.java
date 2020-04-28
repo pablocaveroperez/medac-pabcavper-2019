@@ -72,7 +72,8 @@ public class Category implements ICategory, LimitsDB {
         if (checkCategory()) {
             salida += "********************";
             salida += "\nCategoria: " + sCategoryName;
-            salida += "\nDescripcion: " + sDescription;
+            if (sDescription != null)
+                salida += "\nDescripcion: " + sDescription;
             salida += "\n********************";
         }
         return salida;

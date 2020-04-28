@@ -72,7 +72,8 @@ public class ArticleType implements IArticleType, LimitsDB {
         if (checkArticleType()) {
             salida += "**********************";
             salida += "\nTipo de Articulo: " + sTypeName;
-            salida += "\nDescripcion: " + sDescription;
+            if (sDescription != null)
+                salida += "\nDescripcion: " + sDescription;
             salida += "\n**********************";
         }
         return salida;

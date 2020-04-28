@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="validaciones">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/ValidaLibrary.jar!/validaciones" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
