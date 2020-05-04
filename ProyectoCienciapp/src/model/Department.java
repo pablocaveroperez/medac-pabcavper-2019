@@ -76,4 +76,15 @@ public class Department implements LimitsDB {
     public int hashCode() {
         return Objects.hash(getIdDepartment());
     }
+
+    public String toString() {
+        String salida = "";
+        salida += "*******************";
+        salida += "\nID Departamento: " + getIdDepartment();
+        if (getsName() != null)
+            salida += "\nNombre: " + getsName();
+        salida += "\nFacultad: " + getoFaculty().getsFaculName();
+        salida += "*******************";
+        return salida;
+    }
 }
