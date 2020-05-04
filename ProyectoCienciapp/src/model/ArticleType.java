@@ -28,7 +28,7 @@ public class ArticleType implements IArticleType, LimitsDB {
     @Override
     public boolean setsDescription(String sDescription) {
         boolean bExito = false;
-        if (sDescription.length() < MAXCHAR_DESCTYPE && sDescription.length() > MINCHAR){
+        if (sDescription.length() < MAXCHAR_250 && sDescription.length() > MINCHAR){
             this.sDescription = sDescription;
             bExito = true;
         }
@@ -37,7 +37,7 @@ public class ArticleType implements IArticleType, LimitsDB {
 
     private boolean setsTypeName(String sTypeName) {
         boolean bExito = false;
-        if (sTypeName.length() < MAXCHAR_NAME && sTypeName.length() > MINCHAR && sTypeName != null){
+        if (sTypeName != null && sTypeName.length() < MAXCHAR_50 && sTypeName.length() > MINCHAR){
             this.sTypeName = sTypeName;
             bExito = true;
         }
@@ -47,7 +47,7 @@ public class ArticleType implements IArticleType, LimitsDB {
     @Override
     public boolean checkArticleType() {
         boolean bExito = false;
-        if (getsDescription().length() < MAXCHAR_DESCTYPE && getsDescription().length() > MINCHAR && getsTypeName() != null) {
+        if (getsDescription().length() < MAXCHAR_250 && getsDescription().length() > MINCHAR && getsTypeName() != null) {
             bExito = true;
         }
         return bExito;

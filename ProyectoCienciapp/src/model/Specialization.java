@@ -28,7 +28,7 @@ public class Specialization implements ISpecialization, LimitsDB{
     @Override
     public boolean setsDescription(String sDescription) {
         boolean bExito = false;
-        if (sDescription.length() < MAXCHAR_DESC && sDescription.length() > MINCHAR) {
+        if (sDescription.length() < MAXCHAR_200 && sDescription.length() > MINCHAR) {
             this.sDescription = sDescription;
             bExito = true;
         }
@@ -37,7 +37,7 @@ public class Specialization implements ISpecialization, LimitsDB{
 
     private boolean setsName(String sName) {
         boolean bExito = false;
-        if (sName.length() < MAXCHAR_NAME && sName.length() > MINCHAR && sName != null){
+        if (sName != null && sName.length() < MAXCHAR_50 && sName.length() > MINCHAR){
             this.sName = sName;
             bExito = true;
         }
@@ -47,7 +47,7 @@ public class Specialization implements ISpecialization, LimitsDB{
     @Override
     public boolean checkSpecialization() {
         boolean bExito = false;
-        if (getsDescription().length() < MAXCHAR_DESC && getsDescription().length() > MINCHAR && getsName() != null){
+        if (getsDescription().length() < MAXCHAR_200 && getsDescription().length() > MINCHAR && getsName() != null){
             bExito = true;
         }
         return bExito;

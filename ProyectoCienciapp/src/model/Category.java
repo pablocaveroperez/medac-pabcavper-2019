@@ -28,7 +28,7 @@ public class Category implements ICategory, LimitsDB {
     @Override
     public boolean setsDescription(String sDescription) {
         boolean bExito = false;
-        if (sDescription.length() < MAXCHAR_DESC && sDescription.length() > MINCHAR){
+        if (sDescription.length() < MAXCHAR_200 && sDescription.length() > MINCHAR){
             this.sDescription = sDescription;
             bExito = true;
         }
@@ -37,7 +37,7 @@ public class Category implements ICategory, LimitsDB {
 
     private boolean setsCategoryName(String sCategoryName) {
         boolean bExito = false;
-        if (sCategoryName.length() < MAXCHAR_CATEGORY && sCategoryName != null && sCategoryName.length() > MINCHAR){
+        if (sCategoryName != null && sCategoryName.length() < MAXCHAR_60 && sCategoryName.length() > MINCHAR){
             this.sCategoryName = sCategoryName;
             bExito = true;
         }
@@ -47,7 +47,7 @@ public class Category implements ICategory, LimitsDB {
     @Override
     public boolean checkCategory() {
         boolean bExito = false;
-        if (getsDescription().length() < MAXCHAR_DESC && getsCategoryName() != null && getsDescription().length() > MINCHAR){
+        if (getsDescription().length() < MAXCHAR_200 && getsCategoryName() != null && getsDescription().length() > MINCHAR){
             bExito = true;
         }
         return bExito;
