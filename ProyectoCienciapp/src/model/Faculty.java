@@ -56,4 +56,13 @@ public class Faculty implements LimitsDB {
     public int hashCode() {
         return Objects.hash(getsFaculName());
     }
+
+    public String toString() {
+        String salida = "";
+        salida += "*******************";
+        salida += "\nFacultad: " + getsFaculName();
+        salida += "\nUniversidad: " + getoUniversity().getsUniName();
+        salida += "*******************";
+        return salida;
+    }
 }
