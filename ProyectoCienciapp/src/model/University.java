@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Objects;
+
 public class University implements LimitsDB {
     private String sUniName;
     private String sLocality;
@@ -69,5 +71,30 @@ public class University implements LimitsDB {
             bExito = true;
         }
         return bExito;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        University that = (University) o;
+        return getsUniName().equals(that.getsUniName());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getsUniName());
+    }
+
+    public String toString() {
+        String salida = "";
+        salida += "*******************";
+        salida += "\nUniversidad: " + getsUniName();
+        salida += "\nLocalidad: " + getsLocality();
+        salida += "\nPais: " + getoCountry().getsName();
+        if (getsAddres() != null)
+            salida += "\nDireccion: " + getsAddres();
+        salida += "*******************";
+        return salida;
     }
 }
