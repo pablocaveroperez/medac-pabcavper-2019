@@ -2,7 +2,7 @@ package model;
 
 import java.util.Objects;
 
-public class University implements LimitsDB {
+public class University implements LimitsDB, IUniversity {
     private String sUniName;
     private String sLocality;
     private String sAddres;
@@ -21,6 +21,7 @@ public class University implements LimitsDB {
         setoCountry(oCountry);
     }
 
+    @Override
     public String getsUniName() {
         return sUniName;
     }
@@ -34,10 +35,12 @@ public class University implements LimitsDB {
         return bExito;
     }
 
+    @Override
     public String getsLocality() {
         return sLocality;
     }
 
+    @Override
     public boolean setsLocality(String sLocality) {
         boolean bExito = false;
         if (sLocality != null && sLocality.length() < MAXCHAR_70 && sLocality.length() > MINCHAR) {
@@ -47,10 +50,12 @@ public class University implements LimitsDB {
         return bExito;
     }
 
+    @Override
     public String getsAddres() {
         return sAddres;
     }
 
+    @Override
     public boolean setsAddres(String sAddres) {
         boolean bExito = false;
         if (sAddres.length() > MINCHAR && sAddres.length() < MAXCHAR_100) {
@@ -60,10 +65,12 @@ public class University implements LimitsDB {
         return bExito;
     }
 
+    @Override
     public Country getoCountry() {
         return oCountry;
     }
 
+    @Override
     public boolean setoCountry(Country oCountry) {
         boolean bExito = false;
         if (oCountry.checkCountry()) {
@@ -73,6 +80,7 @@ public class University implements LimitsDB {
         return bExito;
     }
 
+    @Override
     public boolean chechUniversity() {
         boolean bExito = false;
         if (getsUniName() != null && getsLocality() != null && getoCountry() != null)
@@ -93,6 +101,8 @@ public class University implements LimitsDB {
         return Objects.hash(getsUniName());
     }
 
+
+    @Override
     public String toString() {
         String salida = "";
         salida += "*******************";
