@@ -92,4 +92,16 @@ public class ResearchTeam implements LimitsDB {
     public int hashCode() {
         return Objects.hash(getIdResearchTeam());
     }
+
+    public String toString() {
+        String salida = "";
+        salida += "*******************";
+        salida += "\nID Equipo de Investigacion: " + getIdResearchTeam();
+        if (getsName() != null)
+            salida += "\nNombre: " + getsName();
+        salida += "\nPresupuesto: " + getiBudget();
+        salida += "\nDepartamento: " + getoDepartment().getIdDepartment();
+        salida += "\n*******************";
+        return salida;
+    }
 }
