@@ -28,7 +28,7 @@ public class Specialization implements ISpecialization, LimitsDB{
     @Override
     public boolean setsDescription(String sDescription) {
         boolean bExito = false;
-        if (sDescription.length() < MAXCHAR_DESC && sDescription.length() > 0) {
+        if (sDescription.length() < MAXCHAR_DESC && sDescription.length() > MINCHAR) {
             this.sDescription = sDescription;
             bExito = true;
         }
@@ -37,7 +37,7 @@ public class Specialization implements ISpecialization, LimitsDB{
 
     private boolean setsName(String sName) {
         boolean bExito = false;
-        if (sName.length() < MAXCHAR_NAME && sName.length() > 0){
+        if (sName.length() < MAXCHAR_NAME && sName.length() > MINCHAR && sName != null){
             this.sName = sName;
             bExito = true;
         }
@@ -47,7 +47,7 @@ public class Specialization implements ISpecialization, LimitsDB{
     @Override
     public boolean checkSpecialization() {
         boolean bExito = false;
-        if (getsName().length() < MAXCHAR_NAME && getsDescription().length() < MAXCHAR_DESC && getsName() != null){
+        if (getsDescription().length() < MAXCHAR_DESC && getsDescription().length() > MINCHAR && getsName() != null){
             bExito = true;
         }
         return bExito;
@@ -72,7 +72,8 @@ public class Specialization implements ISpecialization, LimitsDB{
         if (checkSpecialization()) {
             salida += "*******************";
             salida += "\nEspecializacion: " + sName;
-            salida += "\nDescripcion: " + sDescription;
+            if (getsDescription() != null)
+                salida += "\nDescripcion: " + sDescription;
             salida += "\n*******************";
         }
         return salida;

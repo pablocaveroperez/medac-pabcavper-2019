@@ -8,5 +8,7 @@ public interface LimitsDB {
     public final byte MAXCHAR_COUNTRY = 70;
     public final byte MAXCHAR_CATEGORY = 60;
 
+    public final byte MINCHAR = 0;
+
 
 }

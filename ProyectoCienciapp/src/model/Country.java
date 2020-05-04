@@ -16,7 +16,7 @@ public class Country implements ICountry, LimitsDB {
 
     private boolean setsName(String sName) {
         boolean bExito = false;
-        if (sName.length() < MAXCHAR_COUNTRY && sName.length() > 0) {
+        if (sName.length() < MAXCHAR_COUNTRY && sName.length() > MINCHAR) {
             this.sName = sName;
             bExito = true;
         }
@@ -26,7 +26,7 @@ public class Country implements ICountry, LimitsDB {
     @Override
     public boolean checkCountry(){
         boolean bExito = false;
-        if (getsName().length() < MAXCHAR_COUNTRY && getsName() != null){
+        if (getsName() != null){
             bExito = true;
         }
         return bExito;
