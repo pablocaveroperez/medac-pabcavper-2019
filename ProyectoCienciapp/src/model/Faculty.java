@@ -2,7 +2,7 @@ package model;
 
 import java.util.Objects;
 
-public class Faculty implements LimitsDB {
+public class Faculty implements LimitsDB, IFaculty {
     private String sFaculName;
     private University oUniversity;
 
@@ -11,6 +11,7 @@ public class Faculty implements LimitsDB {
         setsFaculName(sFaculName);
     }
 
+    @Override
     public String getsFaculName() {
         return sFaculName;
     }
@@ -24,10 +25,12 @@ public class Faculty implements LimitsDB {
         return bExito;
     }
 
+    @Override
     public University getoUniversity() {
         return oUniversity;
     }
 
+    @Override
     public boolean setoUniversity(University oUniversity) {
         boolean bExito = false;
         if (oUniversity.checkUniversity()) {
@@ -37,6 +40,7 @@ public class Faculty implements LimitsDB {
         return bExito;
     }
 
+    @Override
     public boolean checkFaculty() {
         boolean bExito = false;
         if (sFaculName != null && oUniversity != null)
@@ -57,6 +61,7 @@ public class Faculty implements LimitsDB {
         return Objects.hash(getsFaculName());
     }
 
+    @Override
     public String toString() {
         String salida = "";
         salida += "*******************";
