@@ -15,7 +15,7 @@ public interface IUniversity {
 
     boolean setoCountry(Country oCountry);
 
-    boolean chechUniversity();
+    boolean checkUniversity();
 
     @Override
     boolean equals(Object o);

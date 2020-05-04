@@ -28,10 +28,17 @@ public class Faculty implements LimitsDB {
 
     public boolean setoUniversity(University oUniversity) {
         boolean bExito = false;
-        if (oUniversity.chechUniversity()) {
+        if (oUniversity.checkUniversity()) {
             this.oUniversity = oUniversity;
             bExito = true;
         }
+        return bExito;
+    }
+
+    public boolean checkFaculty() {
+        boolean bExito = false;
+        if (sFaculName != null && oUniversity != null)
+            bExito = true;
         return bExito;
     }
 }
