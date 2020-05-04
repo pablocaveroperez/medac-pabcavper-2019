@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Objects;
+
 public class ResearchTeam implements LimitsDB {
     private byte idResearchTeam;
     private Department oDepartment;
@@ -76,5 +78,18 @@ public class ResearchTeam implements LimitsDB {
         if (getoDepartment() != null && (getiBudget() > MINCHAR && getiBudget() < MAXBUDGET) && (getIdResearchTeam() < MAXCHAR_30 && getIdResearchTeam() > MINCHAR))
             bExito = true;
         return bExito;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ResearchTeam that = (ResearchTeam) o;
+        return getIdResearchTeam() == that.getIdResearchTeam();
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getIdResearchTeam());
     }
 }
