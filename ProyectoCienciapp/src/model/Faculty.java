@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Objects;
+
 public class Faculty implements LimitsDB {
     private String sFaculName;
     private University oUniversity;
@@ -40,5 +42,18 @@ public class Faculty implements LimitsDB {
         if (sFaculName != null && oUniversity != null)
             bExito = true;
         return bExito;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Faculty faculty = (Faculty) o;
+        return getsFaculName().equals(faculty.getsFaculName());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getsFaculName());
     }
 }
