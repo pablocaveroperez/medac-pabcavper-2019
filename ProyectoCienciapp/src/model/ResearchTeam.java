@@ -2,7 +2,7 @@ package model;
 
 import java.util.Objects;
 
-public class ResearchTeam implements LimitsDB {
+public class ResearchTeam implements LimitsDB, IResearchTeam {
     private byte idResearchTeam;
     private Department oDepartment;
     private String sName;
@@ -21,6 +21,7 @@ public class ResearchTeam implements LimitsDB {
         setoDepartment(oDepartment);
     }
 
+    @Override
     public byte getIdResearchTeam() {
         return idResearchTeam;
     }
@@ -34,10 +35,12 @@ public class ResearchTeam implements LimitsDB {
         return bExito;
     }
 
+    @Override
     public Department getoDepartment() {
         return oDepartment;
     }
 
+    @Override
     public boolean setoDepartment(Department oDepartment) {
         boolean bExito = false;
         if (oDepartment.checkDepartment()) {
@@ -47,10 +50,12 @@ public class ResearchTeam implements LimitsDB {
         return bExito;
     }
 
+    @Override
     public String getsName() {
         return sName;
     }
 
+    @Override
     public boolean setsName(String sName) {
         boolean bExito = false;
         if (sName.length() > MINCHAR && sName.length() < MAXCHAR_40) {
@@ -60,10 +65,12 @@ public class ResearchTeam implements LimitsDB {
         return bExito;
     }
 
+    @Override
     public int getiBudget() {
         return iBudget;
     }
 
+    @Override
     public boolean setiBudget(int iBudget) {
         boolean bExito = false;
         if (iBudget > MINCHAR && iBudget < MAXBUDGET) {
@@ -73,6 +80,7 @@ public class ResearchTeam implements LimitsDB {
         return bExito;
     }
 
+    @Override
     public boolean checkResearchTeam() {
         boolean bExito = false;
         if (getoDepartment() != null && (getiBudget() > MINCHAR && getiBudget() < MAXBUDGET) && (getIdResearchTeam() < MAXCHAR_30 && getIdResearchTeam() > MINCHAR))
@@ -93,6 +101,7 @@ public class ResearchTeam implements LimitsDB {
         return Objects.hash(getIdResearchTeam());
     }
 
+    @Override
     public String toString() {
         String salida = "";
         salida += "*******************";
