@@ -54,4 +54,11 @@ public class Department implements LimitsDB {
         }
         return bExito;
     }
+
+    public boolean checkDepartment() {
+        boolean bExito = false;
+        if (getoFaculty().checkFaculty() && getIdDepartment() > MINCHAR && getIdDepartment() < MAXCHAR_30)
+            bExito = true;
+        return bExito;
+    }
 }
