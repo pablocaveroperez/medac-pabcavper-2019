@@ -70,4 +70,11 @@ public class ResearchTeam implements LimitsDB {
         }
         return bExito;
     }
+
+    public boolean checkResearchTeam() {
+        boolean bExito = false;
+        if (getoDepartment() != null && (getiBudget() > MINCHAR && getiBudget() < MAXBUDGET) && (getIdResearchTeam() < MAXCHAR_30 && getIdResearchTeam() > MINCHAR))
+            bExito = true;
+        return bExito;
+    }
 }
