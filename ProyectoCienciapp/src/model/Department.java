@@ -2,7 +2,7 @@ package model;
 
 import java.util.Objects;
 
-public class Department implements LimitsDB {
+public class Department implements LimitsDB, IDepartment {
     private byte idDepartment;
     private Faculty oFaculty;
     private String sName;
@@ -18,6 +18,7 @@ public class Department implements LimitsDB {
         setoFaculty(oFaculty);
     }
 
+    @Override
     public byte getIdDepartment() {
         return idDepartment;
     }
@@ -31,10 +32,12 @@ public class Department implements LimitsDB {
         return bExito;
     }
 
+    @Override
     public Faculty getoFaculty() {
         return oFaculty;
     }
 
+    @Override
     public boolean setoFaculty(Faculty oFaculty) {
         boolean bExito = false;
         if (oFaculty.checkFaculty()) {
@@ -44,10 +47,12 @@ public class Department implements LimitsDB {
         return bExito;
     }
 
+    @Override
     public String getsName() {
         return sName;
     }
 
+    @Override
     public boolean setsName(String sName) {
         boolean bExito = false;
         if (sName.length() > MINCHAR && sName.length() < MAXCHAR_50) {
@@ -57,6 +62,7 @@ public class Department implements LimitsDB {
         return bExito;
     }
 
+    @Override
     public boolean checkDepartment() {
         boolean bExito = false;
         if (getoFaculty().checkFaculty() && getIdDepartment() > MINCHAR && getIdDepartment() < MAXCHAR_30)
@@ -77,6 +83,7 @@ public class Department implements LimitsDB {
         return Objects.hash(getIdDepartment());
     }
 
+    @Override
     public String toString() {
         String salida = "";
         salida += "*******************";
