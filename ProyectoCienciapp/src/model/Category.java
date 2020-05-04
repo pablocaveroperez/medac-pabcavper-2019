@@ -47,7 +47,7 @@ public class Category implements ICategory, LimitsDB {
     @Override
     public boolean checkCategory() {
         boolean bExito = false;
-        if (getsDescription().length() < MAXCHAR_200 && getsCategoryName() != null && getsDescription().length() > MINCHAR){
+        if (getsCategoryName() != null){
             bExito = true;
         }
         return bExito;

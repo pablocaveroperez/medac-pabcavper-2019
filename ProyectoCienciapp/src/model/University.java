@@ -73,6 +73,13 @@ public class University implements LimitsDB {
         return bExito;
     }
 
+    public boolean chechUniversity() {
+        boolean bExito = false;
+        if (getsUniName() != null && getsLocality() != null && getoCountry() != null)
+            bExito = true;
+        return bExito;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

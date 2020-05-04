@@ -47,7 +47,7 @@ public class ArticleType implements IArticleType, LimitsDB {
     @Override
     public boolean checkArticleType() {
         boolean bExito = false;
-        if (getsDescription().length() < MAXCHAR_250 && getsDescription().length() > MINCHAR && getsTypeName() != null) {
+        if (getsTypeName() != null) {
             bExito = true;
         }
         return bExito;

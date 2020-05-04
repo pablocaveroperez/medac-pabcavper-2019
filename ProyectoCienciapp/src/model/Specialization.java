@@ -47,7 +47,7 @@ public class Specialization implements ISpecialization, LimitsDB{
     @Override
     public boolean checkSpecialization() {
         boolean bExito = false;
-        if (getsDescription().length() < MAXCHAR_200 && getsDescription().length() > MINCHAR && getsName() != null){
+        if (getsName() != null){
             bExito = true;
         }
         return bExito;
