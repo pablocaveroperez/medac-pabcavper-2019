@@ -43,7 +43,7 @@ public class Faculty implements LimitsDB, IFaculty {
     @Override
     public boolean checkFaculty() {
         boolean bExito = false;
-        if (sFaculName != null && oUniversity != null)
+        if (sFaculName != null && oUniversity.checkUniversity())
             bExito = true;
         return bExito;
     }
