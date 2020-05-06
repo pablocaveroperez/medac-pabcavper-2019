@@ -1,6 +1,6 @@
 package model;
 
-import java.util.Date;
+import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 public class Member implements LimitsDB {
@@ -11,7 +11,7 @@ public class Member implements LimitsDB {
     private Specialization oSpecialization; // NN
     private ResearchTeam oResearchTeam; // NN
 
-    public Member(String sDNI, Date birthDate, String sName, String sSurname, Specialization oSpecialization, ResearchTeam oResearchTeam) {
+    public Member(String sDNI, GregorianCalendar birthDate, String sName, String sSurname, Specialization oSpecialization, ResearchTeam oResearchTeam) {
         setsDNI(sDNI);
         setBirthDate(birthDate);
         setsName(sName);
@@ -41,13 +41,13 @@ public class Member implements LimitsDB {
         return bExito;
     }
 
-    public Date getBirthDate() {
+    public GregorianCalendar getBirthDate() {
         return birthDate;
     }
 
-    public boolean setBirthDate(Date birthDate) {
+    public boolean setBirthDate(GregorianCalendar birthDate) {
         boolean bExito = false;
-        if (birthDate.getYear() > 1900 && birthDate.getYear() < 2020) {
+        if (birthDate.get(Calendar.YEAR) > 1900 && birthDate.get(Calendar.YEAR) < 2020) {
             this.birthDate = birthDate;
             bExito = true;
         }
@@ -59,7 +59,12 @@ public class Member implements LimitsDB {
     }
 
     public boolean setsName(String sName) {
-        this.sName = sName;
+        boolean bExito = false;
+        if (sName != null && sName.length() < MAXCHAR_50 && sName.length() > MINCHAR) {
+            this.sName = sName;
+            bExito = true;
+        }
+        return bExito;
     }
 
     public String getsSurname() {
@@ -67,7 +72,12 @@ public class Member implements LimitsDB {
     }
 
     public boolean setsSurname(String sSurname) {
-        this.sSurname = sSurname;
+        boolean bExito = false;
+        if (sSurname != null && sSurname.length() > MINCHAR && sSurname.length() < MAXCHAR_50) {
+            this.sSurname = sSurname;
+            bExito = true;
+        }
+        return bExito;
     }
 
     public Specialization getoSpecialization() {
@@ -75,7 +85,12 @@ public class Member implements LimitsDB {
     }
 
     public boolean setoSpecialization(Specialization oSpecialization) {
-        this.oSpecialization = oSpecialization;
+        boolean bExito = false;
+        if (oSpecialization.checkSpecialization()) {
+            this.oSpecialization = oSpecialization;
+            bExito = true;
+        }
+        return bExito;
     }
 
     public ResearchTeam getoResearchTeam() {
@@ -83,6 +98,11 @@ public class Member implements LimitsDB {
     }
 
     public boolean setoResearchTeam(ResearchTeam oResearchTeam) {
-        this.oResearchTeam = oResearchTeam;
+        boolean bExito = false;
+        if (oResearchTeam.checkResearchTeam()) {
+            this.oResearchTeam = oResearchTeam;
+            bExito = true;
+        }
+        return bExito;
     }
 }
