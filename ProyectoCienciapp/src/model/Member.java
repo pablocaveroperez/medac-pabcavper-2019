@@ -105,4 +105,14 @@ public class Member implements LimitsDB {
         }
         return bExito;
     }
+
+    public boolean checkMember() {
+        boolean bExito = false;
+        if (getoResearchTeam().checkResearchTeam() && getoSpecialization().checkSpecialization() && getsDNI() != null
+            && getsName() != null && getsSurname() != null)
+            bExito = true;
+        return bExito;
+    }
+
+
 }
