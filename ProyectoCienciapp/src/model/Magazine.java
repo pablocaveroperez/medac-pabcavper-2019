@@ -2,10 +2,11 @@ package model;
 
 import java.util.Objects;
 
-public class Magazine implements LimitsDB {
+public class Magazine implements LimitsDB, IMagazine {
     private String sName;                   //PRIMARY KEY
     private Headquarters oHeadquarters;     // NN
 
+    @Override
     public String getsName() {
         return sName;
     }
@@ -19,10 +20,12 @@ public class Magazine implements LimitsDB {
         return bExito;
     }
 
+    @Override
     public Headquarters getoHeadquarters() {
         return oHeadquarters;
     }
 
+    @Override
     public boolean setoHeadquarters(Headquarters oHeadquarters) {
         boolean bExito = false;
         if (oHeadquarters.checkHeadquarters()) {
@@ -32,6 +35,7 @@ public class Magazine implements LimitsDB {
         return bExito;
     }
 
+    @Override
     public boolean checkMagazine() {
         boolean bExito = false;
         if (getsName() != null && getoHeadquarters() != null && getoHeadquarters().checkHeadquarters())
@@ -53,6 +57,7 @@ public class Magazine implements LimitsDB {
         return Objects.hash(getsName(), getoHeadquarters());
     }
 
+    @Override
     public String toString() {
         String salida = "";
         salida += "**********************";
