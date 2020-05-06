@@ -30,5 +30,10 @@ public class Magazine implements LimitsDB {
         return bExito;
     }
 
-
+    public boolean checkMagazine() {
+        boolean bExito = false;
+        if (getsName() != null && getoHeadquarters() != null && getoHeadquarters().checkHeadquarters())
+            bExito = true;
+        return bExito;
+    }
 }
