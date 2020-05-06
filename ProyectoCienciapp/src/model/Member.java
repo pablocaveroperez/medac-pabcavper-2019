@@ -11,22 +11,38 @@ public class Member implements LimitsDB, IMember {
     private String sSurname;                                        // NN
     private Specialization oSpecialization;                         // NN
     private ResearchTeam oResearchTeam;                             // NN
+    private User oUser;                                             // NN
 
-    public Member(String sDNI, GregorianCalendar birthDate, String sName, String sSurname, Specialization oSpecialization, ResearchTeam oResearchTeam) {
+    public Member(String sDNI, GregorianCalendar birthDate, String sName, String sSurname, Specialization oSpecialization, ResearchTeam oResearchTeam, User oUser) {
         setsDNI(sDNI);
         setBirthDate(birthDate);
         setsName(sName);
         setsSurname(sSurname);
         setoSpecialization(oSpecialization);
         setoResearchTeam(oResearchTeam);
+        setoUser(oUser);
     }
 
-    public Member(String sDNI, String sName, String sSurname, Specialization oSpecialization, ResearchTeam oResearchTeam) {
+    public Member(String sDNI, String sName, String sSurname, Specialization oSpecialization, ResearchTeam oResearchTeam, User oUser) {
         setsDNI(sDNI);
         setsName(sName);
         setsSurname(sSurname);
         setoSpecialization(oSpecialization);
         setoResearchTeam(oResearchTeam);
+        setoUser(oUser);
+    }
+
+    public User getoUser() {
+        return oUser;
+    }
+
+    public boolean setoUser(User oUser) {
+        boolean bExito = false;
+        if (oUser.checkUser()) {
+            this.oUser = oUser;
+            bExito = true;
+        }
+        return bExito;
     }
 
     @Override
@@ -122,7 +138,7 @@ public class Member implements LimitsDB, IMember {
     public boolean checkMember() {
         boolean bExito = false;
         if (getoResearchTeam().checkResearchTeam() && getoSpecialization().checkSpecialization() && getsDNI() != null
-            && getsName() != null && getsSurname() != null)
+            && getsName() != null && getsSurname() != null && getoUser() != null && getoUser().checkUser())
             bExito = true;
         return bExito;
     }
@@ -147,6 +163,7 @@ public class Member implements LimitsDB, IMember {
         salida += "\nDNI: " + getsDNI();
         salida += "\nNombre: " + getsName();
         salida += "\nApellido: " + getsSurname();
+        salida += "\nUsuario: " + getoUser();
         if (getBirthDate() != null) {
             salida += "\nFecha Nacimiento: " + getBirthDate().get(Calendar.DATE) + "/" + getBirthDate().get(Calendar.MONTH)
                     + "/" + getBirthDate().get(Calendar.YEAR);
