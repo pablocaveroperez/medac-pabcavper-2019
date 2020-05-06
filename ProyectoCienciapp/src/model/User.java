@@ -5,6 +5,12 @@ public class User implements LimitsDB {
     private String sPassword;
     private String sEmail;
 
+    public User(String sUsername, String sPassword, String sEmail) {
+        setsUsername(sUsername);
+        setsPassword(sPassword);
+        setsEmail(sEmail);
+    }
+
     public String getsUsername() {
         return sUsername;
     }
@@ -39,6 +45,22 @@ public class User implements LimitsDB {
         boolean bExito = false;
         if (sEmail != null && sEmail.length() > MINCHAR && sEmail.length() < MAXCHAR_500) {
             this.sEmail = sEmail;
+            bExito = true;
+        }
+        return bExito;
+    }
+
+    public boolean checkUser() {
+        boolean bExito = false;
+        if (sUsername != null && sPassword != null && sEmail != null)
+            bExito = true;
+        return bExito;
+    }
+
+    public boolean checkLogin(Object obj) {
+        boolean bExito = false;
+        User other = (User) obj;
+        if(checkUser() && other.checkUser() && this.sUsername.equals(other.sUsername) && this.sPassword.equals(other.sPassword)) {
             bExito = true;
         }
         return bExito;
