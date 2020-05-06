@@ -5,7 +5,7 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Objects;
 
-public class User implements LimitsDB {
+public class User implements LimitsDB, IUser {
     private String sUsername;
     private String sPassword;
     private String sEmail;
@@ -16,6 +16,7 @@ public class User implements LimitsDB {
         setsEmail(sEmail);
     }
 
+    @Override
     public String getsUsername() {
         return sUsername;
     }
@@ -29,10 +30,12 @@ public class User implements LimitsDB {
         return bExito;
     }
 
+    @Override
     public String getsPassword() {
         return sPassword;
     }
 
+    @Override
     public boolean setsPassword(String sPassword) {
         boolean bExito = false;
         if (sPassword != null && sPassword.length() > MINCHAR_PASSWORD && sPassword.length() < MAXCHAR_PASSWORD) {
@@ -42,10 +45,12 @@ public class User implements LimitsDB {
         return bExito;
     }
 
+    @Override
     public String getsEmail() {
         return sEmail;
     }
 
+    @Override
     public boolean setsEmail(String sEmail) {
         boolean bExito = false;
         if (sEmail != null && sEmail.length() > MINCHAR && sEmail.length() < MAXCHAR_500) {
@@ -55,6 +60,7 @@ public class User implements LimitsDB {
         return bExito;
     }
 
+    @Override
     public boolean checkUser() {
         boolean bExito = false;
         if (sUsername != null && sPassword != null && sEmail != null)
@@ -62,6 +68,7 @@ public class User implements LimitsDB {
         return bExito;
     }
 
+    @Override
     public boolean checkLogin(Object obj) {
         boolean bExito = false;
         User other = (User) obj;
@@ -72,6 +79,7 @@ public class User implements LimitsDB {
     }
 
     // Generar SHA-512 a partir de una contraseña (String).
+    @Override
     public String encryptSha512(String input)
     {
         try {
@@ -102,6 +110,7 @@ public class User implements LimitsDB {
         return Objects.hash(getsUsername());
     }
 
+    @Override
     public String toString() {
         String salida = "";
         salida += "\n**********************";
