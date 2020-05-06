@@ -3,9 +3,9 @@ package model;
 import java.util.Objects;
 
 public class Department implements LimitsDB, IDepartment {
-    private byte idDepartment;
-    private Faculty oFaculty;
-    private String sName;
+    private byte idDepartment;  // PRIMARY KEY
+    private Faculty oFaculty;   // NN
+    private String sName;       // NULL
 
     public Department(byte idDepartment, Faculty oFaculty, String sName) {
         setIdDepartment(idDepartment);

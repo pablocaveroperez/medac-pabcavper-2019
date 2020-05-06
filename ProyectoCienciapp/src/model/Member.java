@@ -5,12 +5,12 @@ import java.util.GregorianCalendar;
 import java.util.Objects;
 
 public class Member implements LimitsDB, IMember {
-    private String sDNI; // Primary Key
-    private GregorianCalendar birthDate = new GregorianCalendar(); // NULO
-    private String sName; // NN
-    private String sSurname; // NN
-    private Specialization oSpecialization; // NN
-    private ResearchTeam oResearchTeam; // NN
+    private String sDNI;                                            // Primary Key
+    private GregorianCalendar birthDate = new GregorianCalendar();  // NULO
+    private String sName;                                           // NN
+    private String sSurname;                                        // NN
+    private Specialization oSpecialization;                         // NN
+    private ResearchTeam oResearchTeam;                             // NN
 
     public Member(String sDNI, GregorianCalendar birthDate, String sName, String sSurname, Specialization oSpecialization, ResearchTeam oResearchTeam) {
         setsDNI(sDNI);

@@ -3,10 +3,10 @@ package model;
 import java.util.Objects;
 
 public class University implements LimitsDB, IUniversity {
-    private String sUniName;
-    private String sLocality;
-    private String sAddres;
-    private Country oCountry;
+    private String sUniName;        // PRIMARY KEY
+    private String sLocality;       // NN
+    private String sAddres;         // NULL
+    private Country oCountry;       // NN
 
     public University(String sUniName, String sLocality, String sAddres, Country oCountry) {
         setsUniName(sUniName);

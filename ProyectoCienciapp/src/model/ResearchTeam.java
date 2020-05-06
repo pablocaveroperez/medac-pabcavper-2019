@@ -3,10 +3,10 @@ package model;
 import java.util.Objects;
 
 public class ResearchTeam implements LimitsDB, IResearchTeam {
-    private byte idResearchTeam;
-    private Department oDepartment;
-    private String sName;
-    private int iBudget;
+    private byte idResearchTeam;        // PRIMARY KEY
+    private Department oDepartment;     // NN
+    private String sName;               // NULL
+    private int iBudget;                // NN
 
     public ResearchTeam(byte idResearchTeam, Department oDepartment, String sName, int iBudget) {
         setiBudget(iBudget);

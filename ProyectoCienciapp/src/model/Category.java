@@ -3,8 +3,8 @@ package model;
 import java.util.Objects;
 
 public class Category implements ICategory, LimitsDB {
-    private String sCategoryName;
-    private String sDescription;
+    private String sCategoryName;   // PRIMARY KEY
+    private String sDescription;    // NULL
 
     public Category(String sCategoryName, String sDescription) {
         setsCategoryName(sCategoryName);

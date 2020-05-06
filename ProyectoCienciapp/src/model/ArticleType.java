@@ -3,8 +3,8 @@ package model;
 import java.util.Objects;
 
 public class ArticleType implements IArticleType, LimitsDB {
-    private String sTypeName;
-    private String sDescription;
+    private String sTypeName;       // PRIMARY KEY
+    private String sDescription;    // NULL
 
     public ArticleType(String sTypeName, String sDescription) {
         setsTypeName(sTypeName);

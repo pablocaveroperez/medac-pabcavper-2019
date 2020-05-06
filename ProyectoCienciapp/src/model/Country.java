@@ -3,7 +3,7 @@ package model;
 import java.util.Objects;
 
 public class Country implements ICountry, LimitsDB {
-    private String sName;
+    private String sName;   // PRIMARY KEY
 
     public Country (String sName) {
         setsName(sName);

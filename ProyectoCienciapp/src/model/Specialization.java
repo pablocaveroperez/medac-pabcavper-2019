@@ -3,8 +3,8 @@ package model;
 import java.util.Objects;
 
 public class Specialization implements ISpecialization, LimitsDB{
-    private String sName;
-    private String sDescription;
+    private String sName;           // PRIMARY KEY
+    private String sDescription;    // NULL
 
     public Specialization(String sName, String sDescription) {
         setsName(sName);

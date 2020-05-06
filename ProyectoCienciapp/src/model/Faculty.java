@@ -3,8 +3,8 @@ package model;
 import java.util.Objects;
 
 public class Faculty implements LimitsDB, IFaculty {
-    private String sFaculName;
-    private University oUniversity;
+    private String sFaculName;          // PRIMARY KEY
+    private University oUniversity;     // NN
 
     public Faculty(String sFaculName, University oUniversity) {
         setoUniversity(oUniversity);
