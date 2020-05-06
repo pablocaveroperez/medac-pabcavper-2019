@@ -70,4 +70,11 @@ public class Headquarters implements LimitsDB {
         }
         return bExito;
     }
+
+    public boolean checkHeadquarters() {
+        boolean bExito = false;
+        if (getsName() != null && getoCountry().checkCountry() && getsLocality() != null)
+            bExito = true;
+        return bExito;
+    }
 }
