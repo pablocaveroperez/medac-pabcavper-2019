@@ -6,9 +6,9 @@ import java.security.NoSuchAlgorithmException;
 import java.util.Objects;
 
 public class User implements LimitsDB, IUser {
-    private String sUsername;
-    private String sPassword;
-    private String sEmail;
+    private String sUsername;       // PRIMARY KEY
+    private String sPassword;       // NN
+    private String sEmail;          // NN
 
     public User(String sUsername, String sPassword, String sEmail) {
         setsUsername(sUsername);
