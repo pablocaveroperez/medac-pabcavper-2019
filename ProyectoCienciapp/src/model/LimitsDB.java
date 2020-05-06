@@ -10,9 +10,12 @@ public interface LimitsDB {
     public final byte MAXCHAR_100 = 100;
     public final short MAXCHAR_200 = 200;
     public final short MAXCHAR_250 = 250;
+    public final short MAXCHAR_500 = 500;
     public final int MAXBUDGET = 5000000;
 
     public final byte MINCHAR = 0;
+
+    public final short MAXCHAR_PASSWORD = 1024;
 
 
 }

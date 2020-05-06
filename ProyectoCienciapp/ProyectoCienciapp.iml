@@ -7,7 +7,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="validaciones" level="project" />
-    <orderEntry type="library" name="MariaDB" level="project" />
+    <orderEntry type="library" name="mariadb-java-client-2.6.0" level="project" />
+    <orderEntry type="library" name="ValidaLibrary" level="project" />
   </component>
 </module>
