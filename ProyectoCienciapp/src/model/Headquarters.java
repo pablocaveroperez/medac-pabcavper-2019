@@ -2,7 +2,7 @@ package model;
 
 import java.util.Objects;
 
-public class Headquarters implements LimitsDB {
+public class Headquarters implements LimitsDB, IHeadquarters {
     private String sName;       // PRIMARY KEY
     private String sAddres;     // NULL
     private String sLocality;   // NN
@@ -21,6 +21,7 @@ public class Headquarters implements LimitsDB {
         setoCountry(oCountry);
     }
 
+    @Override
     public String getsName() {
         return sName;
     }
@@ -34,10 +35,12 @@ public class Headquarters implements LimitsDB {
         return bExito;
     }
 
+    @Override
     public String getsAddres() {
         return sAddres;
     }
 
+    @Override
     public boolean setsAddres(String sAddres) {
         boolean bExito = false;
         if (sAddres.length() > MINCHAR && sAddres.length() < MAXCHAR_100) {
@@ -47,10 +50,12 @@ public class Headquarters implements LimitsDB {
         return bExito;
     }
 
+    @Override
     public String getsLocality() {
         return sLocality;
     }
 
+    @Override
     public boolean setsLocality(String sLocality) {
         boolean bExito = false;
         if (sLocality != null && sLocality.length() > MINCHAR && sLocality.length() < MAXCHAR_70) {
@@ -60,10 +65,12 @@ public class Headquarters implements LimitsDB {
         return bExito;
     }
 
+    @Override
     public Country getoCountry() {
         return oCountry;
     }
 
+    @Override
     public boolean setoCountry(Country oCountry) {
         boolean bExito = false;
         if (oCountry.checkCountry()) {
@@ -73,6 +80,7 @@ public class Headquarters implements LimitsDB {
         return bExito;
     }
 
+    @Override
     public boolean checkHeadquarters() {
         boolean bExito = false;
         if (getsName() != null && getoCountry().checkCountry() && getsLocality() != null)
@@ -93,6 +101,7 @@ public class Headquarters implements LimitsDB {
         return Objects.hash(getsName());
     }
 
+    @Override
     public String toString() {
         String salida = "";
         salida += "**********************";
