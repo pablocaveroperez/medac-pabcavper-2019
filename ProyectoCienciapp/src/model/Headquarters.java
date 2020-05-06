@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Objects;
+
 public class Headquarters implements LimitsDB {
     private String sName;       // PRIMARY KEY
     private String sAddres;     // NULL
@@ -76,5 +78,18 @@ public class Headquarters implements LimitsDB {
         if (getsName() != null && getoCountry().checkCountry() && getsLocality() != null)
             bExito = true;
         return bExito;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Headquarters that = (Headquarters) o;
+        return getsName().equals(that.getsName());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getsName());
     }
 }
