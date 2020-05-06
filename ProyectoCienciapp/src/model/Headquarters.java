@@ -92,4 +92,16 @@ public class Headquarters implements LimitsDB {
     public int hashCode() {
         return Objects.hash(getsName());
     }
+
+    public String toString() {
+        String salida = "";
+        salida += "**********************";
+        salida += "\nOficina Central: " + getsName();
+        if (getsAddres() != null)
+            salida += "\nDireccion: " + getsAddres();
+        salida += "\nLocalidad: " + getsLocality();
+        salida += "\nPais: " + getoCountry().getsName();
+        salida += "\n**********************";
+        return salida;
+    }
 }
