@@ -2,6 +2,7 @@ package model;
 
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+import java.util.Objects;
 
 public class Member implements LimitsDB {
     private String sDNI; // Primary Key
@@ -114,5 +115,16 @@ public class Member implements LimitsDB {
         return bExito;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Member member = (Member) o;
+        return getsDNI().equals(member.getsDNI());
+    }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(getsDNI());
+    }
 }
