@@ -4,7 +4,7 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.Objects;
 
-public class Member implements LimitsDB {
+public class Member implements LimitsDB, IMember {
     private String sDNI; // Primary Key
     private GregorianCalendar birthDate = new GregorianCalendar(); // NULO
     private String sName; // NN
@@ -29,6 +29,7 @@ public class Member implements LimitsDB {
         setoResearchTeam(oResearchTeam);
     }
 
+    @Override
     public String getsDNI() {
         return sDNI;
     }
@@ -42,10 +43,12 @@ public class Member implements LimitsDB {
         return bExito;
     }
 
+    @Override
     public GregorianCalendar getBirthDate() {
         return birthDate;
     }
 
+    @Override
     public boolean setBirthDate(GregorianCalendar birthDate) {
         boolean bExito = false;
         if (birthDate.get(Calendar.YEAR) > 1900 && birthDate.get(Calendar.YEAR) < 2020) {
@@ -55,10 +58,12 @@ public class Member implements LimitsDB {
         return bExito;
     }
 
+    @Override
     public String getsName() {
         return sName;
     }
 
+    @Override
     public boolean setsName(String sName) {
         boolean bExito = false;
         if (sName != null && sName.length() < MAXCHAR_50 && sName.length() > MINCHAR) {
@@ -68,10 +73,12 @@ public class Member implements LimitsDB {
         return bExito;
     }
 
+    @Override
     public String getsSurname() {
         return sSurname;
     }
 
+    @Override
     public boolean setsSurname(String sSurname) {
         boolean bExito = false;
         if (sSurname != null && sSurname.length() > MINCHAR && sSurname.length() < MAXCHAR_50) {
@@ -81,10 +88,12 @@ public class Member implements LimitsDB {
         return bExito;
     }
 
+    @Override
     public Specialization getoSpecialization() {
         return oSpecialization;
     }
 
+    @Override
     public boolean setoSpecialization(Specialization oSpecialization) {
         boolean bExito = false;
         if (oSpecialization.checkSpecialization()) {
@@ -94,10 +103,12 @@ public class Member implements LimitsDB {
         return bExito;
     }
 
+    @Override
     public ResearchTeam getoResearchTeam() {
         return oResearchTeam;
     }
 
+    @Override
     public boolean setoResearchTeam(ResearchTeam oResearchTeam) {
         boolean bExito = false;
         if (oResearchTeam.checkResearchTeam()) {
@@ -107,6 +118,7 @@ public class Member implements LimitsDB {
         return bExito;
     }
 
+    @Override
     public boolean checkMember() {
         boolean bExito = false;
         if (getoResearchTeam().checkResearchTeam() && getoSpecialization().checkSpecialization() && getsDNI() != null
@@ -128,6 +140,7 @@ public class Member implements LimitsDB {
         return Objects.hash(getsDNI());
     }
 
+    @Override
     public String toString() {
         String salida = "";
         salida += "**********************";
