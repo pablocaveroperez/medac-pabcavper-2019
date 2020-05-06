@@ -127,4 +127,19 @@ public class Member implements LimitsDB {
     public int hashCode() {
         return Objects.hash(getsDNI());
     }
+
+    public String toString() {
+        String salida = "";
+        salida += "**********************";
+        salida += "\nDNI: " + getsDNI();
+        salida += "\nNombre: " + getsName();
+        salida += "\nApellido: " + getsSurname();
+        if (getBirthDate() != null) {
+            salida += "\nFecha Nacimiento: " + getBirthDate().get(Calendar.DATE) + "/" + getBirthDate().get(Calendar.MONTH)
+                    + "/" + getBirthDate().get(Calendar.YEAR);
+        }
+        salida += "\nEspecializacion: " + getoSpecialization().getsName();
+        salida += "\nEquipo de investigacion: " + getoResearchTeam().getIdResearchTeam();
+        return salida;
+    }
 }
