@@ -15,7 +15,8 @@ public interface LimitsDB {
 
     public final byte MINCHAR = 0;
 
-    public final short MAXCHAR_PASSWORD = 1024;
+    public final byte MINCHAR_PASSWORD = 6;
+    public final byte MAXCHAR_PASSWORD = 15;
 
 
 }

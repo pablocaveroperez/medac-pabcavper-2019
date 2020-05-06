@@ -1,5 +1,10 @@
 package model;
 
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.util.Objects;
+
 public class User implements LimitsDB {
     private String sUsername;
     private String sPassword;
@@ -30,8 +35,8 @@ public class User implements LimitsDB {
 
     public boolean setsPassword(String sPassword) {
         boolean bExito = false;
-        if (sPassword != null && sPassword.length() > MINCHAR && sPassword.length() < MAXCHAR_PASSWORD) {
-            this.sPassword = sPassword;
+        if (sPassword != null && sPassword.length() > MINCHAR_PASSWORD && sPassword.length() < MAXCHAR_PASSWORD) {
+            this.sPassword = encryptSha512(sPassword);
             bExito = true;
         }
         return bExito;
@@ -64,5 +69,45 @@ public class User implements LimitsDB {
             bExito = true;
         }
         return bExito;
+    }
+
+    // Generar SHA-512 a partir de una contraseña (String).
+    public String encryptSha512(String input)
+    {
+        try {
+            MessageDigest md = MessageDigest.getInstance("SHA-512");
+            byte[] messageDigest = md.digest(input.getBytes());
+            BigInteger no = new BigInteger(1, messageDigest);
+            String hashtext = no.toString(16);
+            while (hashtext.length() < 32) {
+                hashtext = "0" + hashtext;
+            }
+            return hashtext;
+        }
+        catch (NoSuchAlgorithmException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return getsUsername().equals(user.getsUsername());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getsUsername());
+    }
+
+    public String toString() {
+        String salida = "";
+        salida += "\n**********************";
+        salida += "\nNombre de usuario: " + getsUsername();
+        salida += "\nEmail: " + getsEmail();
+        salida += "\n**********************";
+        return salida;
     }
 }

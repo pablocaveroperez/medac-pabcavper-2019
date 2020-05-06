@@ -153,6 +153,7 @@ public class Member implements LimitsDB, IMember {
         }
         salida += "\nEspecializacion: " + getoSpecialization().getsName();
         salida += "\nEquipo de investigacion: " + getoResearchTeam().getIdResearchTeam();
+        salida += "\n**********************";
         return salida;
     }
 }
