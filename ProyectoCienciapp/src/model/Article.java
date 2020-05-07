@@ -125,4 +125,18 @@ public class Article implements LimitsDB {
     public int hashCode() {
         return Objects.hash(getIdArticle());
     }
+
+    public String toString() {
+        String salida = "";
+        salida += "**********************";
+        salida += "\nID Articulo: " + getIdArticle();
+        salida += "\nNombre: " + getsName();
+        if (shPages > MINCHAR && shPages < MAXCHAR_1000)
+            salida += "\nPaginas: " + getShPages();
+        salida += "\nRevista: " + getoMagazine().getsName();
+        salida += "\nMiembro: " + getoMember().getsDNI();
+        salida += "\nTipo Articulo: " + getoArticleType().getsTypeName();
+        salida += "\n**********************";
+        return salida;
+    }
 }
