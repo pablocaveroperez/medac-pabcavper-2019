@@ -30,7 +30,12 @@ public class Article implements LimitsDB {
     }
 
     private boolean setIdArticle(byte idArticle) {
-        this.idArticle = idArticle;
+        boolean bExito = false;
+        if (idArticle > MINCHAR && idArticle < MAXCHAR_100) {
+            this.idArticle = idArticle;
+            bExito = true;
+        }
+        return bExito;
     }
 
     public short getShPages() {
@@ -38,7 +43,12 @@ public class Article implements LimitsDB {
     }
 
     public boolean setShPages(short shPages) {
-        this.shPages = shPages;
+        boolean bExito = false;
+        if (shPages > MINCHAR && shPages < MAXCHAR_1000) {
+            this.shPages = shPages;
+            bExito = true;
+        }
+        return bExito;
     }
 
     public String getsName() {
@@ -46,7 +56,12 @@ public class Article implements LimitsDB {
     }
 
     public boolean setsName(String sName) {
-        this.sName = sName;
+        boolean bExito = false;
+        if (sName != null && sName.length() > MINCHAR && sName.length() < MAXCHAR_55) {
+            this.sName = sName;
+            bExito = true;
+        }
+        return bExito;
     }
 
     public Magazine getoMagazine() {
@@ -54,7 +69,12 @@ public class Article implements LimitsDB {
     }
 
     public boolean setoMagazine(Magazine oMagazine) {
-        this.oMagazine = oMagazine;
+        boolean bExito = false;
+        if (oMagazine != null && oMagazine.checkMagazine()) {
+            this.oMagazine = oMagazine;
+            bExito = true;
+        }
+        return bExito;
     }
 
     public Member getoMember() {
@@ -62,7 +82,12 @@ public class Article implements LimitsDB {
     }
 
     public boolean setoMember(Member oMember) {
-        this.oMember = oMember;
+        boolean bExito = false;
+        if (oMember != null && oMember.checkMember()) {
+            this.oMember = oMember;
+            bExito = true;
+        }
+        return bExito;
     }
 
     public ArticleType getoArticleType() {
@@ -70,6 +95,11 @@ public class Article implements LimitsDB {
     }
 
     public boolean setoArticleType(ArticleType oArticleType) {
-        this.oArticleType = oArticleType;
+        boolean bExito = false;
+        if (oArticleType != null && oArticleType.checkArticleType()) {
+            this.oArticleType = oArticleType;
+            bExito = true;
+        }
+        return bExito;
     }
 }
