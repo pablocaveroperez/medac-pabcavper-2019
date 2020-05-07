@@ -2,7 +2,7 @@ package model;
 
 import java.util.Objects;
 
-public class Article implements LimitsDB {
+public class Article implements LimitsDB, IArticle {
     private byte idArticle;                 // PRIMARY KEY
     private short shPages;                  // NULL
     private String sName;                   // NN
@@ -27,6 +27,7 @@ public class Article implements LimitsDB {
         setoArticleType(oArticleType);
     }
 
+    @Override
     public byte getIdArticle() {
         return idArticle;
     }
@@ -40,10 +41,12 @@ public class Article implements LimitsDB {
         return bExito;
     }
 
+    @Override
     public short getShPages() {
         return shPages;
     }
 
+    @Override
     public boolean setShPages(short shPages) {
         boolean bExito = false;
         if (shPages > MINCHAR && shPages < MAXCHAR_1000) {
@@ -53,10 +56,12 @@ public class Article implements LimitsDB {
         return bExito;
     }
 
+    @Override
     public String getsName() {
         return sName;
     }
 
+    @Override
     public boolean setsName(String sName) {
         boolean bExito = false;
         if (sName != null && sName.length() > MINCHAR && sName.length() < MAXCHAR_55) {
@@ -66,10 +71,12 @@ public class Article implements LimitsDB {
         return bExito;
     }
 
+    @Override
     public Magazine getoMagazine() {
         return oMagazine;
     }
 
+    @Override
     public boolean setoMagazine(Magazine oMagazine) {
         boolean bExito = false;
         if (oMagazine != null && oMagazine.checkMagazine()) {
@@ -79,10 +86,12 @@ public class Article implements LimitsDB {
         return bExito;
     }
 
+    @Override
     public Member getoMember() {
         return oMember;
     }
 
+    @Override
     public boolean setoMember(Member oMember) {
         boolean bExito = false;
         if (oMember != null && oMember.checkMember()) {
@@ -92,10 +101,12 @@ public class Article implements LimitsDB {
         return bExito;
     }
 
+    @Override
     public ArticleType getoArticleType() {
         return oArticleType;
     }
 
+    @Override
     public boolean setoArticleType(ArticleType oArticleType) {
         boolean bExito = false;
         if (oArticleType != null && oArticleType.checkArticleType()) {
@@ -105,6 +116,7 @@ public class Article implements LimitsDB {
         return bExito;
     }
 
+    @Override
     public boolean checkArticle() {
         boolean bExito = false;
         if ((getIdArticle() > MINCHAR && getIdArticle() < MAXCHAR_100) && getsName() != null && getoMagazine() != null && getoMagazine().checkMagazine()
@@ -126,6 +138,7 @@ public class Article implements LimitsDB {
         return Objects.hash(getIdArticle());
     }
 
+    @Override
     public String toString() {
         String salida = "";
         salida += "**********************";
