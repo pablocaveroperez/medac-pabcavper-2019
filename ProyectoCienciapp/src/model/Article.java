@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Objects;
+
 public class Article implements LimitsDB {
     private byte idArticle;                 // PRIMARY KEY
     private short shPages;                  // NULL
@@ -109,5 +111,18 @@ public class Article implements LimitsDB {
             && getoMember() != null && getoMember().checkMember() && getoArticleType() != null && getoArticleType().checkArticleType())
             bExito = true;
         return bExito;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Article article = (Article) o;
+        return getIdArticle() == article.getIdArticle();
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getIdArticle());
     }
 }
