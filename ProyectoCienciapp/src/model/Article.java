@@ -102,4 +102,12 @@ public class Article implements LimitsDB {
         }
         return bExito;
     }
+
+    public boolean checkArticle() {
+        boolean bExito = false;
+        if ((getIdArticle() > MINCHAR && getIdArticle() < MAXCHAR_100) && getsName() != null && getoMagazine() != null && getoMagazine().checkMagazine()
+            && getoMember() != null && getoMember().checkMember() && getoArticleType() != null && getoArticleType().checkArticleType())
+            bExito = true;
+        return bExito;
+    }
 }
