@@ -93,4 +93,16 @@ public class ArticleRatingUser implements LimitsDB {
     public int hashCode() {
         return Objects.hash(getoUser(), getoArticle());
     }
+
+    public String toString() {
+        String salida = "";
+        salida += "**********************";
+        salida += "\nUsuario: " + getoUser().getsUsername();
+        salida += "\nArticulo: " + getoArticle().getIdArticle();
+        if (getsComment() != null)
+            salida += "\nComentario: " + getsComment();
+        salida += "\nPuntuacion sobre diez: " + getbRating();
+        salida += "\n**********************";
+        return salida;
+    }
 }
