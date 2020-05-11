@@ -3,14 +3,14 @@ package controller.SistemaInvestigacion;
 import controller.Ctrl.CountryController;
 
 public class PackageController {
-    private CountryController countryController;
     private UniversityController universityController;
     private FacultyController facultyController;
+    private DepartmentController departmentController;
 
     public PackageController() {
-        countryController = new CountryController();
         universityController = new UniversityController();
         facultyController = new FacultyController();
+        departmentController = new DepartmentController();
     }
 
 }
