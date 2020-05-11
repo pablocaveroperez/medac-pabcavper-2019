@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Objects;
+
 public class ArticleRatingUser implements LimitsDB {
     private User oUser;
     private Article oArticle;
@@ -76,5 +78,19 @@ public class ArticleRatingUser implements LimitsDB {
         if (getoUser() != null && getoUser().checkUser() && getoArticle() != null && getoArticle().checkArticle() && getbRating() > MINCHAR && getbRating() < MAXRATING)
             bExito = true;
         return bExito;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ArticleRatingUser that = (ArticleRatingUser) o;
+        return getoUser().equals(that.getoUser()) &&
+                getoArticle().equals(that.getoArticle());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getoUser(), getoArticle());
     }
 }
