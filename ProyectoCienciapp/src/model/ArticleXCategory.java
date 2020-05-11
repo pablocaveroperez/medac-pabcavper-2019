@@ -2,14 +2,16 @@ package model;
 
 import java.util.Objects;
 
-public class ArticleXCategory {
+public class ArticleXCategory implements IArticleXCategory {
     private Article oArticle;       // PRIMARY KEY Y FOREIGN KEY
     private Category oCategory;     // PRIMARY KEY Y FOREIGN KEY
 
+    @Override
     public Article getoArticle() {
         return oArticle;
     }
 
+    @Override
     public boolean setoArticle(Article oArticle) {
         boolean bExito = false;
         if (oArticle != null && oArticle.checkArticle()) {
@@ -19,10 +21,12 @@ public class ArticleXCategory {
         return bExito;
     }
 
+    @Override
     public Category getoCategory() {
         return oCategory;
     }
 
+    @Override
     public boolean setoCategory(Category oCategory) {
         boolean bExito = false;
         if (oCategory != null && oCategory.checkCategory()) {
@@ -32,6 +36,7 @@ public class ArticleXCategory {
         return bExito;
     }
 
+    @Override
     public boolean checkArticleXCategory() {
         boolean bExito = false;
         if (getoArticle() != null && getoArticle().checkArticle() && getoCategory() != null && getoCategory().checkCategory())
@@ -53,6 +58,7 @@ public class ArticleXCategory {
         return Objects.hash(getoArticle(), getoCategory());
     }
 
+    @Override
     public String toString() {
         String salida = "";
         salida += "**********************";
