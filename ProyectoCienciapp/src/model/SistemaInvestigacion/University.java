@@ -1,4 +1,7 @@
-package model;
+package model.SistemaInvestigacion;
+
+import model.Country;
+import model.LimitsDB;
 
 import java.util.Objects;
 

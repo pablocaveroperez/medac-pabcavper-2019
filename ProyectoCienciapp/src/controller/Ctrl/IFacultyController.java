@@ -1,6 +1,6 @@
 package controller.Ctrl;
 
-import model.Faculty;
+import model.SistemaInvestigacion.Faculty;
 
 public interface IFacultyController {
     // #########

@@ -1,4 +1,4 @@
-package model;
+package model.SistemaInvestigacion;
 
 public interface IResearchTeam {
     byte getIdResearchTeam();

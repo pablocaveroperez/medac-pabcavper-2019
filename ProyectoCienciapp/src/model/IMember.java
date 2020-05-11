@@ -1,5 +1,7 @@
 package model;
 
+import model.SistemaInvestigacion.ResearchTeam;
+
 import java.util.GregorianCalendar;
 
 public interface IMember {

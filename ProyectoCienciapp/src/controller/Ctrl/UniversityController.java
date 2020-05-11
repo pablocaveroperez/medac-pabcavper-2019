@@ -1,7 +1,7 @@
 package controller.Ctrl;
 
 import controller.ConexionDB;
-import model.University;
+import model.SistemaInvestigacion.University;
 
 public class UniversityController implements IUniversityController {
 
@@ -9,14 +9,9 @@ public class UniversityController implements IUniversityController {
     // # CRUDS #
     // #########
     @Override
-    public int add(University oObject, CountryController countryController) {
+    public int add(University oObject) {
         int iRes = 0;
         if (oObject.checkUniversity()) {
-
-            // Anadir pais
-            countryController.add(oObject.getoCountry());
-
-            // Anadir universidad
             String sql = "INSERT INTO university VALUES (\"" + oObject.getsUniName() + "\",\"" + oObject.getsLocality() + "\",\"" +
                     oObject.getsAddres()+ "\",\""+ oObject.getoCountry().getsName() +"\n)";
             iRes = ConexionDB.executeUpdate(sql);

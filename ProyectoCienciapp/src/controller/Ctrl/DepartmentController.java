@@ -1,8 +1,8 @@
 package controller.Ctrl;
 
 import controller.ConexionDB;
-import model.Department;
-import model.Faculty;
+import model.SistemaInvestigacion.Department;
+import model.SistemaInvestigacion.Faculty;
 
 public class DepartmentController {
 

@@ -1,7 +1,7 @@
 package controller.Ctrl;
 
 import controller.ConexionDB;
-import model.Faculty;
+import model.SistemaInvestigacion.Faculty;
 
 public class FacultyController implements IFacultyController {
 

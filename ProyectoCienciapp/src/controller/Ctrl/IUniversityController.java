@@ -1,12 +1,12 @@
 package controller.Ctrl;
 
-import model.University;
+import model.SistemaInvestigacion.University;
 
 public interface IUniversityController {
     // #########
     // # CRUDS #
     // #########
-    int add(University oObject, CountryController countryController);
+    int add(University oObject);
 
     int remove(University oUniversity);
 
