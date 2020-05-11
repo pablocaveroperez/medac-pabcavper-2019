@@ -2,7 +2,7 @@ package model;
 
 import java.util.Objects;
 
-public class ArticleRatingUser implements LimitsDB {
+public class ArticleRatingUser implements LimitsDB, IArticleRatingUser {
     private User oUser;
     private Article oArticle;
     private String sComment;
@@ -21,10 +21,12 @@ public class ArticleRatingUser implements LimitsDB {
         setbRating(bRating);
     }
 
+    @Override
     public User getoUser() {
         return oUser;
     }
 
+    @Override
     public boolean setoUser(User oUser) {
         boolean bExito = false;
         if (oUser != null && oUser.checkUser()) {
@@ -34,10 +36,12 @@ public class ArticleRatingUser implements LimitsDB {
         return bExito;
     }
 
+    @Override
     public Article getoArticle() {
         return oArticle;
     }
 
+    @Override
     public boolean setoArticle(Article oArticle) {
         boolean bExito = false;
         if (oArticle != null && oArticle.checkArticle()) {
@@ -47,10 +51,12 @@ public class ArticleRatingUser implements LimitsDB {
         return bExito;
     }
 
+    @Override
     public String getsComment() {
         return sComment;
     }
 
+    @Override
     public boolean setsComment(String sComment) {
         boolean bExito = false;
         if (sComment.length() > MINCHAR && sComment.length() < MAXCHAR_255) {
@@ -60,10 +66,12 @@ public class ArticleRatingUser implements LimitsDB {
         return bExito;
     }
 
+    @Override
     public byte getbRating() {
         return bRating;
     }
 
+    @Override
     public boolean setbRating(byte bRating) {
         boolean bExito = false;
         if (bRating > MINCHAR && bRating < MAXRATING) {
@@ -73,6 +81,7 @@ public class ArticleRatingUser implements LimitsDB {
         return bExito;
     }
 
+    @Override
     public boolean checkArticleRatingUser() {
         boolean bExito = false;
         if (getoUser() != null && getoUser().checkUser() && getoArticle() != null && getoArticle().checkArticle() && getbRating() > MINCHAR && getbRating() < MAXRATING)
@@ -94,6 +103,7 @@ public class ArticleRatingUser implements LimitsDB {
         return Objects.hash(getoUser(), getoArticle());
     }
 
+    @Override
     public String toString() {
         String salida = "";
         salida += "**********************";
