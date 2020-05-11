@@ -1,6 +1,8 @@
 package controller.SistemaInvestigacion;
 
 
+import model.SistemaInvestigacion.*;
+
 public class SistemaInvestigacionController {
     private UniversityController universityController;
     private FacultyController facultyController;
@@ -36,5 +38,33 @@ public class SistemaInvestigacionController {
         return memberController;
     }
 
+    // UNIVERSIDAD
+    // #################
+    public int addUniversity(University oUniversity) {
+        return universityController.add(oUniversity);
+    }
 
+    // FACULTAD
+    // #################
+    public int addFaculty(Faculty oFaculty) {
+        return facultyController.add(oFaculty);
+    }
+
+    // DEPARTAMENTO
+    // #################
+    public int addDepartment(Department oDepartment) {
+        return departmentController.add(oDepartment);
+    }
+
+    // ESPECIALIZACION
+    // #################
+    public int addSpecialization(Specialization oSpecialization) {
+        return specializationController.add(oSpecialization);
+    }
+
+    // MIEMBRO
+    // #################
+    public int addMember(Member oMember) {
+        return memberController.add(oMember);
+    }
 }
