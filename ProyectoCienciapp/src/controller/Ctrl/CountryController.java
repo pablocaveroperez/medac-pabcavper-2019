@@ -1,5 +1,6 @@
-package controller;
+package controller.Ctrl;
 
+import controller.ConexionDB;
 import model.Country;
 
 public class CountryController implements ICountryController {
