@@ -3,10 +3,12 @@ package controller.Ctrl;
 public class PackageController {
     private CountryController countryController;
     private UniversityController universityController;
+    private FacultyController facultyController;
 
     public PackageController() {
-        universityController = new UniversityController();
         countryController = new CountryController();
+        universityController = new UniversityController();
+        facultyController = new FacultyController();
     }
 
 }
