@@ -1,4 +1,6 @@
-package model;
+package model.ArticulosUsuarios;
+
+import model.LimitsDB;
 
 import java.util.Objects;
 

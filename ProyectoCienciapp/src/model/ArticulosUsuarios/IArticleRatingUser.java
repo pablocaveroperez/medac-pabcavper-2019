@@ -1,4 +1,4 @@
-package model;
+package model.ArticulosUsuarios;
 
 public interface IArticleRatingUser {
     User getoUser();

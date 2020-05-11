@@ -1,7 +1,7 @@
 package model.SistemaInvestigacion;
 
 import model.LimitsDB;
-import model.User;
+import model.ArticulosUsuarios.User;
 
 import java.util.Calendar;
 import java.util.GregorianCalendar;

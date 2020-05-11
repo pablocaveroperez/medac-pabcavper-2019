@@ -1,4 +1,4 @@
-package model;
+package model.ArticulosUsuarios;
 
 public interface IUser {
     String getsUsername();

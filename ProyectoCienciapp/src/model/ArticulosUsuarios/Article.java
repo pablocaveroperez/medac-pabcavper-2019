@@ -1,5 +1,6 @@
-package model;
+package model.ArticulosUsuarios;
 
+import model.LimitsDB;
 import model.Publicadores.Magazine;
 import model.SistemaInvestigacion.Member;
 

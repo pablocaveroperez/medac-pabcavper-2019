@@ -1,4 +1,4 @@
-package model;
+package model.ArticulosUsuarios;
 
 public interface IArticleXCategory {
     Article getoArticle();

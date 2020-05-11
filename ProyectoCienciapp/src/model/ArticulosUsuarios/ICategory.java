@@ -1,18 +1,17 @@
-package model;
+package model.ArticulosUsuarios;
 
-public interface IArticleType {
+public interface ICategory {
     String getsDescription();
 
-    String getsTypeName();
+    String getsCategoryName();
 
     boolean setsDescription(String sDescription);
 
-    boolean checkArticleType();
+    boolean checkCategory();
 
     public boolean equals(Object o);
 
     public int hashCode();
 
     public String toString();
-
 }

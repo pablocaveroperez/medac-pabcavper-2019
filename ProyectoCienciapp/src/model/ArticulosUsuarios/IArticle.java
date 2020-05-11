@@ -1,4 +1,4 @@
-package model;
+package model.ArticulosUsuarios;
 
 import model.Publicadores.Magazine;
 import model.SistemaInvestigacion.Member;
