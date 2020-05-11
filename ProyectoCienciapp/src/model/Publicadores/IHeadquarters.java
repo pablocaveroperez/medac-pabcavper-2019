@@ -1,4 +1,6 @@
-package model;
+package model.Publicadores;
+
+import model.Country;
 
 public interface IHeadquarters {
     String getsName();

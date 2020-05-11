@@ -1,5 +1,6 @@
 package model;
 
+import model.Publicadores.Magazine;
 import model.SistemaInvestigacion.Member;
 
 import java.util.Objects;

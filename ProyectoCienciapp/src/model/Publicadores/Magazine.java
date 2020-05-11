@@ -1,4 +1,6 @@
-package model;
+package model.Publicadores;
+
+import model.LimitsDB;
 
 import java.util.Objects;
 
