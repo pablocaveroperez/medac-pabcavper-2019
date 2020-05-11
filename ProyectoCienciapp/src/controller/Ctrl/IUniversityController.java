@@ -6,7 +6,7 @@ public interface IUniversityController {
     // #########
     // # CRUDS #
     // #########
-    int add(University oObject);
+    int add(University oObject, CountryController countryController);
 
     int remove(University oUniversity);
 

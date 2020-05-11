@@ -9,10 +9,16 @@ public class UniversityController implements IUniversityController {
     // # CRUDS #
     // #########
     @Override
-    public int add(University oObject) {
+    public int add(University oObject, CountryController countryController) {
         int iRes = 0;
         if (oObject.checkUniversity()) {
-            String sql = "INSERT INTO university VALUES (\"" + oObject.getsUniName() + "\")";
+
+            // Anadir pais
+            countryController.add(oObject.getoCountry());
+
+            // Anadir universidad
+            String sql = "INSERT INTO university VALUES (\"" + oObject.getsUniName() + "\",\"" + oObject.getsLocality() + "\",\"" +
+                    oObject.getsAddres()+ "\",\""+ oObject.getoCountry().getsName() +"\n)";
             iRes = ConexionDB.executeUpdate(sql);
         }
         return iRes;
