@@ -13,5 +13,5 @@ public interface IDepartmentController {
     // ###########
     // # QUERIES #
     // ###########
-    int existeFacultad(Department oObject);
+    int existeDepartamento(Department oObject);
 }

@@ -30,7 +30,7 @@ public class DepartmentController implements IDepartmentController {
     // # QUERIES #
     // ###########
     @Override
-    public int existeFacultad(Department oObject) {
+    public int existeDepartamento(Department oObject) {
         int iRes = 0;
         if (oObject.checkDepartment()) {
             String sql = "SELECT COUNT(*) FROM department WHERE idDepartment LIKE \"" + oObject.getIdDepartment() + "\"";

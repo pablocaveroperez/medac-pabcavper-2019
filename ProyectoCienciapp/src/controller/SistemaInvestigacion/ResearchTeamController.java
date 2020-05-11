@@ -3,7 +3,7 @@ package controller.SistemaInvestigacion;
 import controller.ConexionDB;
 import model.SistemaInvestigacion.ResearchTeam;
 
-public class ResearchTeamController {
+public class ResearchTeamController implements IResearchTeamController {
 
     // #########
     // # CRUDS #
@@ -30,7 +30,7 @@ public class ResearchTeamController {
     // # QUERIES #
     // ###########
     @Override
-    public int existeFacultad(ResearchTeam oObject) {
+    public int existeEquipoInvestigacion(ResearchTeam oObject) {
         int iRes = 0;
         if (oObject.checkResearchTeam()) {
             String sql = "SELECT COUNT(*) FROM researchteam WHERE idResearchTeam LIKE \"" + oObject.getIdResearchTeam() + "\"";
