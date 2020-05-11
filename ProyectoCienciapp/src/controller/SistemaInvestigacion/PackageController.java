@@ -1,7 +1,5 @@
 package controller.SistemaInvestigacion;
 
-import controller.Ctrl.CountryController;
-
 public class PackageController {
     private UniversityController universityController;
     private FacultyController facultyController;
