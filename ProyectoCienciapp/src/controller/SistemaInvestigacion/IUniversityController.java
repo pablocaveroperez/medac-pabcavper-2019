@@ -1,4 +1,4 @@
-package controller.Ctrl;
+package controller.SistemaInvestigacion;
 
 import model.SistemaInvestigacion.University;
 

@@ -1,19 +1,18 @@
-package controller.Ctrl;
+package controller.SistemaInvestigacion;
 
 import controller.ConexionDB;
-import model.SistemaInvestigacion.Department;
 import model.SistemaInvestigacion.Faculty;
 
-public class DepartmentController {
+public class FacultyController implements IFacultyController {
 
     // #########
     // # CRUDS #
     // #########
     @Override
-    public int add(Department oObject) {
+    public int add(Faculty oObject) {
         int iRes = 0;
-        if (oObject.checkDepartment()) {
-            String sql = "INSERT INTO faculty VALUES (\"" + oObject.getIdDepartment() + "\")";
+        if (oObject.checkFaculty()) {
+            String sql = "INSERT INTO faculty VALUES (\"" + oObject.getsFaculName() + "\")";
             iRes = ConexionDB.executeUpdate(sql);
         }
         return iRes;

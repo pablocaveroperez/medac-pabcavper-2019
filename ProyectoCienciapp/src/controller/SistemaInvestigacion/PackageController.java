@@ -1,4 +1,6 @@
-package controller.Ctrl;
+package controller.SistemaInvestigacion;
+
+import controller.Ctrl.CountryController;
 
 public class PackageController {
     private CountryController countryController;
