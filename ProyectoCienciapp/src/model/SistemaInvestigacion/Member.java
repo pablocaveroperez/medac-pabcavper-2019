@@ -1,6 +1,7 @@
-package model;
+package model.SistemaInvestigacion;
 
-import model.SistemaInvestigacion.ResearchTeam;
+import model.LimitsDB;
+import model.User;
 
 import java.util.Calendar;
 import java.util.GregorianCalendar;

@@ -1,6 +1,4 @@
-package model;
-
-import model.SistemaInvestigacion.ResearchTeam;
+package model.SistemaInvestigacion;
 
 import java.util.GregorianCalendar;
 

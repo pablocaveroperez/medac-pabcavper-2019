@@ -1,8 +1,10 @@
-package model;
+package model.SistemaInvestigacion;
+
+import model.LimitsDB;
 
 import java.util.Objects;
 
-public class Specialization implements ISpecialization, LimitsDB{
+public class Specialization implements ISpecialization, LimitsDB {
     private String sName;           // PRIMARY KEY
     private String sDescription;    // NULL
 

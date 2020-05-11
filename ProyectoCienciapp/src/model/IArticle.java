@@ -1,5 +1,7 @@
 package model;
 
+import model.SistemaInvestigacion.Member;
+
 public interface IArticle {
     byte getIdArticle();
 

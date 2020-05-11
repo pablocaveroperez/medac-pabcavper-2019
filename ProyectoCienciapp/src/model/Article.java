@@ -1,5 +1,7 @@
 package model;
 
+import model.SistemaInvestigacion.Member;
+
 import java.util.Objects;
 
 public class Article implements LimitsDB, IArticle {
