@@ -51,7 +51,7 @@ public class ArticleRatingUser implements LimitsDB {
 
     public boolean setsComment(String sComment) {
         boolean bExito = false;
-        if (sComment != null && sComment.length() > MINCHAR && sComment.length() < MAXCHAR_255) {
+        if (sComment.length() > MINCHAR && sComment.length() < MAXCHAR_255) {
             this.sComment = sComment;
             bExito = true;
         }
@@ -68,6 +68,13 @@ public class ArticleRatingUser implements LimitsDB {
             this.bRating = bRating;
             bExito = true;
         }
+        return bExito;
+    }
+
+    public boolean checkArticleRatingUser() {
+        boolean bExito = false;
+        if (getoUser() != null && getoUser().checkUser() && getoArticle() != null && getoArticle().checkArticle() && getbRating() > MINCHAR && getbRating() < MAXRATING)
+            bExito = true;
         return bExito;
     }
 }
