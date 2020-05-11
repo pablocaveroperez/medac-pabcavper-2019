@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Objects;
+
 public class ArticleXCategory {
     private Article oArticle;       // PRIMARY KEY Y FOREIGN KEY
     private Category oCategory;     // PRIMARY KEY Y FOREIGN KEY
@@ -37,5 +39,17 @@ public class ArticleXCategory {
         return bExito;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ArticleXCategory that = (ArticleXCategory) o;
+        return getoArticle().equals(that.getoArticle()) &&
+                getoCategory().equals(that.getoCategory());
+    }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(getoArticle(), getoCategory());
+    }
 }
