@@ -52,4 +52,13 @@ public class ArticleXCategory {
     public int hashCode() {
         return Objects.hash(getoArticle(), getoCategory());
     }
+
+    public String toString() {
+        String salida = "";
+        salida += "**********************";
+        salida += "\nArticulo: " + getoArticle().getIdArticle();
+        salida += "\nCategoria: " + getoCategory().getsCategoryName();
+        salida += "\n**********************";
+        return salida;
+    }
 }
