@@ -12,7 +12,7 @@ public class FacultyController implements IFacultyController {
     public int add(Faculty oObject) {
         int iRes = 0;
         if (oObject.checkFaculty()) {
-            String sql = "INSERT INTO faculty VALUES (\"" + oObject.getsFaculName() + "\")";
+            String sql = "INSERT INTO faculty VALUES (\"" + oObject.getsFaculName() + "\",\"" + oObject.getoUniversity().getsUniName() +"\")";
             iRes = ConexionDB.executeUpdate(sql);
         }
         return iRes;

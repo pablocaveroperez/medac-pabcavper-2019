@@ -2,9 +2,8 @@ package controller.SistemaInvestigacion;
 
 import controller.ConexionDB;
 import model.SistemaInvestigacion.Department;
-import model.SistemaInvestigacion.Faculty;
 
-public class DepartmentController {
+public class DepartmentController implements IDepartmentController {
 
     // #########
     // # CRUDS #
@@ -13,16 +12,16 @@ public class DepartmentController {
     public int add(Department oObject) {
         int iRes = 0;
         if (oObject.checkDepartment()) {
-            String sql = "INSERT INTO faculty VALUES (\"" + oObject.getIdDepartment() + "\")";
+            String sql = "INSERT INTO department VALUES (\"" + oObject.getIdDepartment() + "\",\"" + oObject.getoFaculty().getsFaculName() + "\",\"" + oObject.getsName() + "\")";
             iRes = ConexionDB.executeUpdate(sql);
         }
         return iRes;
     }
 
     @Override
-    public int remove(Faculty oFaculty) {
+    public int remove(Department oObject) {
         int iRes = 0;
-        String sql = "DELETE FROM faculty WHERE faculName LIKE \"" + oFaculty.getsFaculName() + "\"";
+        String sql = "DELETE FROM department WHERE idDepartment LIKE \"" + oObject.getIdDepartment() + "\"";
         iRes = ConexionDB.executeUpdate(sql);
         return iRes;
     }
@@ -31,10 +30,10 @@ public class DepartmentController {
     // # QUERIES #
     // ###########
     @Override
-    public int existeFacultad(Faculty oFaculty) {
+    public int existeFacultad(Department oObject) {
         int iRes = 0;
-        if (oFaculty.checkFaculty()) {
-            String sql = "SELECT COUNT(*) FROM faculty WHERE faculName LIKE \"" + oFaculty.getsFaculName() + "\"";
+        if (oObject.checkDepartment()) {
+            String sql = "SELECT COUNT(*) FROM department WHERE idDepartment LIKE \"" + oObject.getIdDepartment() + "\"";
             iRes = ConexionDB.executeCount(sql);
         }
         return iRes;
