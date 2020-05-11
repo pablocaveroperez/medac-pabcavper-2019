@@ -1,6 +1,7 @@
 package model;
 
 public interface LimitsDB {
+    public final byte MAXRATING = 10;
     public final byte MAXCHAR_30 = 30;
     public final byte MAXCHAR_40 = 40;
     public final byte MAXCHAR_50 = 50;
@@ -11,6 +12,7 @@ public interface LimitsDB {
     public final byte MAXCHAR_100 = 100;
     public final short MAXCHAR_200 = 200;
     public final short MAXCHAR_250 = 250;
+    public final short MAXCHAR_255 = 255;
     public final short MAXCHAR_500 = 500;
     public final short MAXCHAR_1000 = 1000;
     public final int MAXBUDGET = 5000000;
