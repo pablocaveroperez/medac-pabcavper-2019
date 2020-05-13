@@ -4,6 +4,7 @@ import controller.ArticulosUsuarios.ArticulosUsuariosController;
 import controller.Ctrl.CountryController;
 import controller.Publicadores.PublicadoresController;
 import controller.SistemaInvestigacion.SistemaInvestigacionController;
+import model.ArticulosUsuarios.*;
 import model.Country;
 import model.Publicadores.Headquarters;
 import model.Publicadores.Magazine;
@@ -38,7 +39,7 @@ public class GeneralController {
     // #######SISTEMA INVESTIGACION#######
     // ###################################
 
-    // SISTEMA INVESTIGACION (UNIVERSIDAD)
+    // UNIVERSIDAD
     public int addUniversidad(University oUniversity) {
         return sistemaInvestigacionController.addUniversity(oUniversity);
     }
@@ -51,7 +52,7 @@ public class GeneralController {
         return sistemaInvestigacionController.existeUniversity(oUniversity);
     }
 
-    // SISTEMA INVESTIGACION (FACULTAD)
+    // FACULTAD
     public int addFaculty(Faculty oFaculty) {
         return sistemaInvestigacionController.addFaculty(oFaculty);
     }
@@ -64,7 +65,7 @@ public class GeneralController {
         return sistemaInvestigacionController.existeFaculty(oFaculty);
     }
 
-    // SISTEMA INVESTIGACION (DEPARTAMENTO)
+    // DEPARTAMENTO
     public int addDepartment(Department oDepartment) {
         return sistemaInvestigacionController.addDepartment(oDepartment);
     }
@@ -77,7 +78,7 @@ public class GeneralController {
         return sistemaInvestigacionController.existeDepartment(oDepartment);
     }
 
-    // SISTEMA INVESTIGACION (ESPECIALIZACION)
+    // ESPECIALIZACION
     public int addSpecialization(Specialization oSpecialization) {
         return sistemaInvestigacionController.addSpecialization(oSpecialization);
     }
@@ -90,7 +91,7 @@ public class GeneralController {
         return sistemaInvestigacionController.existeSpecialization(oSpecialization);
     }
 
-    // SISTEMA INVESTIGACION (MIEMBRO)
+    // MIEMBRO
     public int addMember(Member oMember) {
         return sistemaInvestigacionController.addMember(oMember);
     }
@@ -123,7 +124,7 @@ public class GeneralController {
     // ############PUBLICADORES###########
     // ###################################
 
-    // PUBLICADORES (OFICINA PRINCIPAL)
+    // OFICINA PRINCIPAL
     public int addHeadquarters(Headquarters oHeadquarters) {
         return publicadoresController.addHeadquarters(oHeadquarters);
     }
@@ -136,7 +137,7 @@ public class GeneralController {
         return publicadoresController.existeHeadquarters(oHeadquarters);
     }
 
-    // PUBLICADORES (REVISTA)
+    // REVISTA
     public int addMagazine(Magazine oMagazine) {
         return publicadoresController.addMagazine(oMagazine);
     }
@@ -149,4 +150,85 @@ public class GeneralController {
         return publicadoresController.existeMagazine(oMagazine);
     }
 
+    // ###################################
+    // #########ARTICULOS USUARIO#########
+    // ###################################
+
+    // USUARIO
+    public int addUser(User oUser) {
+        return articulosUsuariosController.addUser(oUser);
+    }
+
+    public int removeUser(User oUser) {
+        return articulosUsuariosController.removeUser(oUser);
+    }
+
+    public int existeUser(User oUser) {
+        return articulosUsuariosController.existeUser(oUser);
+    }
+
+    // CATEGORIA
+    public int addCategory(Category oCategory) {
+        return articulosUsuariosController.addCategory(oCategory);
+    }
+
+    public int removeCategory(Category oCategory) {
+        return articulosUsuariosController.removeCategory(oCategory);
+    }
+
+    public int existeCategory(Category oCategory) {
+        return articulosUsuariosController.existeCategory(oCategory);
+    }
+
+    // TIPO ARTICULO
+    public int addArticleType(ArticleType oArticleType) {
+        return articulosUsuariosController.addArticleType(oArticleType);
+    }
+
+    public int removeArticleType(ArticleType oArticleType) {
+        return articulosUsuariosController.removeArticleType(oArticleType);
+    }
+
+    public int existeArticleType(ArticleType oArticleType) {
+        return articulosUsuariosController.existeArticleType(oArticleType);
+    }
+
+    // ARTICULO
+    public int addArticle(Article oArticle) {
+        return articulosUsuariosController.addArticle(oArticle);
+    }
+
+    public int removeArticle(Article oArticle) {
+        return articulosUsuariosController.removeArticle(oArticle);
+    }
+
+    public int existeArticle(Article oArticle) {
+        return articulosUsuariosController.existeArticle(oArticle);
+    }
+
+    // PUNTUACION DEL ARTICULO POR USUARIO
+    public int addArticleRatingUser(ArticleRatingUser oArticleRatingUser) {
+        return articulosUsuariosController.addArticleRatingUser(oArticleRatingUser);
+    }
+
+    public int removeArticleRatingUser(ArticleRatingUser oArticleRatingUser) {
+        return articulosUsuariosController.removeArticleRatingUser(oArticleRatingUser);
+    }
+
+    public int existeArticleRatingUser(ArticleRatingUser oArticleRatingUser) {
+        return articulosUsuariosController.existeArticleRatingUser(oArticleRatingUser);
+    }
+
+    // CATEGORIA DEL ARTICULO
+    public int addArticleXCategory(ArticleXCategory oArticleXCategory) {
+        return articulosUsuariosController.addArticleXCategory(oArticleXCategory);
+    }
+
+    public int removeArticleXCategory(ArticleXCategory oArticleXCategory) {
+        return articulosUsuariosController.removeArticleXCategory(oArticleXCategory);
+    }
+
+    public int existeArticleXCategory(ArticleXCategory oArticleXCategory) {
+        return articulosUsuariosController.existeArticleXCategory(oArticleXCategory);
+    }
 }
