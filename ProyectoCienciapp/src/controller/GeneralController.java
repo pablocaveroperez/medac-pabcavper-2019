@@ -4,6 +4,9 @@ import controller.ArticulosUsuarios.ArticulosUsuariosController;
 import controller.Ctrl.CountryController;
 import controller.Publicadores.PublicadoresController;
 import controller.SistemaInvestigacion.SistemaInvestigacionController;
+import model.Country;
+import model.Publicadores.Headquarters;
+import model.Publicadores.Magazine;
 import model.SistemaInvestigacion.*;
 
 public class GeneralController {
@@ -99,4 +102,51 @@ public class GeneralController {
     public int existeMember(Member oMember) {
         return sistemaInvestigacionController.existeMember(oMember);
     }
+
+    // ###################################
+    // ########COUNTRY CONTROLLER#########
+    // ###################################
+
+    public int addCountry(Country oCountry) {
+        return countryController.add(oCountry);
+    }
+
+    public int removeCountry(Country oCountry) {
+        return countryController.remove(oCountry);
+    }
+
+    public int existeCountry(Country oCountry) {
+        return countryController.existePais(oCountry);
+    }
+
+    // ###################################
+    // ############PUBLICADORES###########
+    // ###################################
+
+    // PUBLICADORES (OFICINA PRINCIPAL)
+    public int addHeadquarters(Headquarters oHeadquarters) {
+        return publicadoresController.addHeadquarters(oHeadquarters);
+    }
+
+    public int removeHeadquarters(Headquarters oHeadquartes) {
+        return publicadoresController.removeHeadquarters(oHeadquartes);
+    }
+
+    public int existeHeadquarters(Headquarters oHeadquarters) {
+        return publicadoresController.existeHeadquarters(oHeadquarters);
+    }
+
+    // PUBLICADORES (REVISTA)
+    public int addMagazine(Magazine oMagazine) {
+        return publicadoresController.addMagazine(oMagazine);
+    }
+
+    public int removeMagazine(Magazine oMagazine) {
+        return publicadoresController.removeMagazine(oMagazine);
+    }
+
+    public int existeMagazine(Magazine oMagazine) {
+        return publicadoresController.existeMagazine(oMagazine);
+    }
+
 }
