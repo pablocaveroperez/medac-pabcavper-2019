@@ -59,7 +59,7 @@ public class SistemaInvestigacionController {
     }
 
     public int removeFaculty(Faculty oFaculty) {
-        return facultyController.add(oFaculty);
+        return facultyController.remove(oFaculty);
     }
 
     public int existeFaculty(Faculty oFaculty) {
