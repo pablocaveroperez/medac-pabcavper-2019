@@ -10,12 +10,17 @@ import java.util.Objects;
 public class User implements LimitsDB, IUser {
     private String sUsername;       // PRIMARY KEY
     private String sPassword;       // NN
-    private String sEmail;          // NN
+    private String sEmail;          // NULO
 
     public User(String sUsername, String sPassword, String sEmail) {
         setsUsername(sUsername);
         setsPassword(sPassword);
         setsEmail(sEmail);
+    }
+
+    public User(String sUsername, String sPassword) {
+        setsUsername(sUsername);
+        setsPassword(sPassword);
     }
 
     @Override
