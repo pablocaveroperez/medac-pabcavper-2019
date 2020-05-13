@@ -92,7 +92,7 @@ public class DepartmentView implements LimitsDB {
         byte bOpcion = 0;
         boolean errorControl = true;
 
-        System.out.println("\n\nFACULTADES: ");
+        System.out.println("\n\nDEPARTAMENTO: ");
         System.out.println("1. Anadir.");
         System.out.println("2. Eliminar.");
         System.out.println("3. Busqueda.");
