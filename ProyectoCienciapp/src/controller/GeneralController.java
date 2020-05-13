@@ -35,6 +35,11 @@ public class GeneralController {
     public ArticulosUsuariosController getArticulosUsuariosController() {
         return articulosUsuariosController;
     }
+
+    public SistemaInvestigacionController getSistemaInvestigacionController() {
+        return sistemaInvestigacionController;
+    }
+
     // ###################################
     // #######SISTEMA INVESTIGACION#######
     // ###################################
