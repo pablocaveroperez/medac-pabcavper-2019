@@ -86,6 +86,28 @@ public class FacultyView implements LimitsDB {
     }
 
     private static void busqueda(GeneralController controller) {
+        String sFaculName = null;
+        boolean errorControl = true;
+        Faculty oFaculty;
+        int iNumFacultades;
+
+        while (errorControl) {
+            try {
+                sFaculName = ValidaLibrary.leer("Introduce el nombre de la facultad: ");
+                if (sFaculName.length() > MINCHAR && sFaculName.length() <= MAXCHAR_50)
+                    errorControl = false;
+            }catch (Exception exception) {
+                System.out.println("Error: " + exception.getMessage());
+            }
+        }
+
+        oFaculty = new Faculty(sFaculName);
+        iNumFacultades = controller.existeFaculty(oFaculty);
+
+        if (iNumFacultades > 0)
+            System.out.println("Existe " + iNumFacultades + " en la base de datos.");
+        else
+            System.out.println("No existe ninguna facultad con ese nombre en la base de datos.");
 
     }
 
