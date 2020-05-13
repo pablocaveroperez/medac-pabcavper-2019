@@ -125,7 +125,7 @@ public class UniversityView implements LimitsDB {
         while (errorControl) {
             try {
                 bOpcion = (byte) ValidaLibrary.valida("Introduce una opcion: ", 1, 4, 3);
-                errorControl = true;
+                errorControl = false;
             } catch (Exception exception) {
                 System.out.println("Error: " + exception.getMessage());
             }
