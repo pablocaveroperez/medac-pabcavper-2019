@@ -33,6 +33,25 @@ public class UniversityView implements LimitsDB {
         } while (bOpcion != 4);
     }
 
+    private static int eliminar(GeneralController controller) {
+        String sUniName = null;
+        University oUniversity = null;
+        boolean errorControl = true;
+
+        while (errorControl) {
+            try {
+                sUniName = ValidaLibrary.leer("Introduce el nombre: ");
+                if (sUniName.length() <= MAXCHAR_65 && sUniName.length() > MINCHAR)
+                    errorControl = false;
+            } catch (Exception exception) {
+                System.out.println("Error: " + exception.getMessage());
+            }
+        }
+        oUniversity = new University(sUniName);
+
+        return controller.getSistemaInvestigacionController().removeUniversity(oUniversity);
+    }
+
     private static int alta(GeneralController controller) {
         String sUniName = null;
         String sLocality = null;
