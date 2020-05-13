@@ -1,6 +1,6 @@
 package model.SistemaInvestigacion;
 
-import model.Country;
+import model.Ctrl.Country;
 
 public interface IUniversity {
     String getsUniName();

@@ -1,6 +1,6 @@
 package model.Publicadores;
 
-import model.Country;
+import model.Ctrl.Country;
 import model.LimitsDB;
 
 import java.util.Objects;

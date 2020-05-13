@@ -1,6 +1,6 @@
 package controller.Ctrl;
 
-import model.Country;
+import model.Ctrl.Country;
 
 public interface ICountryController {
     // #########

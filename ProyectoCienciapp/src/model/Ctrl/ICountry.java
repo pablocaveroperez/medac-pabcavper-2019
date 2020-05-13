@@ -1,4 +1,4 @@
-package model;
+package model.Ctrl;
 
 public interface ICountry {
     String getsName();

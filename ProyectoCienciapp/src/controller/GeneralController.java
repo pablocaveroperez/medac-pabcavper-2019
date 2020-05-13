@@ -5,7 +5,7 @@ import controller.Ctrl.CountryController;
 import controller.Publicadores.PublicadoresController;
 import controller.SistemaInvestigacion.SistemaInvestigacionController;
 import model.ArticulosUsuarios.*;
-import model.Country;
+import model.Ctrl.Country;
 import model.Publicadores.Headquarters;
 import model.Publicadores.Magazine;
 import model.SistemaInvestigacion.*;
