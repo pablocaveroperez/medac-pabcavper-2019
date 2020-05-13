@@ -49,7 +49,7 @@ public class UniversityView implements LimitsDB {
             }
         }
         oUniversity = new University(sUniName);
-        iNumUniversidades = controller.getSistemaInvestigacionController().getUniversityController().existeUniversidad(oUniversity);
+        iNumUniversidades = controller.existeUniversity(oUniversity);
 
         if (iNumUniversidades > 0){
             if (iNumUniversidades == 1)
@@ -77,7 +77,7 @@ public class UniversityView implements LimitsDB {
         }
         oUniversity = new University(sUniName);
 
-        return controller.getSistemaInvestigacionController().removeUniversity(oUniversity);
+        return controller.removeUniversidad(oUniversity);
     }
 
     private static int alta(GeneralController controller) {
@@ -137,7 +137,7 @@ public class UniversityView implements LimitsDB {
             oUniversity = new University(sUniName, sLocality, sAddres, new Country(sCountry));
         }
 
-        return controller.getSistemaInvestigacionController().addUniversity(oUniversity);
+        return controller.addUniversidad(oUniversity);
     }
 
     private static byte opcionMenu() {
