@@ -2,7 +2,6 @@ package controller.ArticulosUsuarios;
 
 import controller.ConexionDB;
 import model.ArticulosUsuarios.Category;
-import model.ArticulosUsuarios.User;
 
 public class CategoryController implements ICategoryController {
 
