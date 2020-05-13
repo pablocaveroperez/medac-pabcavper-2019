@@ -57,7 +57,7 @@ public class Department implements LimitsDB, IDepartment {
     @Override
     public boolean setsName(String sName) {
         boolean bExito = false;
-        if (sName.length() > MINCHAR && sName.length() < MAXCHAR_50) {
+        if (sName == null || (sName.length() > MINCHAR && sName.length() < MAXCHAR_50)) {
             this.sName = sName;
             bExito = true;
         }

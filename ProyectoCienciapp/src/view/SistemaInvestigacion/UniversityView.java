@@ -109,7 +109,7 @@ public class UniversityView implements LimitsDB {
         while (errorControl) {
             try {
                 sAddres = ValidaLibrary.leer("Introduce la direccion: ");
-                if (sAddres == null || sAddres.length() <= MAXCHAR_100 && sAddres.length() > MINCHAR)
+                if (sAddres == null || (sAddres.length() <= MAXCHAR_100 && sAddres.length() > MINCHAR))
                     errorControl = false;
             }catch (Exception exception){
                 System.out.println("Error: " + exception.getMessage());
