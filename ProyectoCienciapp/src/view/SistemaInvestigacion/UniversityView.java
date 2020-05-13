@@ -51,12 +51,8 @@ public class UniversityView implements LimitsDB {
         oUniversity = new University(sUniName);
         iNumUniversidades = controller.existeUniversity(oUniversity);
 
-        if (iNumUniversidades > 0){
-            if (iNumUniversidades == 1)
-                System.out.println("Existe " + iNumUniversidades + " en la base de datos.");
-            else
-                System.out.println("Existen " + iNumUniversidades + " en la base de datos.");
-        }
+        if (iNumUniversidades > 0)
+            System.out.println("Existe " + iNumUniversidades + " en la base de datos.");
         else
             System.out.println("No existe ninguna universidad con ese nombre en la base de datos.");
     }
