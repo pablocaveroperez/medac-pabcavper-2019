@@ -34,6 +34,28 @@ public class DepartmentView implements LimitsDB {
     }
 
     private static void busqueda(GeneralController controller) {
+        byte idDepartamento = 0;
+        boolean errorControl = true;
+        Department oDepartment = null;
+        int iNumDepartamentos;
+
+        while (errorControl) {
+            try {
+                idDepartamento = (byte) ValidaLibrary.valida("Introduce el ID del departamento: ", MINCHAR, MAXCHAR_30, 3);
+                errorControl = false;
+            }catch (Exception exception) {
+                System.out.println("Error: " + exception.getMessage());
+            }
+        }
+
+        oDepartment = new Department(idDepartamento);
+        iNumDepartamentos = controller.existeDepartment(oDepartment);
+
+        if (iNumDepartamentos > 0)
+            System.out.println("Existe " + iNumDepartamentos + " en la base de datos.");
+        else
+            System.out.println("No existe ningun departamento con ese nombre en la base de datos.");
+
 
     }
 
