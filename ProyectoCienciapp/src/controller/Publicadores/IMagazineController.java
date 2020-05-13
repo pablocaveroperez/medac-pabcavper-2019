@@ -13,5 +13,5 @@ public interface IMagazineController {
     // ###########
     // # QUERIES #
     // ###########
-    int existeHQ(Magazine oObject);
+    int existeMagazine(Magazine oObject);
 }

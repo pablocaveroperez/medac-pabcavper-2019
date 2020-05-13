@@ -31,7 +31,7 @@ public class MagazineController implements IMagazineController {
     // # QUERIES #
     // ###########
     @Override
-    public int existeHQ(Magazine oObject) {
+    public int existeMagazine(Magazine oObject) {
         int iRes = 0;
         if (oObject.checkMagazine()) {
             String sql = "SELECT COUNT(*) FROM magazine WHERE name LIKE \"" + oObject.getsName() + "\"";

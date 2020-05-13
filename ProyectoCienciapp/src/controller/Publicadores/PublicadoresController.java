@@ -43,6 +43,6 @@ public class PublicadoresController {
     }
 
     public int existeMagazine(Magazine oMagazine) {
-        return magazineController.existeHQ(oMagazine);
+        return magazineController.existeMagazine(oMagazine);
     }
 }
