@@ -20,6 +20,10 @@ public class Department implements LimitsDB, IDepartment {
         setoFaculty(oFaculty);
     }
 
+    public Department(byte idDepartment) {
+        setIdDepartment(idDepartment);
+    }
+
     @Override
     public byte getIdDepartment() {
         return idDepartment;
