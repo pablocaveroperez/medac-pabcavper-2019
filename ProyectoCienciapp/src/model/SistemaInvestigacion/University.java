@@ -24,6 +24,10 @@ public class University implements LimitsDB, IUniversity {
         setoCountry(oCountry);
     }
 
+    public University(String sUniName) {
+        setsUniName(sUniName);
+    }
+
     @Override
     public String getsUniName() {
         return sUniName;
