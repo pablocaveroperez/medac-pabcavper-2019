@@ -61,7 +61,7 @@ public class University implements LimitsDB, IUniversity {
     @Override
     public boolean setsAddres(String sAddres) {
         boolean bExito = false;
-        if (sAddres.length() > MINCHAR && sAddres.length() < MAXCHAR_100) {
+        if (sAddres == null || sAddres.length() > MINCHAR && sAddres.length() < MAXCHAR_100) {
             this.sAddres = sAddres;
             bExito = true;
         }
