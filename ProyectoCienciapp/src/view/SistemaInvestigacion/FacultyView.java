@@ -66,7 +66,23 @@ public class FacultyView implements LimitsDB {
     }
 
     private static int eliminar(GeneralController controller) {
-        return 0;
+        String sFaculName = null;
+        boolean errorControl = true;
+        Faculty oFaculty = null;
+
+        while (errorControl) {
+            try {
+                sFaculName = ValidaLibrary.leer("Introduce el nombre de la facultad: ");
+                if (sFaculName.length() > MINCHAR && sFaculName.length() <= MAXCHAR_50)
+                    errorControl = false;
+            }catch (Exception exception) {
+                System.out.println("Error: " + exception.getMessage());
+            }
+        }
+
+        oFaculty = new Faculty(sFaculName);
+
+        return controller.removeFaculty(oFaculty);
     }
 
     private static void busqueda(GeneralController controller) {
