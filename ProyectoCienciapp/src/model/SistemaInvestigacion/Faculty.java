@@ -13,6 +13,10 @@ public class Faculty implements LimitsDB, IFaculty {
         setsFaculName(sFaculName);
     }
 
+    public Faculty(String sFaculName) {
+        setsFaculName(sFaculName);
+    }
+
     @Override
     public String getsFaculName() {
         return sFaculName;
