@@ -25,12 +25,40 @@ public class UniversityView implements LimitsDB {
                         System.out.println("No existe en el sistema.");
                     break;
                 case 3:
-                    menuBusquedas(controller);
+                    busqueda(controller);
                     break;
                 default:
                     System.out.println("Volviendo...");
             }
         } while (bOpcion != 4);
+    }
+
+    private static void busqueda(GeneralController controller) {
+        String sUniName = null;
+        boolean errorControl = true;
+        University oUniversity;
+        int iNumUniversidades;
+
+        while (errorControl) {
+            try {
+                sUniName = ValidaLibrary.leer("Introduce el nombre: ");
+                if (sUniName.length() <= MAXCHAR_65 && sUniName.length() > MINCHAR)
+                    errorControl = false;
+            } catch (Exception exception) {
+                System.out.println("Error: " + exception.getMessage());
+            }
+        }
+        oUniversity = new University(sUniName);
+        iNumUniversidades = controller.getSistemaInvestigacionController().getUniversityController().existeUniversidad(oUniversity);
+
+        if (iNumUniversidades > 0){
+            if (iNumUniversidades == 1)
+                System.out.println("Existe " + iNumUniversidades + " en la base de datos.");
+            else
+                System.out.println("Existen " + iNumUniversidades + " en la base de datos.");
+        }
+        else
+            System.out.println("No existe ninguna universidad con ese nombre en la base de datos.");
     }
 
     private static int eliminar(GeneralController controller) {
