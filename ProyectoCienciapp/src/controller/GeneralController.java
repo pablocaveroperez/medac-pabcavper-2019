@@ -31,6 +31,9 @@ public class GeneralController {
     public ArticulosUsuariosController getArticulosUsuariosController() {
         return articulosUsuariosController;
     }
+    // ###################################
+    // #######SISTEMA INVESTIGACION#######
+    // ###################################
 
     // SISTEMA INVESTIGACION (UNIVERSIDAD)
     public int addUniversidad(University oUniversity) {
