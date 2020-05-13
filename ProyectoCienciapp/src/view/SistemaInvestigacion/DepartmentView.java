@@ -38,7 +38,22 @@ public class DepartmentView implements LimitsDB {
     }
 
     private static int eliminar(GeneralController controller) {
-        return 0;
+        byte idDepartamento = 0;
+        boolean errorControl = true;
+        Department oDepartment = null;
+
+        while (errorControl) {
+            try {
+                idDepartamento = (byte) ValidaLibrary.valida("Introduce el ID del departamento: ", MINCHAR, MAXCHAR_30, 3);
+                errorControl = false;
+            }catch (Exception exception) {
+                System.out.println("Error: " + exception.getMessage());
+            }
+        }
+
+        oDepartment = new Department(idDepartamento);
+
+        return controller.removeDepartment(oDepartment);
     }
 
     private static int alta(GeneralController controller) {
