@@ -39,4 +39,10 @@ public class UserController implements IUserController {
         }
         return iRes;
     }
+
+    @Override
+    public int checkLogin(User oUsuario) {
+        String sql = "SELECT COUNT(*) FROM user WHERE username LIKE \"" + oUsuario.getsUsername() + "\" AND password LIKE \"" + oUsuario.getsPassword() + "\"";
+        return ConexionDB.executeCount(sql);
+    }
 }

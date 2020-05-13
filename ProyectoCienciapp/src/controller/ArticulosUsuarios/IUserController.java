@@ -14,4 +14,6 @@ public interface IUserController {
     // # QUERIES #
     // ###########
     int existeUser(User oObject);
+
+    int checkLogin(User oUsuario);
 }
