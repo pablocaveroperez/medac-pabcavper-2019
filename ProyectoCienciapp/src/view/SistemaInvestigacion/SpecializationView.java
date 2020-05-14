@@ -88,7 +88,28 @@ public class SpecializationView implements LimitsDB {
     }
 
     private static void busqueda(GeneralController controller) {
+        String sSpecialization = null;
+        boolean errorControl = true;
+        Specialization oSpecialization = null;
+        int iNumSpecializaciones;
 
+        while (errorControl) {
+            try {
+                sSpecialization = ValidaLibrary.leer("Introduce la especializacion: ");
+                if (sSpecialization.length() > MINCHAR && sSpecialization.length() < MAXCHAR_50)
+                    errorControl = false;
+            }catch (Exception exception) {
+                System.out.println("Error: " + exception.getMessage());
+            }
+        }
+
+        oSpecialization = new Specialization(sSpecialization);
+        iNumSpecializaciones = controller.existeSpecialization(oSpecialization);
+
+        if (iNumSpecializaciones > 0)
+            System.out.println("Existe " + iNumSpecializaciones + " en la base de datos.");
+        else
+            System.out.println("No existe ninguna especializacion con ese nombre en la base de datos.");
     }
 
     private static byte opcionMenu() {
