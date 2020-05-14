@@ -40,7 +40,7 @@ public class Magazine implements LimitsDB, IMagazine {
     @Override
     public boolean checkMagazine() {
         boolean bExito = false;
-        if (getsName() != null && getoHeadquarters() != null && getoHeadquarters().checkHeadquarters())
+        if (getsName() != null)
             bExito = true;
         return bExito;
     }

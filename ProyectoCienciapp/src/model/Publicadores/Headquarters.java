@@ -86,7 +86,7 @@ public class Headquarters implements LimitsDB, IHeadquarters {
     @Override
     public boolean checkHeadquarters() {
         boolean bExito = false;
-        if (getsName() != null && getoCountry().checkCountry() && getsLocality() != null)
+        if (getsName() != null)
             bExito = true;
         return bExito;
     }

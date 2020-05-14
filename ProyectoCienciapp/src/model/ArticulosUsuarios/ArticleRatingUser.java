@@ -86,7 +86,7 @@ public class ArticleRatingUser implements LimitsDB, IArticleRatingUser {
     @Override
     public boolean checkArticleRatingUser() {
         boolean bExito = false;
-        if (getoUser() != null && getoUser().checkUser() && getoArticle() != null && getoArticle().checkArticle() && getbRating() > MINCHAR && getbRating() < MAXRATING)
+        if (getoUser() != null && getoArticle() != null)
             bExito = true;
         return bExito;
     }

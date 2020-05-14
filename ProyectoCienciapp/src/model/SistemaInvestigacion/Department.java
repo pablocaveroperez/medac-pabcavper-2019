@@ -71,7 +71,7 @@ public class Department implements LimitsDB, IDepartment {
     @Override
     public boolean checkDepartment() {
         boolean bExito = false;
-        if (getoFaculty().checkFaculty() && getIdDepartment() > MINCHAR && getIdDepartment() < MAXCHAR_30)
+        if (getIdDepartment() > MINCHAR && getIdDepartment() < MAXCHAR_30)
             bExito = true;
         return bExito;
     }

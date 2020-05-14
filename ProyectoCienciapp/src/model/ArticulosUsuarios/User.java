@@ -74,7 +74,7 @@ public class User implements LimitsDB, IUser {
     @Override
     public boolean checkUser() {
         boolean bExito = false;
-        if (sUsername != null && sPassword != null && sEmail != null)
+        if (sUsername != null)
             bExito = true;
         return bExito;
     }

@@ -89,7 +89,7 @@ public class ResearchTeam implements LimitsDB, IResearchTeam {
     @Override
     public boolean checkResearchTeam() {
         boolean bExito = false;
-        if (getoDepartment() != null && (getiBudget() > MINCHAR && getiBudget() < MAXBUDGET) && (getIdResearchTeam() < MAXCHAR_30 && getIdResearchTeam() > MINCHAR))
+        if (getIdResearchTeam() < MAXCHAR_30 && getIdResearchTeam() > MINCHAR)
             bExito = true;
         return bExito;
     }

@@ -90,7 +90,7 @@ public class University implements LimitsDB, IUniversity {
     @Override
     public boolean checkUniversity() {
         boolean bExito = false;
-        if (getsUniName() != null && getsLocality() != null && getoCountry().checkCountry())
+        if (getsUniName() != null)
             bExito = true;
         return bExito;
     }

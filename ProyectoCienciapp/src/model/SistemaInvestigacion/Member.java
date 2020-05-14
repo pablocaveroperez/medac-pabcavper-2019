@@ -144,8 +144,7 @@ public class Member implements LimitsDB, IMember {
     @Override
     public boolean checkMember() {
         boolean bExito = false;
-        if (getoResearchTeam().checkResearchTeam() && getoSpecialization().checkSpecialization() && getsDNI() != null
-            && getsName() != null && getsSurname() != null && getoUser() != null && getoUser().checkUser())
+        if (getsDNI() != null)
             bExito = true;
         return bExito;
     }

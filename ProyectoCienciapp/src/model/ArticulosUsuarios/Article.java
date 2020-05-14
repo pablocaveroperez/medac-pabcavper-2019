@@ -123,8 +123,7 @@ public class Article implements LimitsDB, IArticle {
     @Override
     public boolean checkArticle() {
         boolean bExito = false;
-        if ((getIdArticle() > MINCHAR && getIdArticle() < MAXCHAR_100) && getsName() != null && getoMagazine() != null && getoMagazine().checkMagazine()
-            && getoMember() != null && getoMember().checkMember() && getoArticleType() != null && getoArticleType().checkArticleType())
+        if (getIdArticle() > MINCHAR && getIdArticle() < MAXCHAR_100)
             bExito = true;
         return bExito;
     }
