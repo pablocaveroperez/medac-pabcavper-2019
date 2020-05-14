@@ -2,6 +2,7 @@ package view.SistemaInvestigacion;
 
 import controller.GeneralController;
 import model.LimitsDB;
+import model.SistemaInvestigacion.Specialization;
 import validaciones.ValidaLibrary;
 
 public class SpecializationView implements LimitsDB {
@@ -32,7 +33,38 @@ public class SpecializationView implements LimitsDB {
     }
 
     private static int alta(GeneralController controller) {
-        return 0;
+        String sSpecialization = null;
+        String sDescription = null;
+        boolean errorControl = true;
+        Specialization oSpecialization = null;
+
+        while (errorControl) {
+            try {
+                sSpecialization = ValidaLibrary.leer("Introduce la especializacion: ");
+                if (sSpecialization.length() > MINCHAR && sSpecialization.length() < MAXCHAR_50)
+                    errorControl = false;
+            }catch (Exception exception) {
+                System.out.println("Error: " + exception.getMessage());
+            }
+        }
+
+        errorControl = true;
+        while (errorControl) {
+            try {
+                sDescription = ValidaLibrary.leer("Introduce la descripcion: ");
+                if (sDescription == null || (sDescription.length() < MAXCHAR_200 && sDescription.length() > MINCHAR))
+                    errorControl = false;
+            }catch (Exception exception) {
+                System.out.println("Error: " + exception.getMessage());
+            }
+        }
+
+        if (sDescription == null)
+            oSpecialization = new Specialization(sSpecialization);
+        else
+            oSpecialization = new Specialization(sSpecialization, sDescription);
+
+        return controller.addSpecialization(oSpecialization);
     }
 
     private static int eliminar(GeneralController controller) {
