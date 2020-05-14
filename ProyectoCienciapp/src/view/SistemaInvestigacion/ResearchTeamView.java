@@ -1,9 +1,12 @@
 package view.SistemaInvestigacion;
 
 import controller.GeneralController;
+import model.LimitsDB;
+import model.SistemaInvestigacion.Department;
+import model.SistemaInvestigacion.ResearchTeam;
 import validaciones.ValidaLibrary;
 
-public class ResearchTeamView {
+public class ResearchTeamView implements LimitsDB {
     public static void menuEquiposInvestigacion(GeneralController controller) {
         byte bOpcion = 0;
         do {
@@ -31,7 +34,59 @@ public class ResearchTeamView {
     }
 
     private static int alta(GeneralController controller) {
-        return 0;
+        byte idResearchTeam = 0;
+        String sName = null;
+        int iBudget = 0;
+        byte idDepartment = 0;
+        boolean errorControl = true;
+        ResearchTeam oResearchTeam = null;
+
+        while (errorControl) {
+            try {
+                idResearchTeam = (byte) ValidaLibrary.valida("Introduce el ID del equipo: ", MINCHAR, MAXCHAR_30,3);
+                errorControl = false;
+            }catch (Exception exception) {
+                System.out.println("Error: " + exception.getMessage());
+            }
+        }
+
+        errorControl = true;
+        while (errorControl) {
+            try {
+                sName = ValidaLibrary.leer("Introduce el nombre del equipo: ");
+                if (sName == null || (sName.length() > MINCHAR && sName.length() < MAXCHAR_40))
+                    errorControl = false;
+            }catch (Exception exception) {
+                System.out.println("Error: " + exception.getMessage());
+            }
+        }
+
+        errorControl = true;
+        while (errorControl) {
+            try {
+                iBudget = (int) ValidaLibrary.valida("Introduce el presupuesto: ", MINCHAR, MAXBUDGET, 1);
+                errorControl = false;
+            }catch (Exception exception) {
+                System.out.println("Error: " + exception.getMessage());
+            }
+        }
+
+        errorControl = true;
+        while (errorControl) {
+            try {
+                idDepartment = (byte) ValidaLibrary.valida("Introduce el ID del departamento: ", MINCHAR, MAXCHAR_30, 3);
+                errorControl = false;
+            }catch (Exception exception) {
+                System.out.println("Error: " + exception.getMessage());
+            }
+        }
+
+        if (sName == null)
+            oResearchTeam = new ResearchTeam(idResearchTeam, new Department(idDepartment), iBudget);
+        else
+            oResearchTeam = new ResearchTeam(idResearchTeam, new Department(idDepartment), sName,iBudget);
+
+        return controller.addResearchTeam(oResearchTeam);
     }
 
     private static int eliminar(GeneralController controller) {
