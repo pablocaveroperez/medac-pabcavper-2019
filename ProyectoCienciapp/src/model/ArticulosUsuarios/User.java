@@ -23,6 +23,10 @@ public class User implements LimitsDB, IUser {
         setsPassword(sPassword);
     }
 
+    public User(String sUsername) {
+        setsUsername(sUsername);
+    }
+
     @Override
     public String getsUsername() {
         return sUsername;
