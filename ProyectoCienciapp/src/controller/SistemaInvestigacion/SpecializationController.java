@@ -12,7 +12,12 @@ public class SpecializationController implements ISpecializationController {
     public int add(Specialization oObject) {
         int iRes = 0;
         if (oObject.checkSpecialization()) {
-            String sql = "INSERT INTO specialization VALUES (\"" + oObject.getsName() + "\",\"" + oObject.getsDescription() + "\")";
+            String sql;
+            if (oObject.getsDescription() != null) {
+                sql = "INSERT INTO specialization VALUES (\"" + oObject.getsName() + "\",\"" + oObject.getsDescription() + "\")";
+            } else {
+                sql = "INSERT INTO specialization VALUES (\"" + oObject.getsName() + "\",null)";
+            }
             iRes = ConexionDB.executeUpdate(sql);
         }
         return iRes;

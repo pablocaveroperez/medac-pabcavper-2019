@@ -12,9 +12,20 @@ public class MemberController implements IMemberController {
     public int add(Member oObject) {
         int iRes = 0;
         if (oObject.checkMember()) {
-            String sql = "INSERT INTO member VALUES (\"" + oObject.getsDNI() + "\",\"" + oObject.getBirthDate() + "\",\"" +
-                    oObject.getsName() + "\",\"" + oObject.getsSurname() + "\",\"" + oObject.getoSpecialization().getsName()
-                    + "\",\"" + oObject.getoResearchTeam().getIdResearchTeam() + "\",\"" + oObject.getoUser().getsUsername() +"\n)";
+            String sql;
+            if (oObject.getBirthDate() == null) {
+                sql = "INSERT INTO member VALUES (\"" + oObject.getsDNI()
+                        + "\",null,\"" + oObject.getsName()
+                        + "\",\"" + oObject.getsSurname() + "\",\"" + oObject.getoSpecialization().getsName()
+                        + "\",\"" + oObject.getoResearchTeam().getIdResearchTeam() + "\",\"" + oObject.getoUser().getsUsername()
+                        +"\n)";
+            } else {
+                sql = "INSERT INTO member VALUES (\"" + oObject.getsDNI()
+                        + "\",\"" + oObject.getBirthDate() + "\",\"" + oObject.getsName()
+                        + "\",\"" + oObject.getsSurname() + "\",\"" + oObject.getoSpecialization().getsName()
+                        + "\",\"" + oObject.getoResearchTeam().getIdResearchTeam() + "\",\"" + oObject.getoUser().getsUsername()
+                        +"\n)";
+            }
             iRes = ConexionDB.executeUpdate(sql);
         }
         return iRes;

@@ -12,7 +12,12 @@ public class ResearchTeamController implements IResearchTeamController {
     public int add(ResearchTeam oObject) {
         int iRes = 0;
         if (oObject.checkResearchTeam()) {
-            String sql = "INSERT INTO researchteam VALUES (\"" + oObject.getIdResearchTeam() + "\",\"" + oObject.getsName() + "\",\"" + oObject.getiBudget() + "\",\"" + oObject.getoDepartment().getIdDepartment() + "\")";
+            String sql;
+            if (oObject.getsName() != null) {
+                sql = "INSERT INTO researchteam VALUES (\"" + oObject.getIdResearchTeam() + "\",\"" + oObject.getsName() + "\",\"" + oObject.getiBudget() + "\",\"" + oObject.getoDepartment().getIdDepartment() + "\")";
+            } else {
+                sql = "INSERT INTO researchteam VALUES (\"" + oObject.getIdResearchTeam() + "\",null,\"" + oObject.getiBudget() + "\",\"" + oObject.getoDepartment().getIdDepartment() + "\")";
+            }
             iRes = ConexionDB.executeUpdate(sql);
         }
         return iRes;

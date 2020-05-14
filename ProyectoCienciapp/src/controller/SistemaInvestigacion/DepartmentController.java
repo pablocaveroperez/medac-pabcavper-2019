@@ -12,7 +12,12 @@ public class DepartmentController implements IDepartmentController {
     public int add(Department oObject) {
         int iRes = 0;
         if (oObject.checkDepartment()) {
-            String sql = "INSERT INTO department VALUES (\"" + oObject.getIdDepartment() + "\",\"" + oObject.getoFaculty().getsFaculName() + "\",\"" + oObject.getsName() + "\")";
+            String sql;
+            if (oObject.getsName() != null) {
+                sql = "INSERT INTO department VALUES (\"" + oObject.getIdDepartment() + "\",\"" + oObject.getoFaculty().getsFaculName() + "\",\"" + oObject.getsName() + "\")";
+            } else {
+                sql = "INSERT INTO department VALUES (\"" + oObject.getIdDepartment() + "\",\"" + oObject.getoFaculty().getsFaculName() + "\",null)";
+            }
             iRes = ConexionDB.executeUpdate(sql);
         }
         return iRes;

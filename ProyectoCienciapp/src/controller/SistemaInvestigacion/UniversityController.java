@@ -12,8 +12,13 @@ public class UniversityController implements IUniversityController {
     public int add(University oObject) {
         int iRes = 0;
         if (oObject.checkUniversity()) {
-            String sql = "INSERT INTO university VALUES (\"" + oObject.getsUniName() + "\",\"" + oObject.getsLocality() + "\",\"" +
-                    oObject.getsAddres()+ "\",\""+ oObject.getoCountry().getsName() +"\n)";
+            String sql;
+            if (oObject.getsAddres() != null) {
+                sql = "INSERT INTO university VALUES (\"" + oObject.getsUniName() + "\",\"" + oObject.getsLocality() + "\",\"" +
+                        oObject.getsAddres()+ "\",\""+ oObject.getoCountry().getsName() +"\")";
+            }else {
+                sql = "INSERT INTO university VALUES (\"" + oObject.getsUniName() + "\",\"" + oObject.getsLocality() + "\",null,\""+ oObject.getoCountry().getsName() +"\")";
+            }
             iRes = ConexionDB.executeUpdate(sql);
         }
         return iRes;
