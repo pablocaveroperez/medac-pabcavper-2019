@@ -2,6 +2,7 @@ package view.SistemaInvestigacion;
 
 import controller.GeneralController;
 import model.LimitsDB;
+import validaciones.ValidaLibrary;
 
 public class MemberView implements LimitsDB {
     public static void menuMiembros(GeneralController controller) {
@@ -28,5 +29,26 @@ public class MemberView implements LimitsDB {
                     System.out.println("Volviendo...");
             }
         } while (bOpcion != 4);
+    }
+
+    private static byte opcionMenu() {
+        byte bOpcion = 0;
+        boolean errorControl = true;
+
+        System.out.println("\n\nMIEMBRO: ");
+        System.out.println("1. Anadir.");
+        System.out.println("2. Eliminar.");
+        System.out.println("3. Busqueda.");
+        System.out.println("4. Volver.");
+
+        while (errorControl) {
+            try {
+                bOpcion = (byte) ValidaLibrary.valida("Introduce una opcion: ", 1, 4, 3);
+                errorControl = false;
+            } catch (Exception exception) {
+                System.out.println("Error: " + exception.getMessage());
+            }
+        }
+        return bOpcion;
     }
 }
