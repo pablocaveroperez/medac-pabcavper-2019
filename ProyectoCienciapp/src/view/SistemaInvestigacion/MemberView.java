@@ -31,6 +31,17 @@ public class MemberView implements LimitsDB {
         } while (bOpcion != 4);
     }
 
+    private static int alta(GeneralController controller) {
+        return 0;
+    }
+
+    private static int eliminar(GeneralController controller) {
+        return 0;
+    }
+
+    private static void busqueda(GeneralController controller) {
+    }
+
     private static byte opcionMenu() {
         byte bOpcion = 0;
         boolean errorControl = true;
