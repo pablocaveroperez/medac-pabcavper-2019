@@ -183,7 +183,23 @@ public class MemberView implements LimitsDB {
     }
 
     private static int eliminar(GeneralController controller) {
-        return 0;
+        String sDNI = null;
+        Member oMember = null;
+        boolean errorControl = true;
+
+        while (errorControl) {
+            try {
+                sDNI = ValidaLibrary.leer("Introduce el DNI: ");
+                if (sDNI.length() == DNILENGTH)
+                    errorControl = false;
+            }catch (Exception exception) {
+                System.out.println("Error: " + exception.getMessage());
+            }
+        }
+
+        oMember = new Member(sDNI);
+
+        return controller.removeMember(oMember);
     }
 
     private static void busqueda(GeneralController controller) {
