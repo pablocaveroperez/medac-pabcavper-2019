@@ -109,7 +109,27 @@ public class ResearchTeamView implements LimitsDB {
     }
 
     private static void busqueda(GeneralController controller) {
+        byte idResearchTeam = 0;
+        boolean errorControl = true;
+        ResearchTeam oResearchTeam = null;
+        int iNumEquipos;
 
+        while (errorControl) {
+            try {
+                idResearchTeam = (byte) ValidaLibrary.valida("Introduce el ID del equipo: ", MINCHAR, MAXCHAR_30,3);
+                errorControl = false;
+            }catch (Exception exception) {
+                System.out.println("Error: " + exception.getMessage());
+            }
+        }
+
+        oResearchTeam = new ResearchTeam(idResearchTeam);
+        iNumEquipos = controller.existeResearchTeam(oResearchTeam);
+
+        if (iNumEquipos > 0)
+            System.out.println("Existe " + iNumEquipos + " en la base de datos.");
+        else
+            System.out.println("No existe ningun equipo de investigacion con ese nombre en la base de datos.");
     }
 
 
