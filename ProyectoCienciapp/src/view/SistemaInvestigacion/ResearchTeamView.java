@@ -54,7 +54,7 @@ public class ResearchTeamView implements LimitsDB {
         while (errorControl) {
             try {
                 sName = ValidaLibrary.leer("Introduce el nombre del equipo: ");
-                if (sName == null || (sName.length() > MINCHAR && sName.length() < MAXCHAR_40))
+                if (sName.equals("") || (sName.length() > MINCHAR && sName.length() < MAXCHAR_40))
                     errorControl = false;
             }catch (Exception exception) {
                 System.out.println("Error: " + exception.getMessage());
@@ -81,7 +81,7 @@ public class ResearchTeamView implements LimitsDB {
             }
         }
 
-        if (sName == null)
+        if (sName.equals(""))
             oResearchTeam = new ResearchTeam(idResearchTeam, new Department(idDepartment), iBudget);
         else
             oResearchTeam = new ResearchTeam(idResearchTeam, new Department(idDepartment), sName,iBudget);

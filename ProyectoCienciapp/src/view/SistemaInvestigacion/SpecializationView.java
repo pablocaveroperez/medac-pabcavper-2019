@@ -52,14 +52,14 @@ public class SpecializationView implements LimitsDB {
         while (errorControl) {
             try {
                 sDescription = ValidaLibrary.leer("Introduce la descripcion: ");
-                if (sDescription == null || (sDescription.length() < MAXCHAR_200 && sDescription.length() > MINCHAR))
+                if (sDescription.equals("") || (sDescription.length() < MAXCHAR_200 && sDescription.length() > MINCHAR))
                     errorControl = false;
             }catch (Exception exception) {
                 System.out.println("Error: " + exception.getMessage());
             }
         }
 
-        if (sDescription == null)
+        if (sDescription.equals(""))
             oSpecialization = new Specialization(sSpecialization);
         else
             oSpecialization = new Specialization(sSpecialization, sDescription);

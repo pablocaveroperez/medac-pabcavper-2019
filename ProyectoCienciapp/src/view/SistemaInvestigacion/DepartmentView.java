@@ -107,14 +107,14 @@ public class DepartmentView implements LimitsDB {
         while (errorControl) {
             try {
                 sName = ValidaLibrary.leer("Introduce el nombre del departamento: ");
-                if (sName == null || (sName.length() > MINCHAR && sName.length() < MAXCHAR_50))
+                if (sName.equals("") || (sName.length() > MINCHAR && sName.length() < MAXCHAR_50))
                     errorControl = false;
             }catch (Exception exception) {
                 System.out.println("Error: " + exception.getMessage());
             }
         }
 
-        if (sName == null) {
+        if (sName.equals("")) {
             oDepartment = new Department(idDepartment, new Faculty(sFaculName));
         }else {
             oDepartment = new Department(idDepartment, new Faculty(sFaculName),sName);
