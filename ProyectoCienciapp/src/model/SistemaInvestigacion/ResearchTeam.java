@@ -23,6 +23,10 @@ public class ResearchTeam implements LimitsDB, IResearchTeam {
         setoDepartment(oDepartment);
     }
 
+    public ResearchTeam(byte idResearchTeam) {
+        setIdResearchTeam(idResearchTeam);
+    }
+
     @Override
     public byte getIdResearchTeam() {
         return idResearchTeam;
