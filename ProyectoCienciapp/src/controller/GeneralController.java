@@ -109,6 +109,20 @@ public class GeneralController {
         return sistemaInvestigacionController.existeMember(oMember);
     }
 
+    // EQUIPO DE INVESTIGACION
+    public int addResearchTeam(ResearchTeam oResearchTeam) {
+        return sistemaInvestigacionController.addResearchTeam(oResearchTeam);
+    }
+
+    public int removeResearchTeam(ResearchTeam oResearchTeam) {
+        return sistemaInvestigacionController.removeResearchTeam(oResearchTeam);
+    }
+
+    public int existeResearchTeam(ResearchTeam oResearchTeam) {
+        return sistemaInvestigacionController.existeResearchTeam(oResearchTeam);
+    }
+
+
     // ###################################
     // ########COUNTRY CONTROLLER#########
     // ###################################

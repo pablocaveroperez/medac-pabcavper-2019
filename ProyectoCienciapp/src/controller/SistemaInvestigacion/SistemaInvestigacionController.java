@@ -9,6 +9,7 @@ public class SistemaInvestigacionController {
     private DepartmentController departmentController;
     private SpecializationController specializationController;
     private MemberController memberController;
+    private ResearchTeamController researchTeamController;
 
     public SistemaInvestigacionController() {
         universityController = new UniversityController();
@@ -16,6 +17,7 @@ public class SistemaInvestigacionController {
         departmentController = new DepartmentController();
         specializationController = new SpecializationController();
         memberController = new MemberController();
+        researchTeamController = new ResearchTeamController();
     }
 
     public UniversityController getUniversityController() {
@@ -106,5 +108,19 @@ public class SistemaInvestigacionController {
 
     public int existeMember(Member oMember) {
         return memberController.existeMember(oMember);
+    }
+
+    // EQUIPO INVESTIGACION
+    // #################
+    public int addResearchTeam(ResearchTeam oResearchTeam) {
+        return researchTeamController.add(oResearchTeam);
+    }
+
+    public int removeResearchTeam(ResearchTeam oResearchTeam) {
+        return researchTeamController.remove(oResearchTeam);
+    }
+
+    public int existeResearchTeam(ResearchTeam oResearchTeam) {
+        return researchTeamController.existeEquipoInvestigacion(oResearchTeam);
     }
 }
