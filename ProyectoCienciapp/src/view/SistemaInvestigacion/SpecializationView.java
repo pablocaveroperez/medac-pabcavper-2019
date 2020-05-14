@@ -1,9 +1,10 @@
 package view.SistemaInvestigacion;
 
 import controller.GeneralController;
+import model.LimitsDB;
 import validaciones.ValidaLibrary;
 
-public class SpecializationView {
+public class SpecializationView implements LimitsDB {
     public static void menuEspecializacion(GeneralController controller) {
         byte bOpcion = 0;
         do {
@@ -30,11 +31,23 @@ public class SpecializationView {
         } while (bOpcion != 4);
     }
 
+    private static int alta(GeneralController controller) {
+        return 0;
+    }
+
+    private static int eliminar(GeneralController controller) {
+        return 0;
+    }
+
+    private static void busqueda(GeneralController controller) {
+
+    }
+
     private static byte opcionMenu() {
         byte bOpcion = 0;
         boolean errorControl = true;
 
-        System.out.println("\n\nMIEMBRO: ");
+        System.out.println("\n\nESPECIALIZACION: ");
         System.out.println("1. Anadir.");
         System.out.println("2. Eliminar.");
         System.out.println("3. Busqueda.");
