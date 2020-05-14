@@ -12,8 +12,14 @@ public class HeadquartersController implements IHeadquartersController {
     public int add(Headquarters oObject) {
         int iRes = 0;
         if (oObject.checkHeadquarters()) {
-            String sql = "INSERT INTO headquarters VALUES (\"" + oObject.getsName() + "\",\"" + oObject.getsAddres() + "\",\"" +
-                    oObject.getsLocality()+ "\",\""+ oObject.getoCountry().getsName() +"\n)";
+            String sql;
+            if (oObject.getsAddres() != null) {
+                sql = "INSERT INTO headquarters VALUES (\"" + oObject.getsName() + "\",\"" + oObject.getsAddres() + "\",\"" +
+                        oObject.getsLocality()+ "\",\""+ oObject.getoCountry().getsName() +"\n)";
+            } else {
+                sql = "INSERT INTO headquarters VALUES (\"" + oObject.getsName() + "\",null,\"" +
+                        oObject.getsLocality()+ "\",\""+ oObject.getoCountry().getsName() +"\n)";
+            }
             iRes = ConexionDB.executeUpdate(sql);
         }
         return iRes;
