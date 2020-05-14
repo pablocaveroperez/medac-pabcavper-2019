@@ -55,8 +55,6 @@ public class DepartmentView implements LimitsDB {
             System.out.println("Existe " + iNumDepartamentos + " en la base de datos.");
         else
             System.out.println("No existe ningun departamento con ese nombre en la base de datos.");
-
-
     }
 
     private static int eliminar(GeneralController controller) {
