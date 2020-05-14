@@ -35,6 +35,10 @@ public class Member implements LimitsDB, IMember {
         setoUser(oUser);
     }
 
+    public Member(String sDNI) {
+        setsDNI(sDNI);
+    }
+
     public User getoUser() {
         return oUser;
     }
