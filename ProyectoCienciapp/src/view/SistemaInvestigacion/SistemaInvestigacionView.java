@@ -49,7 +49,7 @@ public class SistemaInvestigacionView {
         while (errorControl) {
             try {
                 bOpcion = (byte) ValidaLibrary.valida("Introduce una opcion: ", 1, 7, 3);
-                errorControl = true;
+                errorControl = false;
             } catch (Exception exception) {
                 System.out.println("Error: " + exception.getMessage());
             }
