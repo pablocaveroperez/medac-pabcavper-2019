@@ -14,7 +14,7 @@ public class ArticleXCategoryController implements IArticleXCategoryController {
         if (oObject.checkArticleXCategory()) {
             String sql = "INSERT INTO article_x_category VALUES (\"" + oObject.getoArticle().getIdArticle()
                     + "\",\"" + oObject.getoCategory().getsCategoryName()
-                    + "\n)";
+                    + "\")";
             iRes = ConexionDB.executeUpdate(sql);
         }
         return iRes;

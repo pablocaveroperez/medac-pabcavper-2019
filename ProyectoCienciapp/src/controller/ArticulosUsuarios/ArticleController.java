@@ -12,10 +12,18 @@ public class ArticleController implements IArticleController {
     public int add(Article oObject) {
         int iRes = 0;
         if (oObject.checkArticle()) {
-            String sql = "INSERT INTO article VALUES (\"" + oObject.getIdArticle() + "\",\"" + oObject.getsName()
-                    + "\",\"" + oObject.getShPages() + "\",\"" + oObject.getoMagazine().getsName()
-                    + "\",\"" + oObject.getoMember().getsDNI() +  "\",\"" + oObject.getoArticleType().getsTypeName()
-                    + "\n)";
+            String sql;
+            if (!oObject.isPageNull()) {
+                sql = "INSERT INTO article VALUES (\"" + oObject.getIdArticle() + "\",\"" + oObject.getsName()
+                        + "\",\"" + oObject.getShPages() + "\",\"" + oObject.getoMagazine().getsName()
+                        + "\",\"" + oObject.getoMember().getsDNI() +  "\",\"" + oObject.getoArticleType().getsTypeName()
+                        + "\n)";
+            } else {
+                sql = "INSERT INTO article VALUES (\"" + oObject.getIdArticle() + "\",\"" + oObject.getsName()
+                        + "\",null,\"" + oObject.getoMagazine().getsName()
+                        + "\",\"" + oObject.getoMember().getsDNI() +  "\",\"" + oObject.getoArticleType().getsTypeName()
+                        + "\n)";
+            }
             iRes = ConexionDB.executeUpdate(sql);
         }
         return iRes;

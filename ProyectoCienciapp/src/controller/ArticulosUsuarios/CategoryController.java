@@ -12,7 +12,12 @@ public class CategoryController implements ICategoryController {
     public int add(Category oObject) {
         int iRes = 0;
         if (oObject.checkCategory()) {
-            String sql = "INSERT INTO category VALUES (\"" + oObject.getsCategoryName() + "\",\"" + oObject.getsDescription() + "\n)";
+            String sql;
+            if (oObject.getsDescription() != null) {
+                sql = "INSERT INTO category VALUES (\"" + oObject.getsCategoryName() + "\",\"" + oObject.getsDescription() + "\")";
+            } else {
+                sql = "INSERT INTO category VALUES (\"" + oObject.getsCategoryName() + "\",null)";
+            }
             iRes = ConexionDB.executeUpdate(sql);
         }
         return iRes;

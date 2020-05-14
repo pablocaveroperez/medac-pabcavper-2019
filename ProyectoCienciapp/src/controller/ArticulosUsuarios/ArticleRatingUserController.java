@@ -12,10 +12,18 @@ public class ArticleRatingUserController implements IArticleRatingUserController
     public int add(ArticleRatingUser oObject) {
         int iRes = 0;
         if (oObject.checkArticleRatingUser()) {
-            String sql = "INSERT INTO articleratinguser VALUES (\"" + oObject.getoUser().getsUsername()
-                    + "\",\"" + oObject.getoArticle().getIdArticle()
-                    + "\",\"" + oObject.getsComment() + "\",\"" + oObject.getbRating()
-                    + "\n)";
+            String sql;
+            if (oObject.getsComment() != null) {
+                sql = "INSERT INTO articleratinguser VALUES (\"" + oObject.getoUser().getsUsername()
+                        + "\",\"" + oObject.getoArticle().getIdArticle()
+                        + "\",\"" + oObject.getsComment() + "\",\"" + oObject.getbRating()
+                        + "\")";
+            } else {
+                sql = "INSERT INTO articleratinguser VALUES (\"" + oObject.getoUser().getsUsername()
+                        + "\",\"" + oObject.getoArticle().getIdArticle()
+                        + "\",null,\"" + oObject.getbRating()
+                        + "\")";
+            }
             iRes = ConexionDB.executeUpdate(sql);
         }
         return iRes;

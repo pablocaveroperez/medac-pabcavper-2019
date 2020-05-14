@@ -13,6 +13,7 @@ public class Article implements LimitsDB, IArticle {
     private Magazine oMagazine;             // NN
     private Member oMember;                 // NN
     private ArticleType oArticleType;       // NN
+    private boolean pageNull;
 
     public Article(byte idArticle, String sName, Magazine oMagazine, Member oMember, ArticleType oArticleType) {
         setIdArticle(idArticle);
@@ -20,6 +21,7 @@ public class Article implements LimitsDB, IArticle {
         setoMagazine(oMagazine);
         setoMember(oMember);
         setoArticleType(oArticleType);
+        setPageNull(true);
     }
 
     public Article(byte idArticle, short shPages, String sName, Magazine oMagazine, Member oMember, ArticleType oArticleType) {
@@ -56,8 +58,19 @@ public class Article implements LimitsDB, IArticle {
         if (shPages > MINCHAR && shPages < MAXCHAR_1000) {
             this.shPages = shPages;
             bExito = true;
+            setPageNull(false);
         }
+        if (shPages == -1)
+            setPageNull(true);
         return bExito;
+    }
+
+    public boolean isPageNull() {
+        return pageNull;
+    }
+
+    private void setPageNull(boolean pageNull) {
+        this.pageNull = pageNull;
     }
 
     @Override

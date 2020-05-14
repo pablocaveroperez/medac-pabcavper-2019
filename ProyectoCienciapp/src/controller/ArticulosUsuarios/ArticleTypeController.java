@@ -12,7 +12,12 @@ public class ArticleTypeController implements IArticleTypeController {
     public int add(ArticleType oObject) {
         int iRes = 0;
         if (oObject.checkArticleType()) {
-            String sql = "INSERT INTO articletype VALUES (\"" + oObject.getsTypeName() + "\",\"" + oObject.getsDescription() + "\n)";
+            String sql;
+            if (oObject.getsDescription() != null) {
+                sql = "INSERT INTO articletype VALUES (\"" + oObject.getsTypeName() + "\",\"" + oObject.getsDescription() + "\")";
+            } else {
+                sql = "INSERT INTO articletype VALUES (\"" + oObject.getsTypeName() + "\",null)";
+            }
             iRes = ConexionDB.executeUpdate(sql);
         }
         return iRes;
