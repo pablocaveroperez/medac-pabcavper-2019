@@ -30,12 +30,24 @@ public class ResearchTeamView {
         } while (bOpcion != 4);
     }
 
+    private static int alta(GeneralController controller) {
+        return 0;
+    }
+
+    private static int eliminar(GeneralController controller) {
+        return 0;
+    }
+
+    private static void busqueda(GeneralController controller) {
+
+    }
+
 
     private static byte opcionMenu() {
         byte bOpcion = 0;
         boolean errorControl = true;
 
-        System.out.println("\n\nDEPARTAMENTO: ");
+        System.out.println("\n\nEQUIPOS DE INVESTIGACION: ");
         System.out.println("1. Anadir.");
         System.out.println("2. Eliminar.");
         System.out.println("3. Busqueda.");
