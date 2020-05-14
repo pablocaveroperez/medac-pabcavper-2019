@@ -203,6 +203,28 @@ public class MemberView implements LimitsDB {
     }
 
     private static void busqueda(GeneralController controller) {
+        String sDNI = null;
+        Member oMember = null;
+        int iNumMiembros;
+        boolean errorControl = true;
+
+        while (errorControl) {
+            try {
+                sDNI = ValidaLibrary.leer("Introduce el DNI: ");
+                if (sDNI.length() == DNILENGTH)
+                    errorControl = false;
+            }catch (Exception exception) {
+                System.out.println("Error: " + exception.getMessage());
+            }
+        }
+
+        oMember = new Member(sDNI);
+        iNumMiembros = controller.existeMember(oMember);
+
+        if (iNumMiembros > 0)
+            System.out.println("Existe " + iNumMiembros + " en la base de datos.");
+        else
+            System.out.println("No existe ningun miembro con ese dni en la base de datos.");
     }
 
     private static byte opcionMenu() {
