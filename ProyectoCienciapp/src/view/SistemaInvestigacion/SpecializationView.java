@@ -68,7 +68,23 @@ public class SpecializationView implements LimitsDB {
     }
 
     private static int eliminar(GeneralController controller) {
-        return 0;
+        String sSpecialization = null;
+        boolean errorControl = true;
+        Specialization oSpecialization = null;
+
+        while (errorControl) {
+            try {
+                sSpecialization = ValidaLibrary.leer("Introduce la especializacion: ");
+                if (sSpecialization.length() > MINCHAR && sSpecialization.length() < MAXCHAR_50)
+                    errorControl = false;
+            }catch (Exception exception) {
+                System.out.println("Error: " + exception.getMessage());
+            }
+        }
+
+        oSpecialization = new Specialization(sSpecialization);
+
+        return controller.removeSpecialization(oSpecialization);
     }
 
     private static void busqueda(GeneralController controller) {
