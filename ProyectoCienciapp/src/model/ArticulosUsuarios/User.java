@@ -64,7 +64,7 @@ public class User implements LimitsDB, IUser {
     @Override
     public boolean setsEmail(String sEmail) {
         boolean bExito = false;
-        if (sEmail != null && sEmail.length() > MINCHAR && sEmail.length() < MAXCHAR_500) {
+        if (sEmail == null || (sEmail.length() > MINCHAR && sEmail.length() < MAXCHAR_500)) {
             this.sEmail = sEmail;
             bExito = true;
         }

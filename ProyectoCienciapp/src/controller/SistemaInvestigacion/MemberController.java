@@ -18,13 +18,13 @@ public class MemberController implements IMemberController {
                         + "\",null,\"" + oObject.getsName()
                         + "\",\"" + oObject.getsSurname() + "\",\"" + oObject.getoSpecialization().getsName()
                         + "\",\"" + oObject.getoResearchTeam().getIdResearchTeam() + "\",\"" + oObject.getoUser().getsUsername()
-                        +"\n)";
+                        +"\")";
             } else {
                 sql = "INSERT INTO member VALUES (\"" + oObject.getsDNI()
                         + "\",\"" + oObject.getBirthDate() + "\",\"" + oObject.getsName()
                         + "\",\"" + oObject.getsSurname() + "\",\"" + oObject.getoSpecialization().getsName()
                         + "\",\"" + oObject.getoResearchTeam().getIdResearchTeam() + "\",\"" + oObject.getoUser().getsUsername()
-                        +"\n)";
+                        +"\")";
             }
             iRes = ConexionDB.executeUpdate(sql);
         }

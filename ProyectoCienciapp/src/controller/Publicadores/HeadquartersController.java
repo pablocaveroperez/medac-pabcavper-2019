@@ -15,10 +15,10 @@ public class HeadquartersController implements IHeadquartersController {
             String sql;
             if (oObject.getsAddres() != null) {
                 sql = "INSERT INTO headquarters VALUES (\"" + oObject.getsName() + "\",\"" + oObject.getsAddres() + "\",\"" +
-                        oObject.getsLocality()+ "\",\""+ oObject.getoCountry().getsName() +"\n)";
+                        oObject.getsLocality()+ "\",\""+ oObject.getoCountry().getsName() +"\")";
             } else {
                 sql = "INSERT INTO headquarters VALUES (\"" + oObject.getsName() + "\",null,\"" +
-                        oObject.getsLocality()+ "\",\""+ oObject.getoCountry().getsName() +"\n)";
+                        oObject.getsLocality()+ "\",\""+ oObject.getoCountry().getsName() +"\")";
             }
             iRes = ConexionDB.executeUpdate(sql);
         }

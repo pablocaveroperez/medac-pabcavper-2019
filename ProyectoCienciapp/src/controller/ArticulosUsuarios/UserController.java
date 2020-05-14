@@ -12,8 +12,13 @@ public class UserController implements IUserController {
     public int add(User oObject) {
         int iRes = 0;
         if (oObject.checkUser()) {
-            String sql = "INSERT INTO user VALUES (\"" + oObject.getsUsername() + "\",\"" + oObject.getsPassword() + "\",\"" +
-                    oObject.getsEmail() + "\n)";
+            String sql;
+            if (oObject.getsEmail() != null) {
+                sql = "INSERT INTO user VALUES (\"" + oObject.getsUsername() + "\",\"" + oObject.getsPassword() + "\",\"" +
+                        oObject.getsEmail() + "\")";
+            } else {
+                sql = "INSERT INTO user VALUES (\"" + oObject.getsUsername() + "\",\"" + oObject.getsPassword() + "\",null)";
+            }
             iRes = ConexionDB.executeUpdate(sql);
         }
         return iRes;

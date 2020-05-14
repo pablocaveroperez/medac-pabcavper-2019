@@ -13,7 +13,7 @@ public class MagazineController implements IMagazineController {
     public int add(Magazine oObject) {
         int iRes = 0;
         if (oObject.checkMagazine()) {
-            String sql = "INSERT INTO magazine VALUES (\"" + oObject.getsName() + "\",\"" + oObject.getoHeadquarters().getsName() +"\n)";
+            String sql = "INSERT INTO magazine VALUES (\"" + oObject.getsName() + "\",\"" + oObject.getoHeadquarters().getsName() +"\")";
             iRes = ConexionDB.executeUpdate(sql);
         }
         return iRes;
