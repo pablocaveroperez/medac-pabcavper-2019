@@ -90,7 +90,22 @@ public class ResearchTeamView implements LimitsDB {
     }
 
     private static int eliminar(GeneralController controller) {
-        return 0;
+        byte idResearchTeam = 0;
+        boolean errorControl = true;
+        ResearchTeam oResearchTeam = null;
+
+        while (errorControl) {
+            try {
+                idResearchTeam = (byte) ValidaLibrary.valida("Introduce el ID del equipo: ", MINCHAR, MAXCHAR_30,3);
+                errorControl = false;
+            }catch (Exception exception) {
+                System.out.println("Error: " + exception.getMessage());
+            }
+        }
+
+        oResearchTeam = new ResearchTeam(idResearchTeam);
+
+        return controller.removeResearchTeam(oResearchTeam);
     }
 
     private static void busqueda(GeneralController controller) {
