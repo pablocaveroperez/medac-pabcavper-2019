@@ -6,6 +6,11 @@ public class ArticleXCategory implements IArticleXCategory {
     private Article oArticle;       // PRIMARY KEY Y FOREIGN KEY
     private Category oCategory;     // PRIMARY KEY Y FOREIGN KEY
 
+    public ArticleXCategory(Article oArticle, Category oCategory) {
+        setoArticle(oArticle);
+        setoCategory(oCategory);
+    }
+
     @Override
     public Article getoArticle() {
         return oArticle;

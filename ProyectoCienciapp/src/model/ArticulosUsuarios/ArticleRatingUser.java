@@ -23,6 +23,11 @@ public class ArticleRatingUser implements LimitsDB, IArticleRatingUser {
         setbRating(bRating);
     }
 
+    public ArticleRatingUser(User oUser, Article oArticle) {
+        setoUser(oUser);
+        setoArticle(oArticle);
+    }
+
     @Override
     public User getoUser() {
         return oUser;

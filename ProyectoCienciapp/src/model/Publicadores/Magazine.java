@@ -8,6 +8,15 @@ public class Magazine implements LimitsDB, IMagazine {
     private String sName;                   //PRIMARY KEY
     private Headquarters oHeadquarters;     // NN
 
+    public Magazine(String sName, Headquarters oHeadquarters) {
+        setsName(sName);
+        setoHeadquarters(oHeadquarters);
+    }
+
+    public Magazine(String sName) {
+        setsName(sName);
+    }
+
     @Override
     public String getsName() {
         return sName;

@@ -33,6 +33,10 @@ public class Article implements LimitsDB, IArticle {
         setoArticleType(oArticleType);
     }
 
+    public Article(byte idArticle) {
+        setIdArticle(idArticle);
+    }
+
     @Override
     public byte getIdArticle() {
         return idArticle;

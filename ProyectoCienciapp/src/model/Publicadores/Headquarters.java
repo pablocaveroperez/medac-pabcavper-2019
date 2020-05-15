@@ -24,6 +24,10 @@ public class Headquarters implements LimitsDB, IHeadquarters {
         setoCountry(oCountry);
     }
 
+    public Headquarters(String sName) {
+        setsName(sName);
+    }
+
     @Override
     public String getsName() {
         return sName;
