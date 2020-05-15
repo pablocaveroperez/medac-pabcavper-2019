@@ -6,6 +6,8 @@ import model.LimitsDB;
 import model.SistemaInvestigacion.University;
 import validaciones.ValidaLibrary;
 
+import java.util.List;
+
 public class UniversityView implements LimitsDB {
     public static void menuUniversidades(GeneralController controller) {
         byte bOpcion = 0;
@@ -27,10 +29,26 @@ public class UniversityView implements LimitsDB {
                 case 3:
                     busqueda(controller);
                     break;
+                case 4:
+                    mostrarTodas(controller);
+                    break;
                 default:
                     System.out.println("Volviendo...");
             }
         } while (bOpcion != 4);
+    }
+
+    private static void mostrarTodas(GeneralController controller) {
+        List<University> lUniversity;
+
+        lUniversity = controller.getSistemaInvestigacionController().getUniversityController().getTodasUniversidades();
+
+        if (lUniversity != null) {
+            for (University oUniversity : lUniversity) {
+                System.out.println(oUniversity);
+            }
+        }else
+            System.out.println("No hay ninguna universidad en la base de datos.");
     }
 
     private static void busqueda(GeneralController controller) {
