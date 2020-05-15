@@ -2,6 +2,8 @@ package controller.SistemaInvestigacion;
 
 import model.SistemaInvestigacion.ResearchTeam;
 
+import java.util.List;
+
 public interface IResearchTeamController {
     // #########
     // # CRUDS #
@@ -14,4 +16,6 @@ public interface IResearchTeamController {
     // # QUERIES #
     // ###########
     int existeEquipoInvestigacion(ResearchTeam oObject);
+
+    List<ResearchTeam> getTodosEquipos();
 }
