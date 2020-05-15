@@ -35,7 +35,7 @@ public class FacultyView implements LimitsDB {
                 default:
                     System.out.println("Volviendo...");
             }
-        } while (bOpcion != 4);
+        } while (bOpcion != 5);
     }
 
     private static void mostrarTodas(GeneralController controller) {
@@ -48,7 +48,7 @@ public class FacultyView implements LimitsDB {
                 System.out.println(oFaculty);
             }
         }else
-            System.out.println("No hay ninguna universidad en la base de datos.");
+            System.out.println("No hay ninguna facultad en la base de datos.");
     }
 
     private static int alta(GeneralController controller) {
@@ -137,11 +137,12 @@ public class FacultyView implements LimitsDB {
         System.out.println("1. Anadir.");
         System.out.println("2. Eliminar.");
         System.out.println("3. Busqueda.");
-        System.out.println("4. Volver.");
+        System.out.println("4. Mostrar todo.");
+        System.out.println("5. Volver.");
 
         while (errorControl) {
             try {
-                bOpcion = (byte) ValidaLibrary.valida("Introduce una opcion: ", 1, 4, 3);
+                bOpcion = (byte) ValidaLibrary.valida("Introduce una opcion: ", 1, 5, 3);
                 errorControl = false;
             } catch (Exception exception) {
                 System.out.println("Error: " + exception.getMessage());

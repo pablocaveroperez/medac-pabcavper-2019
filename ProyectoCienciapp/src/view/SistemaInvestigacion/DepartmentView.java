@@ -6,6 +6,8 @@ import model.SistemaInvestigacion.Department;
 import model.SistemaInvestigacion.Faculty;
 import validaciones.ValidaLibrary;
 
+import java.util.List;
+
 public class DepartmentView implements LimitsDB {
     public static void menuDepartamentos(GeneralController controller) {
         byte bOpcion = 0;
@@ -27,10 +29,26 @@ public class DepartmentView implements LimitsDB {
                 case 3:
                     busqueda(controller);
                     break;
+                case 4:
+                    mostrarTodas(controller);
+                    break;
                 default:
                     System.out.println("Volviendo...");
             }
-        } while (bOpcion != 4);
+        } while (bOpcion != 5);
+    }
+
+    private static void mostrarTodas(GeneralController controller) {
+        List<Department> lDepartamentos;
+
+        lDepartamentos = controller.getSistemaInvestigacionController().getDepartmentController().getTodosDepartamentos();
+
+        if (lDepartamentos != null) {
+            for (Department oDepartment : lDepartamentos) {
+                System.out.println(oDepartment);
+            }
+        }else
+            System.out.println("No hay ningun departamento en la base de datos.");
     }
 
     private static void busqueda(GeneralController controller) {

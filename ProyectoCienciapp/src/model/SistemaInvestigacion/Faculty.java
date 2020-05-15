@@ -73,7 +73,7 @@ public class Faculty implements LimitsDB, IFaculty {
         salida += "*******************";
         salida += "\nFacultad: " + getsFaculName();
         salida += "\nUniversidad: " + getoUniversity().getsUniName();
-        salida += "*******************";
+        salida += "\n*******************";
         return salida;
     }
 }
