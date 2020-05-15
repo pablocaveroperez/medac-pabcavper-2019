@@ -97,7 +97,7 @@ public class Department implements LimitsDB, IDepartment {
         if (getsName() != null)
             salida += "\nNombre: " + getsName();
         salida += "\nFacultad: " + getoFaculty().getsFaculName();
-        salida += "*******************";
+        salida += "\n*******************";
         return salida;
     }
 }
