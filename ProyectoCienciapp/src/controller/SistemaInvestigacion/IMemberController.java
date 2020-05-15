@@ -2,6 +2,8 @@ package controller.SistemaInvestigacion;
 
 import model.SistemaInvestigacion.Member;
 
+import java.util.List;
+
 public interface IMemberController {
     // #########
     // # CRUDS #
@@ -14,4 +16,6 @@ public interface IMemberController {
     // # QUERIES #
     // ###########
     int existeMember(Member oObject);
+
+    List<Member> getTodosMiembros();
 }

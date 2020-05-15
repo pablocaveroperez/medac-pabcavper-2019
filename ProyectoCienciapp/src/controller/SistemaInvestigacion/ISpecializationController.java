@@ -2,6 +2,8 @@ package controller.SistemaInvestigacion;
 
 import model.SistemaInvestigacion.Specialization;
 
+import java.util.List;
+
 public interface ISpecializationController {
     // #########
     // # CRUDS #
@@ -14,4 +16,6 @@ public interface ISpecializationController {
     // # QUERIES #
     // ###########
     int existeEspecializacion(Specialization oObject);
+
+    List<Specialization> getTodosEspecializaciones();
 }

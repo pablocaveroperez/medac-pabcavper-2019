@@ -1,7 +1,17 @@
 package controller.SistemaInvestigacion;
 
 import controller.ConexionDB;
+import model.ArticulosUsuarios.User;
 import model.SistemaInvestigacion.Member;
+import model.SistemaInvestigacion.ResearchTeam;
+import model.SistemaInvestigacion.Specialization;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.GregorianCalendar;
+import java.util.List;
 
 public class MemberController implements IMemberController {
 
@@ -50,5 +60,33 @@ public class MemberController implements IMemberController {
             iRes = ConexionDB.executeCount(sql);
         }
         return iRes;
+    }
+
+    @Override
+    public List<Member> getTodosMiembros() {
+        List<Member> lMiembros = new ArrayList<>();
+
+        String sql = "SELECT dni, birthDate, name, surname, specialization, idResearchTeam, user FROM member";
+        Statement stm = null;
+
+        try {
+            stm = ConexionDB.getConnection().createStatement();
+            ResultSet rs = stm.executeQuery(sql);
+            while (rs.next()) {
+                String sDNI = rs.getString(1);
+                GregorianCalendar birthDate = new GregorianCalendar();
+                birthDate.setTime(rs.getDate(2));
+                String sName = rs.getString(3);
+                String sSurname = rs.getString(4);
+                Specialization oSpecialization = new Specialization(rs.getString(5));
+                ResearchTeam oResearchTeam = new ResearchTeam((byte) rs.getInt(6));
+                User oUser = new User(rs.getString(7));
+                lMiembros.add(new Member(sDNI, birthDate, sName, sSurname, oSpecialization, oResearchTeam, oUser));
+            }
+            stm.close();
+        } catch (SQLException exception) {
+            lMiembros = null;
+        }
+        return lMiembros;
     }
 }
