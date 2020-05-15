@@ -118,7 +118,7 @@ public class University implements LimitsDB, IUniversity {
         salida += "\nPais: " + getoCountry().getsName();
         if (getsAddres() != null)
             salida += "\nDireccion: " + getsAddres();
-        salida += "*******************";
+        salida += "\n*******************";
         return salida;
     }
 }
