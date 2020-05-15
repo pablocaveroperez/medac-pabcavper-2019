@@ -1,7 +1,15 @@
 package controller.SistemaInvestigacion;
 
 import controller.ConexionDB;
+import model.Ctrl.Country;
 import model.SistemaInvestigacion.University;
+
+import javax.xml.transform.Result;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 public class UniversityController implements IUniversityController {
 
@@ -43,5 +51,30 @@ public class UniversityController implements IUniversityController {
             iRes = ConexionDB.executeCount(sql);
         }
         return iRes;
+    }
+
+
+    @Override
+    public List<University> getTodasUniversidades() {
+        List<University> lUniversity = new ArrayList<>();
+
+        String sql = "SELECT uniName, locality, addres, country FROM university";
+        Statement stm = null;
+
+        try {
+            stm = ConexionDB.getConnection().createStatement();
+            ResultSet rs = stm.executeQuery(sql);
+            while (rs.next()) {
+                String sUniName = rs.getString(1);
+                String sLocality = rs.getString(2);
+                String sAddres = rs.getString(3);
+                Country oCountry = new Country(rs.getString(4));
+                lUniversity.add(new University(sUniName,sLocality, sAddres, oCountry));
+            }
+            stm.close();
+        } catch (SQLException exception) {
+            lUniversity = null;
+        }
+        return lUniversity;
     }
 }

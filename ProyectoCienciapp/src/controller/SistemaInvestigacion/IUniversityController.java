@@ -2,6 +2,8 @@ package controller.SistemaInvestigacion;
 
 import model.SistemaInvestigacion.University;
 
+import java.util.List;
+
 public interface IUniversityController {
     // #########
     // # CRUDS #
@@ -14,4 +16,6 @@ public interface IUniversityController {
     // # QUERIES #
     // ###########
     int existeUniversidad(University oUniversity);
+
+    List<University> getTodasUniversidades();
 }
