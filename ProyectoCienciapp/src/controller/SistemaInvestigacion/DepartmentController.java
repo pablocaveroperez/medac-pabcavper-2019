@@ -2,6 +2,14 @@ package controller.SistemaInvestigacion;
 
 import controller.ConexionDB;
 import model.SistemaInvestigacion.Department;
+import model.SistemaInvestigacion.Faculty;
+import model.SistemaInvestigacion.University;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 public class DepartmentController implements IDepartmentController {
 
@@ -42,5 +50,28 @@ public class DepartmentController implements IDepartmentController {
             iRes = ConexionDB.executeCount(sql);
         }
         return iRes;
+    }
+
+    @Override
+    public List<Department> getTodosDepartamentos() {
+        List<Department> lDepartment = new ArrayList<>();
+
+        String sql = "SELECT idDepartment, faculName, name FROM department";
+        Statement stm = null;
+
+        try {
+            stm = ConexionDB.getConnection().createStatement();
+            ResultSet rs = stm.executeQuery(sql);
+            while (rs.next()) {
+                byte idDepartment = (byte) rs.getInt(1);
+                String sFaculNane = rs.getString(2);
+                String sName = rs.getString(3);
+                lDepartment.add(new Department(idDepartment,new Faculty(sFaculNane),sName));
+            }
+            stm.close();
+        } catch (SQLException exception) {
+            lDepartment = null;
+        }
+        return lDepartment;
     }
 }

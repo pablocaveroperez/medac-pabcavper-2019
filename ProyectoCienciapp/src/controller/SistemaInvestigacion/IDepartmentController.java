@@ -2,6 +2,8 @@ package controller.SistemaInvestigacion;
 
 import model.SistemaInvestigacion.Department;
 
+import java.util.List;
+
 public interface IDepartmentController {
     // #########
     // # CRUDS #
@@ -14,4 +16,6 @@ public interface IDepartmentController {
     // # QUERIES #
     // ###########
     int existeDepartamento(Department oObject);
+
+    List<Department> getTodosDepartamentos();
 }
