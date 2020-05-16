@@ -47,7 +47,7 @@ public class Principal {
                         // TODO Auto-generated catch block
                             exception.printStackTrace();
                         }
-                        System.out.println("Hasta luego maricarmen.");
+                        System.out.println("Hasta luego " + oUsuario.getsUsername() + ".");
                 }
             } while (bOpcionPrincipal != 5);
         } else
