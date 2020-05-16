@@ -43,7 +43,7 @@ public class FacultyView implements LimitsDB {
 
         lFaculty = controller.getSistemaInvestigacionController().getFacultyController().getTodasFacultades();
 
-        if (lFaculty != null) {
+        if (lFaculty.size() != 0) {
             for (Faculty oFaculty : lFaculty) {
                 System.out.println(oFaculty);
             }

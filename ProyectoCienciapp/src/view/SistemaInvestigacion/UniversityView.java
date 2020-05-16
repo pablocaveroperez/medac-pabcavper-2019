@@ -43,7 +43,7 @@ public class UniversityView implements LimitsDB {
 
         lUniversity = controller.getSistemaInvestigacionController().getUniversityController().getTodasUniversidades();
 
-        if (lUniversity != null) {
+        if (lUniversity.size() != 0) {
             for (University oUniversity : lUniversity) {
                 System.out.println(oUniversity);
             }

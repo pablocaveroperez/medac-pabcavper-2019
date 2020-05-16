@@ -43,7 +43,7 @@ public class SpecializationView implements LimitsDB {
 
         lEspecializacion = controller.getSistemaInvestigacionController().getSpecializationController().getTodosEspecializaciones();
 
-        if (lEspecializacion != null) {
+        if (lEspecializacion.size() != 0) {
             for (Specialization oEspecializacion : lEspecializacion) {
                 System.out.println(oEspecializacion);
             }

@@ -43,7 +43,7 @@ public class ResearchTeamView implements LimitsDB {
 
         lEquipo = controller.getSistemaInvestigacionController().getResearchTeamController().getTodosEquipos();
 
-        if (lEquipo != null) {
+        if (lEquipo.size() != 0)  {
             for (ResearchTeam oEquipo : lEquipo) {
                 System.out.println(oEquipo);
             }

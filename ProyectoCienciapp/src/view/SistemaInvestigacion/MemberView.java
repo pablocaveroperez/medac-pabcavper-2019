@@ -47,7 +47,7 @@ public class MemberView implements LimitsDB {
 
         lMiembro = controller.getSistemaInvestigacionController().getMemberController().getTodosMiembros();
 
-        if (lMiembro != null) {
+        if (lMiembro.size() != 0) {
             for (Member oMember : lMiembro) {
                 System.out.println(oMember);
             }

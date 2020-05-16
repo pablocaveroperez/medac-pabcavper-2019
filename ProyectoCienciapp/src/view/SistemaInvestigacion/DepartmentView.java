@@ -43,7 +43,7 @@ public class DepartmentView implements LimitsDB {
 
         lDepartamentos = controller.getSistemaInvestigacionController().getDepartmentController().getTodosDepartamentos();
 
-        if (lDepartamentos != null) {
+        if (lDepartamentos.size() != 0) {
             for (Department oDepartment : lDepartamentos) {
                 System.out.println(oDepartment);
             }
