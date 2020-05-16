@@ -40,6 +40,10 @@ public class SistemaInvestigacionController {
         return memberController;
     }
 
+    public ResearchTeamController getResearchTeamController() {
+        return researchTeamController;
+    }
+
     // UNIVERSIDAD
     // #################
     public int addUniversity(University oUniversity) {
