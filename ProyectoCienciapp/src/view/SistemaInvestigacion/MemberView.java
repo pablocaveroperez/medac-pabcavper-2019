@@ -151,7 +151,7 @@ public class MemberView implements LimitsDB {
         errorControl = true;
         while (errorControl) {
             try {
-                sSurname = ValidaLibrary.leer("Introduce el nombre: ");
+                sSurname = ValidaLibrary.leer("Introduce el apellido: ");
                 if (sSurname.length() > MINCHAR && sSurname.length() < MAXCHAR_50)
                     errorControl = false;
             }catch (Exception exception) {

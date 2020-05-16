@@ -126,7 +126,6 @@ public class User implements LimitsDB, IUser {
         String salida = "";
         salida += "\n**********************";
         salida += "\nNombre de usuario: " + getsUsername();
-        salida += "\nEmail: " + getsEmail();
         salida += "\n**********************";
         return salida;
     }

@@ -23,7 +23,7 @@ public class Principal {
                 oUsuario = LoginView.login(controller);
             }
 
-            System.out.println("¡Bienvenido a la aplicacion. Puto!");
+            System.out.println("¡Bienvenido a la aplicacion, " + oUsuario.getsUsername() + "!");
 
             do {
                 bOpcionPrincipal = menuPrincipal();

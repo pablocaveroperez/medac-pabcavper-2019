@@ -9,7 +9,7 @@ import java.util.Objects;
 
 public class Member implements LimitsDB, IMember {
     private String sDNI;                                            // Primary Key
-    private GregorianCalendar birthDate = new GregorianCalendar();  // NULO
+    private GregorianCalendar birthDate;  // NULO
     private String sName;                                           // NN
     private String sSurname;                                        // NN
     private Specialization oSpecialization;                         // NN
@@ -74,9 +74,14 @@ public class Member implements LimitsDB, IMember {
     @Override
     public boolean setBirthDate(GregorianCalendar birthDate) {
         boolean bExito = false;
-        if (birthDate.get(Calendar.YEAR) > 1900 && birthDate.get(Calendar.YEAR) < 2020) {
-            this.birthDate = birthDate;
+        if (birthDate == null) {
+            this.birthDate = null;
             bExito = true;
+        }else {
+            if (birthDate.get(Calendar.YEAR) > 1900 && birthDate.get(Calendar.YEAR) < 2020) {
+                this.birthDate = birthDate;
+                bExito = true;
+            }
         }
         return bExito;
     }

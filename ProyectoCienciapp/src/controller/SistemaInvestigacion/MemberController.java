@@ -10,6 +10,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
 
@@ -74,14 +75,20 @@ public class MemberController implements IMemberController {
             ResultSet rs = stm.executeQuery(sql);
             while (rs.next()) {
                 String sDNI = rs.getString(1);
+                Date oDate = rs.getDate(2);
                 GregorianCalendar birthDate = new GregorianCalendar();
-                birthDate.setTime(rs.getDate(2));
                 String sName = rs.getString(3);
                 String sSurname = rs.getString(4);
                 Specialization oSpecialization = new Specialization(rs.getString(5));
                 ResearchTeam oResearchTeam = new ResearchTeam((byte) rs.getInt(6));
                 User oUser = new User(rs.getString(7));
-                lMiembros.add(new Member(sDNI, birthDate, sName, sSurname, oSpecialization, oResearchTeam, oUser));
+                if (oDate != null) {
+                    birthDate.setTime(oDate);
+                    lMiembros.add(new Member(sDNI, birthDate, sName, sSurname, oSpecialization, oResearchTeam, oUser));
+                }else {
+                    lMiembros.add(new Member(sDNI, sName, sSurname, oSpecialization, oResearchTeam, oUser));
+                }
+
             }
             stm.close();
         } catch (SQLException exception) {
