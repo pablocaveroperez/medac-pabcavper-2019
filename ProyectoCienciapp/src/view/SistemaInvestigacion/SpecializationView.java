@@ -2,8 +2,11 @@ package view.SistemaInvestigacion;
 
 import controller.GeneralController;
 import model.LimitsDB;
+import model.SistemaInvestigacion.Member;
 import model.SistemaInvestigacion.Specialization;
 import validaciones.ValidaLibrary;
+
+import java.util.List;
 
 public class SpecializationView implements LimitsDB {
     public static void menuEspecializacion(GeneralController controller) {
@@ -26,10 +29,26 @@ public class SpecializationView implements LimitsDB {
                 case 3:
                     busqueda(controller);
                     break;
+                case 4:
+                    mostrarTodas(controller);
+                    break;
                 default:
                     System.out.println("Volviendo...");
             }
-        } while (bOpcion != 4);
+        } while (bOpcion != 5);
+    }
+
+    private static void mostrarTodas(GeneralController controller) {
+        List<Specialization> lEspecializacion;
+
+        lEspecializacion = controller.getSistemaInvestigacionController().getSpecializationController().getTodosEspecializaciones();
+
+        if (lEspecializacion != null) {
+            for (Specialization oEspecializacion : lEspecializacion) {
+                System.out.println(oEspecializacion);
+            }
+        }else
+            System.out.println("No hay ningun miembro en la base de datos.");
     }
 
     private static int alta(GeneralController controller) {
@@ -120,11 +139,12 @@ public class SpecializationView implements LimitsDB {
         System.out.println("1. Anadir.");
         System.out.println("2. Eliminar.");
         System.out.println("3. Busqueda.");
-        System.out.println("4. Volver.");
+        System.out.println("4. Mostrar todas.");
+        System.out.println("5. Volver.");
 
         while (errorControl) {
             try {
-                bOpcion = (byte) ValidaLibrary.valida("Introduce una opcion: ", 1, 4, 3);
+                bOpcion = (byte) ValidaLibrary.valida("Introduce una opcion: ", 1, 5, 3);
                 errorControl = false;
             } catch (Exception exception) {
                 System.out.println("Error: " + exception.getMessage());
