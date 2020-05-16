@@ -5,7 +5,7 @@ import controller.GeneralController;
 import model.ArticulosUsuarios.User;
 import validaciones.ValidaLibrary;
 import view.ArticulosUsuarios.LoginView;
-import view.Ctrl.PaisView;
+import view.Ctrl.CountryView;
 import view.SistemaInvestigacion.SistemaInvestigacionView;
 
 import java.sql.SQLException;
@@ -33,7 +33,7 @@ public class Principal {
                         SistemaInvestigacionView.menuSistemaInvestigacion(controller);
                         break;
                     case 2:
-                        PaisView.menuPais(controller);
+                        CountryView.menuPais(controller);
                         break;
                     case 3:
 

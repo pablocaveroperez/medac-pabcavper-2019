@@ -1,10 +1,11 @@
 package view.Ctrl;
 
 import controller.GeneralController;
+import model.Ctrl.Country;
 import model.LimitsDB;
 import validaciones.ValidaLibrary;
 
-public class PaisView implements LimitsDB {
+public class CountryView implements LimitsDB {
     public static void menuPais(GeneralController controller) {
         byte bOpcion = 0;
         do {
@@ -32,6 +33,26 @@ public class PaisView implements LimitsDB {
                     System.out.println("Volviendo...");
             }
         } while (bOpcion != 5);
+    }
+
+    private static int alta(GeneralController controller) {
+        String sPais = null;
+        boolean errorControl = true;
+        Country oCountry = null;
+
+        while (errorControl) {
+            try {
+                sPais = ValidaLibrary.leer("Introduce el Pais: ");
+                if (sPais.length() > MINCHAR && sPais.length() < MAXCHAR_70)
+                    errorControl = false;
+            }catch (Exception exception) {
+                System.out.println("Error: " + exception.getMessage());
+            }
+        }
+
+        oCountry = new Country(sPais);
+
+        return controller.getCountryController().add(oCountry);
     }
 
     private static byte opcionMenu() {
