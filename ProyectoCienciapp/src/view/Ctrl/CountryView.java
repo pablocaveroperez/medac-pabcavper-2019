@@ -55,6 +55,26 @@ public class CountryView implements LimitsDB {
         return controller.getCountryController().add(oCountry);
     }
 
+    private static int eliminar(GeneralController controller) {
+        String sPais = null;
+        boolean errorControl = true;
+        Country oCountry = null;
+
+        while (errorControl) {
+            try {
+                sPais = ValidaLibrary.leer("Introduce el Pais: ");
+                if (sPais.length() > MINCHAR && sPais.length() < MAXCHAR_70)
+                    errorControl = false;
+            }catch (Exception exception) {
+                System.out.println("Error: " + exception.getMessage());
+            }
+        }
+
+        oCountry = new Country(sPais);
+
+        return controller.getCountryController().add(oCountry);
+    }
+
     private static byte opcionMenu() {
         byte bOpcion = 0;
         boolean errorControl = true;
