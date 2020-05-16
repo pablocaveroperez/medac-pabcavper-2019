@@ -75,6 +75,32 @@ public class CountryView implements LimitsDB {
         return controller.getCountryController().add(oCountry);
     }
 
+    private static void busqueda(GeneralController controller) {
+        String sPais = null;
+        boolean errorControl = true;
+        Country oCountry = null;
+        int iNumPaises;
+
+        while (errorControl) {
+            try {
+                sPais = ValidaLibrary.leer("Introduce el Pais: ");
+                if (sPais.length() > MINCHAR && sPais.length() < MAXCHAR_70)
+                    errorControl = false;
+            }catch (Exception exception) {
+                System.out.println("Error: " + exception.getMessage());
+            }
+        }
+
+        oCountry = new Country(sPais);
+        iNumPaises = controller.getCountryController().existePais(oCountry);
+
+        if (iNumPaises > 0) {
+            System.out.println("Existen " + iNumPaises + " en la base de datos");
+        }else {
+            System.out.println("No existe ningun pais con ese nombre en la base de datos.");
+        }
+    }
+
     private static byte opcionMenu() {
         byte bOpcion = 0;
         boolean errorControl = true;
