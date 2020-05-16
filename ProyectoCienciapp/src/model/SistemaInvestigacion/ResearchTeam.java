@@ -64,9 +64,14 @@ public class ResearchTeam implements LimitsDB, IResearchTeam {
     @Override
     public boolean setsName(String sName) {
         boolean bExito = false;
-        if (sName == null || (sName.length() > MINCHAR && sName.length() < MAXCHAR_40)) {
-            this.sName = sName;
+        if (sName == null) {
+            this.sName = "No hay nombre";
             bExito = true;
+        }else{
+            if (sName.length() > MINCHAR && sName.length() < MAXCHAR_40) {
+                this.sName = sName;
+                bExito = true;
+            }
         }
         return bExito;
     }
