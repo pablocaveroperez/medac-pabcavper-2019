@@ -46,7 +46,7 @@ public class ArticleTypeView implements LimitsDB {
 
         while (errorControl) {
             try {
-                sTypeName = ValidaLibrary.leer("Introduce el username: ");
+                sTypeName = ValidaLibrary.leer("Introduce el nombre: ");
                 if (sTypeName.length() < MAXCHAR_50 && sTypeName.length() > MINCHAR)
                     errorControl = false;
             } catch (Exception exception) {
@@ -76,7 +76,7 @@ public class ArticleTypeView implements LimitsDB {
 
         while (errorControl) {
             try {
-                sTypeName = ValidaLibrary.leer("Introduce el username: ");
+                sTypeName = ValidaLibrary.leer("Introduce el nombre: ");
                 if (sTypeName.length() < MAXCHAR_50 && sTypeName.length() > MINCHAR)
                     errorControl = false;
             } catch (Exception exception) {
@@ -96,7 +96,7 @@ public class ArticleTypeView implements LimitsDB {
 
         while (errorControl) {
             try {
-                sTypeName = ValidaLibrary.leer("Introduce el username: ");
+                sTypeName = ValidaLibrary.leer("Introduce el nombre: ");
                 if (sTypeName.length() < MAXCHAR_50 && sTypeName.length() > MINCHAR)
                     errorControl = false;
             } catch (Exception exception) {
