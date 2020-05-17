@@ -2,7 +2,11 @@ package view.Publicaciones;
 
 import controller.GeneralController;
 import model.LimitsDB;
+import model.Publicadores.Headquarters;
+import model.Publicadores.Magazine;
 import validaciones.ValidaLibrary;
+
+import java.util.List;
 
 public class MagazineView implements LimitsDB {
     public static void menuMagazine(GeneralController controller) {
@@ -32,6 +36,19 @@ public class MagazineView implements LimitsDB {
                     System.out.println("Volviendo...");
             }
         } while (bOpcion != 5);
+    }
+
+    private static void mostrarTodas(GeneralController controller) {
+        List<Magazine> lMagazine;
+
+        lMagazine = controller.getPublicadoresController().getMagazineController().getTodasRevistas();
+
+        if (lMagazine.size() != 0) {
+            for (Magazine oMagazine: lMagazine) {
+                System.out.println(oMagazine);
+            }
+        }else
+            System.out.println("No hay ninguna revista en la base de datos.");
     }
 
     private static byte opcionMenu() {
