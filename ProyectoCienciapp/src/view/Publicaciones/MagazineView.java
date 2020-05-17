@@ -38,6 +38,32 @@ public class MagazineView implements LimitsDB {
         } while (bOpcion != 5);
     }
 
+    private static void busqueda(GeneralController controller) {
+        String sName = null;
+        boolean errorControl = true;
+        Magazine oMagazine = null;
+        int iNumRevistas;
+
+        while (errorControl) {
+            try {
+                sName = ValidaLibrary.leer("Introduce el nombre de la revista: ");
+                if (sName.length() > MINCHAR && sName.length() < MAXCHAR_100)
+                    errorControl = false;
+            } catch (Exception exception) {
+                System.out.println("Error: " + exception.getMessage());
+            }
+        }
+
+        oMagazine = new Magazine(sName);
+        iNumRevistas = controller.existeMagazine(oMagazine);
+
+        if (iNumRevistas > 0) {
+            System.out.println("Existen " + iNumRevistas + " en la base de datos");
+        }else {
+            System.out.println("No existe ninguna revista con ese nombre en la base de datos.");
+        }
+    }
+
     private static void mostrarTodas(GeneralController controller) {
         List<Magazine> lMagazine;
 
