@@ -2,6 +2,8 @@ package controller.ArticulosUsuarios;
 
 import model.ArticulosUsuarios.User;
 
+import java.util.List;
+
 public interface IUserController {
     // #########
     // # CRUDS #
@@ -16,4 +18,6 @@ public interface IUserController {
     int existeUser(User oObject);
 
     int checkLogin(User oUsuario);
+
+    List<User> getTodasCategorias();
 }
