@@ -19,5 +19,5 @@ public interface IUserController {
 
     int checkLogin(User oUsuario);
 
-    List<User> getTodasCategorias();
+    List<User> getTodasUsuarios();
 }

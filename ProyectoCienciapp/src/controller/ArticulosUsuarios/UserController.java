@@ -59,7 +59,7 @@ public class UserController implements IUserController {
     }
 
     @Override
-    public List<User> getTodasCategorias(){
+    public List<User> getTodasUsuarios(){
         List<User> lUsers = new ArrayList<>();
 
         String sql = "SELECT username, password, email FROM user";
