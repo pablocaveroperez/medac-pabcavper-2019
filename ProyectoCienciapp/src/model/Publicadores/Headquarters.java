@@ -50,9 +50,14 @@ public class Headquarters implements LimitsDB, IHeadquarters {
     @Override
     public boolean setsAddres(String sAddres) {
         boolean bExito = false;
-        if (sAddres.length() > MINCHAR && sAddres.length() < MAXCHAR_100) {
-            this.sAddres = sAddres;
+        if (sAddres == null) {
+            this.sAddres = "No hay direccion";
             bExito = true;
+        }else {
+            if (sAddres.length() > MINCHAR && sAddres.length() < MAXCHAR_100) {
+                this.sAddres = sAddres;
+                bExito = true;
+            }
         }
         return bExito;
     }
