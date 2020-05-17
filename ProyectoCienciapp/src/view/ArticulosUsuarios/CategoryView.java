@@ -37,6 +37,31 @@ public class CategoryView implements LimitsDB {
         } while (bOpcion != 5);
     }
 
+    private static void busqueda(GeneralController controller) {
+        String sName = null;
+        boolean errorControl = true;
+        Category oCategory = null;
+        int iNumCategorias;
+
+        while (errorControl) {
+            try {
+                sName = ValidaLibrary.leer("Introduce el nombre de la categoria: ");
+                if (sName.length() > MINCHAR && sName.length() < MAXCHAR_60)
+                    errorControl = false;
+            } catch (Exception exception) {
+                System.out.println("Error: " + exception.getMessage());
+            }
+        }
+
+        oCategory = new Category(sName);
+        iNumCategorias = controller.existeCategory(oCategory);
+
+        if (iNumCategorias > 0) {
+            System.out.println("Existen " + iNumCategorias + " en la base de datos.");
+        }else
+            System.out.println("No existe ninguna categoria con ese nombre.");
+    }
+
     private static void mostrarTodas(GeneralController controller) {
         List<Category> lCategoria;
 
