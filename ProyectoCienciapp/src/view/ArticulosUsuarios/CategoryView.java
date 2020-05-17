@@ -1,8 +1,11 @@
 package view.ArticulosUsuarios;
 
 import controller.GeneralController;
+import model.ArticulosUsuarios.Category;
 import model.LimitsDB;
 import validaciones.ValidaLibrary;
+
+import java.util.List;
 
 public class CategoryView implements LimitsDB {
     public static void menuCategory(GeneralController controller) {
@@ -32,6 +35,19 @@ public class CategoryView implements LimitsDB {
                     System.out.println("Volviendo...");
             }
         } while (bOpcion != 5);
+    }
+
+    private static void mostrarTodas(GeneralController controller) {
+        List<Category> lCategoria;
+
+        lCategoria = controller.getArticulosUsuariosController().getCategoryController().getTodasCategorias();
+
+        if (lCategoria.size() != 0) {
+            for (Category oCategory: lCategoria) {
+                System.out.println(oCategory);
+            }
+        }else
+            System.out.println("No hay ninguna categoria en la base de datos.");
     }
 
     private static byte opcionMenu() {
