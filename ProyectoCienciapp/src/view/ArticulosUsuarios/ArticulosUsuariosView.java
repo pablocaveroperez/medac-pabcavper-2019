@@ -23,6 +23,7 @@ public class ArticulosUsuariosView {
                     ArticleView.menuArticleType(controller);
                     break;
                 case 5:
+                    ArticleXCategoryView.menuArticleXCategory(controller);
                     break;
                 case 6:
                     break;
