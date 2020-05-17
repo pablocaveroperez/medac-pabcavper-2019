@@ -26,6 +26,7 @@ public class ArticulosUsuariosView {
                     ArticleXCategoryView.menuArticleXCategory(controller);
                     break;
                 case 6:
+                    ArticleRatingUserView.menuArticleXCategory(controller);
                     break;
                 default:
                     System.out.println("Volviendo...");
