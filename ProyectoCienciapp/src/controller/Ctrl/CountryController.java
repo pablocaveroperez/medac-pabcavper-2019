@@ -2,6 +2,14 @@ package controller.Ctrl;
 
 import controller.ConexionDB;
 import model.Ctrl.Country;
+import model.SistemaInvestigacion.Department;
+import model.SistemaInvestigacion.Faculty;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 public class CountryController implements ICountryController {
 
@@ -37,5 +45,26 @@ public class CountryController implements ICountryController {
             iRes = ConexionDB.executeCount(sql);
         }
         return iRes;
+    }
+
+    @Override
+    public List<Country> getTodosPaises() {
+        List<Country> lCountry = new ArrayList<>();
+
+        String sql = "SELECT name FROM country";
+        Statement stm = null;
+
+        try {
+            stm = ConexionDB.getConnection().createStatement();
+            ResultSet rs = stm.executeQuery(sql);
+            while (rs.next()) {
+                String sName = rs.getString(1);
+                lCountry.add(new Country(sName));
+            }
+            stm.close();
+        } catch (SQLException exception) {
+            lCountry = null;
+        }
+        return lCountry;
     }
 }

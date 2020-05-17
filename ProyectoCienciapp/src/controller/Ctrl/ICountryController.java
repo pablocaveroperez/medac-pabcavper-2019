@@ -2,6 +2,8 @@ package controller.Ctrl;
 
 import model.Ctrl.Country;
 
+import java.util.List;
+
 public interface ICountryController {
     // #########
     // # CRUDS #
@@ -14,4 +16,6 @@ public interface ICountryController {
     // # QUERIES #
     // ###########
     int existePais(Country oCountry);
+
+    List<Country> getTodosPaises();
 }
