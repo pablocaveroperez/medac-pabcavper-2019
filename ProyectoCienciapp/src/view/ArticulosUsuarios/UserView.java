@@ -37,6 +37,31 @@ public class UserView implements LimitsDB {
         } while (bOpcion != 5);
     }
 
+    private static void busqueda(GeneralController controller) {
+        String sUsername = null;
+        User oUser = null;
+        boolean errorControl = true;
+        int iNumUsers;
+
+        while (errorControl) {
+            try {
+                sUsername = ValidaLibrary.leer("Introduce el username: ");
+                if (sUsername.length() < MAXCHAR_50 && sUsername.length() > MINCHAR)
+                    errorControl = false;
+            } catch (Exception exception) {
+                System.out.println("Error: " + exception.getMessage());
+            }
+        }
+
+        oUser = new User(sUsername);
+        iNumUsers = controller.existeUser(oUser);
+
+        if (iNumUsers > 0) {
+            System.out.println("Existen " + iNumUsers + " en la base de datos.");
+        }else
+            System.out.println("No existe ningun usuario con ese username.");
+    }
+
     private static void mostrarTodas(GeneralController controller) {
         List<User> lUser;
 
