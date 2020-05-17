@@ -10,6 +10,7 @@ public class ArticulosUsuariosView {
             bOpcion = opcionMenu();
             switch (bOpcion) {
                 case 1:
+                    CategoryView.menuCategory(controller);
                     break;
                 case 2:
                     break;
