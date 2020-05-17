@@ -34,7 +34,7 @@ public class CategoryController implements ICategoryController {
     @Override
     public int remove(Category oObject) {
         int iRes = 0;
-        String sql = "DELETE FROM category WHERE category LIKE \"" + oObject.getsCategoryName() + "\"";
+        String sql = "DELETE FROM category WHERE categoryName LIKE \"" + oObject.getsCategoryName() + "\"";
         iRes = ConexionDB.executeUpdate(sql);
         return iRes;
     }
