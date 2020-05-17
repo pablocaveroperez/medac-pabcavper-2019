@@ -2,6 +2,13 @@ package controller.ArticulosUsuarios;
 
 import controller.ConexionDB;
 import model.ArticulosUsuarios.ArticleType;
+import model.ArticulosUsuarios.User;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ArticleTypeController implements IArticleTypeController {
 
@@ -42,5 +49,27 @@ public class ArticleTypeController implements IArticleTypeController {
             iRes = ConexionDB.executeCount(sql);
         }
         return iRes;
+    }
+
+    @Override
+    public List<ArticleType> getTodasTipoArticulo(){
+        List<ArticleType> lTipoArticulo = new ArrayList<>();
+
+        String sql = "SELECT typeName, description FROM articletype";
+        Statement stm = null;
+
+        try {
+            stm = ConexionDB.getConnection().createStatement();
+            ResultSet rs = stm.executeQuery(sql);
+            while (rs.next()) {
+                String sTypeName = rs.getString(1);
+                String sDescription = rs.getString(2);
+                lTipoArticulo.add(new ArticleType(sTypeName, sDescription));
+            }
+            stm.close();
+        } catch (SQLException exception) {
+            lTipoArticulo = null;
+        }
+        return lTipoArticulo;
     }
 }

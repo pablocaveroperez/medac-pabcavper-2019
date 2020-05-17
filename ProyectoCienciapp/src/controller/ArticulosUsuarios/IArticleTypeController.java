@@ -2,6 +2,8 @@ package controller.ArticulosUsuarios;
 
 import model.ArticulosUsuarios.ArticleType;
 
+import java.util.List;
+
 public interface IArticleTypeController {
     // #########
     // # CRUDS #
@@ -14,4 +16,6 @@ public interface IArticleTypeController {
     // # QUERIES #
     // ###########
     int existeArticleType(ArticleType oObject);
+
+    List<ArticleType> getTodasTipoArticulo();
 }
