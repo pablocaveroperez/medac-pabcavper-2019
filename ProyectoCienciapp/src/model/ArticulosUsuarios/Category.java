@@ -30,9 +30,14 @@ public class Category implements ICategory, LimitsDB {
     @Override
     public boolean setsDescription(String sDescription) {
         boolean bExito = false;
-        if (sDescription.length() < MAXCHAR_200 && sDescription.length() > MINCHAR){
-            this.sDescription = sDescription;
+        if (sDescription == null) {
+            this.sDescription = "No hay descripcion";
             bExito = true;
+        }else {
+            if (sDescription.length() < MAXCHAR_200 && sDescription.length() > MINCHAR){
+                this.sDescription = sDescription;
+                bExito = true;
+            }
         }
         return bExito;
     }
