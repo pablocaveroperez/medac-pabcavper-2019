@@ -66,7 +66,7 @@ public class ArticleTypeView implements LimitsDB {
         }
 
         oType = new ArticleType(sTypeName, sDescription);
-        return controller.removeArticleType(oType);
+        return controller.addArticleType(oType);
     }
 
     private static int eliminar(GeneralController controller) {
