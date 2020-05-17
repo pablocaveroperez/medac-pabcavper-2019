@@ -4,6 +4,8 @@ import controller.GeneralController;
 import model.ArticulosUsuarios.Article;
 import model.ArticulosUsuarios.ArticleType;
 import model.LimitsDB;
+import model.Publicadores.Magazine;
+import model.SistemaInvestigacion.Member;
 import validaciones.ValidaLibrary;
 
 import java.util.List;
@@ -43,14 +45,14 @@ public class ArticleView implements LimitsDB {
         String sMagazine = null;
         String sDNI = null;
         String sTypeName = null;
-        int idArticle = 0;
+        byte idArticle = 0;
         short shPages = 1;
         Article oArticle = null;
         boolean errorControl = true;
 
         while (errorControl) {
             try {
-                idArticle = (int) ValidaLibrary.valida("Introduce el ID del articulo: ",MINCHAR,MAXCHAR_100,1);
+                idArticle = (byte) ValidaLibrary.valida("Introduce el ID del articulo: ",MINCHAR,MAXCHAR_100,3);
                 errorControl = false;
             } catch (Exception exception) {
                 System.out.println("Error: " + exception.getMessage());
@@ -71,7 +73,39 @@ public class ArticleView implements LimitsDB {
         errorControl = true;
         while (errorControl) {
             try {
-                sTypeName = ValidaLibrary.leer("Introduce el nombre: ");
+                shPages = (short) ValidaLibrary.valida("Introduce el numero de paginas(Pon 1 si no se quiere introducir): )",MINCHAR,MAXCHAR_1000,4);
+                errorControl = false;
+            } catch (Exception exception) {
+                System.out.println("Error: " + exception.getMessage());
+            }
+        }
+
+        errorControl = true;
+        while (errorControl) {
+            try {
+                sMagazine = ValidaLibrary.leer("Introduce el nombre de la revista: ");
+                if (sMagazine.length() > MINCHAR && sMagazine.length() < MAXCHAR_100)
+                    errorControl = false;
+            } catch (Exception exception) {
+                System.out.println("Error: " + exception.getMessage());
+            }
+        }
+
+        errorControl = true;
+        while (errorControl) {
+            try {
+                sDNI = ValidaLibrary.leer("Introduce el dni del autor: ");
+                if (sDNI.length() == DNILENGTH)
+                    errorControl = false;
+            } catch (Exception exception) {
+                System.out.println("Error: " + exception.getMessage());
+            }
+        }
+
+        errorControl = true;
+        while (errorControl) {
+            try {
+                sTypeName = ValidaLibrary.leer("Introduce el tipo de articulo: ");
                 if (sTypeName.length() < MAXCHAR_50 && sTypeName.length() > MINCHAR)
                     errorControl = false;
             } catch (Exception exception) {
@@ -79,8 +113,9 @@ public class ArticleView implements LimitsDB {
             }
         }
 
+        oArticle = new Article(idArticle,shPages,sName,new Magazine(sMagazine),new Member(sDNI),new ArticleType(sTypeName));
 
-        return
+        return controller.addArticle(oArticle);
     }
 
     private static int eliminar(GeneralController controller) {
