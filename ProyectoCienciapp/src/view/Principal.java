@@ -4,6 +4,7 @@ import controller.ConexionDB;
 import controller.GeneralController;
 import model.ArticulosUsuarios.User;
 import validaciones.ValidaLibrary;
+import view.ArticulosUsuarios.ArticulosUsuariosView;
 import view.ArticulosUsuarios.LoginView;
 import view.Ctrl.CountryView;
 import view.Publicaciones.PublicadoresView;
@@ -40,7 +41,7 @@ public class Principal {
                         PublicadoresView.menuPublicadores(controller);
                         break;
                     case 4:
-
+                        ArticulosUsuariosView.menuArticulosUsuarios(controller);
                         break;
                     default:
                         try {
