@@ -2,6 +2,8 @@ package controller.ArticulosUsuarios;
 
 import model.ArticulosUsuarios.ArticleXCategory;
 
+import java.util.List;
+
 public interface IArticleXCategoryController {
     // #########
     // # CRUDS #
@@ -14,4 +16,6 @@ public interface IArticleXCategoryController {
     // # QUERIES #
     // ###########
     int existeArticleXCategoryController(ArticleXCategory oObject);
+
+    List<ArticleXCategory> getTodasArticuloXCategoria();
 }

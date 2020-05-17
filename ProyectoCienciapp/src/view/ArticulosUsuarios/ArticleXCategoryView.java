@@ -140,16 +140,16 @@ public class ArticleXCategoryView implements LimitsDB {
     }
 
     private static void mostrarTodas(GeneralController controller) {
-        List<Article> lArticle;
+        List<ArticleXCategory> lArticleXCategory;
 
-        lArticle = controller.getArticulosUsuariosController().getArticleController().getTodasArticulo();
+        lArticleXCategory = controller.getArticulosUsuariosController().getArticleXCategoryController().getTodasArticuloXCategoria();
 
-        if (lArticle.size() > 0) {
-            for (Article oArticle : lArticle) {
-                System.out.println(oArticle);
+        if (lArticleXCategory.size() > 0) {
+            for (ArticleXCategory oArticleXCategory : lArticleXCategory) {
+                System.out.println(oArticleXCategory);
             }
         }else{
-            System.out.println("No hay ningun articulo en la base de datos.");
+            System.out.println("No hay ningun articuloXcategoria en la base de datos.");
         }
     }
 
