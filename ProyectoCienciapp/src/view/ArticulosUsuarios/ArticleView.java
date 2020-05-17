@@ -161,16 +161,16 @@ public class ArticleView implements LimitsDB {
     }
 
     private static void mostrarTodas(GeneralController controller) {
-        List<ArticleType> lArticleType;
+        List<Article> lArticle;
 
-        lArticleType = controller.getArticulosUsuariosController().getArticleTypeController().getTodasTipoArticulo();
+        lArticle = controller.getArticulosUsuariosController().getArticleController().getTodasArticulo();
 
-        if (lArticleType.size() > 0) {
-            for (ArticleType oArticleType : lArticleType) {
-                System.out.println(oArticleType);
+        if (lArticle.size() > 0) {
+            for (Article oArticle : lArticle) {
+                System.out.println(oArticle);
             }
         }else{
-            System.out.println("No hay ningun tipo de articulo en la base de datos.");
+            System.out.println("No hay ningun articulo en la base de datos.");
         }
     }
 
