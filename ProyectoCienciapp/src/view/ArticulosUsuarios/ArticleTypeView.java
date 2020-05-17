@@ -38,6 +38,37 @@ public class ArticleTypeView implements LimitsDB {
         } while (bOpcion != 5);
     }
 
+    private static int alta(GeneralController controller) {
+        String sTypeName = null;
+        String sDescription = null;
+        ArticleType oType = null;
+        boolean errorControl = true;
+
+        while (errorControl) {
+            try {
+                sTypeName = ValidaLibrary.leer("Introduce el username: ");
+                if (sTypeName.length() < MAXCHAR_50 && sTypeName.length() > MINCHAR)
+                    errorControl = false;
+            } catch (Exception exception) {
+                System.out.println("Error: " + exception.getMessage());
+            }
+        }
+
+        errorControl = true;
+        while (errorControl) {
+            try {
+                sDescription = ValidaLibrary.leer("Introduce la descripcion(Puede ser nulo): ");
+                if (sDescription.equals("") || (sDescription.length() < MAXCHAR_250 && sDescription.length() > MINCHAR))
+                    errorControl = false;
+            } catch (Exception exception) {
+                System.out.println("Error: " + exception.getMessage());
+            }
+        }
+
+        oType = new ArticleType(sTypeName, sDescription);
+        return controller.removeArticleType(oType);
+    }
+
     private static int eliminar(GeneralController controller) {
         String sTypeName = null;
         ArticleType oType = null;
