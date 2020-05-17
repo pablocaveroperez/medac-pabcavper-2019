@@ -4,6 +4,7 @@ import controller.GeneralController;
 import model.ArticulosUsuarios.Article;
 import model.ArticulosUsuarios.ArticleType;
 import model.ArticulosUsuarios.ArticleXCategory;
+import model.ArticulosUsuarios.Category;
 import model.LimitsDB;
 import model.Publicadores.Magazine;
 import model.SistemaInvestigacion.Member;
@@ -67,9 +68,9 @@ public class ArticleXCategoryView implements LimitsDB {
             }
         }
 
-        oArticleXCategory = new ArticleXCategory();
+        oArticleXCategory = new ArticleXCategory(new Article(idArticle), new Category(sCategoryName));
 
-        return controller.addArticle(oArticleXCategory);
+        return controller.addArticleXCategory(oArticleXCategory);
     }
 
     private static int eliminar(GeneralController controller) {
