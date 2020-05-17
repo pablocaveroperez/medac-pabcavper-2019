@@ -105,9 +105,10 @@ public class ArticleXCategoryView implements LimitsDB {
 
     private static void busqueda(GeneralController controller) {
         byte idArticle = 0;
-        Article oArticle = null;
+        String sCategoryName = null;
+        ArticleXCategory oArticleXCategory = null;
         boolean errorControl = true;
-        int iNumArticles;
+        int iNumArticlesXCategory;
 
         while (errorControl) {
             try {
@@ -118,13 +119,24 @@ public class ArticleXCategoryView implements LimitsDB {
             }
         }
 
-        oArticle = new Article(idArticle);
-        iNumArticles = controller.existeArticle(oArticle);
+        errorControl = true;
+        while (errorControl) {
+            try {
+                sCategoryName = ValidaLibrary.leer("Introduce la categoria: ");
+                if (sCategoryName.length() > MINCHAR && sCategoryName.length() < MAXCHAR_60)
+                    errorControl = false;
+            } catch (Exception exception) {
+                System.out.println("Error: " + exception.getMessage());
+            }
+        }
 
-        if (iNumArticles > 0) {
-            System.out.println("Existen " + iNumArticles + " en la base de datos.");
+        oArticleXCategory = new ArticleXCategory(new Article(idArticle), new Category(sCategoryName));
+        iNumArticlesXCategory = controller.existeArticleXCategory(oArticleXCategory);
+
+        if (iNumArticlesXCategory > 0) {
+            System.out.println("Existen " + iNumArticlesXCategory + " en la base de datos.");
         }else
-            System.out.println("No existe ningun articulo con ese ID.");
+            System.out.println("No existe ningun articuloXcategoria con ese ID y categoria.");
     }
 
     private static void mostrarTodas(GeneralController controller) {
