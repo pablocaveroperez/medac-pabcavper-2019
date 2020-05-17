@@ -41,7 +41,7 @@ public class CountryController implements ICountryController {
     public int existePais(Country oCountry) {
         int iRes = 0;
         if (oCountry.checkCountry()) {
-            String sql = "SELECT COUNT(*) FROM pais WHERE nombre LIKE \"" + oCountry.getsName() + "\"";
+            String sql = "SELECT COUNT(*) FROM country WHERE name LIKE \"" + oCountry.getsName() + "\"";
             iRes = ConexionDB.executeCount(sql);
         }
         return iRes;
