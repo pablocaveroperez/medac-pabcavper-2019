@@ -13,6 +13,7 @@ public class ArticulosUsuariosView {
                     CategoryView.menuCategory(controller);
                     break;
                 case 2:
+                    UserView.menuUser(controller);
                     break;
                 case 3:
                     break;
