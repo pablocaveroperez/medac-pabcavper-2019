@@ -1,6 +1,7 @@
 package view.Publicaciones;
 
 import controller.GeneralController;
+import model.Ctrl.Country;
 import model.LimitsDB;
 import model.Publicadores.Headquarters;
 import validaciones.ValidaLibrary;
@@ -35,6 +36,62 @@ public class HeadquartersView implements LimitsDB {
                     System.out.println("Volviendo...");
             }
         } while (bOpcion != 5);
+    }
+
+    private static int alta(GeneralController controller) {
+        String sName = null;
+        boolean errorControl = true;
+        String sAddres = null;
+        String sLocality = null;
+        String sCountry = null;
+        Headquarters oHeadquarters = null;
+
+        while (errorControl) {
+            try {
+                sName = ValidaLibrary.leer("Introduce el nombre del HQ: ");
+                if (sName.length() > MINCHAR && sName.length() < MAXCHAR_40)
+                    errorControl = false;
+            }catch (Exception exception) {
+                System.out.println("Error: " + exception.getMessage());
+            }
+        }
+
+        errorControl = true;
+        while (errorControl) {
+            try {
+                sAddres = ValidaLibrary.leer("Introduce la direccion(Puede ser nulo): ");
+                if (sAddres.equals("") || (sAddres.length() > MINCHAR && sAddres.length() < MAXCHAR_100))
+                    errorControl = false;
+            }catch (Exception exception) {
+                System.out.println("Error: " + exception.getMessage());
+            }
+        }
+
+        errorControl = true;
+        while (errorControl) {
+            try {
+                sLocality = ValidaLibrary.leer("Introduce la localidad: ");
+                if (sLocality.length() > MINCHAR && sLocality.length() < MAXCHAR_70)
+                    errorControl = false;
+            } catch (Exception exception) {
+                System.out.println("Error: " + exception.getMessage());
+            }
+        }
+
+        errorControl = true;
+        while (errorControl) {
+            try {
+                sCountry = ValidaLibrary.leer("Introduce el pais en el que esta situado: ");
+                if (sCountry.length() > MINCHAR && sCountry.length() < MAXCHAR_70)
+                    errorControl = false;
+            } catch (Exception exception) {
+                System.out.println("Error: " + exception.getMessage());
+            }
+        }
+
+        oHeadquarters = new Headquarters(sName, sAddres, sLocality, new Country(sCountry));
+
+        return controller.addHeadquarters(oHeadquarters);
     }
 
     private static int eliminar(GeneralController controller) {
