@@ -4,7 +4,7 @@ import controller.GeneralController;
 import model.LimitsDB;
 
 public class ArticleXCategoryView implements LimitsDB {
-    public static void menuArticleType(GeneralController controller) {
+    public static void menuArticleXCategory(GeneralController controller) {
         byte bOpcion = 0;
         do {
             bOpcion = opcionMenu();
