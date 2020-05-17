@@ -75,7 +75,7 @@ public class CountryView implements LimitsDB {
 
         oCountry = new Country(sPais);
 
-        return controller.getCountryController().add(oCountry);
+        return controller.getCountryController().remove(oCountry);
     }
 
     private static void busqueda(GeneralController controller) {
