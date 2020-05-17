@@ -37,6 +37,32 @@ public class HeadquartersView implements LimitsDB {
         } while (bOpcion != 5);
     }
 
+    private static void busqueda(GeneralController controller) {
+        String sName = null;
+        boolean errorControl = true;
+        Headquarters oHeadquarters = null;
+        int iNumHQs;
+
+        while (errorControl) {
+            try {
+                sName = ValidaLibrary.leer("Introduce el nombre del HQ: ");
+                if (sName.length() > MINCHAR && sName.length() < MAXCHAR_40)
+                    errorControl = false;
+            }catch (Exception exception) {
+                System.out.println("Error: " + exception.getMessage());
+            }
+        }
+
+        oHeadquarters = new Headquarters(sName);
+        iNumHQs = controller.getPublicadoresController().existeHeadquarters(oHeadquarters);
+
+        if (iNumHQs > 0) {
+            System.out.println("Existen " + iNumHQs + " en la base de datos");
+        }else {
+            System.out.println("No existe ningun HQ con ese nombre en la base de datos.");
+        }
+    }
+
     private static void mostrarTodas(GeneralController controller) {
         List<Headquarters> lHQ;
 
