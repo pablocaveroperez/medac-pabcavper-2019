@@ -163,7 +163,7 @@ public class ArticleRatingUserView implements LimitsDB {
 
         lArticleRatingUsers = controller.getArticulosUsuariosController().getArticleRatingUserController().getTodasCalificaciones();
 
-        if (lArticleRatingUsers.size() != 0) {
+        if (lArticleRatingUsers.size() > 0) {
             for (ArticleRatingUser oArticleRatingUser: lArticleRatingUsers) {
                 System.out.println(oArticleRatingUser);
             }
