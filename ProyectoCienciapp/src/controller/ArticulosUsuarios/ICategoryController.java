@@ -2,6 +2,8 @@ package controller.ArticulosUsuarios;
 
 import model.ArticulosUsuarios.Category;
 
+import java.util.List;
+
 public interface ICategoryController {
     // #########
     // # CRUDS #
@@ -14,4 +16,6 @@ public interface ICategoryController {
     // # QUERIES #
     // ###########
     int existeCategory(Category oObject);
+
+    List<Category> getTodasCategorias();
 }

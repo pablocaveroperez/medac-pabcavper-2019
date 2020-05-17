@@ -2,6 +2,14 @@ package controller.ArticulosUsuarios;
 
 import controller.ConexionDB;
 import model.ArticulosUsuarios.Category;
+import model.Publicadores.Headquarters;
+import model.Publicadores.Magazine;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 public class CategoryController implements ICategoryController {
 
@@ -42,5 +50,27 @@ public class CategoryController implements ICategoryController {
             iRes = ConexionDB.executeCount(sql);
         }
         return iRes;
+    }
+
+    @Override
+    public List<Category> getTodasCategorias(){
+        List<Category> lCategorias = new ArrayList<>();
+
+        String sql = "SELECT categoryName, description FROM category";
+        Statement stm = null;
+
+        try {
+            stm = ConexionDB.getConnection().createStatement();
+            ResultSet rs = stm.executeQuery(sql);
+            while (rs.next()) {
+                String sCategoryName = rs.getString(1);
+                String sDescription = rs.getString(2);
+                lCategorias.add(new Category(sCategoryName, sDescription));
+            }
+            stm.close();
+        } catch (SQLException exception) {
+            lCategorias = null;
+        }
+        return lCategorias;
     }
 }
