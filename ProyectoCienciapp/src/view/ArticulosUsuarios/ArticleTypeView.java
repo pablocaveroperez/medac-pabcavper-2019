@@ -1,8 +1,12 @@
 package view.ArticulosUsuarios;
 
 import controller.GeneralController;
+import model.ArticulosUsuarios.ArticleType;
+import model.ArticulosUsuarios.User;
 import model.LimitsDB;
 import validaciones.ValidaLibrary;
+
+import java.util.List;
 
 public class ArticleTypeView implements LimitsDB {
     public static void menuArticleType(GeneralController controller) {
@@ -32,6 +36,20 @@ public class ArticleTypeView implements LimitsDB {
                     System.out.println("Volviendo...");
             }
         } while (bOpcion != 5);
+    }
+
+    private static void mostrarTodas(GeneralController controller) {
+        List<ArticleType> lArticleType;
+
+        lArticleType = controller.getArticulosUsuariosController().getArticleTypeController().getTodasTipoArticulo();
+
+        if (lArticleType.size() > 0) {
+            for (ArticleType oArticleType : lArticleType) {
+                System.out.println(oArticleType);
+            }
+        }else{
+            System.out.println("No hay ningun tipo de articulo en la base de datos.");
+        }
     }
 
     private static byte opcionMenu() {
