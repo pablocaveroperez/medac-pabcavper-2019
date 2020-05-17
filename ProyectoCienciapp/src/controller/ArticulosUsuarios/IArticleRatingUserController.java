@@ -2,6 +2,8 @@ package controller.ArticulosUsuarios;
 
 import model.ArticulosUsuarios.ArticleRatingUser;
 
+import java.util.List;
+
 public interface IArticleRatingUserController {
     // #########
     // # CRUDS #
@@ -14,4 +16,6 @@ public interface IArticleRatingUserController {
     // # QUERIES #
     // ###########
     int existeArticleRatingUser(ArticleRatingUser oObject);
+
+    List<ArticleRatingUser> getTodasCalificaciones();
 }

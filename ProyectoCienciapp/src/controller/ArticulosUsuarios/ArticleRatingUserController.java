@@ -1,7 +1,13 @@
 package controller.ArticulosUsuarios;
 
 import controller.ConexionDB;
-import model.ArticulosUsuarios.ArticleRatingUser;
+import model.ArticulosUsuarios.*;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ArticleRatingUserController implements IArticleRatingUserController {
 
@@ -50,5 +56,29 @@ public class ArticleRatingUserController implements IArticleRatingUserController
             iRes = ConexionDB.executeCount(sql);
         }
         return iRes;
+    }
+
+    @Override
+    public List<ArticleRatingUser> getTodasCalificaciones(){
+        List<ArticleRatingUser> lArticuloRatingUser = new ArrayList<>();
+
+        String sql = "SELECT username, idArticle, comment, rating FROM articleratinguser";
+        Statement stm = null;
+
+        try {
+            stm = ConexionDB.getConnection().createStatement();
+            ResultSet rs = stm.executeQuery(sql);
+            while (rs.next()) {
+                String sUsername = rs.getString(1);
+                byte idArticle = rs.getByte(2);
+                String sComment = rs.getString(3);
+                byte bRating = rs.getByte(4);
+                lArticuloRatingUser.add(new ArticleRatingUser(new User(sUsername), new Article(idArticle), sComment, bRating));
+            }
+            stm.close();
+        } catch (SQLException exception) {
+            lArticuloRatingUser = null;
+        }
+        return lArticuloRatingUser;
     }
 }

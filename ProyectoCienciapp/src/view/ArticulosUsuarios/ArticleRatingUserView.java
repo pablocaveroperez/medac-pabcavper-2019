@@ -7,6 +7,8 @@ import model.ArticulosUsuarios.User;
 import model.LimitsDB;
 import validaciones.ValidaLibrary;
 
+import java.util.List;
+
 public class ArticleRatingUserView implements LimitsDB {
     public static void menuArticleXCategory(GeneralController controller) {
         byte bOpcion = 0;
@@ -154,6 +156,19 @@ public class ArticleRatingUserView implements LimitsDB {
             System.out.println("Existen " + iNumArticleRatingUser + " en la base de datos.");
         } else
             System.out.println("No hay ninguna calificacion de ese usuario a ese articulo.");
+    }
+
+    private static void mostrarTodas(GeneralController controller) {
+        List<ArticleRatingUser> lArticleRatingUsers;
+
+        lArticleRatingUsers = controller.getArticulosUsuariosController().getArticleRatingUserController().getTodasCalificaciones();
+
+        if (lArticleRatingUsers.size() != 0) {
+            for (ArticleRatingUser oArticleRatingUser: lArticleRatingUsers) {
+                System.out.println(oArticleRatingUser);
+            }
+        }else
+            System.out.println("No hay ninguna calificacion en la base de datos.");
     }
 
     private static byte opcionMenu() {
