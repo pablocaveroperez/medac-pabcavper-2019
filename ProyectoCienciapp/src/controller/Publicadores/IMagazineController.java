@@ -2,6 +2,8 @@ package controller.Publicadores;
 
 import model.Publicadores.Magazine;
 
+import java.util.List;
+
 public interface IMagazineController {
     // #########
     // # CRUDS #
@@ -14,4 +16,6 @@ public interface IMagazineController {
     // # QUERIES #
     // ###########
     int existeMagazine(Magazine oObject);
+
+    List<Magazine> getTodosRevistas();
 }
