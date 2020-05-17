@@ -37,6 +37,38 @@ public class CategoryView implements LimitsDB {
         } while (bOpcion != 5);
     }
 
+    private static int alta(GeneralController controller) {
+        String sName = null;
+        String sDescription = null;
+        Category oCategory = null;
+        boolean errorControl = true;
+
+        while (errorControl) {
+            try {
+                sName = ValidaLibrary.leer("Introduce el nombre de la categoria: ");
+                if (sName.length() > MINCHAR && sName.length() < MAXCHAR_60)
+                    errorControl = false;
+            } catch (Exception exception) {
+                System.out.println("Error: " + exception.getMessage());
+            }
+        }
+
+        errorControl = true;
+        while (errorControl) {
+            try {
+                sDescription = ValidaLibrary.leer("Introduce la descripcion: ");
+                if (sDescription.equals("") || (sDescription.length() > MINCHAR && sDescription.length() < MAXCHAR_200))
+                    errorControl = false;
+            } catch (Exception exception) {
+                System.out.println("Error: " + exception.getMessage());
+            }
+        }
+
+        oCategory = new Category(sName, sDescription);
+
+        return controller.addCategory(oCategory);
+    }
+
     private static int eliminar(GeneralController controller) {
         String sName = null;
         boolean errorControl = true;
