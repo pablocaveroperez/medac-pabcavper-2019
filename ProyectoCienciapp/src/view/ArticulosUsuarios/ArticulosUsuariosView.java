@@ -16,6 +16,7 @@ public class ArticulosUsuariosView {
                     UserView.menuUser(controller);
                     break;
                 case 3:
+                    ArticleTypeView.menuArticleType(controller);
                     break;
                 case 4:
                     break;
