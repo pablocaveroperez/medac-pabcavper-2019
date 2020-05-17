@@ -38,6 +38,31 @@ public class ArticleTypeView implements LimitsDB {
         } while (bOpcion != 5);
     }
 
+    private static void busqueda(GeneralController controller) {
+        String sTypeName = null;
+        ArticleType oType = null;
+        boolean errorControl = true;
+        int iNumTypes;
+
+        while (errorControl) {
+            try {
+                sTypeName = ValidaLibrary.leer("Introduce el username: ");
+                if (sTypeName.length() < MAXCHAR_50 && sTypeName.length() > MINCHAR)
+                    errorControl = false;
+            } catch (Exception exception) {
+                System.out.println("Error: " + exception.getMessage());
+            }
+        }
+
+        oType = new ArticleType(sTypeName);
+        iNumTypes = controller.existeArticleType(oType);
+
+        if (iNumTypes > 0) {
+            System.out.println("Existen " + iNumTypes + " en la base de datos.");
+        }else
+            System.out.println("No existe ningun tipo de articulo con ese nombre.");
+    }
+
     private static void mostrarTodas(GeneralController controller) {
         List<ArticleType> lArticleType;
 
