@@ -3,7 +3,10 @@ package view.Ctrl;
 import controller.GeneralController;
 import model.Ctrl.Country;
 import model.LimitsDB;
+import model.SistemaInvestigacion.University;
 import validaciones.ValidaLibrary;
+
+import java.util.List;
 
 public class CountryView implements LimitsDB {
     public static void menuPais(GeneralController controller) {
@@ -99,6 +102,19 @@ public class CountryView implements LimitsDB {
         }else {
             System.out.println("No existe ningun pais con ese nombre en la base de datos.");
         }
+    }
+
+    private static void mostrarTodas(GeneralController controller) {
+        List<Country> lPais;
+
+        lPais = controller.getCountryController().getTodosPaises();
+
+        if (lPais.size() != 0) {
+            for (Country oCountry : lPais) {
+                System.out.println(oCountry);
+            }
+        }else
+            System.out.println("No hay ningun pais en la base de datos.");
     }
 
     private static byte opcionMenu() {
