@@ -48,7 +48,7 @@ public class MagazineController implements IMagazineController {
     }
 
     @Override
-    public List<Magazine> getTodosRevistas() {
+    public List<Magazine> getTodasRevistas() {
         List<Magazine> lRevistas = new ArrayList<>();
 
         String sql = "SELECT name, headQuarters FROM magazine";

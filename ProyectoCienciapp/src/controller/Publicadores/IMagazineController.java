@@ -17,5 +17,5 @@ public interface IMagazineController {
     // ###########
     int existeMagazine(Magazine oObject);
 
-    List<Magazine> getTodosRevistas();
+    List<Magazine> getTodasRevistas();
 }
