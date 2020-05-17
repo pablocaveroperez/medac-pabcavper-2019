@@ -137,28 +137,27 @@ public class ArticleView implements LimitsDB {
     }
 
     private static void busqueda(GeneralController controller) {
-        String sTypeName = null;
-        ArticleType oType = null;
+        byte idArticle = 0;
+        Article oArticle = null;
         boolean errorControl = true;
-        int iNumTypes;
+        int iNumArticles;
 
         while (errorControl) {
             try {
-                sTypeName = ValidaLibrary.leer("Introduce el nombre: ");
-                if (sTypeName.length() < MAXCHAR_50 && sTypeName.length() > MINCHAR)
-                    errorControl = false;
+                idArticle = (byte) ValidaLibrary.valida("Introduce el ID del articulo: ",MINCHAR,MAXCHAR_100,3);
+                errorControl = false;
             } catch (Exception exception) {
                 System.out.println("Error: " + exception.getMessage());
             }
         }
 
-        oType = new ArticleType(sTypeName);
-        iNumTypes = controller.existeArticleType(oType);
+        oArticle = new Article(idArticle);
+        iNumArticles = controller.existeArticle(oArticle);
 
-        if (iNumTypes > 0) {
-            System.out.println("Existen " + iNumTypes + " en la base de datos.");
+        if (iNumArticles > 0) {
+            System.out.println("Existen " + iNumArticles + " en la base de datos.");
         }else
-            System.out.println("No existe ningun tipo de articulo con ese nombre.");
+            System.out.println("No existe ningun articulo con ese ID.");
     }
 
     private static void mostrarTodas(GeneralController controller) {
