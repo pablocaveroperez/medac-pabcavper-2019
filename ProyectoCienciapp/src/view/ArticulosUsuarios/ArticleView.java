@@ -119,22 +119,21 @@ public class ArticleView implements LimitsDB {
     }
 
     private static int eliminar(GeneralController controller) {
-        String sTypeName = null;
-        ArticleType oType = null;
+        byte idArticle = 0;
+        Article oArticle = null;
         boolean errorControl = true;
 
         while (errorControl) {
             try {
-                sTypeName = ValidaLibrary.leer("Introduce el nombre: ");
-                if (sTypeName.length() < MAXCHAR_50 && sTypeName.length() > MINCHAR)
-                    errorControl = false;
+                idArticle = (byte) ValidaLibrary.valida("Introduce el ID del articulo: ",MINCHAR,MAXCHAR_100,3);
+                errorControl = false;
             } catch (Exception exception) {
                 System.out.println("Error: " + exception.getMessage());
             }
         }
 
-        oType = new ArticleType(sTypeName);
-        return controller.removeArticleType(oType);
+        oArticle = new Article(idArticle);
+        return controller.removeArticle(oArticle);
     }
 
     private static void busqueda(GeneralController controller) {
