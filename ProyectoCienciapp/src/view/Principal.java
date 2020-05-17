@@ -6,6 +6,7 @@ import model.ArticulosUsuarios.User;
 import validaciones.ValidaLibrary;
 import view.ArticulosUsuarios.LoginView;
 import view.Ctrl.CountryView;
+import view.Publicaciones.PublicadoresView;
 import view.SistemaInvestigacion.SistemaInvestigacionView;
 
 import java.sql.SQLException;
@@ -36,7 +37,7 @@ public class Principal {
                         CountryView.menuPais(controller);
                         break;
                     case 3:
-
+                        PublicadoresView.menuPublicadores(controller);
                         break;
                     case 4:
 
