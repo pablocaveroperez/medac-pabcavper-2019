@@ -66,9 +66,14 @@ public class ArticleRatingUser implements LimitsDB, IArticleRatingUser {
     @Override
     public boolean setsComment(String sComment) {
         boolean bExito = false;
-        if (sComment.length() > MINCHAR && sComment.length() < MAXCHAR_255) {
-            this.sComment = sComment;
+        if (sComment == null) {
+            this.sComment = "Sin comentario";
             bExito = true;
+        } else {
+            if (sComment.length() > MINCHAR && sComment.length() < MAXCHAR_255) {
+                this.sComment = sComment;
+                bExito = true;
+            }
         }
         return bExito;
     }
