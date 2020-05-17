@@ -1,6 +1,7 @@
 package view.ArticulosUsuarios;
 
 import controller.GeneralController;
+import model.ArticulosUsuarios.Article;
 import validaciones.ValidaLibrary;
 
 public class ArticulosUsuariosView {
@@ -19,6 +20,7 @@ public class ArticulosUsuariosView {
                     ArticleTypeView.menuArticleType(controller);
                     break;
                 case 4:
+                    ArticleView.menuArticleType(controller);
                     break;
                 case 5:
                     break;
