@@ -75,7 +75,8 @@ public class ArticleXCategoryView implements LimitsDB {
 
     private static int eliminar(GeneralController controller) {
         byte idArticle = 0;
-        Article oArticle = null;
+        String sCategoryName = null;
+        ArticleXCategory oArticleXCategory = null;
         boolean errorControl = true;
 
         while (errorControl) {
@@ -87,8 +88,19 @@ public class ArticleXCategoryView implements LimitsDB {
             }
         }
 
-        oArticle = new Article(idArticle);
-        return controller.removeArticle(oArticle);
+        errorControl = true;
+        while (errorControl) {
+            try {
+                sCategoryName = ValidaLibrary.leer("Introduce la categoria: ");
+                if (sCategoryName.length() > MINCHAR && sCategoryName.length() < MAXCHAR_60)
+                    errorControl = false;
+            } catch (Exception exception) {
+                System.out.println("Error: " + exception.getMessage());
+            }
+        }
+
+        oArticleXCategory = new ArticleXCategory(new Article(idArticle), new Category(sCategoryName));
+        return controller.removeArticleXCategory(oArticleXCategory);
     }
 
     private static void busqueda(GeneralController controller) {
