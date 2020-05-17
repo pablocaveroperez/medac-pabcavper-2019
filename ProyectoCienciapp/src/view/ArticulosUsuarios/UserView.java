@@ -37,6 +37,50 @@ public class UserView implements LimitsDB {
         } while (bOpcion != 5);
     }
 
+    private static int alta(GeneralController controller) {
+        String sUsername = null;
+        String sPassword = null;
+        String sEmail = null;
+        User oUser = null;
+        boolean errorControl = true;
+
+        while (errorControl) {
+            try {
+                sUsername = ValidaLibrary.leer("Introduce el username: ");
+                if (sUsername.length() < MAXCHAR_50 && sUsername.length() > MINCHAR)
+                    errorControl = false;
+            } catch (Exception exception) {
+                System.out.println("Error: " + exception.getMessage());
+            }
+        }
+
+        errorControl = true;
+        while (errorControl) {
+            try {
+                sPassword = ValidaLibrary.leer("Introduce la contrasena: ");
+                if (sPassword.length() > MINCHAR_PASSWORD && sPassword.length() < MAXCHAR_PASSWORD)
+                    errorControl = false;
+            } catch (Exception exception) {
+                System.out.println("Error: " + exception.getMessage());
+            }
+        }
+
+        errorControl = true;
+        while (errorControl) {
+            try {
+                sEmail = ValidaLibrary.leer("Introduce el email: ");
+                if (sEmail.equals("") || (sEmail.length() > MINCHAR && sEmail.length() < MAXCHAR_500))
+                    errorControl = false;
+            } catch (Exception exception) {
+                System.out.println("Error: " + exception.getMessage());
+            }
+        }
+
+        oUser = new User(sUsername, sPassword, sEmail);
+
+        return controller.addUser(oUser);
+    }
+
     private static int eliminar(GeneralController controller) {
         String sUsername = null;
         boolean errorControl = true;
