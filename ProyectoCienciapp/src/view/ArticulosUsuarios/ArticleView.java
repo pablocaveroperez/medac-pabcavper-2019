@@ -73,7 +73,7 @@ public class ArticleView implements LimitsDB {
         errorControl = true;
         while (errorControl) {
             try {
-                shPages = (short) ValidaLibrary.valida("Introduce el numero de paginas(Pon 1 si no se quiere introducir): )",MINCHAR,MAXCHAR_1000,4);
+                shPages = (short) ValidaLibrary.valida("Introduce el numero de paginas(Pon 1 si no se quiere introducir): ",MINCHAR,MAXCHAR_1000,4);
                 errorControl = false;
             } catch (Exception exception) {
                 System.out.println("Error: " + exception.getMessage());

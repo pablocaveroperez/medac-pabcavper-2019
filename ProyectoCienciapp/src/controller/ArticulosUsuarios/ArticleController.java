@@ -26,12 +26,12 @@ public class ArticleController implements IArticleController {
                 sql = "INSERT INTO article VALUES (\"" + oObject.getIdArticle() + "\",\"" + oObject.getsName()
                         + "\",\"" + oObject.getShPages() + "\",\"" + oObject.getoMagazine().getsName()
                         + "\",\"" + oObject.getoMember().getsDNI() +  "\",\"" + oObject.getoArticleType().getsTypeName()
-                        + "\n)";
+                        + "\")";
             } else {
                 sql = "INSERT INTO article VALUES (\"" + oObject.getIdArticle() + "\",\"" + oObject.getsName()
                         + "\",null,\"" + oObject.getoMagazine().getsName()
                         + "\",\"" + oObject.getoMember().getsDNI() +  "\",\"" + oObject.getoArticleType().getsTypeName()
-                        + "\n)";
+                        + "\")";
             }
             iRes = ConexionDB.executeUpdate(sql);
         }
