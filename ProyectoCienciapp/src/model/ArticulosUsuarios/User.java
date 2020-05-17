@@ -64,9 +64,14 @@ public class User implements LimitsDB, IUser {
     @Override
     public boolean setsEmail(String sEmail) {
         boolean bExito = false;
-        if (sEmail == null || (sEmail.length() > MINCHAR && sEmail.length() < MAXCHAR_500)) {
-            this.sEmail = sEmail;
+        if (sEmail == null) {
+            this.sEmail = "Correo por establecer";
             bExito = true;
+        }else {
+            if (sEmail.length() > MINCHAR && sEmail.length() < MAXCHAR_500) {
+                this.sEmail = sEmail;
+                bExito = true;
+            }
         }
         return bExito;
     }
