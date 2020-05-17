@@ -38,6 +38,25 @@ public class MagazineView implements LimitsDB {
         } while (bOpcion != 5);
     }
 
+    private static int eliminar(GeneralController controller) {
+        String sName = null;
+        boolean errorControl = true;
+        Magazine oMagazine = null;
+
+        while (errorControl) {
+            try {
+                sName = ValidaLibrary.leer("Introduce el nombre de la revista: ");
+                if (sName.length() > MINCHAR && sName.length() < MAXCHAR_100)
+                    errorControl = false;
+            }catch (Exception exception) {
+                System.out.println("Error: " + exception.getMessage());
+            }
+        }
+
+        oMagazine = new Magazine(sName);
+        return controller.removeMagazine(oMagazine);
+    }
+
     private static void busqueda(GeneralController controller) {
         String sName = null;
         boolean errorControl = true;
