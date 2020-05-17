@@ -2,6 +2,8 @@ package controller.Publicadores;
 
 import model.Publicadores.Headquarters;
 
+import java.util.List;
+
 public interface IHeadquartersController {
     // #########
     // # CRUDS #
@@ -14,4 +16,6 @@ public interface IHeadquartersController {
     // # QUERIES #
     // ###########
     int existeHQ(Headquarters oObject);
+
+    List<Headquarters> getTodosHQ();
 }
