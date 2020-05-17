@@ -37,6 +37,26 @@ public class HeadquartersView implements LimitsDB {
         } while (bOpcion != 5);
     }
 
+    private static int eliminar(GeneralController controller) {
+        String sName = null;
+        boolean errorControl = true;
+        Headquarters oHeadquarters = null;
+
+        while (errorControl) {
+            try {
+                sName = ValidaLibrary.leer("Introduce el nombre del HQ: ");
+                if (sName.length() > MINCHAR && sName.length() < MAXCHAR_40)
+                    errorControl = false;
+            }catch (Exception exception) {
+                System.out.println("Error: " + exception.getMessage());
+            }
+        }
+
+        oHeadquarters = new Headquarters(sName);
+
+        return controller.removeHeadquarters(oHeadquarters);
+    }
+
     private static void busqueda(GeneralController controller) {
         String sName = null;
         boolean errorControl = true;
@@ -54,7 +74,7 @@ public class HeadquartersView implements LimitsDB {
         }
 
         oHeadquarters = new Headquarters(sName);
-        iNumHQs = controller.getPublicadoresController().existeHeadquarters(oHeadquarters);
+        iNumHQs = controller.existeHeadquarters(oHeadquarters);
 
         if (iNumHQs > 0) {
             System.out.println("Existen " + iNumHQs + " en la base de datos");
