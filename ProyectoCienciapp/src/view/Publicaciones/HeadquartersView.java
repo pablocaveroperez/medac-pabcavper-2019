@@ -2,7 +2,10 @@ package view.Publicaciones;
 
 import controller.GeneralController;
 import model.LimitsDB;
+import model.Publicadores.Headquarters;
 import validaciones.ValidaLibrary;
+
+import java.util.List;
 
 public class HeadquartersView implements LimitsDB {
     public static void menuHeadquarters(GeneralController controller) {
@@ -32,6 +35,19 @@ public class HeadquartersView implements LimitsDB {
                     System.out.println("Volviendo...");
             }
         } while (bOpcion != 5);
+    }
+
+    private static void mostrarTodas(GeneralController controller) {
+        List<Headquarters> lHQ;
+
+        lHQ = controller.getPublicadoresController().getHeadquartersController().getTodosHQ();
+
+        if (lHQ.size() != 0) {
+            for (Headquarters oHeadquartes: lHQ) {
+                System.out.println(oHeadquartes);
+            }
+        }else
+            System.out.println("No hay ninguna oficina central en la base de datos.");
     }
 
     private static byte opcionMenu() {
