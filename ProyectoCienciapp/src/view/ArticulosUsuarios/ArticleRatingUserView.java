@@ -120,6 +120,42 @@ public class ArticleRatingUserView implements LimitsDB {
         return controller.removeArticleRatingUser(oArticleRatingUser);
     }
 
+    private static void busqueda(GeneralController controller) {
+        String sUsername = null;
+        byte idArticle = 0;
+        ArticleRatingUser oArticleRatingUser = null;
+        boolean errorControl = true;
+        int iNumArticleRatingUser;
+
+        while (errorControl) {
+            try {
+                sUsername = ValidaLibrary.leer("Introduce el nombre de usuario: ");
+                if (sUsername.length() < MAXCHAR_50 && sUsername.length() > MINCHAR)
+                    errorControl = false;
+            } catch (Exception exception) {
+                System.out.println("Error: " + exception.getMessage());
+            }
+        }
+
+        errorControl = true;
+        while (errorControl) {
+            try {
+                idArticle = (byte) ValidaLibrary.valida("Introduce el ID del articulo: ",MINCHAR,MAXCHAR_100,3);
+                errorControl = false;
+            } catch (Exception exception) {
+                System.out.println("Error: " + exception.getMessage());
+            }
+        }
+
+        oArticleRatingUser = new ArticleRatingUser(new User(sUsername), new Article(idArticle));
+        iNumArticleRatingUser = controller.existeArticleRatingUser(oArticleRatingUser);
+
+        if (iNumArticleRatingUser > 0) {
+            System.out.println("Existen " + iNumArticleRatingUser + " en la base de datos.");
+        } else
+            System.out.println("No hay ninguna calificacion de ese usuario a ese articulo.");
+    }
+
     private static byte opcionMenu() {
         byte bOpcion = 0;
         boolean errorControl = true;
