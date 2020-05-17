@@ -1,8 +1,11 @@
 package view.ArticulosUsuarios;
 
 import controller.GeneralController;
+import model.ArticulosUsuarios.User;
 import model.LimitsDB;
 import validaciones.ValidaLibrary;
+
+import java.util.List;
 
 public class UserView implements LimitsDB {
     public static void menuUser(GeneralController controller) {
@@ -32,6 +35,20 @@ public class UserView implements LimitsDB {
                     System.out.println("Volviendo...");
             }
         } while (bOpcion != 5);
+    }
+
+    private static void mostrarTodas(GeneralController controller) {
+        List<User> lUser;
+
+        lUser = controller.getArticulosUsuariosController().getUserController().getTodasUsuarios();
+
+        if (lUser.size() > 0) {
+            for (User oUser : lUser) {
+                System.out.println(oUser);
+            }
+        }else{
+            System.out.println("No hay ningun usuario en la base de datos.");
+        }
     }
 
     private static byte opcionMenu() {
