@@ -1,0 +1,29 @@
+La zona de configuración del servidor de base de 
+datos se encuentra en el fichero ConexionDB.java que está en la siguiente direccion:
+ProyectoCienciapp\src\controller\ConexionDB.java
+
+Las lineas de codigo son desde la 6 a la 10
+
+
+Por si te hace falta, una vez ejecutado el programa
+desde la clase principal que está en la vista,
+puedes usar cualquiera de los tres usuarios que están en la base de datos (xXAlbertitoXx , fary69 o tuGitanito). 
+Todos estos usuarios usan la contraseña: "123456789".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Esta hecho con IntelliJ IDEA, que es bastante mejor que eclipse.
