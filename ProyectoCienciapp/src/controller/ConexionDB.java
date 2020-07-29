@@ -4,7 +4,7 @@ import java.sql.*;
 
 public class ConexionDB {
     private String host = "localhost";
-    private String port = "3306";
+    private String port = "3307";
     private String user = "root";
     private String password = "root";
     private String pattern = "jdbc:mysql://" + host + ":" + port + "/";
